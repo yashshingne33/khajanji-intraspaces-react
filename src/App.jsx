@@ -14,6 +14,7 @@ import ConstructionPage from './pages/ConstructionPage'
 import InteriorDesignPage from './pages/InteriorDesignPage'
 import LightingDesignPage from './pages/LightingDesignPage'
 import MediaAwardsPage from './pages/MediaAwardsPage'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="services/interior-design" element={<InteriorDesignPage />} />
           <Route path="services/lighting-design" element={<LightingDesignPage />} />
           <Route path="media" element={<MediaAwardsPage />} />
+          <Route path="contact" element={<ContactPage />} />
           <Route path="blog"        element={<Archive />} />
           <Route path="blog/:slug"  element={<BlogPost />} />
           <Route path="author/:name" element={<AuthorPage />} />
