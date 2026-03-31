@@ -1,0 +1,136 @@
+.process {
+  background: #ffffff;
+  padding: var(--section-pad) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 88px);
+  align-items: center;
+}
+
+.left {
+  max-width: 640px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.8vw, 38px);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: 48px;
+}
+
+.accordion {
+  border-top: 1px solid var(--color-border);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.25s var(--ease);
+}
+
+.item:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.trigger {
+  width: 100%;
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  color: inherit;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.symbol {
+  font-size: 20px;
+  color: var(--color-text-muted);
+  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.trigger:hover .symbol {
+  color: var(--color-text);
+  transform: translateX(2px);
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: max-height 0.35s var(--ease), opacity 0.35s var(--ease), transform 0.35s var(--ease);
+}
+
+.open {
+  max-height: 240px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.body {
+  padding: 0 0 22px 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageWrap {
+  width: 100%;
+  max-width: 560px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 0.9s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    justify-content: flex-start;
+  }
+
+  .imageWrap {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
+
+  .trigger {
+    padding: 18px 0;
+  }
+}
