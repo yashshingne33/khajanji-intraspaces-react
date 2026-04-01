@@ -1,12 +1,16 @@
 import { useState, useEffect, useRef } from 'react'
 import styles from './HomePage.module.css'
 import Hero from '../components/home/Hero'
+import WhoWeAre from '../components/home/WhoWeAre'
 import Services from '../components/home/Services'
 import Process from '../components/home/Process'
+import BuildPromo from '../components/home/BuildPromo'
 import Stats from '../components/home/Stats'
 import Portfolio from '../components/home/Portfolio'
 import CTABanner from '../components/home/CTABanner'
 import Awards from '../components/home/Awards'
+import FounderQuote from '../components/home/FounderQuote'
+import MediaPress from '../components/home/MediaPress'
 
 const SLIDES = [
   {
@@ -69,7 +73,7 @@ export default function HomePage() {
     initial: { opacity: 0, y: 40 },
     whileInView: { opacity: 1, y: 0 },
     transition: { duration: 0.6 },
-    viewport: { once: true, amount: 0.3 },
+    viewport: { once: true, amount: 0.2 },
   }
 
   return (
@@ -81,14 +85,22 @@ export default function HomePage() {
         current={current}
         fading={fading}
         goTo={goTo}
-        fadeUp={fadeUp}
+        fadeUp={{
+          initial: { opacity: 0 },
+          animate: { opacity: 1 },
+          transition: { duration: 0.8 }
+        }}
       />
 
+      <WhoWeAre fadeUp={fadeUp} />
       <Services fadeUp={fadeUp} />
       <Portfolio fadeUp={fadeUp} />
-      <Stats fadeUp={fadeUp} />
       <Process fadeUp={fadeUp} />
+      <BuildPromo fadeUp={fadeUp} />
+      <Stats fadeUp={fadeUp} />
       <Awards />
+      <FounderQuote fadeUp={fadeUp} />
+      <MediaPress fadeUp={fadeUp} />
       <CTABanner fadeUp={fadeUp} />
     </div>
   )

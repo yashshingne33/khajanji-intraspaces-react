@@ -22,10 +22,10 @@ export default function Footer() {
         <div className={styles['footer-col']}>
           <div className={styles['footer-contact']}>
             <a href="mailto:HELLO@KHAJANJIINFRASPACES.COM" className={styles['footer-underline']}>HELLO@KHAJANJIINFRASPACES.COM</a>
-            <a href="tel:+12030405010" className={styles['footer-underline']}>+1 2030 4050 10</a>
+            <a href="tel:+919284149958" className={styles['footer-underline']}>+91 928 414 9958</a>
             <p className={styles['footer-address']}>
-              NEW YORK,<br />
-              SEVENTH AVE, 20TH FLOOR, NY 10018
+              Nagpur<br />
+              Maharashtra
             </p>
             <a
               href="#"
