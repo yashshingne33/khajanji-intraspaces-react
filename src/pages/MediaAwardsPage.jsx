@@ -144,26 +144,6 @@ function Navbar() {
 
   return (
     <>
-      <header style={{
-        position:'fixed', top:0, left:0, right:0, zIndex:200,
-        display:'flex', alignItems:'center', justifyContent:'space-between',
-        padding:'18px 48px',
-        background: scrolled ? 'rgba(255,255,255,0.97)' : '#fff',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid #e4e2dc' : '1px solid transparent',
-        transition:'all 0.3s ease',
-      }}>
-        <Link to="/" style={{ display:'flex', alignItems:'center', gap:10, textDecoration:'none', color:'#0a0a0a' }}>
-          <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Minnaro</span>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
-        </Link>
-        <button onClick={() => setOpen(!open)} aria-label="Menu"
-          style={{ background:'none', border:'none', cursor:'pointer', padding:4, display:'flex', flexDirection:'column', gap:5 }}>
-          <span style={{ display:'block', width:22, height:1, background:'#0a0a0a', transform:open?'rotate(45deg) translate(3px,3px)':'none', transition:'transform 0.3s', transformOrigin:'center' }} />
-          <span style={{ display:'block', width:16, height:1, background:'#0a0a0a', transform:open?'rotate(-45deg) translate(3px,-2px)':'none', transition:'transform 0.3s', transformOrigin:'center' }} />
-        </button>
-      </header>
 
       {/* Overlay menu */}
       <div style={{
@@ -181,7 +161,7 @@ function Navbar() {
         ].map((l,i) => (
           <Link key={l.to} to={l.to} onClick={()=>setOpen(false)}
             style={{
-              fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2rem,6vw,4.5rem)',
+              fontFamily:"34px Urbanist,serif", fontSize:'clamp(2rem,6vw,4.5rem)',
               fontWeight:400, lineHeight:1.2, color:'#0a0a0a', textDecoration:'none',
               opacity:open?1:0, transform:open?'translateY(0)':'translateY(20px)',
               transition:`opacity 0.4s ease ${i*70}ms, transform 0.4s ease ${i*70}ms`,
@@ -213,8 +193,8 @@ function Footer() {
       {/* Logo row */}
       <div style={{padding:'40px 48px 0',display:'flex',alignItems:'center',gap:10}}>
         <span style={{display:'inline-block',width:18,height:18,background:'#0a0a0a',clipPath:'polygon(0 100%, 50% 0, 100% 100%)'}} />
-        <span style={{fontFamily:"'DM Sans',sans-serif",fontWeight:500,fontSize:15,letterSpacing:'0.02em'}}>Minnaro</span>
-        <span style={{fontFamily:"'DM Sans',sans-serif",fontWeight:300,fontSize:11,color:'#8a8880',letterSpacing:'0.1em',marginLeft:2}}>· interiors</span>
+        <span style={{fontFamily:"'DM Sans',sans-serif",fontWeight:500,fontSize:15,letterSpacing:'0.02em'}}>Khajanji</span>
+        <span style={{fontFamily:"'DM Sans',sans-serif",fontWeight:300,fontSize:11,color:'#8a8880',letterSpacing:'0.1em',marginLeft:2}}>· intraspaces</span>
       </div>
 
       <div style={{margin:'20px 0 0',borderTop:'1px solid #e4e2dc'}} />
@@ -248,7 +228,7 @@ function Footer() {
       {/* Have something + contact */}
       <div style={{padding:'48px 48px 40px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:40,alignItems:'start'}}>
         <div>
-          <h2 style={{fontFamily:"'DM Serif Display',serif",fontSize:'clamp(1.8rem,3.2vw,3rem)',fontWeight:400,lineHeight:1.2,marginBottom:28}}>
+          <h2 style={{fontFamily:"34px Urbanist,serif",fontSize:'clamp(1.8rem,3.2vw,3rem)',fontWeight:400,lineHeight:1.2,marginBottom:28}}>
             Have something in mind?<br/>Let's talk.
           </h2>
           <button
@@ -350,11 +330,11 @@ export default function MediaAwardsPage() {
           Right: tall warm architectural photo
       ══════════════════════════════════════════ */}
       <section className="hero-grid" style={{display:'grid',gridTemplateColumns:'1fr 1fr',minHeight:'82vh'}}>
-        <div className="pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',padding:'120px 48px 80px'}}>
+        <div className="pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',padding:'100px 48px 80px'}}>
           <h1 className="fu1" style={{
-            fontFamily:"'DM Serif Display',serif",
+            fontFamily:"34px Urbanist,serif",
             fontSize:'clamp(2.2rem,3.8vw,3.4rem)',
-            fontWeight:400,lineHeight:1.13,letterSpacing:'-0.01em',
+            fontWeight:400,lineHeight:1.1,letterSpacing:'-0.00em',
             marginBottom:28,color:'#0a0a0a',
           }}>
             2025 Design Awards<br/>Recap
@@ -377,7 +357,7 @@ export default function MediaAwardsPage() {
       ══════════════════════════════════════════ */}
       <section className="pad" style={{padding:'100px 48px 60px',maxWidth:900,margin:'0 auto'}}>
         <p className="sr" style={{
-          fontFamily:"'DM Serif Display',serif",
+          fontFamily:"34px Urbanist,serif",
           fontSize:'clamp(1.25rem,2.3vw,1.8rem)',
           fontWeight:400,lineHeight:1.6,
           textAlign:'center',color:'#0a0a0a',
@@ -430,7 +410,7 @@ export default function MediaAwardsPage() {
             <p className="sr" style={{fontFamily:"'DM Sans',sans-serif",fontSize:11,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300,marginBottom:16}}>
               2025
             </p>
-            <h2 className="sr sr-d1" style={{fontFamily:"'DM Serif Display',serif",fontSize:'clamp(1.8rem,3vw,2.8rem)',fontWeight:400,lineHeight:1.2,marginBottom:48,color:'#0a0a0a'}}>
+            <h2 className="sr sr-d1" style={{fontFamily:"34px Urbanist,serif",fontSize:'clamp(1.8rem,3vw,2.8rem)',fontWeight:400,lineHeight:1.2,marginBottom:48,color:'#0a0a0a'}}>
               International Awards
             </h2>
 
@@ -461,7 +441,7 @@ export default function MediaAwardsPage() {
       <section className="pad gallery-grid" style={{padding:'64px 48px',display:'grid',gridTemplateColumns:'1fr 2.5fr',gap:20,alignItems:'start'}}>
         {/* Left — small portrait */}
         <div className="sr">
-          <div className="iz" style={{height:340,marginBottom:12}}>
+          <div className="iz" style={{height:540,marginBottom:12}}>
             <img
               src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=400&h=500&fit=crop"
               alt="Duce Campus"
@@ -473,7 +453,7 @@ export default function MediaAwardsPage() {
         </div>
         {/* Right — large landscape */}
         <div className="sr sr-d1">
-          <div className="iz" style={{height:340,marginBottom:12}}>
+          <div className="iz" style={{height:540,marginBottom:12}}>
             <img
               src="https://images.unsplash.com/photo-1618219944342-824e40a13285?w=900&h=600&fit=crop"
               alt="Hotel Kempinski"
@@ -493,7 +473,7 @@ export default function MediaAwardsPage() {
       <section className="pad table-grid" style={{padding:'0 48px 80px',display:'grid',gridTemplateColumns:'260px 1fr',gap:60,alignItems:'start'}}>
         {/* Left label */}
         <div>
-          <p className="sr" style={{fontFamily:"'DM Sans',sans-serif",fontSize:10,letterSpacing:'0.16em',textTransform:'uppercase',color:'#8a8880',fontWeight:300,paddingTop:4}}>
+          <p className="sr" style={{fontFamily:"34px Urbanist,sans-serif",fontSize:12,letterSpacing:'0.16em',textTransform:'uppercase',color:'#8a8880',fontWeight:400,paddingTop:4}}>
             Our awards over the years
           </p>
         </div>
@@ -518,7 +498,7 @@ export default function MediaAwardsPage() {
         {/* Left */}
         <div className="pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',padding:'80px 48px'}}>
           <h2 className="sr" style={{
-            fontFamily:"'DM Serif Display',serif",
+            fontFamily:"34px Urbanist,serif",
             fontSize:'clamp(1.8rem,3.2vw,2.9rem)',
             fontWeight:400,lineHeight:1.22,
             marginBottom:32,color:'#0a0a0a',

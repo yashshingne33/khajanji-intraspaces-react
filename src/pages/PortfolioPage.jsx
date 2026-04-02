@@ -349,7 +349,7 @@ export default function PortfolioPage() {
         <h1
           className="fu1 slideInUp"
           style={{
-            fontFamily: "Urbanist, sans-serif",
+            fontFamily: "34px Urbanist, sans-serif",
             fontSize: '60px',
             fontWeight: 400,
             lineHeight: 1.1,
@@ -362,7 +362,7 @@ export default function PortfolioPage() {
         </h1>
 
         <p className="fu2" style={{
-          fontFamily: "17px, sans-serif",
+          fontFamily: "34px Urbanist, sans-serif",
           fontSize: 'clamp( 2vw, 1.35rem)',
           lineHeight: 1.6,
           color: '#4a4a4a',
@@ -430,7 +430,7 @@ export default function PortfolioPage() {
             </div>
 
             <p style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "34px Urbanist, sans-serif",
               fontSize: 15,
               fontWeight: 400,
               color: '#0a0a0a',

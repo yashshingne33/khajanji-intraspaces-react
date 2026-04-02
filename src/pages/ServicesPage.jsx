@@ -105,10 +105,10 @@ export default function ServicesPage() {
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'80vh' }} className="two-col">
         {/* Left */}
         <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'120px 48px 80px' }}>
-          <h1 className="fu1" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
+          <h1 className="fu1" style={{ fontFamily:"34px Urbanist,serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
             Our services
           </h1>
-          <p className="fu2" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:340 }}>
+          <p className="fu2" style={{ fontFamily:"Urbanist,sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:340 }}>
             From concept to completion, Minnaro delivers expert guidance across every phase of a project—from creative direction and detailed construction drawings to the full installation of rooms or entire buildings. We offer professional, experienced interior design services for homes, multi-family residences, lobbies, offices, medical spaces, retail stores, showrooms, and boutique hotels.
           </p>
         </div>
@@ -130,13 +130,13 @@ export default function ServicesPage() {
             <div className="svc-body-grid">
               {/* Left: title + Learn more */}
               <div>
-                <h2 className="sr" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.8rem,3vw,2.8rem)', fontWeight:400, lineHeight:1.2, marginBottom:24, color:'#0a0a0a' }}>
+                <h2 className="sr" style={{ fontFamily:"Urbanist,serif", fontSize:'clamp(1.8rem,3vw,2.8rem)', fontWeight:400, lineHeight:1.2, marginBottom:24, color:'#0a0a0a' }}>
                   {svc.title}
                 </h2>
                 <Link
                   to={svc.to}
                   className="sr sr-d1"
-                  style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"'DM Sans',sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, transition:'opacity 0.2s' }}
+                  style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"Urbanist,sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, transition:'opacity 0.2s' }}
                   onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
                   onMouseLeave={e => e.currentTarget.style.opacity='1'}
                 >
@@ -146,7 +146,7 @@ export default function ServicesPage() {
               {/* Right: body paragraphs */}
               <div className="sr sr-d1">
                 {svc.body.map((para, i) => (
-                  <p key={i} style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300, marginBottom: i < svc.body.length - 1 ? 20 : 0 }}>
+                  <p key={i} style={{ fontFamily:"Urbanist,sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300, marginBottom: i < svc.body.length - 1 ? 20 : 0 }}>
                     {para}
                   </p>
                 ))}
@@ -165,7 +165,7 @@ export default function ServicesPage() {
 
           {/* ── Projects grid label + 3-col asymmetric grid ── */}
           <section className="pad" style={{ padding:'0 48px 96px' }}>
-            <p className="sr" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:24 }}>
+            <p className="sr" style={{ fontFamily:"Urbanist,sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:24 }}>
               {svc.projectsLabel}
             </p>
             <div className="svc-proj-grid">
@@ -179,7 +179,7 @@ export default function ServicesPage() {
                       onError={e => { e.target.src=`https://placehold.co/400x400/e4e2dc/8a8880?text=${encodeURIComponent(p.name)}` }}
                     />
                   </div>
-                  <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a' }}>{p.name}</p>
+                  <p style={{ fontFamily:"Urbanist,sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a' }}>{p.name}</p>
                 </div>
               ))}
             </div>

@@ -47,26 +47,6 @@ function Navbar() {
 
   return (
     <>
-      <header style={{
-        position:'fixed', top:0, left:0, right:0, zIndex:200,
-        display:'flex', alignItems:'center', justifyContent:'space-between',
-        padding:'18px 48px',
-        background: scrolled ? 'rgba(255,255,255,0.97)' : '#fff',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid #e4e2dc' : '1px solid transparent',
-        transition: 'all 0.3s ease',
-      }}>
-        <Link to="/" style={{ display:'flex', alignItems:'center', gap:10, textDecoration:'none', color:'#0a0a0a' }}>
-          <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Minnaro</span>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
-        </Link>
-        <button onClick={() => setOpen(!open)} aria-label="Menu"
-          style={{ background:'none', border:'none', cursor:'pointer', padding:4, display:'flex', flexDirection:'column', gap:5 }}>
-          <span style={{ display:'block', width:22, height:1, background:'#0a0a0a', transform:open?'rotate(45deg) translate(3px,3px)':'none', transition:'transform 0.3s', transformOrigin:'center' }} />
-          <span style={{ display:'block', width:16, height:1, background:'#0a0a0a', transform:open?'rotate(-45deg) translate(3px,-2px)':'none', transition:'transform 0.3s', transformOrigin:'center' }} />
-        </button>
-      </header>
 
       {/* Overlay menu */}
       <div style={{
@@ -84,7 +64,7 @@ function Navbar() {
         ].map((l, i) => (
           <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
             style={{
-              fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2rem,6vw,4.5rem)',
+              fontFamily:"34px Urbanist,serif", fontSize:'clamp(2rem,6vw,4.5rem)',
               fontWeight:400, lineHeight:1.2, color:'#0a0a0a', textDecoration:'none',
               opacity:open?1:0, transform:open?'translateY(0)':'translateY(20px)',
               transition:`opacity 0.4s ease ${i*70}ms, transform 0.4s ease ${i*70}ms`,
@@ -96,7 +76,7 @@ function Navbar() {
         <div style={{ marginTop:36, display:'flex', gap:24 }}>
           {SOCIAL.map(s => (
             <a key={s.label} href="#"
-              style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
+              style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
               onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
               onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
             >{s.label}</a>
@@ -116,8 +96,8 @@ function Footer() {
       {/* Logo row */}
       <div style={{ padding:'40px 48px 0', display:'flex', alignItems:'center', gap:10 }}>
         <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Minnaro</span>
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
+        <span style={{ fontFamily:"34px Urbanist,sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji</span>
+        <span style={{ fontFamily:"34px Urbanist,sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
       </div>
 
       <div style={{ margin:'20px 0 0', borderTop:'1px solid #e4e2dc' }} />
@@ -127,7 +107,7 @@ function Footer() {
         <nav style={{ display:'flex', gap:32, flexWrap:'wrap' }}>
           {[['Studio','/about'],['Services','/services'],['Portfolio','/portfolio'],['Reviews','/reviews'],['Journal','/journal']].map(([l, to]) => (
             <Link key={to} to={to}
-              style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
+              style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
               onMouseEnter={e => e.currentTarget.style.opacity='1'}
               onMouseLeave={e => e.currentTarget.style.opacity='0.75'}
             >{l}</Link>
@@ -151,7 +131,7 @@ function Footer() {
       {/* Have something + contact */}
       <div style={{ padding:'48px 48px 40px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:40, alignItems:'start' }}>
         <div>
-          <h2 style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.8rem,3.2vw,3rem)', fontWeight:400, lineHeight:1.2, marginBottom:28 }}>
+          <h2 style={{ fontFamily:"34px Urbanist,serif", fontSize:'clamp(1.8rem,3.2vw,3rem)', fontWeight:400, lineHeight:1.2, marginBottom:28 }}>
             Have something in mind?<br />Let's talk.
           </h2>
           <button
@@ -169,12 +149,12 @@ function Footer() {
               <text x="5"  y="27" style={{ fontFamily:'sans-serif', fontSize:5, fill:'#0a0a0a' }}>Design Awards</text>
             </svg>
             <div>
-              <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, fontWeight:500, color:'#0a0a0a' }}>Interior</p>
-              <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, fontWeight:300, color:'#8a8880' }}>Design Awards</p>
+              <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:10, fontWeight:500, color:'#0a0a0a' }}>Interior</p>
+              <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:10, fontWeight:300, color:'#8a8880' }}>Design Awards</p>
             </div>
           </div>
           <a href="mailto:hello@minnaro.com"
-            style={{ display:'block', fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}
+            style={{ display:'block', fontFamily:"34px Urbanist,sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}
             onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
             onMouseLeave={e => e.currentTarget.style.opacity='1'}
           >hello@minnaro.com</a>
@@ -228,7 +208,7 @@ function Field({ label, type='text', placeholder, isTextarea=false, value, onCha
   }
   return (
     <div style={{ marginBottom:18 }}>
-      <label style={{ display:'block', fontFamily:"'DM Sans',sans-serif", fontSize:12, fontWeight:400, color:'#0a0a0a', marginBottom:6, letterSpacing:'0.01em' }}>
+      <label style={{ display:'block', fontFamily:"34px Urbanist,sans-serif", fontSize:12, fontWeight:400, color:'#0a0a0a', marginBottom:6, letterSpacing:'0.01em' }}>
         {label}
       </label>
       {isTextarea ? (
@@ -285,7 +265,7 @@ export default function ContactPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; background: #fff; color: #0a0a0a; }
+        body { font-family: '34px Urbanist, sans-serif; -webkit-font-smoothing: antialiased; background: #fff; color: #0a0a0a; }
 
         .sr    { opacity: 0; transform: translateY(24px); transition: opacity 0.75s cubic-bezier(.25,.46,.45,.94), transform 0.75s cubic-bezier(.25,.46,.45,.94); }
         .sr-on { opacity: 1 !important; transform: translateY(0) !important; }
@@ -330,7 +310,7 @@ export default function ContactPage() {
 
           {/* Page heading */}
           <h1 className="fu1" style={{
-            fontFamily:"'DM Serif Display',serif",
+            fontFamily:"34px Urbanist,serif",
             fontSize:'clamp(2.4rem,4vw,3.8rem)',
             fontWeight:400,
             lineHeight:1.12,
@@ -343,7 +323,7 @@ export default function ContactPage() {
 
           {/* Subtitle */}
           <p className="fu2" style={{
-            fontFamily:"'DM Sans',sans-serif",
+            fontFamily:"34px Urbanist,sans-serif",
             fontSize:14,
             lineHeight:1.75,
             color:'#555',
@@ -356,13 +336,13 @@ export default function ContactPage() {
 
           {/* GET IN TOUCH */}
           <div className="fu3" style={{ marginBottom:36 }}>
-            <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
+            <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
               Get in touch
             </p>
             <a href="mailto:hello@minnaro.com"
               style={{
                 display:'block',
-                fontFamily:"'DM Sans',sans-serif",
+                fontFamily:"34px Urbanist,sans-serif",
                 fontSize:14, fontWeight:400,
                 color:'#0a0a0a', textDecoration:'none',
                 borderBottom:'1px solid #0a0a0a',
@@ -379,7 +359,7 @@ export default function ContactPage() {
             <a href="tel:+12030405010"
               style={{
                 display:'block',
-                fontFamily:"'DM Sans',sans-serif",
+                fontFamily:"34px Urbanist,sans-serif",
                 fontSize:14, fontWeight:400,
                 color:'#0a0a0a', textDecoration:'none',
                 borderBottom:'1px solid #0a0a0a',
@@ -396,10 +376,10 @@ export default function ContactPage() {
 
           {/* SCOPE OF WORK / Address */}
           <div className="fu3" style={{ transitionDelay:'0.12s' }}>
-            <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
+            <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
               Scope of work
             </p>
-            <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a', lineHeight:1.65 }}>
+            <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a', lineHeight:1.65 }}>
               New York, Seventh Ave, 20th<br />Floor, NY 10018
             </p>
           </div>
@@ -415,7 +395,7 @@ export default function ContactPage() {
         >
           {/* Background image fills the entire right column */}
           <img
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&h=1200&fit=crop&crop=center"
+            src="https://images.unsplash.com/photo-1758551038941-a67e29026bff?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Interior"
             style={{
               position: 'absolute',
@@ -434,16 +414,17 @@ export default function ContactPage() {
             left: '50%',
             transform: 'translate(-50%, -50%)',
             width: 'calc(100% - 48px)',
-            maxWidth: 380,
-            background: '#fff',
+            maxWidth: 580,
+            background: '#8C7226',
+            
             padding: '32px 32px 28px',
             boxShadow: '0 2px 24px rgba(0,0,0,0.10)',
           }}>
             {sent ? (
               /* Success state */
               <div style={{ textAlign:'center', padding:'40px 0' }}>
-                <p style={{ fontFamily:"'DM Serif Display',serif", fontSize:'1.6rem', fontWeight:400, marginBottom:12 }}>Thank you.</p>
-                <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, color:'#555', fontWeight:300, lineHeight:1.7 }}>
+                <p style={{ fontFamily:"34px Urbanist,serif", fontSize:'1.6rem', fontWeight:400, marginBottom:12 }}>Thank you.</p>
+                <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:13, color:'#555', fontWeight:300, lineHeight:1.7 }}>
                   We'll be in touch within 1–2 business days.
                 </p>
               </div>
@@ -451,7 +432,7 @@ export default function ContactPage() {
               <>
                 {/* Intro text inside card */}
                 <p style={{
-                  fontFamily:"'DM Sans',sans-serif",
+                  fontFamily:"34px Urbanist,sans-serif",
                   fontSize:13,
                   lineHeight:1.72,
                   color:'#0a0a0a',
@@ -464,7 +445,7 @@ export default function ContactPage() {
 
                 {/* Error */}
                 {error && (
-                  <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:12, color:'#c0392b', marginBottom:14 }}>{error}</p>
+                  <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:12, color:'#c0392b', marginBottom:14 }}>{error}</p>
                 )}
 
                 {/* Form */}
@@ -515,7 +496,7 @@ export default function ContactPage() {
                       padding:'10px 28px',
                       background:'transparent',
                       border:'1px solid #0a0a0a',
-                      fontFamily:"'DM Sans',sans-serif",
+                      fontFamily:"34px Urbanist,sans-serif",
                       fontSize:13,
                       fontWeight:400,
                       color:'#0a0a0a',
