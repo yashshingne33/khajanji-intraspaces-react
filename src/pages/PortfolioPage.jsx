@@ -29,48 +29,56 @@ const PROJECTS = [
     name: 'Bawly Modern House',
     location: 'San Diego, California',
     img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=660&h=520&fit=crop',
+    badge: 'Custom Homes',
   },
   {
     id: 2,
     name: 'Holis Passive House',
     location: 'Washington, D.C.',
     img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=660&h=520&fit=crop',
+    badge: 'Passive Design',
   },
   {
     id: 3,
     name: 'GG Art Gallery',
     location: 'Vancouver, British Columbia',
     img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=660&h=520&fit=crop',
+    badge: 'Public & Cultural',
   },
   {
     id: 4,
     name: 'Heise',
     location: 'Bodø, Norway',
     img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=660&h=520&fit=crop',
+    badge: 'Residential',
   },
   {
     id: 5,
     name: 'Kaave Academy',
     location: 'Stockholm, Sweden',
     img: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=660&h=520&fit=crop',
+    badge: 'Education',
   },
   {
     id: 6,
     name: 'Casa Palermo',
     location: 'Palermo, Italy',
     img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=660&h=520&fit=crop',
+    badge: 'Villa & Estate',
   },
   {
     id: 7,
     name: 'Tower',
     location: 'Lyon, France',
     img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=660&h=520&fit=crop&crop=bottom',
+    badge: 'Commercial',
   },
   {
     id: 8,
     name: 'Grand Terra',
     location: 'Hanoi, Vietnam',
     img: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?w=660&h=520&fit=crop',
+    badge: 'Landscape',
   },
 ]
 
@@ -109,26 +117,6 @@ function Navbar() {
 
   return (
     <>
-      <header style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '18px 48px',
-        background: scrolled ? 'rgba(255,255,255,0.96)' : 'rgba(255,255,255,1)',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid #e4e2dc' : '1px solid transparent',
-        transition: 'all 0.3s ease',
-      }}>
-        <Link to="/" style={{ display:'flex', alignItems:'center', gap:10, textDecoration:'none', color:'#0a0a0a' }}>
-          <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Minnaro</span>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
-        </Link>
-        <button onClick={() => setOpen(!open)} aria-label="Menu"
-          style={{ background:'none', border:'none', cursor:'pointer', padding:4, display:'flex', flexDirection:'column', gap:5 }}>
-          <span style={{ display:'block', width:22, height:1, background:'#0a0a0a', transform: open ? 'rotate(45deg) translate(3px,3px)' : 'none', transition:'transform 0.3s', transformOrigin:'center' }} />
-          <span style={{ display:'block', width:16, height:1, background:'#0a0a0a', transform: open ? 'rotate(-45deg) translate(3px,-2px)' : 'none', transition:'transform 0.3s', transformOrigin:'center' }} />
-        </button>
-      </header>
 
       {/* Overlay menu */}
       <div style={{
@@ -165,11 +153,7 @@ function Navbar() {
 }
 
 /* ─────────────────────────────────────────────
-   FOOTER  — matches portfolio page PNG exactly:
-   • White top section: logo row + divider + nav/social row
-   • Below: full-width "Have something in mind? / Let's talk." left
-             + Interior Design Awards badge + contact right
-   • Bottom: back-to-top arrow left | copyright + terms right
+   FOOTER
 ───────────────────────────────────────────── */
 function Footer() {
   return (
@@ -178,8 +162,8 @@ function Footer() {
       {/* ── Logo-only row (light gray bg, matches PNG) ── */}
       <div style={{ background:'#f5f4f0', padding:'28px 48px', display:'flex', alignItems:'center', gap:10 }}>
         <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Minnaro</span>
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
+        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji</span>
+        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
       </div>
 
       {/* ── Divider ── */}
@@ -220,7 +204,6 @@ function Footer() {
         gap:40,
         alignItems:'start',
       }}>
-        {/* Left: "Have something in mind?" stacked above "Let's talk." + button */}
         <div>
           <h2 style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:400, lineHeight:1.18, marginBottom:28 }}>
             Have something in mind?<br />Let's talk.
@@ -241,11 +224,8 @@ function Footer() {
           </button>
         </div>
 
-        {/* Right: Interior Design Awards badge + contact details */}
         <div>
-          {/* Awards badge */}
           <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:24 }}>
-            {/* Matches the "iac Interior Design Awards" badge in the PNG */}
             <svg width="36" height="28" viewBox="0 0 44 32" fill="none">
               <rect x="1" y="1" width="42" height="30" stroke="#0a0a0a" strokeWidth="1.2"/>
               <text x="8"  y="12" style={{ fontFamily:'sans-serif', fontSize:7, fontWeight:700, fill:'#0a0a0a' }}>i</text>
@@ -256,25 +236,20 @@ function Footer() {
             </svg>
           </div>
 
-          {/* Email */}
           <a href="mailto:hello@minnaro.com"
             style={{ display:'block', fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', marginBottom:2, borderBottom:'1px solid #0a0a0a', paddingBottom:1, width:'fit-content' }}
             onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
             onMouseLeave={e => e.currentTarget.style.opacity='1'}
           >hello@minnaro.com</a>
 
-          {/* Divider line */}
           <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
 
-          {/* Phone */}
           <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:2 }}>
             +1 2030 4050 10
           </p>
 
-          {/* Divider line */}
           <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
 
-          {/* Address */}
           <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
             New York, Seventh Ave, 20th<br />Floor, NY 10018
           </p>
@@ -286,7 +261,6 @@ function Footer() {
 
       {/* ── Copyright row ── */}
       <div style={{ padding:'16px 48px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
-        {/* Back to top arrow */}
         <button
           onClick={() => window.scrollTo({ top:0, behavior:'smooth' })}
           aria-label="Back to top"
@@ -347,6 +321,14 @@ export default function PortfolioPage() {
         }
         .project-card:hover .card-img-wrap img { transform: scale(1.05); }
 
+        /* Badge hover */
+        .project-card:hover .portfolio-img {
+          transform: scale(1.1);
+        }
+        .project-card:hover .hover-badge {
+          opacity: 1 !important;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
           .portfolio-grid { grid-template-columns: repeat(3, 1fr) !important; }
@@ -363,85 +345,109 @@ export default function PortfolioPage() {
 
       <Navbar />
 
-      {/* ══════════════════════════════════════════
-          HEADER — title + intro text
-          No filter bar. Matches PNG exactly.
-      ══════════════════════════════════════════ */}
-      <section className="page-pad" style={{ padding:'92px 48px 52px' }}>
-        <h1 className="fu1" style={{
-          fontFamily:"'DM Serif Display',serif",
-          fontSize:'clamp(2rem,4.5vw,3.4rem)',
-          fontWeight:400,
-          lineHeight:1.15,
-          letterSpacing:'-0.01em',
-          marginBottom:28,
-          color:'#0a0a0a',
-        }}>
+      <section className="page-pad" style={{ padding: '92px 48px 52px' }}>
+        <h1
+          className="fu1 slideInUp"
+          style={{
+            fontFamily: "Urbanist, sans-serif",
+            fontSize: '60px',
+            fontWeight: 400,
+            lineHeight: 1.1,
+            letterSpacing: '-0.03em',
+            marginBottom: '48px',
+            color: '#0a0a0a',
+          }}
+        >
           Portfolio architecture
         </h1>
+
         <p className="fu2" style={{
-          fontFamily:"'DM Sans',sans-serif",
-          fontSize:14,
-          lineHeight:1.78,
-          color:'#555',
-          fontWeight:300,
-          maxWidth:340,
+          fontFamily: "17px, sans-serif",
+          fontSize: 'clamp( 2vw, 1.35rem)',
+          lineHeight: 1.6,
+          color: '#4a4a4a',
+          fontWeight: 300,
+          maxWidth: '500px',
+          letterSpacing: '-0.01em',
         }}>
-          At Minnaro Interiors Studio, we approach each project with a thoughtful blend of environmental psychology, art, architecture, and cultural insight — all grounded in meticulous project management.
+          At Minnaro Interiors Studio, we approach each project with a thoughtful
+          blend of environmental psychology, art, architecture, and cultural
+          insight — all grounded in meticulous project management.
         </p>
       </section>
 
-      {/* ══════════════════════════════════════════
-          PROJECT GRID — 4 columns × 2 rows
-          Image ratio: ~3:2.4 (wider than portrait)
-          No overlays, no labels on images
-          Name below image (normal weight)
-          Location below name (tiny, all-caps, tracked, gray)
-      ══════════════════════════════════════════ */}
       <main className="page-pad portfolio-grid" style={{
-        padding:'0 48px 72px',
-        display:'grid',
-        gridTemplateColumns:'repeat(4, 1fr)',
-        gap:'40px 20px',
+        padding: '0 48px 72px',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '40px 20px',
       }}>
         {PROJECTS.map((p, i) => (
           <article
             key={p.id}
             className={`project-card sr sr-d${(i % 4) + 1}`}
-            style={{ cursor:'pointer' }}
+            style={{ cursor: 'pointer' }}
           >
-            {/* Image */}
-            <div className="card-img-wrap" style={{ aspectRatio:'3 / 2.45', marginBottom:14 }}>
+            <div className="card-img-wrap" style={{
+              aspectRatio: '3 / 4',
+              marginBottom: 14,
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              {/* White Badge - shows on hover, unique per card */}
+              <div className="hover-badge" style={{
+                position: 'absolute',
+                top: '20px',
+                left: '20px',
+                backgroundColor: '#fff',
+                color: '#000',
+                padding: '10px 18px',
+                fontSize: '11px',
+                fontWeight: 400,
+                fontFamily: "'DM Sans', sans-serif",
+                zIndex: 10,
+                opacity: 0,
+                transition: 'opacity 0.3s ease',
+                pointerEvents: 'none',
+              }}>
+                {p.badge}
+              </div>
+
               <img
                 src={p.img}
                 alt={p.name}
+                className="portfolio-img"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  transition: 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
+                }}
                 onError={(e) => {
-                  e.target.src = `https://placehold.co/660x520/e4e2dc/8a8880?text=${encodeURIComponent(p.name)}`
+                  e.target.src = `https://placehold.co/600x800/e4e2dc/8a8880?text=${encodeURIComponent(p.name)}`
                 }}
               />
             </div>
 
-            {/* Project name */}
             <p style={{
-              fontFamily:"'DM Sans',sans-serif",
-              fontSize:15,
-              fontWeight:400,
-              color:'#0a0a0a',
-              marginBottom:5,
-              lineHeight:1.3,
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 15,
+              fontWeight: 400,
+              color: '#0a0a0a',
+              marginBottom: 5,
+              lineHeight: 1.3,
             }}>
               {p.name}
             </p>
 
-            {/* Location */}
             <p style={{
-              fontFamily:"'DM Sans',sans-serif",
-              fontSize:10,
-              fontWeight:300,
-              color:'#8a8880',
-              letterSpacing:'0.14em',
-              textTransform:'uppercase',
-              lineHeight:1.4,
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: 10,
+              fontWeight: 300,
+              color: '#8a8880',
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              lineHeight: 1.4,
             }}>
               {p.location}
             </p>

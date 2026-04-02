@@ -107,26 +107,6 @@ function Navbar() {
 
   return (
     <>
-      <header style={{
-        position:'fixed', top:0, left:0, right:0, zIndex:200,
-        display:'flex', alignItems:'center', justifyContent:'space-between',
-        padding:'18px 48px',
-        background: scrolled ? 'rgba(255,255,255,0.96)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid #e4e2dc' : '1px solid transparent',
-        transition:'all 0.3s ease',
-      }}>
-        <Link to="/" style={{ display:'flex', alignItems:'center', gap:10, textDecoration:'none', color:'#0a0a0a' }}>
-          <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Minnaro</span>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
-        </Link>
-        <button onClick={() => setOpen(!open)} aria-label="Menu"
-          style={{ background:'none', border:'none', cursor:'pointer', padding:4, display:'flex', flexDirection:'column', gap:5 }}>
-          <span style={{ display:'block', width:22, height:1, background:'#0a0a0a', transform: open ? 'rotate(45deg) translate(3px,3px)' : 'none', transition:'transform 0.3s', transformOrigin:'center' }} />
-          <span style={{ display:'block', width:16, height:1, background:'#0a0a0a', transform: open ? 'rotate(-45deg) translate(3px,-2px)' : 'none', transition:'transform 0.3s', transformOrigin:'center' }} />
-        </button>
-      </header>
 
       {/* Menu overlay */}
       <div style={{
@@ -151,7 +131,7 @@ function Navbar() {
         <div style={{ marginTop:40, display:'flex', gap:24 }}>
           {SOCIAL_ICONS.map(s => (
             <a key={s.label} href="#"
-              style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
+              style={{ fontFamily:"Urbanist,sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
               onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
               onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
             >{s.label}</a>
@@ -172,15 +152,15 @@ function Footer() {
       {/* Logo row */}
       <div style={{ padding:'44px 48px 0', display:'flex', alignItems:'center', gap:10 }}>
         <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15 }}>Minnaro</span>
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
+        <span style={{ fontFamily:"Urbanist,sans-serif", fontWeight:500, fontSize:15 }}>Khajanji</span>
+        <span style={{ fontFamily:"Urbanist,sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
       </div>
 
       {/* Nav + social */}
       <div style={{ padding:'20px 48px 20px', borderTop:'1px solid #e4e2dc', marginTop:20, display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:16 }}>
         <nav style={{ display:'flex', gap:28, flexWrap:'wrap' }}>
           {[['Studio','/about'],['Services','/services'],['Portfolio','/portfolio'],['Reviews','/reviews'],['Journal','/journal']].map(([l,to]) => (
-            <Link key={to} to={to} style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
+            <Link key={to} to={to} style={{ fontFamily:"Urbanist,sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
               onMouseEnter={e => e.currentTarget.style.opacity='1'}
               onMouseLeave={e => e.currentTarget.style.opacity='0.75'}
             >{l}</Link>
@@ -199,58 +179,93 @@ function Footer() {
         </div>
       </div>
 
-      {/* Have something in mind */}
-      <div style={{ padding:'36px 48px 28px', borderTop:'1px solid #e4e2dc', display:'flex', alignItems:'flex-end', justifyContent:'space-between', flexWrap:'wrap', gap:16 }}>
-        <h2 style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2rem,4.5vw,3.5rem)', fontWeight:400, lineHeight:1.1 }}>
-          Have something in mind?
-        </h2>
-        <div style={{ border:'1px solid #e4e2dc', padding:'8px 14px', display:'flex', flexDirection:'column', alignItems:'center' }}>
-          <svg width="24" height="18" viewBox="0 0 32 24" fill="none">
-            <rect x="1" y="1" width="30" height="22" stroke="#0a0a0a" strokeWidth="1"/>
-            <text x="16" y="9"  textAnchor="middle" style={{ fontFamily:'sans-serif', fontSize:5, fontWeight:600, fill:'#0a0a0a' }}>Interior</text>
-            <text x="16" y="14" textAnchor="middle" style={{ fontFamily:'sans-serif', fontSize:5, fontWeight:600, fill:'#0a0a0a' }}>Design</text>
-            <text x="16" y="19" textAnchor="middle" style={{ fontFamily:'sans-serif', fontSize:5, fontWeight:600, fill:'#0a0a0a' }}>Awards</text>
-          </svg>
-        </div>
-      </div>
 
-      {/* Let's talk */}
-      <div style={{ padding:'28px 48px 36px', borderTop:'1px solid #e4e2dc', display:'flex', alignItems:'flex-start', justifyContent:'space-between', flexWrap:'wrap', gap:24 }}>
+      {/* ── Divider ── */}
+      <div style={{ height:1, background:'#e4e2dc' }} />
+
+      {/* ── Main CTA + contact row ── */}
+      <div style={{
+        padding:'52px 48px 44px',
+        display:'grid',
+        gridTemplateColumns:'1fr 1fr',
+        gap:40,
+        alignItems:'start',
+      }}>
         <div>
-          <h2 style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2.5rem,5vw,4rem)', fontWeight:400, lineHeight:1, marginBottom:24 }}>
-            Let's talk.
+          <h2 style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:400, lineHeight:1.18, marginBottom:28 }}>
+            Have something in mind?<br />Let's talk.
           </h2>
           <button
-            style={{ padding:'10px 24px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', letterSpacing:'0.01em', transition:'background 0.2s, color 0.2s' }}
+            style={{
+              padding:'10px 22px', background:'transparent',
+              border:'1px solid #0a0a0a',
+              fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:400,
+              cursor:'pointer', letterSpacing:'0.01em',
+              transition:'background 0.2s, color 0.2s',
+              color:'#0a0a0a',
+            }}
             onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
             onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#0a0a0a' }}
-          >Request a call back</button>
+          >
+            Request a call back
+          </button>
         </div>
-        <div style={{ textAlign:'right' }}>
-          <a href="mailto:hello@minnaro.com" style={{ display:'block', fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10 }}>
-            hello@minnaro.com
-          </a>
-          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:10 }}>+1 2030 4050 10</p>
-          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.6 }}>
-            New York, Seventh Ave,<br />20th Floor, NY 10018
+
+        <div>
+          <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:24 }}>
+            <svg width="36" height="28" viewBox="0 0 44 32" fill="none">
+              <rect x="1" y="1" width="42" height="30" stroke="#0a0a0a" strokeWidth="1.2"/>
+              <text x="8"  y="12" style={{ fontFamily:'sans-serif', fontSize:7, fontWeight:700, fill:'#0a0a0a' }}>i</text>
+              <text x="14" y="12" style={{ fontFamily:'sans-serif', fontSize:7, fontWeight:700, fill:'#0a0a0a' }}>a</text>
+              <text x="20" y="12" style={{ fontFamily:'sans-serif', fontSize:7, fontWeight:700, fill:'#0a0a0a' }}>c</text>
+              <text x="5"  y="22" style={{ fontFamily:'sans-serif', fontSize:5.5, fill:'#0a0a0a' }}>Interior</text>
+              <text x="5"  y="28" style={{ fontFamily:'sans-serif', fontSize:5.5, fill:'#0a0a0a' }}>Design Awards</text>
+            </svg>
+          </div>
+
+          <a href="mailto:hello@minnaro.com"
+            style={{ display:'block', fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', marginBottom:2, borderBottom:'1px solid #0a0a0a', paddingBottom:1, width:'fit-content' }}
+            onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
+            onMouseLeave={e => e.currentTarget.style.opacity='1'}
+          >hello@minnaro.com</a>
+
+          <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
+
+          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:2 }}>
+            +1 2030 4050 10
+          </p>
+
+          <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
+
+          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
+            New York, Seventh Ave, 20th<br />Floor, NY 10018
           </p>
         </div>
       </div>
 
-      {/* Copyright */}
-      <div style={{ padding:'14px 48px 28px', borderTop:'1px solid #e4e2dc', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
-        <button onClick={() => window.scrollTo({ top:0, behavior:'smooth' })}
-          style={{ background:'none', border:'none', cursor:'pointer', padding:4 }} aria-label="Back to top">
+      {/* ── Divider ── */}
+      <div style={{ height:1, background:'#e4e2dc' }} />
+
+      {/* ── Copyright row ── */}
+      <div style={{ padding:'16px 48px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+        <button
+          onClick={() => window.scrollTo({ top:0, behavior:'smooth' })}
+          aria-label="Back to top"
+          style={{ background:'none', border:'none', cursor:'pointer', padding:4, display:'flex', alignItems:'center' }}
+        >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M7 13V1M2 6l5-5 5 5" stroke="#0a0a0a" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-        <div style={{ display:'flex', gap:20 }}>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>© 2009 – 2026 VAMTAM</span>
-          <a href="#" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
+        <div style={{ display:'flex', gap:24, alignItems:'center' }}>
+          <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>
+            © 2009 – 2026 VAMTAM
+          </span>
+          <a href="#"
+            style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
             onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
             onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
-          >Terms</a>
+          >TERMS</a>
         </div>
       </div>
     </footer>
@@ -268,7 +283,7 @@ export default function AboutPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; background: #fff; color: #0a0a0a; }
+        body { font-family: Urbanist, sans-serif; -webkit-font-smoothing: antialiased; background: #fff; color: #0a0a0a; }
 
         .sr  { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(.25,.46,.45,.94), transform 0.75s cubic-bezier(.25,.46,.45,.94); }
         .sr-on { opacity: 1 !important; transform: translateY(0) !important; }
@@ -301,27 +316,30 @@ export default function AboutPage() {
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────── */}
-      <section className="hg" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'100vh' }}>
-        <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'120px 48px 80px' }}>
-          <p className="fu1" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.18em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:28 }}>
-            About the studio
-          </p>
-          <h1 className="fu2" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2.4rem,3.8vw,3.5rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28 }}>
-            Elevating interiors with lasting quality and modern vision
-          </h1>
-          <p className="fu3" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:320 }}>
-            Minnaro was founded out of a shared desire to create spaces that feel as good as they look — honest, balanced, and deeply personal. With a foundation in interior architecture and product design, the studio connects people to their environments through refined, purposeful design.
-          </p>
-        </div>
-        <div className="iz hi" style={{ height:'100vh' }}>
-          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&h=1200&fit=crop&crop=top"
-            alt="Designer at work" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }} />
-        </div>
-      </section>
+
+      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'100vh', fontFamily:'var(--font-sans)', background:'var(--color-background-primary)' }}>
+      <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'80px 48px' }}>
+        <h1 style={{ fontSize:'clamp(4rem,3.5vw,3.2rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.02em', margin:'0 0 28px', color:'var(--color-text-primary)' }}>
+          Elevating interiors<br />
+          with lasting quality<br />
+          and modern vision
+        </h1>
+        <p style={{ fontSize:16, lineHeight:1.8, color:'var(--color-text-secondary)', fontWeight:300, maxWidth:465, margin:0 }}>
+          Minnaro was founded out of a shared desire to create spaces that feel as good as they look — honest, balanced, and deeply personal. With a foundation in interior architecture and product design, the studio connects people to their environments through refined, purposeful design.
+        </p>
+      </div>
+      <div style={{ overflow:'hidden', height:'100vh' }}>
+        <img
+          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&h=1200&fit=crop&crop=top"
+          alt="Designer at work"
+          style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }}
+        />
+      </div>
+    </section>
 
       {/* ── 2. PULL QUOTE ───────────────────────── */}
       <section className="pad" style={{ padding:'110px 48px', display:'flex', justifyContent:'center' }}>
-        <p className="sr" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.3rem,2.4vw,1.85rem)', fontWeight:400, lineHeight:1.58, maxWidth:680, textAlign:'center' }}>
+        <p className="sr" style={{ fontFamily:"24px Urbanist,serif", fontSize:'clamp(1.3rem,2.4vw,1.85rem)', fontWeight:400, lineHeight:1.3, maxWidth:800, textAlign:'center' }}>
           Every project begins with listening. We take the time to understand daily rhythms, personal values, and individual style. From that, we shape tailored interiors that reflect who you are — spaces that work quietly, beautifully, &amp; intuitively.
         </p>
       </section>
@@ -334,18 +352,18 @@ export default function AboutPage() {
               alt="Studio atmosphere" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
           </div>
           <div className="pad" style={{ padding:'64px 56px' }}>
-            <p className="sr" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:18 }}>Our values</p>
-            <h2 className="sr sr-d1" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.7rem,2.8vw,2.5rem)', fontWeight:400, lineHeight:1.26, marginBottom:40 }}>
+            <p className="sr" style={{ fontFamily:"Urbanist,sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:18 }}>Our values</p>
+            <h2 className="sr sr-d1" style={{ fontFamily:"Urbanist,serif", fontSize:'clamp(1.7rem,2.8vw,2.5rem)', fontWeight:400, lineHeight:1.26, marginBottom:40 }}>
               Driven by purpose,<br />designed with passion.<br />Integrity in every detail.
             </h2>
             {VALUES.map((v, i) => (
               <div key={i} className={`sr sr-d${(i % 3) + 1}`} style={{ borderTop:'1px solid #dddbd5', padding:'24px 0' }}>
                 <v.Icon />
                 <div style={{ height:6 }} />
-                <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, fontWeight:500, marginBottom:8 }}>
+                <p style={{ fontFamily:"Urbanist,sans-serif", fontSize:14, fontWeight:500, marginBottom:8 }}>
                   <span style={{ color:'#c8a97e' }}>{v.accent}</span>{v.title.slice(1)}
                 </p>
-                <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, lineHeight:1.68, color:'#666', fontWeight:300, maxWidth:340 }}>{v.desc}</p>
+                <p style={{ fontFamily:"Urbanist,sans-serif", fontSize:13, lineHeight:1.68, color:'#666', fontWeight:300, maxWidth:340 }}>{v.desc}</p>
               </div>
             ))}
           </div>
@@ -363,7 +381,7 @@ export default function AboutPage() {
               <div className="iz" style={{ height:380 }}>
                 <img src={img.src} alt={img.alt} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
               </div>
-              <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.14em', textTransform:'uppercase', color:'#8a8880', marginTop:12, fontWeight:300 }}>
+              <p style={{ fontFamily:"Urbanist,sans-serif", fontSize:10, letterSpacing:'0.14em', textTransform:'uppercase', color:'#8a8880', marginTop:12, fontWeight:300 }}>
                 Implemented more than 600 projects
               </p>
             </div>
@@ -375,20 +393,20 @@ export default function AboutPage() {
       <section className="pad" style={{ padding:'0 48px 80px' }}>
         <div className="ag" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:80, alignItems:'start' }}>
           <div>
-            <h2 className="sr" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.8rem,3vw,2.8rem)', fontWeight:400, lineHeight:1.2 }}>
+            <h2 className="sr" style={{ fontFamily:"Urbanist,serif", fontSize:'clamp(1.8rem,3vw,2.8rem)', fontWeight:400, lineHeight:1.2 }}>
               Our approach. From vision to reality.
             </h2>
             <Link to="/contact" className="sr sr-d1"
-              style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"'DM Sans',sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, marginTop:28, transition:'opacity 0.2s' }}
+              style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"Urbanist,sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, marginTop:28, transition:'opacity 0.2s' }}
               onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
               onMouseLeave={e => e.currentTarget.style.opacity='1'}
             >Contact us →</Link>
           </div>
           <div className="sr sr-d1">
-            <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300, marginBottom:20 }}>
+            <p style={{ fontFamily:"Urbanist,sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300, marginBottom:20 }}>
               We oversee every aspect of your interior design project — from initial concept to final installation. Our team delivers tailored design solutions, guides you through each decision with clarity, and manages every detail's sourcing, purchasing, and installation.
             </p>
-            <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300 }}>
+            <p style={{ fontFamily:"Urbanist,sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300 }}>
               We collaborate closely with trusted industry partners — contractors, millworkers, wallpaper installers, carpet specialists, workrooms, and art consultants — to ensure your space is beautifully and seamlessly brought to life.
             </p>
           </div>
@@ -414,18 +432,18 @@ export default function AboutPage() {
                     onMouseLeave={e => e.currentTarget.style.filter='grayscale(100%)'}
                   />
                 </div>
-                <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:12, fontWeight:400, marginTop:10 }}>
+                <p style={{ fontFamily:"urbanist,sans-serif", fontSize:12, fontWeight:400, marginTop:10 }}>
                   {m.name} / <span style={{ color:'#8a8880', fontWeight:300 }}>{m.role}</span>
                 </p>
               </div>
             ))}
           </div>
           <div style={{ position:'sticky', top:120 }}>
-            <p className="sr" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:18 }}>The team</p>
+            <p className="sr" style={{ fontFamily:"Urbanist,sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:18 }}>The team</p>
             <h2 className="sr sr-d1" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.7rem,2.6vw,2.4rem)', fontWeight:400, lineHeight:1.25, marginBottom:22 }}>
               Meet the team behind the designs
             </h2>
-            <p className="sr sr-d2" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300 }}>
+            <p className="sr sr-d2" style={{ fontFamily:"Urbanist,sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300 }}>
               Our team blends creativity, expertise, and precision to craft interiors that feel as good as they look. With diverse backgrounds in design, architecture, and project management, we bring a collaborative spirit and a shared passion for thoughtful, elevated living. Every project is a partnership — and every detail, a reflection of our commitment to excellence.
             </p>
           </div>
@@ -437,17 +455,17 @@ export default function AboutPage() {
         <div className="pad" style={{ padding:'80px 48px' }}>
           <div className="awg" style={{ display:'grid', gridTemplateColumns:'1fr 1.4fr', gap:80, alignItems:'start' }}>
             <div>
-              <p className="sr" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:18 }}>
+              <p className="sr" style={{ fontFamily:"Urbanist,sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:18 }}>
                 Awards &amp; Recognition
               </p>
               <h2 className="sr sr-d1" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.7rem,2.6vw,2.5rem)', fontWeight:400, lineHeight:1.25, marginBottom:22 }}>
                 Recognition that reflects our purpose
               </h2>
-              <p className="sr sr-d2" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, lineHeight:1.78, color:'#666', fontWeight:300, marginBottom:30 }}>
+              <p className="sr sr-d2" style={{ fontFamily:"Urbanist,sans-serif", fontSize:13, lineHeight:1.78, color:'#666', fontWeight:300, marginBottom:30 }}>
                 When our work is honored or featured in leading publications, it reflects the creativity, care, and collaboration at the heart of Minnaro. These recognitions speak not just to aesthetics, but to the spaces that truly connect with our clients and the architectural community alike.
               </p>
               <Link to="/contact" className="sr sr-d3"
-                style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"'DM Sans',sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, transition:'opacity 0.2s' }}
+                style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"Urbanist,sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, transition:'opacity 0.2s' }}
                 onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
                 onMouseLeave={e => e.currentTarget.style.opacity='1'}
               >Contact us →</Link>
@@ -456,8 +474,8 @@ export default function AboutPage() {
               {AWARDS.map((a, i) => (
                 <li key={i} className={`sr sr-d${(i % 3) + 1}`}
                   style={{ display:'grid', gridTemplateColumns:'72px 1fr', alignItems:'baseline', borderBottom:'1px solid #dddbd5', padding:'17px 0' }}>
-                  <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:12, color:'#8a8880', fontWeight:300 }}>{a.year}</span>
-                  <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, fontWeight:400 }}>{a.title}</span>
+                  <span style={{ fontFamily:"Urbanist,sans-serif", fontSize:12, color:'#8a8880', fontWeight:300 }}>{a.year}</span>
+                  <span style={{ fontFamily:"Urbanist,sans-serif", fontSize:14, fontWeight:400 }}>{a.title}</span>
                 </li>
               ))}
             </ul>
