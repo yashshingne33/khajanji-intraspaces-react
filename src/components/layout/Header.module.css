@@ -197,7 +197,10 @@
   z-index: 99;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: calc(var(--header-h) + 24px);
+  padding-bottom: 40px;
+  overflow-y: auto;
   gap: 12px;
   opacity: 0;
   pointer-events: none;

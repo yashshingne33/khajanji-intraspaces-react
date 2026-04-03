@@ -22,7 +22,7 @@ export const siteInfo = {
 }
 
 export const navLinks = [
-  { label: 'H.',             to: '/' },
+  { label: 'H.',            to: '/' },
   { label: 'About',         to: '/about' },
   { label: 'Portfolio',     to: '/portfolio' },
   {
