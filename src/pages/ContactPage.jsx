@@ -64,7 +64,7 @@ function Navbar() {
         ].map((l, i) => (
           <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
             style={{
-              fontFamily:"34px Urbanist,serif", fontSize:'clamp(2rem,6vw,4.5rem)',
+              fontFamily:"34px 'Outfit', sans-serif", fontSize:'clamp(2rem,6vw,4.5rem)',
               fontWeight:400, lineHeight:1.2, color:'#0a0a0a', textDecoration:'none',
               opacity:open?1:0, transform:open?'translateY(0)':'translateY(20px)',
               transition:`opacity 0.4s ease ${i*70}ms, transform 0.4s ease ${i*70}ms`,
@@ -76,7 +76,7 @@ function Navbar() {
         <div style={{ marginTop:36, display:'flex', gap:24 }}>
           {SOCIAL.map(s => (
             <a key={s.label} href="#"
-              style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
+              style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
               onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
               onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
             >{s.label}</a>
@@ -96,8 +96,8 @@ function Footer() {
       {/* Logo row */}
       <div style={{ padding:'40px 48px 0', display:'flex', alignItems:'center', gap:10 }}>
         <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"34px Urbanist,sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji</span>
-        <span style={{ fontFamily:"34px Urbanist,sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
+        <span style={{ fontFamily:"34px 'Outfit', sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji</span>
+        <span style={{ fontFamily:"34px 'Outfit', sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
       </div>
 
       <div style={{ margin:'20px 0 0', borderTop:'1px solid #e4e2dc' }} />
@@ -107,7 +107,7 @@ function Footer() {
         <nav style={{ display:'flex', gap:32, flexWrap:'wrap' }}>
           {[['Studio','/about'],['Services','/services'],['Portfolio','/portfolio'],['Reviews','/reviews'],['Journal','/journal']].map(([l, to]) => (
             <Link key={to} to={to}
-              style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
+              style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
               onMouseEnter={e => e.currentTarget.style.opacity='1'}
               onMouseLeave={e => e.currentTarget.style.opacity='0.75'}
             >{l}</Link>
@@ -131,11 +131,11 @@ function Footer() {
       {/* Have something + contact */}
       <div style={{ padding:'48px 48px 40px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:40, alignItems:'start' }}>
         <div>
-          <h2 style={{ fontFamily:"34px Urbanist,serif", fontSize:'clamp(1.8rem,3.2vw,3rem)', fontWeight:400, lineHeight:1.2, marginBottom:28 }}>
+          <h2 style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:'clamp(1.8rem,3.2vw,3rem)', fontWeight:400, lineHeight:1.2, marginBottom:28 }}>
             Have something in mind?<br />Let's talk.
           </h2>
           <button
-            style={{ padding:'10px 22px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', transition:'background 0.2s, color 0.2s', color:'#0a0a0a' }}
+            style={{ padding:'10px 22px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', transition:'background 0.2s, color 0.2s', color:'#0a0a0a' }}
             onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
             onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#0a0a0a' }}
           >Request a call back</button>
@@ -149,20 +149,20 @@ function Footer() {
               <text x="5"  y="27" style={{ fontFamily:'sans-serif', fontSize:5, fill:'#0a0a0a' }}>Design Awards</text>
             </svg>
             <div>
-              <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:10, fontWeight:500, color:'#0a0a0a' }}>Interior</p>
-              <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:10, fontWeight:300, color:'#8a8880' }}>Design Awards</p>
+              <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:10, fontWeight:500, color:'#0a0a0a' }}>Interior</p>
+              <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:10, fontWeight:300, color:'#8a8880' }}>Design Awards</p>
             </div>
           </div>
-          <a href="mailto:hello@minnaro.com"
-            style={{ display:'block', fontFamily:"34px Urbanist,sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}
+          <a href="mailto:hello@khajanjiinfraspaces.com"
+            style={{ display:'block', fontFamily:"34px 'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}
             onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
             onMouseLeave={e => e.currentTarget.style.opacity='1'}
-          >hello@minnaro.com</a>
+          >hello@khajanjiinfraspaces.com</a>
           <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
-          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:10 }}>+1 2030 4050 10</p>
+          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:10 }}>+91 928 414 9958</p>
           <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
-          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
-            New York, Seventh Ave,<br />20th Floor, NY 10018
+          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
+            NAGPUR<br/>MAHARASHTRA
           </p>
         </div>
       </div>
@@ -177,8 +177,8 @@ function Footer() {
           </svg>
         </button>
         <div style={{ display:'flex', gap:20 }}>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>© 2009 – 2026 VAMTAM</span>
-          <a href="#" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
+          <span style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>© 2009 – 2026 ROYALSWEBTECH</span>
+          <a href="#" style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
             onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
             onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
           >TERMS</a>
@@ -195,7 +195,7 @@ function Field({ label, type='text', placeholder, isTextarea=false, value, onCha
   const base = {
     width:'100%',
     padding:'11px 14px',
-    fontFamily:"'DM Sans',sans-serif",
+    fontFamily:"'Outfit', sans-serif",
     fontSize:13,
     fontWeight:300,
     color:'#0a0a0a',
@@ -208,7 +208,7 @@ function Field({ label, type='text', placeholder, isTextarea=false, value, onCha
   }
   return (
     <div style={{ marginBottom:18 }}>
-      <label style={{ display:'block', fontFamily:"34px Urbanist,sans-serif", fontSize:12, fontWeight:400, color:'#0a0a0a', marginBottom:6, letterSpacing:'0.01em' }}>
+      <label style={{ display:'block', fontFamily:"34px 'Outfit', sans-serif", fontSize:12, fontWeight:400, color:'#0a0a0a', marginBottom:6, letterSpacing:'0.01em' }}>
         {label}
       </label>
       {isTextarea ? (
@@ -265,7 +265,7 @@ export default function ContactPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: '34px Urbanist, sans-serif; -webkit-font-smoothing: antialiased; background: #fff; color: #0a0a0a; }
+        body { font-family: '34px 'Outfit', sans-serif; -webkit-font-smoothing: antialiased; background: #fff; color: #0a0a0a; }
 
         .sr    { opacity: 0; transform: translateY(24px); transition: opacity 0.75s cubic-bezier(.25,.46,.45,.94), transform 0.75s cubic-bezier(.25,.46,.45,.94); }
         .sr-on { opacity: 1 !important; transform: translateY(0) !important; }
@@ -310,7 +310,7 @@ export default function ContactPage() {
 
           {/* Page heading */}
           <h1 className="fu1" style={{
-            fontFamily:"34px Urbanist,serif",
+            fontFamily:"34px 'Outfit', sans-serif",
             fontSize:'clamp(2.4rem,4vw,3.8rem)',
             fontWeight:400,
             lineHeight:1.12,
@@ -323,7 +323,7 @@ export default function ContactPage() {
 
           {/* Subtitle */}
           <p className="fu2" style={{
-            fontFamily:"34px Urbanist,sans-serif",
+            fontFamily:"34px 'Outfit', sans-serif",
             fontSize:14,
             lineHeight:1.75,
             color:'#555',
@@ -331,18 +331,18 @@ export default function ContactPage() {
             maxWidth:300,
             marginBottom:48,
           }}>
-            Don't hesitate to get in touch with Minnaro if you want to find out about design services that incorporate luxurious living and timeless interiors.
+            Don't hesitate to get in touch with Khajanji Infraspaces if you want to find out about design services that incorporate luxurious living and timeless interiors.
           </p>
 
           {/* GET IN TOUCH */}
           <div className="fu3" style={{ marginBottom:36 }}>
-            <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
+            <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
               Get in touch
             </p>
-            <a href="mailto:hello@minnaro.com"
+            <a href="mailto:hello@khajanjiinfraspaces.com"
               style={{
                 display:'block',
-                fontFamily:"34px Urbanist,sans-serif",
+                fontFamily:"34px 'Outfit', sans-serif",
                 fontSize:14, fontWeight:400,
                 color:'#0a0a0a', textDecoration:'none',
                 borderBottom:'1px solid #0a0a0a',
@@ -354,12 +354,12 @@ export default function ContactPage() {
               onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
               onMouseLeave={e => e.currentTarget.style.opacity='1'}
             >
-              hello@minnaro.com
+              hello@khajanjiinfraspaces.com
             </a>
             <a href="tel:+12030405010"
               style={{
                 display:'block',
-                fontFamily:"34px Urbanist,sans-serif",
+                fontFamily:"34px 'Outfit', sans-serif",
                 fontSize:14, fontWeight:400,
                 color:'#0a0a0a', textDecoration:'none',
                 borderBottom:'1px solid #0a0a0a',
@@ -370,17 +370,17 @@ export default function ContactPage() {
               onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
               onMouseLeave={e => e.currentTarget.style.opacity='1'}
             >
-              +1 2030 4050 10
+              +91 928 414 9958
             </a>
           </div>
 
           {/* SCOPE OF WORK / Address */}
           <div className="fu3" style={{ transitionDelay:'0.12s' }}>
-            <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
+            <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
               Scope of work
             </p>
-            <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a', lineHeight:1.65 }}>
-              New York, Seventh Ave, 20th<br />Floor, NY 10018
+            <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a', lineHeight:1.65 }}>
+              NAGPUR<br/>MAHARASHTRA
             </p>
           </div>
         </div>
@@ -423,8 +423,8 @@ export default function ContactPage() {
             {sent ? (
               /* Success state */
               <div style={{ textAlign:'center', padding:'40px 0' }}>
-                <p style={{ fontFamily:"34px Urbanist,serif", fontSize:'1.6rem', fontWeight:400, marginBottom:12 }}>Thank you.</p>
-                <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:13, color:'#555', fontWeight:300, lineHeight:1.7 }}>
+                <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:'1.6rem', fontWeight:400, marginBottom:12 }}>Thank you.</p>
+                <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:13, color:'#555', fontWeight:300, lineHeight:1.7 }}>
                   We'll be in touch within 1–2 business days.
                 </p>
               </div>
@@ -432,7 +432,7 @@ export default function ContactPage() {
               <>
                 {/* Intro text inside card */}
                 <p style={{
-                  fontFamily:"34px Urbanist,sans-serif",
+                  fontFamily:"34px 'Outfit', sans-serif",
                   fontSize:13,
                   lineHeight:1.72,
                   color:'#0a0a0a',
@@ -445,7 +445,7 @@ export default function ContactPage() {
 
                 {/* Error */}
                 {error && (
-                  <p style={{ fontFamily:"34px Urbanist,sans-serif", fontSize:12, color:'#c0392b', marginBottom:14 }}>{error}</p>
+                  <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:12, color:'#c0392b', marginBottom:14 }}>{error}</p>
                 )}
 
                 {/* Form */}
@@ -468,7 +468,7 @@ export default function ContactPage() {
                   <Field
                     label="City"
                     name="city"
-                    placeholder="e.g. New York"
+                    placeholder="e.g. Nagpur"
                     value={form.city}
                     onChange={handleChange}
                   />
@@ -496,7 +496,7 @@ export default function ContactPage() {
                       padding:'10px 28px',
                       background:'transparent',
                       border:'1px solid #0a0a0a',
-                      fontFamily:"34px Urbanist,sans-serif",
+                      fontFamily:"34px 'Outfit', sans-serif",
                       fontSize:13,
                       fontWeight:400,
                       color:'#0a0a0a',

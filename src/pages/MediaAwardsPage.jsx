@@ -36,7 +36,7 @@ const INT_AWARDS = [
   {
     category: 'Interior Design Best of Year (BOY) Awards',
     entries: [
-      { project: 'West End Labs', location: 'New York, New York', winner: 'Winner: Gold, Publicly Accessible Interiors—Education' },
+      { project: 'West End Labs', location: 'Mumbai, Maharashtra', winner: 'Winner: Gold, Publicly Accessible Interiors—Education' },
     ],
   },
   {
@@ -91,8 +91,8 @@ const BadgeBueno = () => (
       <text x="16" y="17" textAnchor="middle" style={{ fontFamily:'sans-serif', fontSize:5, fontWeight:700, fill:'#0a0a0a' }}>BNA</text>
     </svg>
     <div>
-      <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, fontWeight:500, color:'#0a0a0a', lineHeight:1.3 }}>Bueno Architecture</p>
-      <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, fontWeight:300, color:'#8a8880' }}>Award &nbsp; 2025</p>
+      <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, fontWeight:500, color:'#0a0a0a', lineHeight:1.3 }}>Bueno Architecture</p>
+      <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, fontWeight:300, color:'#8a8880' }}>Award &nbsp; 2025</p>
     </div>
   </div>
 )
@@ -118,8 +118,8 @@ const BadgeAWA = () => (
       <text x="11" y="27" textAnchor="middle" style={{ fontFamily:'sans-serif', fontSize:4, fill:'#fff' }}>Design Award</text>
     </svg>
     <div>
-      <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, fontWeight:500, color:'#0a0a0a', lineHeight:1.3 }}>AWA Architectural</p>
-      <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, fontWeight:300, color:'#8a8880' }}>Design Award</p>
+      <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, fontWeight:500, color:'#0a0a0a', lineHeight:1.3 }}>AWA Architectural</p>
+      <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, fontWeight:300, color:'#8a8880' }}>Design Award</p>
     </div>
   </div>
 )
@@ -161,7 +161,7 @@ function Navbar() {
         ].map((l,i) => (
           <Link key={l.to} to={l.to} onClick={()=>setOpen(false)}
             style={{
-              fontFamily:"34px Urbanist,serif", fontSize:'clamp(2rem,6vw,4.5rem)',
+              fontFamily:"34px 'Outfit', sans-serif", fontSize:'clamp(2rem,6vw,4.5rem)',
               fontWeight:400, lineHeight:1.2, color:'#0a0a0a', textDecoration:'none',
               opacity:open?1:0, transform:open?'translateY(0)':'translateY(20px)',
               transition:`opacity 0.4s ease ${i*70}ms, transform 0.4s ease ${i*70}ms`,
@@ -173,7 +173,7 @@ function Navbar() {
         <div style={{marginTop:36,display:'flex',gap:24}}>
           {SOCIAL.map(s=>(
             <a key={s.label} href="#"
-              style={{fontFamily:"'DM Sans',sans-serif",fontSize:11,letterSpacing:'0.12em',textTransform:'uppercase',color:'#8a8880',textDecoration:'none'}}
+              style={{fontFamily:"'Outfit', sans-serif",fontSize:11,letterSpacing:'0.12em',textTransform:'uppercase',color:'#8a8880',textDecoration:'none'}}
               onMouseEnter={e=>e.currentTarget.style.color='#0a0a0a'}
               onMouseLeave={e=>e.currentTarget.style.color='#8a8880'}
             >{s.label}</a>
@@ -193,8 +193,8 @@ function Footer() {
       {/* Logo row */}
       <div style={{padding:'40px 48px 0',display:'flex',alignItems:'center',gap:10}}>
         <span style={{display:'inline-block',width:18,height:18,background:'#0a0a0a',clipPath:'polygon(0 100%, 50% 0, 100% 100%)'}} />
-        <span style={{fontFamily:"'DM Sans',sans-serif",fontWeight:500,fontSize:15,letterSpacing:'0.02em'}}>Khajanji</span>
-        <span style={{fontFamily:"'DM Sans',sans-serif",fontWeight:300,fontSize:11,color:'#8a8880',letterSpacing:'0.1em',marginLeft:2}}>· intraspaces</span>
+        <span style={{fontFamily:"'Outfit', sans-serif",fontWeight:500,fontSize:15,letterSpacing:'0.02em'}}>Khajanji</span>
+        <span style={{fontFamily:"'Outfit', sans-serif",fontWeight:300,fontSize:11,color:'#8a8880',letterSpacing:'0.1em',marginLeft:2}}>· intraspaces</span>
       </div>
 
       <div style={{margin:'20px 0 0',borderTop:'1px solid #e4e2dc'}} />
@@ -204,7 +204,7 @@ function Footer() {
         <nav style={{display:'flex',gap:32,flexWrap:'wrap'}}>
           {[['Studio','/about'],['Services','/services'],['Portfolio','/portfolio'],['Reviews','/reviews'],['Journal','/journal']].map(([l,to])=>(
             <Link key={to} to={to}
-              style={{fontFamily:"'DM Sans',sans-serif",fontSize:13,fontWeight:300,color:'#0a0a0a',textDecoration:'none',opacity:0.75}}
+              style={{fontFamily:"'Outfit', sans-serif",fontSize:13,fontWeight:300,color:'#0a0a0a',textDecoration:'none',opacity:0.75}}
               onMouseEnter={e=>e.currentTarget.style.opacity='1'}
               onMouseLeave={e=>e.currentTarget.style.opacity='0.75'}
             >{l}</Link>
@@ -228,11 +228,11 @@ function Footer() {
       {/* Have something + contact */}
       <div style={{padding:'48px 48px 40px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:40,alignItems:'start'}}>
         <div>
-          <h2 style={{fontFamily:"34px Urbanist,serif",fontSize:'clamp(1.8rem,3.2vw,3rem)',fontWeight:400,lineHeight:1.2,marginBottom:28}}>
+          <h2 style={{fontFamily:"34px 'Outfit', sans-serif",fontSize:'clamp(1.8rem,3.2vw,3rem)',fontWeight:400,lineHeight:1.2,marginBottom:28}}>
             Have something in mind?<br/>Let's talk.
           </h2>
           <button
-            style={{padding:'10px 22px',background:'transparent',border:'1px solid #0a0a0a',fontFamily:"'DM Sans',sans-serif",fontSize:13,fontWeight:400,cursor:'pointer',transition:'background 0.2s,color 0.2s',color:'#0a0a0a'}}
+            style={{padding:'10px 22px',background:'transparent',border:'1px solid #0a0a0a',fontFamily:"'Outfit', sans-serif",fontSize:13,fontWeight:400,cursor:'pointer',transition:'background 0.2s,color 0.2s',color:'#0a0a0a'}}
             onMouseEnter={e=>{e.currentTarget.style.background='#0a0a0a';e.currentTarget.style.color='#fff'}}
             onMouseLeave={e=>{e.currentTarget.style.background='transparent';e.currentTarget.style.color='#0a0a0a'}}
           >Request a call back</button>
@@ -247,14 +247,14 @@ function Footer() {
               <text x="5"  y="27" style={{fontFamily:'sans-serif',fontSize:5,fill:'#0a0a0a'}}>Design Awards</text>
             </svg>
           </div>
-          <a href="mailto:hello@minnaro.com" style={{display:'block',fontFamily:"'DM Sans',sans-serif",fontSize:11,letterSpacing:'0.1em',textTransform:'uppercase',color:'#0a0a0a',textDecoration:'none',borderBottom:'1px solid #0a0a0a',paddingBottom:1,marginBottom:10,width:'fit-content'}}>
-            hello@minnaro.com
+          <a href="mailto:hello@khajanjiinfraspaces.com" style={{display:'block',fontFamily:"'Outfit', sans-serif",fontSize:11,letterSpacing:'0.1em',textTransform:'uppercase',color:'#0a0a0a',textDecoration:'none',borderBottom:'1px solid #0a0a0a',paddingBottom:1,marginBottom:10,width:'fit-content'}}>
+            hello@khajanjiinfraspaces.com
           </a>
           <div style={{height:1,background:'#e4e2dc',marginBottom:10}}/>
-          <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:11,letterSpacing:'0.1em',textTransform:'uppercase',color:'#0a0a0a',marginBottom:10}}>+1 2030 4050 10</p>
+          <p style={{fontFamily:"'Outfit', sans-serif",fontSize:11,letterSpacing:'0.1em',textTransform:'uppercase',color:'#0a0a0a',marginBottom:10}}>+91 928 414 9958</p>
           <div style={{height:1,background:'#e4e2dc',marginBottom:10}}/>
-          <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:10,letterSpacing:'0.08em',textTransform:'uppercase',color:'#0a0a0a',lineHeight:1.65}}>
-            New York, Seventh Ave,<br/>20th Floor, NY 10018
+          <p style={{fontFamily:"'Outfit', sans-serif",fontSize:10,letterSpacing:'0.08em',textTransform:'uppercase',color:'#0a0a0a',lineHeight:1.65}}>
+            NAGPUR<br/>MAHARASHTRA
           </p>
         </div>
       </div>
@@ -269,8 +269,8 @@ function Footer() {
           </svg>
         </button>
         <div style={{display:'flex',gap:20}}>
-          <span style={{fontFamily:"'DM Sans',sans-serif",fontSize:10,letterSpacing:'0.12em',textTransform:'uppercase',color:'#8a8880'}}>© 2009 – 2026 VAMTAM</span>
-          <a href="#" style={{fontFamily:"'DM Sans',sans-serif",fontSize:10,letterSpacing:'0.12em',textTransform:'uppercase',color:'#8a8880',textDecoration:'none'}}
+          <span style={{fontFamily:"'Outfit', sans-serif",fontSize:10,letterSpacing:'0.12em',textTransform:'uppercase',color:'#8a8880'}}>© 2009 – 2026 ROYALSWEBTECH</span>
+          <a href="#" style={{fontFamily:"'Outfit', sans-serif",fontSize:10,letterSpacing:'0.12em',textTransform:'uppercase',color:'#8a8880',textDecoration:'none'}}
             onMouseEnter={e=>e.currentTarget.style.color='#0a0a0a'}
             onMouseLeave={e=>e.currentTarget.style.color='#8a8880'}
           >TERMS</a>
@@ -291,7 +291,7 @@ export default function MediaAwardsPage() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-        body{font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased;background:#fff;color:#0a0a0a;}
+        body{font-family:'Outfit', sans-serif;-webkit-font-smoothing:antialiased;background:#fff;color:#0a0a0a;}
 
         .sr    {opacity:0;transform:translateY(26px);transition:opacity 0.75s cubic-bezier(.25,.46,.45,.94),transform 0.75s cubic-bezier(.25,.46,.45,.94);}
         .sr-on {opacity:1!important;transform:translateY(0)!important;}
@@ -332,14 +332,14 @@ export default function MediaAwardsPage() {
       <section className="hero-grid" style={{display:'grid',gridTemplateColumns:'1fr 1fr',minHeight:'82vh'}}>
         <div className="pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',padding:'100px 48px 80px'}}>
           <h1 className="fu1" style={{
-            fontFamily:"34px Urbanist,serif",
+            fontFamily:"34px 'Outfit', sans-serif",
             fontSize:'clamp(2.2rem,3.8vw,3.4rem)',
             fontWeight:400,lineHeight:1.1,letterSpacing:'-0.00em',
             marginBottom:28,color:'#0a0a0a',
           }}>
             2025 Design Awards<br/>Recap
           </h1>
-          <p className="fu2" style={{fontFamily:"'DM Sans',sans-serif",fontSize:14,lineHeight:1.78,color:'#555',fontWeight:300,maxWidth:340}}>
+          <p className="fu2" style={{fontFamily:"'Outfit', sans-serif",fontSize:14,lineHeight:1.78,color:'#555',fontWeight:300,maxWidth:340}}>
             With 2024 now behind us, we're celebrating the standout projects that earned top honors last year. From creating healthy, high-performing workplaces to shaping equitable, community-driven spaces, this global showcase of design excellence highlights how the built environment is transforming the way we live, work, play, and heal.
           </p>
         </div>
@@ -357,7 +357,7 @@ export default function MediaAwardsPage() {
       ══════════════════════════════════════════ */}
       <section className="pad" style={{padding:'100px 48px 60px',maxWidth:900,margin:'0 auto'}}>
         <p className="sr" style={{
-          fontFamily:"34px Urbanist,serif",
+          fontFamily:"34px 'Outfit', sans-serif",
           fontSize:'clamp(1.25rem,2.3vw,1.8rem)',
           fontWeight:400,lineHeight:1.6,
           textAlign:'center',color:'#0a0a0a',
@@ -400,31 +400,31 @@ export default function MediaAwardsPage() {
             </div>
             {/* Caption below */}
             <div style={{padding:'16px 40px 32px'}}>
-              <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:14,fontWeight:400,color:'#0a0a0a',marginBottom:4}}>York University School of Continuing Studies</p>
-              <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:10,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300}}>Toronto, Ontario</p>
+              <p style={{fontFamily:"'Outfit', sans-serif",fontSize:14,fontWeight:400,color:'#0a0a0a',marginBottom:4}}>York University School of Continuing Studies</p>
+              <p style={{fontFamily:"'Outfit', sans-serif",fontSize:10,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300}}>Toronto, Ontario</p>
             </div>
           </div>
 
           {/* Right — awards list */}
           <div className="pad" style={{padding:'64px 48px 64px 56px',display:'flex',flexDirection:'column',justifyContent:'flex-start'}}>
-            <p className="sr" style={{fontFamily:"'DM Sans',sans-serif",fontSize:11,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300,marginBottom:16}}>
+            <p className="sr" style={{fontFamily:"'Outfit', sans-serif",fontSize:11,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300,marginBottom:16}}>
               2025
             </p>
-            <h2 className="sr sr-d1" style={{fontFamily:"34px Urbanist,serif",fontSize:'clamp(1.8rem,3vw,2.8rem)',fontWeight:400,lineHeight:1.2,marginBottom:48,color:'#0a0a0a'}}>
+            <h2 className="sr sr-d1" style={{fontFamily:"34px 'Outfit', sans-serif",fontSize:'clamp(1.8rem,3vw,2.8rem)',fontWeight:400,lineHeight:1.2,marginBottom:48,color:'#0a0a0a'}}>
               International Awards
             </h2>
 
             {INT_AWARDS.map((award,i)=>(
               <div key={i} className={`sr sr-d${(i%4)+1}`} style={{marginBottom:36}}>
-                <h3 style={{fontFamily:"'DM Sans',sans-serif",fontSize:14,fontWeight:500,color:'#0a0a0a',marginBottom:10}}>
+                <h3 style={{fontFamily:"'Outfit', sans-serif",fontSize:14,fontWeight:500,color:'#0a0a0a',marginBottom:10}}>
                   {award.category}
                 </h3>
                 <div style={{height:1,background:'#dddbd5',marginBottom:14}}/>
                 {award.entries.map((entry,j)=>(
                   <div key={j}>
-                    <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:12,fontWeight:400,color:'#0a0a0a',marginBottom:2}}>{entry.project}</p>
-                    {entry.location && <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:12,fontWeight:300,color:'#555',marginBottom:2}}>{entry.location}</p>}
-                    <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:12,fontWeight:300,color:'#555'}}>{entry.winner}</p>
+                    <p style={{fontFamily:"'Outfit', sans-serif",fontSize:12,fontWeight:400,color:'#0a0a0a',marginBottom:2}}>{entry.project}</p>
+                    {entry.location && <p style={{fontFamily:"'Outfit', sans-serif",fontSize:12,fontWeight:300,color:'#555',marginBottom:2}}>{entry.location}</p>}
+                    <p style={{fontFamily:"'Outfit', sans-serif",fontSize:12,fontWeight:300,color:'#555'}}>{entry.winner}</p>
                   </div>
                 ))}
               </div>
@@ -448,8 +448,8 @@ export default function MediaAwardsPage() {
               style={{width:'100%',height:'100%',objectFit:'cover'}}
             />
           </div>
-          <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:14,fontWeight:400,color:'#0a0a0a',marginBottom:4}}>Duce Campus</p>
-          <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:10,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300}}>Doral, Florida</p>
+          <p style={{fontFamily:"'Outfit', sans-serif",fontSize:14,fontWeight:400,color:'#0a0a0a',marginBottom:4}}>Duce Campus</p>
+          <p style={{fontFamily:"'Outfit', sans-serif",fontSize:10,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300}}>Doral, Florida</p>
         </div>
         {/* Right — large landscape */}
         <div className="sr sr-d1">
@@ -460,8 +460,8 @@ export default function MediaAwardsPage() {
               style={{width:'100%',height:'100%',objectFit:'cover'}}
             />
           </div>
-          <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:14,fontWeight:400,color:'#0a0a0a',marginBottom:4}}>Hotel Kempinski Laje de Care</p>
-          <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:10,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300}}>Charlottesville, Virginia</p>
+          <p style={{fontFamily:"'Outfit', sans-serif",fontSize:14,fontWeight:400,color:'#0a0a0a',marginBottom:4}}>Hotel Kempinski Laje de Care</p>
+          <p style={{fontFamily:"'Outfit', sans-serif",fontSize:10,letterSpacing:'0.14em',textTransform:'uppercase',color:'#8a8880',fontWeight:300}}>Charlottesville, Virginia</p>
         </div>
       </section>
 
@@ -473,7 +473,7 @@ export default function MediaAwardsPage() {
       <section className="pad table-grid" style={{padding:'0 48px 80px',display:'grid',gridTemplateColumns:'260px 1fr',gap:60,alignItems:'start'}}>
         {/* Left label */}
         <div>
-          <p className="sr" style={{fontFamily:"34px Urbanist,sans-serif",fontSize:12,letterSpacing:'0.16em',textTransform:'uppercase',color:'#8a8880',fontWeight:400,paddingTop:4}}>
+          <p className="sr" style={{fontFamily:"34px 'Outfit', sans-serif",fontSize:12,letterSpacing:'0.16em',textTransform:'uppercase',color:'#8a8880',fontWeight:400,paddingTop:4}}>
             Our awards over the years
           </p>
         </div>
@@ -482,8 +482,8 @@ export default function MediaAwardsPage() {
           {AWARDS_TABLE.map((a,i)=>(
             <div key={i} className={`award-row sr sr-d${(i%4)+1}`}
               style={{display:'grid',gridTemplateColumns:'80px 1fr',alignItems:'baseline',borderBottom:'1px solid #e4e2dc',padding:'16px 0'}}>
-              <span style={{fontFamily:"'DM Sans',sans-serif",fontSize:12,color:'#8a8880',fontWeight:300}}>{a.year}</span>
-              <span style={{fontFamily:"'DM Sans',sans-serif",fontSize:14,fontWeight:400,color:'#0a0a0a'}}>{a.title}</span>
+              <span style={{fontFamily:"'Outfit', sans-serif",fontSize:12,color:'#8a8880',fontWeight:300}}>{a.year}</span>
+              <span style={{fontFamily:"'Outfit', sans-serif",fontSize:14,fontWeight:400,color:'#0a0a0a'}}>{a.title}</span>
             </div>
           ))}
         </div>
@@ -498,7 +498,7 @@ export default function MediaAwardsPage() {
         {/* Left */}
         <div className="pad" style={{display:'flex',flexDirection:'column',justifyContent:'center',padding:'80px 48px'}}>
           <h2 className="sr" style={{
-            fontFamily:"34px Urbanist,serif",
+            fontFamily:"34px 'Outfit', sans-serif",
             fontSize:'clamp(1.8rem,3.2vw,2.9rem)',
             fontWeight:400,lineHeight:1.22,
             marginBottom:32,color:'#0a0a0a',
@@ -508,7 +508,7 @@ export default function MediaAwardsPage() {
           <Link
             to="/portfolio"
             className="sr sr-d1"
-            style={{display:'inline-flex',alignItems:'center',gap:6,fontFamily:"'DM Sans',sans-serif",fontSize:13,color:'#0a0a0a',textDecoration:'none',borderBottom:'1px solid #0a0a0a',paddingBottom:2,width:'fit-content',transition:'opacity 0.2s'}}
+            style={{display:'inline-flex',alignItems:'center',gap:6,fontFamily:"'Outfit', sans-serif",fontSize:13,color:'#0a0a0a',textDecoration:'none',borderBottom:'1px solid #0a0a0a',paddingBottom:2,width:'fit-content',transition:'opacity 0.2s'}}
             onMouseEnter={e=>e.currentTarget.style.opacity='0.5'}
             onMouseLeave={e=>e.currentTarget.style.opacity='1'}
           >

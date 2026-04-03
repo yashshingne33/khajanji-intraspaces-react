@@ -12,7 +12,7 @@ const STEPS = [
 const COMMITMENT = [
   {
     title: 'Superior Craftsmanship',
-    desc: 'We partner with only the most skilled artisans and tradespeople in New York City and from around the world.',
+    desc: 'We partner with only the most skilled artisans and tradespeople in India and from around the world.',
     bullets: ['Over 1,000 businesses supported', 'Commitment to sustainability', 'Handmade furniture & human creations'],
   },
   {
@@ -22,15 +22,15 @@ const COMMITMENT = [
   },
   {
     title: 'Investment Value',
-    desc: 'Our designs are strategically tailored to maximise your property\'s appeal in the NYC luxury market.',
+    desc: 'Our designs are strategically tailored to maximise your property\'s appeal in the Indian luxury market.',
     bullets: ['Timeless elegance & lasting value', 'Prioritise value creation', 'Strategic design approach'],
   },
 ]
 
 const EXPLORE = [
-  { name: 'Hilton forest colonial', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=580&fit=crop' },
-  { name: 'The NY apartment',       img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=260&fit=crop' },
-  { name: 'Modern fantasy',         img: 'https://images.unsplash.com/photo-1618219944342-824e40a13285?w=400&h=260&fit=crop' },
+  { name: 'Kodaikanal Retreat', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=580&fit=crop' },
+  { name: 'Bandra Luxury Apartment',       img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=260&fit=crop' },
+  { name: 'Contemporary Delhi Residence',         img: 'https://images.unsplash.com/photo-1618219944342-824e40a13285?w=400&h=260&fit=crop' },
 ]
 
 export default function LightingDesignPage() {
@@ -44,10 +44,10 @@ export default function LightingDesignPage() {
       {/* ── HERO ── */}
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-col">
         <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'120px 48px 80px' }}>
-          <h1 className="fu1" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
+          <h1 className="fu1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
             Lighting design
           </h1>
-          <p className="fu2" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:320 }}>
+          <p className="fu2" style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:320 }}>
             Whether you're building new, renovating, or refreshing a single space, we bring expert guidance and technical precision to illuminate your home or business beautifully.
           </p>
         </div>

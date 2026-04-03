@@ -9,8 +9,8 @@ export default function WhoWeAre({ fadeUp }) {
         
         <div className="who-we-are__content">
           <h2 className="who-we-are__text">
-            Minnaro Architects is an award-winning modern<br className="desktop-break" />
-            architecture firm based in New York. We specialize<br className="desktop-break" />
+            Khajanji Infraspaces is an award-winning modern<br className="desktop-break" />
+            architecture firm based in India. We specialize<br className="desktop-break" />
             in contemporary design through our signature<br className="desktop-break" />
             Natural Modern approach.
           </h2>

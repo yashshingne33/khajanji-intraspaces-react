@@ -95,7 +95,7 @@ export function Navbar() {
   }, [mobileOpen])
 
   const navLinkStyle = (active) => ({
-    fontFamily: "'DM Sans',sans-serif",
+    fontFamily: "'Outfit', sans-serif",
     fontSize: 14,
     fontWeight: 400,
     color: '#0a0a0a',
@@ -134,8 +134,8 @@ export function Navbar() {
         {/* Logo */}
         <Link to="/" style={{ display:'flex', alignItems:'center', gap:10, textDecoration:'none', color:'#0a0a0a', flexShrink:0 }}>
           <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Minnaro</span>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· architects</span>
+          <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji Infraspaces</span>
+          <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· architects</span>
         </Link>
 
         {/* Desktop nav */}
@@ -187,7 +187,7 @@ export function Navbar() {
                   style={{
                     display:'block',
                     padding:'14px 20px',
-                    fontFamily:"'DM Sans',sans-serif",
+                    fontFamily:"'Outfit', sans-serif",
                     fontSize:14,
                     fontWeight:300,
                     color:'#0a0a0a',
@@ -211,7 +211,7 @@ export function Navbar() {
             marginLeft:'auto',
             padding:'10px 22px',
             border:'1px solid #0a0a0a',
-            fontFamily:"'DM Sans',sans-serif",
+            fontFamily:"'Outfit', sans-serif",
             fontSize:13,
             fontWeight:400,
             color:'#0a0a0a',
@@ -253,7 +253,7 @@ export function Navbar() {
         ].map((l, i) => (
           <Link key={l.to} to={l.to} onClick={() => setMobileOpen(false)}
             style={{
-              fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.8rem,5vw,3.5rem)',
+              fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,5vw,3.5rem)',
               fontWeight:400, lineHeight:1.25, color:'#0a0a0a', textDecoration:'none',
               opacity: mobileOpen ? 1 : 0,
               transform: mobileOpen ? 'translateY(0)' : 'translateY(16px)',
@@ -268,7 +268,7 @@ export function Navbar() {
             { label:'Lighting design', to:'/services/lighting-design' },
           ].map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setMobileOpen(false)}
-              style={{ display:'block', fontFamily:"'DM Sans',sans-serif", fontSize:14, fontWeight:300, color:'#8a8880', textDecoration:'none', marginBottom:8, paddingLeft:16 }}
+              style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:14, fontWeight:300, color:'#8a8880', textDecoration:'none', marginBottom:8, paddingLeft:16 }}
             >→ {l.label}</Link>
           ))}
         </div>
@@ -295,8 +295,8 @@ export function Footer() {
       {/* Logo row */}
       <div style={{ padding:'36px 48px 0', display:'flex', alignItems:'center', gap:10 }}>
         <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Minnaro</span>
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
+        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji Infraspaces</span>
+        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
       </div>
 
       <div style={{ margin:'20px 0 0', borderTop:'1px solid #e4e2dc' }} />
@@ -306,7 +306,7 @@ export function Footer() {
         <nav style={{ display:'flex', gap:32, flexWrap:'wrap' }}>
           {[['Studio','/about'],['Services','/services'],['Portfolio','/portfolio'],['Reviews','/reviews'],['Journal','/journal']].map(([l,to]) => (
             <Link key={to} to={to}
-              style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
+              style={{ fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
               onMouseEnter={e => e.currentTarget.style.opacity='1'}
               onMouseLeave={e => e.currentTarget.style.opacity='0.75'}
             >{l}</Link>
@@ -330,11 +330,11 @@ export function Footer() {
       {/* Have something in mind + contact */}
       <div style={{ padding:'48px 48px 40px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:40, alignItems:'start' }}>
         <div>
-          <h2 style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.8rem,3.5vw,3rem)', fontWeight:400, lineHeight:1.2, marginBottom:28 }}>
+          <h2 style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,3.5vw,3rem)', fontWeight:400, lineHeight:1.2, marginBottom:28 }}>
             Have something in mind?<br />Let's talk.
           </h2>
           <button
-            style={{ padding:'10px 22px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', transition:'background 0.2s, color 0.2s', color:'#0a0a0a' }}
+            style={{ padding:'10px 22px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', transition:'background 0.2s, color 0.2s', color:'#0a0a0a' }}
             onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
             onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#0a0a0a' }}
           >Request a call back</button>
@@ -349,14 +349,14 @@ export function Footer() {
               <text x="5" y="27" style={{ fontFamily:'sans-serif', fontSize:5, fill:'#0a0a0a' }}>Design Awards</text>
             </svg>
           </div>
-          <a href="mailto:hello@minnaro.com" style={{ display:'block', fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}>
-            hello@minnaro.com
+          <a href="mailto:hello@khajanjiinfraspaces.com" style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}>
+            hello@khajanjiinfraspaces.com
           </a>
           <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
-          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:10 }}>+1 2030 4050 10</p>
+          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:10 }}>+91 928 414 9958</p>
           <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
-          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
-            New York, Seventh Ave,<br />20th Floor, NY 10018
+          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
+            NAGPUR<br/>MAHARASHTRA
           </p>
         </div>
       </div>
@@ -371,8 +371,8 @@ export function Footer() {
           </svg>
         </button>
         <div style={{ display:'flex', gap:20 }}>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>© 2009 – 2026 VAMTAM</span>
-          <a href="#" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}>TERMS</a>
+          <span style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>© 2009 – 2026 ROYALSWEBTECH</span>
+          <a href="#" style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}>TERMS</a>
         </div>
       </div>
     </footer>
@@ -387,7 +387,7 @@ export function Footer() {
 export function PullQuote({ text }) {
   return (
     <section style={{ padding:'100px 48px', display:'flex', justifyContent:'center' }}>
-      <p className="sr" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.3rem,2.4vw,1.85rem)', fontWeight:400, lineHeight:1.58, maxWidth:680, textAlign:'center', color:'#0a0a0a' }}>
+      <p className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.3rem,2.4vw,1.85rem)', fontWeight:400, lineHeight:1.58, maxWidth:680, textAlign:'center', color:'#0a0a0a' }}>
         {text}
       </p>
     </section>
@@ -405,23 +405,23 @@ export function ProcessSection({ label, heading, steps, image }) {
         </div>
         {/* Right steps */}
         <div style={{ padding:'64px 56px' }}>
-          <p className="sr" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:20 }}>
+          <p className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:20 }}>
             {label}
           </p>
-          <h2 className="sr sr-d1" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.6rem,2.6vw,2.3rem)', fontWeight:400, lineHeight:1.25, marginBottom:44, color:'#0a0a0a' }}>
+          <h2 className="sr sr-d1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.6rem,2.6vw,2.3rem)', fontWeight:400, lineHeight:1.25, marginBottom:44, color:'#0a0a0a' }}>
             {heading}
           </h2>
           {steps.map((step, i) => (
             <div key={i} className={`sr sr-d${(i % 4) + 1}`} style={{ marginBottom:36 }}>
               <div style={{ display:'flex', alignItems:'baseline', gap:12, marginBottom:8, borderBottom:'1px solid #dddbd5', paddingBottom:10 }}>
-                <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, color:'#8a8880', fontWeight:300, letterSpacing:'0.04em', minWidth:20 }}>
+                <span style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, color:'#8a8880', fontWeight:300, letterSpacing:'0.04em', minWidth:20 }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1rem,1.6vw,1.25rem)', fontWeight:400, color:'#0a0a0a' }}>
+                <h3 style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1rem,1.6vw,1.25rem)', fontWeight:400, color:'#0a0a0a' }}>
                   {step.title}
                 </h3>
               </div>
-              <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, lineHeight:1.75, color:'#666', fontWeight:300, paddingLeft:32 }}>
+              <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:13, lineHeight:1.75, color:'#666', fontWeight:300, paddingLeft:32 }}>
                 {step.desc}
               </p>
             </div>
@@ -429,7 +429,7 @@ export function ProcessSection({ label, heading, steps, image }) {
           {/* Book consultation button */}
           <div style={{ paddingLeft:32, marginTop:8 }}>
             <button
-              style={{ padding:'11px 24px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', transition:'background 0.2s, color 0.2s', color:'#0a0a0a' }}
+              style={{ padding:'11px 24px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', transition:'background 0.2s, color 0.2s', color:'#0a0a0a' }}
               onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
               onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#0a0a0a' }}
             >Book a Free Consultation</button>
@@ -458,7 +458,7 @@ export function ImagePair({ left, right }) {
 export function CommitmentSection({ columns }) {
   return (
     <section style={{ padding:'80px 48px' }}>
-      <h2 className="sr" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.8rem,3vw,2.6rem)', fontWeight:400, lineHeight:1.2, marginBottom:48, maxWidth:360 }}>
+      <h2 className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,3vw,2.6rem)', fontWeight:400, lineHeight:1.2, marginBottom:48, maxWidth:360 }}>
         Our commitment to excellence
       </h2>
       <div style={{ borderTop:'1px solid #e4e2dc', paddingTop:40 }} />
@@ -466,11 +466,11 @@ export function CommitmentSection({ columns }) {
         {columns.map((col, i) => (
           <div key={i} className={`sr sr-d${i + 1}`}>
             <div style={{ borderTop:'1px solid #e4e2dc', paddingTop:20, marginBottom:16 }} />
-            <h3 style={{ fontFamily:"'DM Sans',sans-serif", fontSize:15, fontWeight:500, marginBottom:12 }}>{col.title}</h3>
-            <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, lineHeight:1.72, color:'#555', fontWeight:300, marginBottom:16 }}>{col.desc}</p>
+            <h3 style={{ fontFamily:"'Outfit', sans-serif", fontSize:15, fontWeight:500, marginBottom:12 }}>{col.title}</h3>
+            <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:13, lineHeight:1.72, color:'#555', fontWeight:300, marginBottom:16 }}>{col.desc}</p>
             <ul style={{ listStyle:'none', padding:0 }}>
               {col.bullets.map((b, j) => (
-                <li key={j} style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, color:'#555', fontWeight:300, marginBottom:6, display:'flex', alignItems:'flex-start', gap:8 }}>
+                <li key={j} style={{ fontFamily:"'Outfit', sans-serif", fontSize:13, color:'#555', fontWeight:300, marginBottom:6, display:'flex', alignItems:'flex-start', gap:8 }}>
                   <span style={{ marginTop:5, width:5, height:5, borderRadius:'50%', background:'#0a0a0a', flexShrink:0 }} />
                   {b}
                 </li>
@@ -489,17 +489,17 @@ export function BestDesignersSection() {
     <section style={{ padding:'80px 48px' }}>
       <div className="two-col" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:80, alignItems:'start' }}>
         <div>
-          <h2 className="sr" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.8rem,3vw,2.6rem)', fontWeight:400, lineHeight:1.2, marginBottom:24 }}>
+          <h2 className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,3vw,2.6rem)', fontWeight:400, lineHeight:1.2, marginBottom:24 }}>
             Best interior designers
           </h2>
           <Link to="/about"
             className="sr sr-d1"
-            style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"'DM Sans',sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, transition:'opacity 0.2s' }}
+            style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"'Outfit', sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, transition:'opacity 0.2s' }}
             onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
             onMouseLeave={e => e.currentTarget.style.opacity='1'}
           >Meet the team →</Link>
         </div>
-        <p className="sr sr-d1" style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300 }}>
+        <p className="sr sr-d1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300 }}>
           From day one, our passionate team is by your side—guiding and advising you through every step of the design journey. We start by getting to know you personally, visiting your space and discussing your wants, needs, lifestyle, values, and aspirations. Based on those insights, we create mood boards and share initial design concepts. Together, we refine the direction, narrowing down design schemes and presenting carefully curated options for your feedback. Once the final design is approved, we bring it to life—managing and coordinating every detail from the first consultation to the final installation, ensuring a seamless and inspiring transformation.
         </p>
       </div>
@@ -507,22 +507,22 @@ export function BestDesignersSection() {
   )
 }
 
-// "Explore the world of Minnaro" — 3-col asymmetric project grid
+// "Explore the world of Khajanji Infraspaces" — 3-col asymmetric project grid
 export function ExploreSection({ projects }) {
   return (
     <section style={{ padding:'0 48px 80px' }}>
       <div style={{ borderTop:'1px solid #e4e2dc', paddingTop:56, marginBottom:40 }} />
-      <h2 className="sr" style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(1.8rem,3vw,2.6rem)', fontWeight:400, lineHeight:1.2, marginBottom:36 }}>
-        Explore the world of Minnaro<br />Interior Design
+      <h2 className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,3vw,2.6rem)', fontWeight:400, lineHeight:1.2, marginBottom:36 }}>
+        Explore the world of Khajanji Infraspaces<br />Interior Design
       </h2>
       {/* Asymmetric 3-col: col1 tall, col2+col3 have top image + title below */}
       <div className="three-col" style={{ display:'grid', gridTemplateColumns:'1fr 1fr 1fr', gap:20, alignItems:'start' }}>
         {projects.map((p, i) => (
           <div key={i} className={`sr sr-d${i + 1}`}>
-            <div className="iz" style={{ height: i === 0 ? 420 : 220, marginBottom:10 }}>
+            <div className="iz" style={{ aspectRatio: '4/5', marginBottom:10 }}>
               <img src={p.img} alt={p.name} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
             </div>
-            <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a' }}>{p.name}</p>
+            <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a' }}>{p.name}</p>
           </div>
         ))}
       </div>

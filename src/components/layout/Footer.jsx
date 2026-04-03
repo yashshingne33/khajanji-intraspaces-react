@@ -71,7 +71,7 @@ export default function Footer() {
       </div>
 
       <div className={styles['footer-bottom']}>
-        <div className={styles['footer-bottom-left']}>&copy; 2009 - 2026 VAMTAM. TERMS</div>
+        <div className={styles['footer-bottom-left']}>&copy; @2026 ROYALSWEBTECH.PVT.LTD</div>
         <div className={styles['footer-social']}>
           <a
             href="https://instagram.com"

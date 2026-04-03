@@ -128,7 +128,7 @@ function Navbar() {
         {NAV.map((l, i) => (
           <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
             style={{
-              fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2rem,6vw,4.5rem)',
+              fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2rem,6vw,4.5rem)',
               fontWeight:400, lineHeight:1.2, color:'#0a0a0a', textDecoration:'none',
               opacity: open ? 1 : 0,
               transform: open ? 'translateY(0)' : 'translateY(20px)',
@@ -141,7 +141,7 @@ function Navbar() {
         <div style={{ marginTop:40, display:'flex', gap:24 }}>
           {SOCIAL_PATHS.map(s => (
             <a key={s.label} href="#"
-              style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
+              style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
               onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
               onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
             >{s.label}</a>
@@ -162,8 +162,8 @@ function Footer() {
       {/* ── Logo-only row (light gray bg, matches PNG) ── */}
       <div style={{ background:'#f5f4f0', padding:'28px 48px', display:'flex', alignItems:'center', gap:10 }}>
         <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji</span>
-        <span style={{ fontFamily:"'DM Sans',sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
+        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji</span>
+        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
       </div>
 
       {/* ── Divider ── */}
@@ -174,7 +174,7 @@ function Footer() {
         <nav style={{ display:'flex', gap:40, flexWrap:'wrap' }}>
           {[['Studio','/about'],['Services','/services'],['Portfolio','/portfolio'],['Reviews','/reviews'],['Journal','/journal']].map(([label, to]) => (
             <Link key={to} to={to}
-              style={{ fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75, letterSpacing:'0.01em' }}
+              style={{ fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75, letterSpacing:'0.01em' }}
               onMouseEnter={e => e.currentTarget.style.opacity='1'}
               onMouseLeave={e => e.currentTarget.style.opacity='0.75'}
             >{label}</Link>
@@ -205,14 +205,14 @@ function Footer() {
         alignItems:'start',
       }}>
         <div>
-          <h2 style={{ fontFamily:"'DM Serif Display',serif", fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:400, lineHeight:1.18, marginBottom:28 }}>
+          <h2 style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:400, lineHeight:1.18, marginBottom:28 }}>
             Have something in mind?<br />Let's talk.
           </h2>
           <button
             style={{
               padding:'10px 22px', background:'transparent',
               border:'1px solid #0a0a0a',
-              fontFamily:"'DM Sans',sans-serif", fontSize:13, fontWeight:400,
+              fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:400,
               cursor:'pointer', letterSpacing:'0.01em',
               transition:'background 0.2s, color 0.2s',
               color:'#0a0a0a',
@@ -236,22 +236,22 @@ function Footer() {
             </svg>
           </div>
 
-          <a href="mailto:hello@minnaro.com"
-            style={{ display:'block', fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', marginBottom:2, borderBottom:'1px solid #0a0a0a', paddingBottom:1, width:'fit-content' }}
+          <a href="mailto:hello@khajanjiinfraspaces.com"
+            style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', marginBottom:2, borderBottom:'1px solid #0a0a0a', paddingBottom:1, width:'fit-content' }}
             onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
             onMouseLeave={e => e.currentTarget.style.opacity='1'}
-          >hello@minnaro.com</a>
+          >hello@khajanjiinfraspaces.com</a>
 
           <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
 
-          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:2 }}>
-            +1 2030 4050 10
+          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:2 }}>
+            +91 928 414 9958
           </p>
 
           <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
 
-          <p style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
-            New York, Seventh Ave, 20th<br />Floor, NY 10018
+          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
+            NAGPUR<br/>MAHARASHTRA
           </p>
         </div>
       </div>
@@ -271,11 +271,11 @@ function Footer() {
           </svg>
         </button>
         <div style={{ display:'flex', gap:24, alignItems:'center' }}>
-          <span style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>
-            © 2009 – 2026 VAMTAM
+          <span style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>
+            © 2009 – 2026 ROYALSWEBTECH
           </span>
           <a href="#"
-            style={{ fontFamily:"'DM Sans',sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
+            style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
             onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
             onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
           >TERMS</a>
@@ -349,7 +349,7 @@ export default function PortfolioPage() {
         <h1
           className="fu1 slideInUp"
           style={{
-            fontFamily: "34px Urbanist, sans-serif",
+            fontFamily: "34px 'Outfit', sans-serif",
             fontSize: '60px',
             fontWeight: 400,
             lineHeight: 1.1,
@@ -362,7 +362,7 @@ export default function PortfolioPage() {
         </h1>
 
         <p className="fu2" style={{
-          fontFamily: "34px Urbanist, sans-serif",
+          fontFamily: "34px 'Outfit', sans-serif",
           fontSize: 'clamp( 2vw, 1.35rem)',
           lineHeight: 1.6,
           color: '#4a4a4a',
@@ -370,7 +370,7 @@ export default function PortfolioPage() {
           maxWidth: '500px',
           letterSpacing: '-0.01em',
         }}>
-          At Minnaro Interiors Studio, we approach each project with a thoughtful
+          At Khajanji Infraspaces, we approach each project with a thoughtful
           blend of environmental psychology, art, architecture, and cultural
           insight — all grounded in meticulous project management.
         </p>
@@ -430,7 +430,7 @@ export default function PortfolioPage() {
             </div>
 
             <p style={{
-              fontFamily: "34px Urbanist, sans-serif",
+              fontFamily: "34px 'Outfit', sans-serif",
               fontSize: 15,
               fontWeight: 400,
               color: '#0a0a0a',
