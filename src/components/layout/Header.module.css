@@ -7,6 +7,8 @@
   justify-content: space-between;
   padding: 0 var(--page-pad);
   height: var(--header-h);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
   transition: background 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
 }
 
@@ -40,7 +42,8 @@
 
 .logoImage {
   width: 160px;
-  height: 110px;
+  height: auto;
+  max-height: 48px;
   object-fit: contain;
   display: block;
 }
@@ -98,6 +101,64 @@
   transform: scaleX(1);
 }
 
+/* ── Dropdown ── */
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.dropdownTrigger svg {
+  transition: transform 0.3s var(--ease);
+}
+
+.navItem:hover .dropdownTrigger svg {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  min-width: 200px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s var(--ease);
+  z-index: 100;
+}
+
+.navItem:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  background: #f8f8f8;
+  color: var(--color-text);
+}
+
 /* ── Actions ── */
 .actions {
   display: flex;
@@ -124,9 +185,8 @@
   transition: transform 0.3s var(--ease), opacity 0.3s;
 }
 
-.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.hamburger.open span:nth-child(1) { transform: translateY(3.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { transform: translateY(-3.5px) rotate(-45deg); }
 
 /* ── Mobile Menu ── */
 .mobileMenu {
@@ -169,6 +229,28 @@
 }
 
 .mobileLink:hover { color: #000000; }
+
+.mobileSubMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: -4px;
+  margin-bottom: 12px;
+}
+
+.mobileSubLink {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--color-text-dim);
+  letter-spacing: 0.04em;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.mobileSubLink:hover {
+  color: var(--color-text);
+}
 
 /* ── Responsive ── */
 @media (max-width: 900px) {

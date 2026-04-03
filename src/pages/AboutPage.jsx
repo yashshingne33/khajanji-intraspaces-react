@@ -80,41 +80,11 @@ const SOCIAL_ICONS = [
 ]
 
 /* ─────────────────────────────────────────────
-   NAVBAR
-───────────────────────────────────────────── */
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 30)
-    window.addEventListener('scroll', fn)
-    return () => window.removeEventListener('scroll', fn)
-  }, [])
-
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [open])
-
-  const NAV = [
-    { label: 'Studio',    to: '/about' },
-    { label: 'Services',  to: '/services' },
-    { label: 'Portfolio', to: '/portfolio' },
-    { label: 'Reviews',   to: '/reviews' },
-    { label: 'Journal',   to: '/journal' },
-  ]
-
-  return (
-    <>
-
-      {/* Menu overlay */}
-      <div style={{
-        position:'fixed', inset:0, zIndex:190, background:'#fff',
-        display:'flex', flexDirection:'column', justifyContent:'center', padding:'0 48px',
-        opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none',
-        transition:'opacity 0.4s ease',
-      }}>
+            src="/assets/logo.jpeg"
+            alt="Khajanji Infraspaces"
+            style={{ height: '32px', width: 'auto', display: 'block' }}
+          />
+        </Link>
         {NAV.map((l, i) => (
           <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
             style={{
@@ -150,10 +120,12 @@ function Footer() {
     <footer style={{ background:'#fff', borderTop:'1px solid #e4e2dc' }}>
 
       {/* Logo row */}
-      <div style={{ padding:'44px 48px 0', display:'flex', alignItems:'center', gap:10 }}>
-        <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:500, fontSize:15 }}>Khajanji</span>
-        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
+      <div style={{ padding:'44px 48px 0', display:'flex', alignItems:'center' }}>
+        <img
+          src="/assets/logo.jpeg"
+          alt="Khajanji Infraspaces"
+          style={{ height: '30px', width: 'auto', display: 'block' }}
+        />
       </div>
 
       {/* Nav + social */}
@@ -310,15 +282,19 @@ export default function AboutPage() {
           .tg  { grid-template-columns: 1fr !important; }
           .awg { grid-template-columns: 1fr !important; }
           .pad { padding-left: 24px !important; padding-right: 24px !important; }
+          /* Responsive Hero */
+          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-image { height: 60vh !important; }
+          .hero-content { padding: 120px 24px 60px !important; }
         }
       `}</style>
 
-      <Navbar />
+      {/* Navbar removed — global layout Header is used */}
 
       {/* ── 1. HERO ─────────────────────────────── */}
 
-      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'100vh', fontFamily:'var(--font-sans)', background:'var(--color-background-primary)' }}>
-      <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'80px 48px' }}>
+      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'100vh', fontFamily:'var(--font-sans)', background:'var(--color-background-primary)' }} className="hero-grid">
+      <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'80px 48px' }} className="hero-content">
         <h1 style={{ fontSize:'clamp(4rem,3.5vw,3.2rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.02em', margin:'0 0 28px', color:'var(--color-text-primary)' }}>
           Elevating interiors<br />
           with lasting quality<br />
@@ -328,7 +304,7 @@ export default function AboutPage() {
           Khajanji Infraspaces was founded out of a shared desire to create spaces that feel as good as they look — honest, balanced, and deeply personal. With a foundation in interior architecture and product design, the studio connects people to their environments through refined, purposeful design.
         </p>
       </div>
-      <div style={{ overflow:'hidden', height:'100vh' }}>
+      <div style={{ overflow:'hidden', height:'100vh' }} className="hero-image">
         <img
           src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&h=1200&fit=crop&crop=top"
           alt="Designer at work"

@@ -38,12 +38,18 @@ export default function ConstructionPage() {
 
   return (
     <>
-      <style>{GLOBAL_CSS}</style>
-      <Navbar />
+      <style>{GLOBAL_CSS}{`
+        @media (max-width: 900px) {
+          .two-colHero { grid-template-columns: 1fr !important; }
+          .two-colHero > div:last-child { height: 50vh !important; order: -1; }
+          .pad { padding: 80px 24px 60px !important; }
+        }
+      `}</style>
+      {/* Internal Navbar removed — global layout Header is used */}
 
       {/* ── HERO ── */}
-      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-col">
-        <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'120px 48px 80px' }}>
+      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-colHero">
+        <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', paddingTop:120, paddingBottom:80 }}>
           <h1 className="fu1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
             Construction
           </h1>
@@ -68,7 +74,7 @@ export default function ConstructionPage() {
       />
 
       {/* ── IMAGE PAIR ── */}
-      <div style={{ padding:'64px 48px 0' }}>
+      <div className="pad" style={{ paddingTop: 64 }}>
         <ImagePair
           left="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop"
           right="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=900&h=500&fit=crop"
@@ -89,7 +95,7 @@ export default function ConstructionPage() {
       {/* ── EXPLORE ── */}
       <ExploreSection projects={EXPLORE} />
 
-      <Footer />
+      {/* Internal Footer removed — global layout Footer is used */}
     </>
   )
 }

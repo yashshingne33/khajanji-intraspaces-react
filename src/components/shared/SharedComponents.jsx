@@ -123,23 +123,25 @@ export function Navbar() {
       <header style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '0 48px',
+        padding: '0 var(--header-pad, 48px)',
         height: 64,
-        background: scrolled ? 'rgba(255,255,255,0.97)' : '#fff',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        background: '#fff',
+        backdropFilter: 'none',
         borderBottom: '1px solid #e4e2dc',
-        transition: 'background 0.3s',
+        transition: 'padding 0.3s, background 0.3s',
       }}>
 
         {/* Logo */}
-        <Link to="/" style={{ display:'flex', alignItems:'center', gap:10, textDecoration:'none', color:'#0a0a0a', flexShrink:0 }}>
-          <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-          <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji Infraspaces</span>
-          <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· architects</span>
+        <Link to="/" style={{ display:'flex', alignItems:'center', textDecoration:'none', color:'#0a0a0a', flexShrink:0 }}>
+          <img
+            src="/assets/logo.jpeg"
+            alt="Khajanji Infraspaces"
+            style={{ width: '160px', height: 'auto', display: 'block', objectFit: 'contain' }}
+          />
         </Link>
 
         {/* Desktop nav */}
-        <nav style={{ display:'flex', alignItems:'center', gap:36, marginLeft:60 }} className="desktop-nav">
+        <nav style={{ display:'flex', alignItems:'center', gap:36 }} className="desktop-nav">
           {/* H. */}
           <Link to="/" className="nav-link" style={navLinkStyle(location.pathname === '/')}>H.</Link>
           <Link to="/about" className="nav-link" style={navLinkStyle(location.pathname === '/about')}>About</Link>
@@ -204,37 +206,37 @@ export function Navbar() {
           <Link to="/media" className="nav-link" style={navLinkStyle(location.pathname === '/media')}>Media &amp; Awards</Link>
         </nav>
 
-        {/* Contact us button */}
-        <Link
-          to="/contact"
-          style={{
-            marginLeft:'auto',
-            padding:'10px 22px',
-            border:'1px solid #0a0a0a',
-            fontFamily:"'Outfit', sans-serif",
-            fontSize:13,
-            fontWeight:400,
-            color:'#0a0a0a',
-            textDecoration:'none',
-            letterSpacing:'0.01em',
-            transition:'background 0.2s, color 0.2s',
-            background:'#fff',
-            flexShrink:0,
-          }}
-          onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
-          onMouseLeave={e => { e.currentTarget.style.background='#fff'; e.currentTarget.style.color='#0a0a0a' }}
-        >
-          Contact us
-        </Link>
+        {/* Actions (Contact + Mobile Toggle) */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexShrink: 0 }}>
+          <Link
+            to="/contact"
+            style={{
+              padding:'10px 22px',
+              border:'1px solid #0a0a0a',
+              fontFamily:"'Outfit', sans-serif",
+              fontSize:13,
+              fontWeight:400,
+              color:'#0a0a0a',
+              textDecoration:'none',
+              letterSpacing:'0.01em',
+              transition:'background 0.2s, color 0.2s',
+              background:'#fff',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
+            onMouseLeave={e => { e.currentTarget.style.background='#fff'; e.currentTarget.style.color='#0a0a0a' }}
+          >
+            Contact us
+          </Link>
 
-        {/* Mobile hamburger */}
-        <button onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu"
-          style={{ display:'none', background:'none', border:'none', cursor:'pointer', padding:4, flexDirection:'column', gap:5, marginLeft:16 }}
-          className="mobile-menu-btn"
-        >
-          <span style={{ display:'block', width:22, height:1, background:'#0a0a0a', transform: mobileOpen ? 'rotate(45deg) translate(3px,3px)' : 'none', transition:'transform 0.3s' }} />
-          <span style={{ display:'block', width:16, height:1, background:'#0a0a0a', transform: mobileOpen ? 'rotate(-45deg) translate(3px,-2px)' : 'none', transition:'transform 0.3s' }} />
-        </button>
+          {/* Mobile hamburger */}
+          <button onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu"
+            style={{ display:'none', background:'none', border:'none', cursor:'pointer', padding:4, flexDirection:'column', gap:5 }}
+            className="mobile-menu-btn"
+          >
+            <span style={{ display:'block', width:22, height:1, background:'#0a0a0a', transform: mobileOpen ? 'rotate(45deg) translate(3px,3px)' : 'none', transition:'transform 0.3s' }} />
+            <span style={{ display:'block', width:16, height:1, background:'#0a0a0a', transform: mobileOpen ? 'rotate(-45deg) translate(3px,-2px)' : 'none', transition:'transform 0.3s' }} />
+          </button>
+        </div>
       </header>
 
       {/* Mobile overlay */}
@@ -276,7 +278,9 @@ export function Navbar() {
 
       {/* Responsive CSS */}
       <style>{`
+        :root { --header-pad: 48px; }
         @media (max-width: 900px) {
+          :root { --header-pad: 24px; }
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
         }
@@ -293,10 +297,12 @@ export function Footer() {
     <footer style={{ background:'#fff' }}>
 
       {/* Logo row */}
-      <div style={{ padding:'36px 48px 0', display:'flex', alignItems:'center', gap:10 }}>
-        <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji Infraspaces</span>
-        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· interiors</span>
+      <div style={{ padding:'36px 48px 0', display:'flex', alignItems:'center' }}>
+        <img
+          src="/assets/logo.jpeg"
+          alt="Khajanji Infraspaces"
+          style={{ height: '30px', width: 'auto', display: 'block' }}
+        />
       </div>
 
       <div style={{ margin:'20px 0 0', borderTop:'1px solid #e4e2dc' }} />

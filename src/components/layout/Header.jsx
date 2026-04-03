@@ -33,17 +33,40 @@ export default function Header() {
 
         <nav className={styles.nav} aria-label="Primary navigation">
           <ul>
-            {navLinks.map(({ label, to }) => (
-              <li key={label}>
-                <NavLink
-                  to={to}
-                  end={to === '/'}
-                  className={({ isActive }) =>
-                    isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
-                  }
-                >
-                  {label}
-                </NavLink>
+            {navLinks.map(({ label, to, sub }) => (
+              <li key={label} className={sub ? styles.navItem : ''}>
+                {sub ? (
+                  <div className={styles.dropdownTrigger}>
+                    <NavLink
+                      to={to}
+                      className={({ isActive }) =>
+                        isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <div className={styles.dropdownMenu}>
+                      {sub.map(s => (
+                        <Link key={s.to} to={s.to} className={styles.dropdownItem}>
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <NavLink
+                    to={to}
+                    end={to === '/'}
+                    className={({ isActive }) =>
+                      isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                )}
               </li>
             ))}
           </ul>
@@ -60,7 +83,6 @@ export default function Header() {
           >
             <span />
             <span />
-            <span />
           </button>
         </div>
       </header>
@@ -68,11 +90,20 @@ export default function Header() {
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ''}`}>
         <nav>
           <ul>
-            {navLinks.map(({ label, to }) => (
+            {navLinks.map(({ label, to, sub }) => (
               <li key={label}>
                 <Link to={to} className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
                   {label}
                 </Link>
+                {sub && (
+                  <div className={styles.mobileSubMenu}>
+                    {sub.map(s => (
+                      <Link key={s.to} to={s.to} className={styles.mobileSubLink} onClick={() => setMenuOpen(false)}>
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ul>

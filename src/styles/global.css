@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
 }
 
 img {
@@ -73,6 +75,25 @@ ul, ol {
 
 .section {
   padding: var(--section-pad) var(--page-pad);
+}
+
+.pad {
+  padding-left: 98px;
+  padding-right: 98px;
+}
+
+@media (max-width: 1200px) {
+  .pad {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .pad {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
 }
 
 .section-label {

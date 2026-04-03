@@ -92,198 +92,7 @@ const SOCIAL_PATHS = [
 /* ─────────────────────────────────────────────
    NAVBAR
 ───────────────────────────────────────────── */
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen]         = useState(false)
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 30)
-    window.addEventListener('scroll', fn)
-    return () => window.removeEventListener('scroll', fn)
-  }, [])
-
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [open])
-
-  const NAV = [
-    { label: 'Studio',    to: '/about' },
-    { label: 'Services',  to: '/services' },
-    { label: 'Portfolio', to: '/portfolio' },
-    { label: 'Reviews',   to: '/reviews' },
-    { label: 'Journal',   to: '/journal' },
-  ]
-
-  return (
-    <>
-
-      {/* Overlay menu */}
-      <div style={{
-        position:'fixed', inset:0, zIndex:190, background:'#fff',
-        display:'flex', flexDirection:'column', justifyContent:'center', padding:'0 48px',
-        opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none',
-        transition:'opacity 0.4s ease',
-      }}>
-        {NAV.map((l, i) => (
-          <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
-            style={{
-              fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2rem,6vw,4.5rem)',
-              fontWeight:400, lineHeight:1.2, color:'#0a0a0a', textDecoration:'none',
-              opacity: open ? 1 : 0,
-              transform: open ? 'translateY(0)' : 'translateY(20px)',
-              transition:`opacity 0.4s ease ${i*70}ms, transform 0.4s ease ${i*70}ms`,
-            }}
-            onMouseEnter={e => e.currentTarget.style.opacity='0.35'}
-            onMouseLeave={e => e.currentTarget.style.opacity='1'}
-          >{l.label}</Link>
-        ))}
-        <div style={{ marginTop:40, display:'flex', gap:24 }}>
-          {SOCIAL_PATHS.map(s => (
-            <a key={s.label} href="#"
-              style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
-              onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
-              onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
-            >{s.label}</a>
-          ))}
-        </div>
-      </div>
-    </>
-  )
-}
-
-/* ─────────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────────── */
-function Footer() {
-  return (
-    <footer style={{ background:'#fff' }}>
-
-      {/* ── Logo-only row (light gray bg, matches PNG) ── */}
-      <div style={{ background:'#f5f4f0', padding:'28px 48px', display:'flex', alignItems:'center', gap:10 }}>
-        <span style={{ display:'inline-block', width:18, height:18, background:'#0a0a0a', clipPath:'polygon(0 100%, 50% 0, 100% 100%)' }} />
-        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:500, fontSize:15, letterSpacing:'0.02em' }}>Khajanji</span>
-        <span style={{ fontFamily:"'Outfit', sans-serif", fontWeight:300, fontSize:11, color:'#8a8880', letterSpacing:'0.1em', marginLeft:2 }}>· intraspaces</span>
-      </div>
-
-      {/* ── Divider ── */}
-      <div style={{ height:1, background:'#e4e2dc' }} />
-
-      {/* ── Nav + Social row ── */}
-      <div style={{ padding:'20px 48px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:16 }}>
-        <nav style={{ display:'flex', gap:40, flexWrap:'wrap' }}>
-          {[['Studio','/about'],['Services','/services'],['Portfolio','/portfolio'],['Reviews','/reviews'],['Journal','/journal']].map(([label, to]) => (
-            <Link key={to} to={to}
-              style={{ fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75, letterSpacing:'0.01em' }}
-              onMouseEnter={e => e.currentTarget.style.opacity='1'}
-              onMouseLeave={e => e.currentTarget.style.opacity='0.75'}
-            >{label}</Link>
-          ))}
-        </nav>
-        <div style={{ display:'flex', gap:18, alignItems:'center' }}>
-          {SOCIAL_PATHS.map(s => (
-            <a key={s.label} href="#" aria-label={s.label}
-              style={{ color:'#8a8880', display:'flex', alignItems:'center', textDecoration:'none' }}
-              onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
-              onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d={s.d} /></svg>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Divider ── */}
-      <div style={{ height:1, background:'#e4e2dc' }} />
-
-      {/* ── Main CTA + contact row ── */}
-      <div style={{
-        padding:'52px 48px 44px',
-        display:'grid',
-        gridTemplateColumns:'1fr 1fr',
-        gap:40,
-        alignItems:'start',
-      }}>
-        <div>
-          <h2 style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:400, lineHeight:1.18, marginBottom:28 }}>
-            Have something in mind?<br />Let's talk.
-          </h2>
-          <button
-            style={{
-              padding:'10px 22px', background:'transparent',
-              border:'1px solid #0a0a0a',
-              fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:400,
-              cursor:'pointer', letterSpacing:'0.01em',
-              transition:'background 0.2s, color 0.2s',
-              color:'#0a0a0a',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
-            onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#0a0a0a' }}
-          >
-            Request a call back
-          </button>
-        </div>
-
-        <div>
-          <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:24 }}>
-            <svg width="36" height="28" viewBox="0 0 44 32" fill="none">
-              <rect x="1" y="1" width="42" height="30" stroke="#0a0a0a" strokeWidth="1.2"/>
-              <text x="8"  y="12" style={{ fontFamily:'sans-serif', fontSize:7, fontWeight:700, fill:'#0a0a0a' }}>i</text>
-              <text x="14" y="12" style={{ fontFamily:'sans-serif', fontSize:7, fontWeight:700, fill:'#0a0a0a' }}>a</text>
-              <text x="20" y="12" style={{ fontFamily:'sans-serif', fontSize:7, fontWeight:700, fill:'#0a0a0a' }}>c</text>
-              <text x="5"  y="22" style={{ fontFamily:'sans-serif', fontSize:5.5, fill:'#0a0a0a' }}>Interior</text>
-              <text x="5"  y="28" style={{ fontFamily:'sans-serif', fontSize:5.5, fill:'#0a0a0a' }}>Design Awards</text>
-            </svg>
-          </div>
-
-          <a href="mailto:hello@khajanjiinfraspaces.com"
-            style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', marginBottom:2, borderBottom:'1px solid #0a0a0a', paddingBottom:1, width:'fit-content' }}
-            onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
-            onMouseLeave={e => e.currentTarget.style.opacity='1'}
-          >hello@khajanjiinfraspaces.com</a>
-
-          <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
-
-          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:2 }}>
-            +91 928 414 9958
-          </p>
-
-          <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
-
-          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
-            NAGPUR<br/>MAHARASHTRA
-          </p>
-        </div>
-      </div>
-
-      {/* ── Divider ── */}
-      <div style={{ height:1, background:'#e4e2dc' }} />
-
-      {/* ── Copyright row ── */}
-      <div style={{ padding:'16px 48px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
-        <button
-          onClick={() => window.scrollTo({ top:0, behavior:'smooth' })}
-          aria-label="Back to top"
-          style={{ background:'none', border:'none', cursor:'pointer', padding:4, display:'flex', alignItems:'center' }}
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M7 13V1M2 6l5-5 5 5" stroke="#0a0a0a" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        <div style={{ display:'flex', gap:24, alignItems:'center' }}>
-          <span style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>
-            © 2009 – 2026 ROYALSWEBTECH
-          </span>
-          <a href="#"
-            style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
-            onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
-            onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
-          >TERMS</a>
-        </div>
-      </div>
-    </footer>
-  )
-}
+/* Internal Navbar and Footer removed in favor of global components */
 
 /* ─────────────────────────────────────────────
    MAIN PAGE
@@ -343,9 +152,9 @@ export default function PortfolioPage() {
         }
       `}</style>
 
-      <Navbar />
+      {/* Navbar removed — global layout Header is used */}
 
-      <section className="page-pad" style={{ padding: '92px 48px 52px' }}>
+      <section className="pad" style={{ paddingTop: 92, paddingBottom: 52 }}>
         <h1
           className="fu1 slideInUp"
           style={{
@@ -376,8 +185,8 @@ export default function PortfolioPage() {
         </p>
       </section>
 
-      <main className="page-pad portfolio-grid" style={{
-        padding: '0 48px 72px',
+      <main className="pad portfolio-grid" style={{
+        paddingBottom: 72,
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
         gap: '40px 20px',
@@ -455,7 +264,7 @@ export default function PortfolioPage() {
         ))}
       </main>
 
-      <Footer />
+      {/* Footer removed — global layout Footer is used */}
     </>
   )
 }

@@ -47,8 +47,6 @@ export default function Footer() {
               src="/assets/logo.jpeg"
               alt="Khajanji infraspaces logo"
             />
-            <div className={styles['footer-title']}>Khajanji infraspaces</div>
-            <div className={styles['footer-subtitle']}>architects</div>
           </div>
         </div>
 

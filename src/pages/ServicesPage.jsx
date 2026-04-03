@@ -93,18 +93,21 @@ export default function ServicesPage() {
         @media (max-width: 900px) {
           .svc-body-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
           .svc-proj-grid { grid-template-columns: 1fr 1fr !important; }
+          .two-colHero { grid-template-columns: 1fr !important; }
+          .two-colHero > div:last-child { height: 50vh !important; order: -1; }
+          .pad { padding: 80px 24px 60px !important; }
         }
         @media (max-width: 600px) {
           .svc-proj-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
 
-      <Navbar />
+      {/* Navbar removed — global layout Header is used */}
 
       {/* ── HERO ── */}
-      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'80vh' }} className="two-col">
+      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'80vh' }} className="two-colHero">
         {/* Left */}
-        <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'120px 48px 80px' }}>
+        <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', paddingTop:120, paddingBottom:80 }}>
           <h1 className="fu1" style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
             Our services
           </h1>
@@ -126,7 +129,7 @@ export default function ServicesPage() {
       {SERVICES.map((svc, idx) => (
         <div key={svc.id}>
           {/* ── Service heading + body text ── */}
-          <section className="pad" style={{ padding:'96px 48px 64px' }}>
+          <section className="pad" style={{ paddingTop:96, paddingBottom:64 }}>
             <div className="svc-body-grid">
               {/* Left: title + Learn more */}
               <div>
@@ -164,7 +167,7 @@ export default function ServicesPage() {
           </div>
 
           {/* ── Projects grid label + 3-col asymmetric grid ── */}
-          <section className="pad" style={{ padding:'0 48px 96px' }}>
+          <section className="pad" style={{ paddingBottom:96 }}>
             <p className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:24 }}>
               {svc.projectsLabel}
             </p>

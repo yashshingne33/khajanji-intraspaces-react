@@ -25,7 +25,15 @@ export const navLinks = [
   { label: 'H.',             to: '/' },
   { label: 'About',         to: '/about' },
   { label: 'Portfolio',     to: '/portfolio' },
-  { label: 'Services',      to: '/services' },
+  {
+    label: 'Services',
+    to:    '/services',
+    sub: [
+      { label: 'Construction',    to: '/services/construction' },
+      { label: 'Interior design', to: '/services/interior-design' },
+      { label: 'Lighting design', to: '/services/lighting-design' },
+    ]
+  },
   { label: 'Media & Awards',to: '/media' },
 ]
 
