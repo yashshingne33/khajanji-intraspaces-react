@@ -5,6 +5,19 @@ import ServiceCard from './shared/ServiceCard'
 
 const services = [
   {
+    title: 'Structure & Arch Planning Services',
+    desc: 'Efficient structural and architectural planning ensuring durability, aesthetics, and functionality.',
+    icon: (
+      <svg className="service-icon" viewBox="0 0 120 48" aria-hidden="true">
+        <path d="M12 34h96" />
+        <path d="M26 34V18" />
+        <path d="M46 34V14" />
+        <path d="M66 34V20" />
+        <path d="M86 34V16" />
+      </svg>
+    ),
+  },
+  {
     title: '3D Design and Elevation Services',
     desc: 'We create realistic 3D designs and elevations that bring architectural ideas to life with precision and creativity.',
     icon: (
@@ -28,19 +41,19 @@ const services = [
       </svg>
     ),
   },
-  {
-    title: 'Structure & Arch Planning Services',
-    desc: 'Efficient structural and architectural planning ensuring durability, aesthetics, and functionality.',
-    icon: (
-      <svg className="service-icon" viewBox="0 0 120 48" aria-hidden="true">
-        <path d="M12 34h96" />
-        <path d="M26 34V18" />
-        <path d="M46 34V14" />
-        <path d="M66 34V20" />
-        <path d="M86 34V16" />
-      </svg>
-    ),
-  },
+  // {
+  //   title: 'Structure & Arch Planning Services',
+  //   desc: 'Efficient structural and architectural planning ensuring durability, aesthetics, and functionality.',
+  //   icon: (
+  //     <svg className="service-icon" viewBox="0 0 120 48" aria-hidden="true">
+  //       <path d="M12 34h96" />
+  //       <path d="M26 34V18" />
+  //       <path d="M46 34V14" />
+  //       <path d="M66 34V20" />
+  //       <path d="M86 34V16" />
+  //     </svg>
+  //   ),
+  // },
   {
     title: 'Digital Marketing and Branding Services',
     desc: 'Strategic digital solutions to enhance brand presence and reach the right audience effectively.',

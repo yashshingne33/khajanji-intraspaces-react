@@ -13,7 +13,7 @@ import ServicesPage from './pages/ServicesPage'
 import ConstructionPage from './pages/ConstructionPage'
 import InteriorDesignPage from './pages/InteriorDesignPage'
 import LightingDesignPage from './pages/LightingDesignPage'
-import MediaAwardsPage from './pages/MediaAwardsPage'
+// import MediaAwardsPage from './pages/MediaAwardsPage'
 import ContactPage from './pages/ContactPage'
 
 export default function App() {
@@ -22,13 +22,13 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />  // about page route 
+          <Route path="about" element={<AboutPage />} />
           <Route path="portfolio" element={<PortfolioPage />} />  
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/construction" element={<ConstructionPage />} />
           <Route path="services/interior-design" element={<InteriorDesignPage />} />
           <Route path="services/lighting-design" element={<LightingDesignPage />} />
-          <Route path="media" element={<MediaAwardsPage />} />
+          {/* <Route path="media" element={<MediaAwardsPage />} /> */}
           <Route path="contact" element={<ContactPage />} />
           <Route path="blog"        element={<Archive />} />
           <Route path="blog/:slug"  element={<BlogPost />} />

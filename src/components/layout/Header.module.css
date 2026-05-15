@@ -7,9 +7,14 @@
   justify-content: space-between;
   padding: 0 var(--page-pad);
   height: var(--header-h);
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-  transition: background 0.4s var(--ease), backdrop-filter 0.4s var(--ease);
+
+  background: transparent;   /* CHANGE THIS */
+  border-bottom: 1px solid transparent;
+
+  transition:
+    background 0.4s var(--ease),
+    backdrop-filter 0.4s var(--ease),
+    border-color 0.4s var(--ease);
 }
 
 .header.scrolled {

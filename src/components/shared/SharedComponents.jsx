@@ -61,7 +61,7 @@ export function useReveal(dep) {
 /* ─────────────────────────────────────────────
    SOCIAL ICON PATHS
 ───────────────────────────────────────────── */
-export const SOCIAL = [
+const SOCIAL = [
   { label: 'Instagram', d: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z' },
   { label: 'Houzz',     d: 'M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z' },
   { label: 'Facebook',  d: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
@@ -70,7 +70,7 @@ export const SOCIAL = [
 
 /* ─────────────────────────────────────────────
    NAVBAR  — horizontal links style (matches screenshot)
-   H. | About | Portfolio | Services (dropdown) | Media & Awards | Contact us
+   Home | About | Portfolio | Services (dropdown) | Media & Awards | Contact us
 ───────────────────────────────────────────── */
 export function Navbar() {
   const [scrolled,     setScrolled]     = useState(false)
@@ -143,7 +143,13 @@ export function Navbar() {
         {/* Desktop nav */}
         <nav style={{ display:'flex', alignItems:'center', gap:36 }} className="desktop-nav">
           {/* H. */}
-          <Link to="/" className="nav-link" style={navLinkStyle(location.pathname === '/')}>H.</Link>
+          <Link
+            to="/"
+            className="nav-link"
+            style={navLinkStyle(location.pathname === '/')}
+          >
+            Home
+          </Link>
           <Link to="/about" className="nav-link" style={navLinkStyle(location.pathname === '/about')}>About</Link>
           <Link to="/portfolio" className="nav-link" style={navLinkStyle(location.pathname === '/portfolio')}>Portfolio</Link>
 
@@ -165,7 +171,6 @@ export function Navbar() {
             {/* Dropdown */}
             <div style={{
               position:'absolute', top:'100%', left:'50%',
-              transform: 'translateX(-50%)',
               marginTop: 8,
               background:'#fff',
               border:'1px solid #e4e2dc',
@@ -247,7 +252,7 @@ export function Navbar() {
         transition:'opacity 0.35s ease',
       }}>
         {[
-          { label:'H.',              to:'/' },
+          { label:'Home',              to:'/' },
           { label:'About',           to:'/about' },
           { label:'Portfolio',       to:'/portfolio' },
           { label:'Services',        to:'/services' },

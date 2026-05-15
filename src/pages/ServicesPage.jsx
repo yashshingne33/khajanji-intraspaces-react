@@ -1,7 +1,7 @@
 // src/pages/ServicesPage.jsx
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar, Footer, GLOBAL_CSS, useReveal, SOCIAL } from '../components/shared/SharedComponents'
+import { Navbar, Footer, GLOBAL_CSS, useReveal } from '../components/shared/SharedComponents'
 
 /* ─────────────────────────────────────────────
    SERVICE SECTIONS DATA

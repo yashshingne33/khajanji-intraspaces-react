@@ -22,7 +22,7 @@ export const siteInfo = {
 }
 
 export const navLinks = [
-  { label: 'H.',            to: '/' },
+  { label: 'Home',            to: '/' },
   { label: 'About',         to: '/about' },
   { label: 'Portfolio',     to: '/portfolio' },
   {
@@ -34,7 +34,7 @@ export const navLinks = [
       { label: 'Lighting design', to: '/services/lighting-design' },
     ]
   },
-  { label: 'Media & Awards',to: '/media' },
+  // { label: 'Media & Awards',to: '/media' },
 ]
 
 // ── Static pages ─────────────────────────────────────────────────────────────
