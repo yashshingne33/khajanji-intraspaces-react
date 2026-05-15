@@ -9,7 +9,7 @@ export default function FounderQuote({ fadeUp }) {
         {/* Left Column - Portrait Image */}
         <div className="founder-quote__col founder-quote__col--left">
           <img 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+            src="/assets/founder.jpg" 
             alt="Portrait of an architect" 
             className="founder-quote__img-left"
           />
@@ -40,7 +40,7 @@ export default function FounderQuote({ fadeUp }) {
         {/* Right Column - Drawing Image */}
         <div className="founder-quote__col founder-quote__col--right">
           <img 
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" 
+            src="/assets/architecture-plan.jpg" 
             alt="Hand drafting architectural plans" 
             className="founder-quote__img-right"
           />

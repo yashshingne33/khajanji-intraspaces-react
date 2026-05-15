@@ -306,7 +306,7 @@ export default function AboutPage() {
       </div>
       <div style={{ overflow:'hidden', height:'100vh' }} className="hero-image">
         <img
-          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&h=1200&fit=crop&crop=top"
+          src="/assets/about.png"
           alt="Designer at work"
           style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }}
         />
@@ -324,7 +324,7 @@ export default function AboutPage() {
       <section style={{ background:'#f0efeb' }}>
         <div className="vg" style={{ display:'grid', gridTemplateColumns:'1fr 1fr' }}>
           <div className="iz" style={{ minHeight:600 }}>
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=1000&fit=crop"
+            <img src="/assets/studio-about.png"
               alt="Studio atmosphere" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
           </div>
           <div className="pad" style={{ padding:'64px 56px' }}>

@@ -10,7 +10,7 @@ export default function BuildPromo({ fadeUp }) {
       <div className="build-promo__bg">
         {/* Main background image simulating the large concrete/wood room */}
         <img 
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" 
+          src="/assets/build-main.jpg" 
           alt="Architectural space" 
           className="build-promo__bg-img"
         />
@@ -26,7 +26,7 @@ export default function BuildPromo({ fadeUp }) {
           <div className="build-promo__right-container">
             <div className="build-promo__inset-wrapper">
               <img 
-                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" 
+                src="/assets/build-small.png" 
                 alt="Collin College, Technical Campus" 
                 className="build-promo__inset-img"
               />

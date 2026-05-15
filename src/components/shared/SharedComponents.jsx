@@ -98,12 +98,12 @@ export function Navbar() {
     fontFamily: "'Outfit', sans-serif",
     fontSize: 14,
     fontWeight: 400,
-    color: '#0a0a0a',
+    color: '#fff',
     textDecoration: 'none',
     letterSpacing: '0.01em',
     opacity: active ? 1 : 0.75,
     padding: '4px 0',
-    borderBottom: active ? '1px solid #0a0a0a' : '1px solid transparent',
+    borderBottom: active ? '1px solid #fff' : '1px solid transparent',
     transition: 'opacity 0.2s',
     background: 'none',
     border: 'none',
@@ -125,7 +125,7 @@ export function Navbar() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '0 var(--header-pad, 48px)',
         height: 64,
-        background: '#fff',
+        background: 'transparent',
         backdropFilter: 'none',
         borderBottom: '1px solid #e4e2dc',
         transition: 'padding 0.3s, background 0.3s',
@@ -164,7 +164,7 @@ export function Navbar() {
             >
               Services
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ marginTop:1 }}>
-                <path d="M1 1l4 4 4-4" stroke="#0a0a0a" strokeWidth="1.2" strokeLinecap="round"/>
+                <path d="M1 1l4 4 4-4" stroke="#fff" strokeWidth="1.2" strokeLinecap="round"/>
               </svg>
             </button>
 
@@ -208,7 +208,7 @@ export function Navbar() {
             </div>
           </div>
 
-          <Link to="/media" className="nav-link" style={navLinkStyle(location.pathname === '/media')}>Media &amp; Awards</Link>
+          
         </nav>
 
         {/* Actions (Contact + Mobile Toggle) */}
@@ -256,7 +256,7 @@ export function Navbar() {
           { label:'About',           to:'/about' },
           { label:'Portfolio',       to:'/portfolio' },
           { label:'Services',        to:'/services' },
-          { label:'Media & Awards',  to:'/media' },
+          
         ].map((l, i) => (
           <Link key={l.to} to={l.to} onClick={() => setMobileOpen(false)}
             style={{
@@ -327,7 +327,7 @@ export function Footer() {
           {SOCIAL.map(s => (
             <a key={s.label} href="#" aria-label={s.label}
               style={{ color:'#8a8880', display:'flex', alignItems:'center', textDecoration:'none' }}
-              onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
+              onMouseEnter={e => e.currentTarget.style.color='#fff'}
               onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d={s.d}/></svg>

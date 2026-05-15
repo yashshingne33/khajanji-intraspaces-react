@@ -8,34 +8,60 @@ import BuildPromo from '../components/home/BuildPromo'
 import Stats from '../components/home/Stats'
 import Portfolio from '../components/home/Portfolio'
 import CTABanner from '../components/home/CTABanner'
-import Awards from '../components/home/Awards'
+// import Awards from '../components/home/Awards'
 import FounderQuote from '../components/home/FounderQuote'
 import MediaPress from '../components/home/MediaPress'
 
+// const SLIDES = [
+//   {
+//     tag:      'FEATURED PROJECT / 2024',
+//     title:    'Heise',
+//     subtitle: 'Beyond Architecture. Creating Experiences.',
+//     cta:      'View Project',
+//     href:     '/portfolio',
+//     bg:       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80',
+//   },
+//   {
+//     tag:      'RECENT PROJECT / 2024',
+//     title:    'Nordvik',
+//     subtitle: 'Where Form Meets Function.',
+//     cta:      'View Project',
+//     href:     '/portfolio',
+//     bg:       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80',
+//   },
+//   {
+//     tag:      'AWARD WINNER / 2023',
+//     title:    'Solaris',
+//     subtitle: 'Designing Tomorrow, Today.',
+//     cta:      'View Project',
+//     href:     '/portfolio',
+//     bg:       'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80',
+//   },
+// ]
 const SLIDES = [
   {
-    tag:      'FEATURED PROJECT / 2024',
-    title:    'Heise',
+    tag: 'FEATURED PROJECT / 2024',
+    title: 'Heise',
     subtitle: 'Beyond Architecture. Creating Experiences.',
-    cta:      'View Project',
-    href:     '/portfolio',
-    bg:       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80',
+    cta: 'View Project',
+    href: '/portfolio',
+    bg: '/assets/hero1.jpg',
   },
   {
-    tag:      'RECENT PROJECT / 2024',
-    title:    'Nordvik',
+    tag: 'RECENT PROJECT / 2024',
+    title: 'Nordvik',
     subtitle: 'Where Form Meets Function.',
-    cta:      'View Project',
-    href:     '/portfolio',
-    bg:       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80',
+    cta: 'View Project',
+    href: '/portfolio',
+    bg: '/assets/hero2.jpg',
   },
   {
-    tag:      'AWARD WINNER / 2023',
-    title:    'Solaris',
+    tag: 'AWARD WINNER / 2023',
+    title: 'Solaris',
     subtitle: 'Designing Tomorrow, Today.',
-    cta:      'View Project',
-    href:     '/portfolio',
-    bg:       'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80',
+    cta: 'View Project',
+    href: '/portfolio',
+    bg: '/assets/hero3.jpg',
   },
 ]
 
@@ -98,7 +124,7 @@ export default function HomePage() {
       <Process fadeUp={fadeUp} />
       <BuildPromo fadeUp={fadeUp} />
       <Stats fadeUp={fadeUp} />
-      <Awards />
+      {/* <Awards /> */}
       <FounderQuote fadeUp={fadeUp} />
       <MediaPress fadeUp={fadeUp} />
       <CTABanner fadeUp={fadeUp} />

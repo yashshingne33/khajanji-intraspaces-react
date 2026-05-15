@@ -8,19 +8,19 @@ const PORTFOLIO = [
     title: '3 Tower Residence Nagpur',
     year: '2024',
     category: 'Residential',
-    img: '/assets/WhatsApp Image 2026-03-28 at 1.03.06 PM.jpeg',
+    img: '/assets/portfolio1.jpg',
   },
   {
     title: 'Bungalow,Civil Line, Nagpur',
     year: '2023',
     category: 'Residential',
-    img: '/assets/WhatsApp Image 2026-03-28 at 1.03.06 PM (1).jpeg',
+    img: '/assets/portfolio2.png',
   },
   {
     title: '7 Floor Pinnacle,Chatrapati Nagar,Nagpur',
     year: '2023',
     category: 'Mixed-Use',
-    img: '/assets/WhatsApp Image 2026-03-28 at 1.03.06 PM (2).jpeg',
+    img: '/assets/portfolio3.jpg',
   },
  
   

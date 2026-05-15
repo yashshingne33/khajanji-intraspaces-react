@@ -13,14 +13,14 @@ const MEDIA_ITEMS = [
     id: 2,
     category: 'Announcements',
     title: '2025 Design Awards Recap',
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80',
+    image: '/assets/design-awards.png',
     link: '/blog/awards-recap'
   },
   {
     id: 3,
     category: 'Media',
     title: 'Industrial Luxury Style, explained by Khajanji Design',
-    image: 'https://images.unsplash.com/photo-1481253127861-534498168948?w=800&auto=format&fit=crop&q=80',
+    image: '/assets/luxury.jpg',
     link: '/blog/industrial-luxury'
   }
 ]
