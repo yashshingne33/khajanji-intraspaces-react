@@ -38,13 +38,13 @@ export default function FounderQuote({ fadeUp }) {
         </div>
 
         {/* Right Column - Drawing Image */}
-        <div className="founder-quote__col founder-quote__col--right">
+        {/* <div className="founder-quote__col founder-quote__col--right">
           <img 
             src="/assets/architecture-plan.jpg" 
             alt="Hand drafting architectural plans" 
             className="founder-quote__img-right"
           />
-        </div>
+        </div> */}
 
       </div>
 

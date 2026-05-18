@@ -23,7 +23,7 @@ export default function CTABanner({ fadeUp }) {
           min-height: 80vh;
           display: flex;
           align-items: stretch;
-          background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=2000&q=80');
+          background-image: url('/assets/cta-background.jpg');
           background-size: cover;
           background-position: center;
           padding: 56px 6vw;
