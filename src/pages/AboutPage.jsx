@@ -350,8 +350,8 @@ export default function AboutPage() {
       <section className="pad" style={{ padding:'80px 48px' }}>
         <div className="gg" style={{ display:'grid', gridTemplateColumns:'1fr 1.85fr', gap:24 }}>
           {[
-            { src:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=700&fit=crop', alt:'Team meeting' },
-            { src:'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&h=700&fit=crop', alt:'Design consultation' },
+            { src:'/assets/about-team.png', alt:'Team meeting' },
+            { src:'/assets/about-consultation.png', alt:'Design consultation' },
           ].map((img, i) => (
             <div key={i} className={`sr sr-d${i + 1}`}>
               <div className="iz" style={{ height:380 }}>
@@ -391,7 +391,7 @@ export default function AboutPage() {
 
       {/* ── 6. FULL-WIDTH IMAGE ─────────────────── */}
       <div className="iz" style={{ width:'100%', height:'clamp(300px,40vw,520px)' }}>
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&h=700&fit=crop&crop=center"
+        <img src="/assets/about-full-width.png"
           alt="Designer working on plans" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center 30%' }} />
       </div>
 

@@ -14,7 +14,7 @@ const PORTFOLIO = [
     title: 'Bungalow,Civil Line, Nagpur',
     year: '2023',
     category: 'Residential',
-    img: '/assets/portfolio2.png',
+    img: '/assets/portfolio2.jpg',
   },
   {
     title: '7 Floor Pinnacle,Chatrapati Nagar,Nagpur',

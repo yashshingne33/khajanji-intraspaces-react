@@ -6,7 +6,7 @@ const MEDIA_ITEMS = [
     id: 1,
     category: 'Media',
     title: 'How Khajanji became a model for affordable, sustainable living',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop&q=80',
+    image: '/assets/media-living.jpg',
     link: '/blog/sustainable-living'
   },
   {
