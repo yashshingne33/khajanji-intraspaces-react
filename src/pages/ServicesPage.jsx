@@ -16,12 +16,12 @@ const SERVICES = [
       'Every project begins with a deep understanding of our clients—their lifestyles, aspirations, and aesthetic sensibilities. With a strong foundation in simplicity and a natural sense of visual order, our design philosophy centres on originality, authenticity, and considered elegance. We don\'t follow trends; we create enduring design stories that evolve with time and use.',
       'At Khajanji Infraspaces, we live and breathe the belief that great design goes far beyond appearance. It has the power to improve lives—fostering well-being, sparking creativity, and cultivating spaces of calm, joy, and inspiration. Whether it\'s a quiet retreat or a vibrant family home, we design environments that support the way you live, work, and connect.',
     ],
-    fullWidthImg: 'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1400&h=600&fit=crop',
+    fullWidthImg: '/assets/service-interior-design.jpg',
     projectsLabel: 'Interior Design Projects',
     projects: [
-      { name: 'Lonavala Valley Estate', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=580&fit=crop' },
-      { name: 'The Heritage Dwelling',        img: 'https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?w=380&h=260&fit=crop' },
-      { name: 'Skyline Penthouse',        img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=380&h=260&fit=crop' },
+      { name: 'Lonavala Valley Estate', img: '/assets/service-project1.jpg' },
+      { name: 'The Heritage Dwelling',        img: '/assets/service-project2.jpg' },
+      { name: 'Skyline Penthouse',        img: '/assets/service-project3.jpg' },
     ],
   },
   {
@@ -33,12 +33,12 @@ const SERVICES = [
       'Our bespoke lighting design services seamlessly blend aesthetics with performance, crafting tailored lighting schemes that complement the architecture, elevate the design narrative, and highlight the finer details of your space. Whether it\'s warm ambient lighting for a living room, dramatic accent lighting to showcase artwork, or precision task lighting for a kitchen, we create layers of light that enhance both the beauty and usability of each room.',
       'From new-build homes to thoughtful renovations or the redesign of a single room, we bring expertise, creativity, and technical know-how to every project. Working closely with you from concept to installation, our team ensures that every fixture, fitting, and light source contributes to a cohesive and beautifully lit environment—one that feels as good as it looks.',
     ],
-    fullWidthImg: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=1400&h=500&fit=crop',
+    fullWidthImg: '/assets/service-lighting-design.jpg',
     projectsLabel: 'Lighting Design Projects',
     projects: [
-      { name: 'Kodaikanal Retreat', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=580&fit=crop' },
-      { name: 'Bandra Luxury Apartment',       img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=380&h=260&fit=crop' },
-      { name: 'Contemporary Delhi Residence',         img: 'https://images.unsplash.com/photo-1618219944342-824e40a13285?w=380&h=260&fit=crop' },
+      { name: 'Kodaikanal Retreat', img: '/assets/service-project4.jpg' },
+      { name: 'Bandra Luxury Apartment',       img: '/assets/service-project5.jpg' },
+      { name: 'Contemporary Delhi Residence',         img: '/assets/service-project6.jpg' },
     ],
   },
   {
@@ -118,7 +118,7 @@ export default function ServicesPage() {
         {/* Right — hero photo */}
         <div className="iz" style={{ minHeight:'80vh' }}>
           <img
-            src="https://images.unsplash.com/photo-1618219944342-824e40a13285?w=900&h=1000&fit=crop&crop=top"
+            src="/assets/service-hero.jpg"
             alt="Interior design"
             style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }}
           />
