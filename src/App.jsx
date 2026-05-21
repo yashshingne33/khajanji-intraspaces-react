@@ -9,11 +9,11 @@ import AuthorPage  from './pages/AuthorPage'
 import NotFound    from './pages/NotFound'
 import AboutPage from './pages/AboutPage'
 import PortfolioPage from './pages/PortfolioPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
 import ServicesPage from './pages/ServicesPage'
 import ConstructionPage from './pages/ConstructionPage'
 import InteriorDesignPage from './pages/InteriorDesignPage'
 import LightingDesignPage from './pages/LightingDesignPage'
-// import MediaAwardsPage from './pages/MediaAwardsPage'
 import ContactPage from './pages/ContactPage'
 
 export default function App() {
@@ -23,18 +23,17 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
-          <Route path="portfolio" element={<PortfolioPage />} />  
+          <Route path="portfolio" element={<PortfolioPage />} /> 
+          <Route path="portfolio/:id" element={<ProjectDetailPage />} /> 
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/construction" element={<ConstructionPage />} />
           <Route path="services/interior-design" element={<InteriorDesignPage />} />
           <Route path="services/lighting-design" element={<LightingDesignPage />} />
-          {/* <Route path="media" element={<MediaAwardsPage />} /> */}
           <Route path="contact" element={<ContactPage />} />
           <Route path="blog"        element={<Archive />} />
           <Route path="blog/:slug"  element={<BlogPost />} />
           <Route path="author/:name" element={<AuthorPage />} />
           <Route path="search"      element={<SearchPage />} />
-          {/* Static pages: /about, /portfolio, /services, /media, /contact */}
           <Route path=":slug"       element={<PageView />} />
           <Route path="*"           element={<NotFound />} />
         </Route>

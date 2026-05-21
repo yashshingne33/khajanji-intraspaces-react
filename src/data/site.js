@@ -29,12 +29,11 @@ export const navLinks = [
     label: 'Services',
     to:    '/services',
     sub: [
-      { label: 'Construction',    to: '/services/construction' },
-      { label: 'Interior design', to: '/services/interior-design' },
-      { label: 'Lighting design', to: '/services/lighting-design' },
+      { label: '3D Architecture & Elevation',    to: '/services/construction' },
+      { label: 'Construction ', to: '/services/interior-design' },
+      { label: ' Interior Design', to: '/services/lighting-design' },
     ]
   },
-  // { label: 'Media & Awards',to: '/media' },
 ]
 
 // ── Static pages ─────────────────────────────────────────────────────────────
