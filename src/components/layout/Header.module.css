@@ -79,7 +79,6 @@
   font-size: 13.5px;
   font-weight: 400;
   letter-spacing: 0.04em;
-  /* color: rgba(0,0,0,0.78); */
   color: #fff;
   position: relative;
   padding-bottom: 2px;
@@ -116,6 +115,37 @@
   color: #000000;
 }
 
+/* ==========================================================================
+   NEW: About, Portfolio, Services ke liye Specific Black Font Styles
+   ========================================================================== */
+
+/* 1. Bina scroll kiye link color black karne ke liye */
+.header.darkFont:not(.scrolled) .navLink {
+  color: #0a0a0a;
+}
+
+.header.darkFont:not(.scrolled) .navLink:hover,
+.header.darkFont:not(.scrolled) .navLink.active {
+  color: #000000;
+}
+
+/* 2. Hover/Active hone par bottom underline bar ko black karne ke liye */
+.header.darkFont:not(.scrolled) .navLink::after {
+  background: #000000;
+}
+
+/* 3. Dropdown SVG arrow arrow ko black karne ke liye */
+.header.darkFont:not(.scrolled) .dropdownTrigger svg {
+  color: #0a0a0a;
+}
+
+/* 4. Hamburger lines ko light background wale page par black/dark rakhne ke liye */
+.header.darkFont .hamburger span {
+  background: #000000;
+}
+/* ========================================================================== */
+
+
 /* ── Dropdown ── */
 .navItem {
   position: relative;
@@ -131,7 +161,13 @@
 }
 
 .dropdownTrigger svg {
-  transition: transform 0.3s var(--ease);
+  color: #fff; /* Default color white kiya taaki hero me dikhe */
+  transition: transform 0.3s var(--ease), color var(--transition);
+}
+
+/* Jab header scroll ho tab arrow black ho jaye */
+.header.scrolled .dropdownTrigger svg {
+  color: #0a0a0a;
 }
 
 .navItem:hover .dropdownTrigger svg {
@@ -196,8 +232,13 @@
   display: block;
   width: 24px;
   height: 1.5px;
+  background: #ffffff; /* Isko default white kiya taaki dark hero image pe dikhe */
+  transition: transform 0.3s var(--ease), opacity 0.3s, background 0.4s;
+}
+
+/* Jab header scroll ho tab hamburger black ho jaye */
+.header.scrolled .hamburger span {
   background: #000000;
-  transition: transform 0.3s var(--ease), opacity 0.3s;
 }
 
 .hamburger.open span:nth-child(1) { transform: translateY(3.5px) rotate(45deg); }

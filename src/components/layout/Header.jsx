@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom' // <-- 1. useLocation import kiya
 import { navLinks } from '../../data/site.js'
 import styles from './Header.module.css'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  
+  const location = useLocation() // <-- 2. Current location get ki
+
+  // 3. Check karein ki kya user current me in teen pages par hai
+  const isDarkFontPage = ['/about', '/portfolio', '/services'].includes(location.pathname)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -22,7 +27,10 @@ export default function Header() {
 
   return (
     <>
-      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+      {/* 4. Yahan header ki className me conditions check karke styles.darkFont class ko append kiya */}
+      <header 
+        className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${isDarkFontPage ? styles.darkFont : ''}`}
+      >
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
           <img
             className={styles.logoImage}
@@ -87,6 +95,7 @@ export default function Header() {
         </div>
       </header>
 
+      {/* Mobile Menu Code (Unchanged) */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ''}`}>
         <nav>
           <ul>

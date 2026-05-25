@@ -56,12 +56,12 @@ const VALUES = [
 ]
 
 const TEAM = [
-  { name: 'Mikaele Mora',  role: 'Founder',              img: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&h=620&fit=crop&crop=face' },
-  { name: 'Isabela Core',  role: 'Interior designer',    img: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=620&fit=crop&crop=face' },
-  { name: 'Kevin Smith',   role: 'Interior designer',    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=620&fit=crop&crop=face' },
-  { name: 'Claris Hofman', role: 'Architect',            img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=620&fit=crop&crop=face' },
-  { name: 'Carmen Lopes',  role: 'Operations manager',   img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=620&fit=crop&crop=face' },
-  { name: 'Jack McLoren',  role: 'Engineer constructor', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=620&fit=crop&crop=face' },
+  { name: 'Mikaele Mora',  role: 'Founder',              img: '1.jpeg' },
+  { name: 'Isabela Core',  role: 'Interior designer',    img: '2.jpeg' },
+  { name: 'Kevin Smith',   role: 'Interior designer',    img: '3.jpeg' },
+  // { name: 'Claris Hofman', role: 'Architect',            img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=620&fit=crop&crop=face' },
+  // { name: 'Carmen Lopes',  role: 'Operations manager',   img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=620&fit=crop&crop=face' },
+  // { name: 'Jack McLoren',  role: 'Engineer constructor', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=620&fit=crop&crop=face' },
 ]
 
 const AWARDS = [
