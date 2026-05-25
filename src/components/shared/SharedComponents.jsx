@@ -360,8 +360,8 @@ export function Footer() {
               <text x="5" y="27" style={{ fontFamily:'sans-serif', fontSize:5, fill:'#0a0a0a' }}>Design Awards</text>
             </svg>
           </div>
-          <a href="mailto:hello@khajanjiinfraspaces.com" style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}>
-            hello@khajanjiinfraspaces.com
+          <a href="mailto: khajanjiinfraspaces@gmail.com" style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}>
+            khajanjiinfraspaces@gmail.com
           </a>
           <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
           <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:10 }}>+91 928 414 9958</p>

@@ -56,9 +56,9 @@ const VALUES = [
 ]
 
 const TEAM = [
-  { name: 'Mikaele Mora',  role: 'Founder',              img: '1.jpeg' },
-  { name: 'Isabela Core',  role: 'Interior designer',    img: '2.jpeg' },
-  { name: 'Kevin Smith',   role: 'Interior designer',    img: '3.jpeg' },
+  { name: 'Lokesh Naktode',  role: 'Principal Architect',              img: '1.jpeg' },
+  { name: 'Ritesh Pande',  role: 'Business Development Manager',    img: '2.jpeg' },
+  { name: 'Ayush Tijare',   role: 'Interior designer',    img: '3.jpeg' },
   // { name: 'Claris Hofman', role: 'Architect',            img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=620&fit=crop&crop=face' },
   // { name: 'Carmen Lopes',  role: 'Operations manager',   img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=620&fit=crop&crop=face' },
   // { name: 'Jack McLoren',  role: 'Engineer constructor', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=620&fit=crop&crop=face' },
@@ -195,16 +195,16 @@ function Footer() {
             </svg>
           </div>
 
-          <a href="mailto:hello@khajanjiinfraspaces.com"
+          <a href="mailto: khajanjiinfraspaces@gmail.com"
             style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', marginBottom:2, borderBottom:'1px solid #0a0a0a', paddingBottom:1, width:'fit-content' }}
             onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
             onMouseLeave={e => e.currentTarget.style.opacity='1'}
-          >hello@khajanjiinfraspaces.com</a>
+          >khajanjiinfraspaces@gmail.com</a>
 
           <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
 
           <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:2 }}>
-            +91 928 414 9958
+            +91 93228 15523
           </p>
 
           <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />

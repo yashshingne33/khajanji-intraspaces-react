@@ -41,42 +41,47 @@ export default function Header() {
 
         <nav className={styles.nav} aria-label="Primary navigation">
           <ul>
-            {navLinks.map(({ label, to, sub }) => (
-              <li key={label} className={sub ? styles.navItem : ''}>
-                {sub ? (
-                  <div className={styles.dropdownTrigger}>
+            {navLinks.map(({ label, to, sub }) => {
+              // Yahan check kar rahe hain agar label 'Services' hai toh use 'Services & Expertise' dikhayein
+              const displayLabel = label.toLowerCase() === 'services' ? 'Services & Expertise' : label;
+              
+              return (
+                <li key={label} className={sub ? styles.navItem : ''}>
+                  {sub ? (
+                    <div className={styles.dropdownTrigger}>
+                      <NavLink
+                        to={to}
+                        className={({ isActive }) =>
+                          isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+                        }
+                      >
+                        {displayLabel}
+                      </NavLink>
+                      <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      <div className={styles.dropdownMenu}>
+                        {sub.map(s => (
+                          <Link key={s.to} to={s.to} className={styles.dropdownItem}>
+                            {s.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
                     <NavLink
                       to={to}
+                      end={to === '/'}
                       className={({ isActive }) =>
                         isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
                       }
                     >
-                      {label}
+                      {displayLabel}
                     </NavLink>
-                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    <div className={styles.dropdownMenu}>
-                      {sub.map(s => (
-                        <Link key={s.to} to={s.to} className={styles.dropdownItem}>
-                          {s.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <NavLink
-                    to={to}
-                    end={to === '/'}
-                    className={({ isActive }) =>
-                      isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
-                    }
-                  >
-                    {label}
-                  </NavLink>
-                )}
-              </li>
-            ))}
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -95,26 +100,31 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Code (Unchanged) */}
+      {/* Mobile Menu Code */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ''}`}>
         <nav>
           <ul>
-            {navLinks.map(({ label, to, sub }) => (
-              <li key={label}>
-                <Link to={to} className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
-                  {label}
-                </Link>
-                {sub && (
-                  <div className={styles.mobileSubMenu}>
-                    {sub.map(s => (
-                      <Link key={s.to} to={s.to} className={styles.mobileSubLink} onClick={() => setMenuOpen(false)}>
-                        {s.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </li>
-            ))}
+            {navLinks.map(({ label, to, sub }) => {
+              // Mobile menu me bhi same change apply kiya
+              const displayLabel = label.toLowerCase() === 'services' ? 'Services & Expertise' : label;
+              
+              return (
+                <li key={label}>
+                  <Link to={to} className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
+                    {displayLabel}
+                  </Link>
+                  {sub && (
+                    <div className={styles.mobileSubMenu}>
+                      {sub.map(s => (
+                        <Link key={s.to} to={s.to} className={styles.mobileSubLink} onClick={() => setMenuOpen(false)}>
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <Link to="/contact" className="btn" onClick={() => setMenuOpen(false)}>
