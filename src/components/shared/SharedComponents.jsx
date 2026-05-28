@@ -301,41 +301,6 @@ export function Footer() {
   return (
     <footer style={{ background:'#fff' }}>
 
-      {/* Logo row */}
-      <div style={{ padding:'36px 48px 0', display:'flex', alignItems:'center' }}>
-        <img
-          src="/assets/logo.jpeg"
-          alt="Khajanji Infraspaces"
-          style={{ height: '30px', width: 'auto', display: 'block' }}
-        />
-      </div>
-
-      <div style={{ margin:'20px 0 0', borderTop:'1px solid #e4e2dc' }} />
-
-      {/* Nav + social */}
-      <div style={{ padding:'18px 48px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:16 }}>
-        <nav style={{ display:'flex', gap:32, flexWrap:'wrap' }}>
-          {[['Studio','/about'],['Services','/services'],['Portfolio','/portfolio'],['Reviews','/reviews'],['Journal','/journal']].map(([l,to]) => (
-            <Link key={to} to={to}
-              style={{ fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:300, color:'#0a0a0a', textDecoration:'none', opacity:0.75 }}
-              onMouseEnter={e => e.currentTarget.style.opacity='1'}
-              onMouseLeave={e => e.currentTarget.style.opacity='0.75'}
-            >{l}</Link>
-          ))}
-        </nav>
-        <div style={{ display:'flex', gap:16, alignItems:'center' }}>
-          {SOCIAL.map(s => (
-            <a key={s.label} href="#" aria-label={s.label}
-              style={{ color:'#8a8880', display:'flex', alignItems:'center', textDecoration:'none' }}
-              onMouseEnter={e => e.currentTarget.style.color='#fff'}
-              onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
-            >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d={s.d}/></svg>
-            </a>
-          ))}
-        </div>
-      </div>
-
       <div style={{ borderTop:'1px solid #e4e2dc' }} />
 
       {/* Have something in mind + contact */}
@@ -353,12 +318,7 @@ export function Footer() {
         <div>
           {/* Awards badge */}
           <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:20 }}>
-            <svg width="32" height="24" viewBox="0 0 44 32" fill="none">
-              <rect x="1" y="1" width="42" height="30" stroke="#0a0a0a" strokeWidth="1.2"/>
-              <text x="5" y="12" style={{ fontFamily:'sans-serif', fontSize:7, fontWeight:700, fill:'#0a0a0a' }}>iac</text>
-              <text x="5" y="20" style={{ fontFamily:'sans-serif', fontSize:5, fill:'#0a0a0a' }}>Interior</text>
-              <text x="5" y="27" style={{ fontFamily:'sans-serif', fontSize:5, fill:'#0a0a0a' }}>Design Awards</text>
-            </svg>
+            
           </div>
           <a href="mailto: khajanjiinfraspaces@gmail.com" style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}>
             khajanjiinfraspaces@gmail.com
@@ -374,18 +334,7 @@ export function Footer() {
 
       <div style={{ borderTop:'1px solid #e4e2dc' }} />
 
-      {/* Copyright */}
-      <div style={{ padding:'14px 48px 24px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
-        <button onClick={() => window.scrollTo({ top:0, behavior:'smooth' })} style={{ background:'none', border:'none', cursor:'pointer', padding:4 }} aria-label="Back to top">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M7 13V1M2 6l5-5 5 5" stroke="#0a0a0a" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        <div style={{ display:'flex', gap:20 }}>
-          <span style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880' }}>© 2009 – 2026 ROYALSWEBTECH</span>
-          <a href="#" style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}>TERMS</a>
-        </div>
-      </div>
+      
     </footer>
   )
 }

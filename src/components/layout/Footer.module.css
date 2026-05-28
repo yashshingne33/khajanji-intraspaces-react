@@ -40,7 +40,7 @@
 .footer-underline {
   font-size: 12px;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: #111;
   text-decoration: underline;
   text-underline-offset: 4px;

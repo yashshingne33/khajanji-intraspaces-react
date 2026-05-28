@@ -6,8 +6,8 @@ export const siteInfo = {
   studioName:  'H. Architects',
   tagline:     'Beyond Architecture. Creating Experiences.',
   description: 'An award-winning architecture studio based in Zürich, working across residential, commercial, and cultural typologies worldwide.',
-  email:       'hello@khajanjiinfraspaces.com',
-  phone:       '+41 44 123 45 67',
+  email:       'khajanjiinfraspaces@gmail.com',
+  phone:       '+91 928 414 9958',
   address: {
     street: 'Bahnhofstrasse 42',
     city:   'Zürich',

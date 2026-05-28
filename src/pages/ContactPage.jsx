@@ -188,7 +188,7 @@ export default function ContactPage() {
             <p style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:14 }}>
               Get in touch
             </p>
-            <a href="mailto:hello@khajanjiinfraspaces.com"
+            <a href="mailto:khajanjiinfraspaces@gmail.com"
               style={{
                 display:'block',
                 fontFamily:"34px 'Outfit', sans-serif",
@@ -203,9 +203,9 @@ export default function ContactPage() {
               onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
               onMouseLeave={e => e.currentTarget.style.opacity='1'}
             >
-              hello@khajanjiinfraspaces.com
+              khajanjiinfraspaces@gmail.com
             </a>
-            <a href="tel:+12030405010"
+            <a href="tel:+919284149958"
               style={{
                 display:'block',
                 fontFamily:"34px 'Outfit', sans-serif",
@@ -302,7 +302,7 @@ export default function ContactPage() {
                   <Field
                     label="Your name"
                     name="name"
-                    placeholder="e.g. John Smith"
+                    placeholder="e.g. Yash Shingne"
                     value={form.name}
                     onChange={handleChange}
                   />
@@ -310,7 +310,7 @@ export default function ContactPage() {
                     label="Email address"
                     type="email"
                     name="email"
-                    placeholder="e.g. john@youremail.com"
+                    placeholder="e.g. yash@youremail.com"
                     value={form.email}
                     onChange={handleChange}
                   />

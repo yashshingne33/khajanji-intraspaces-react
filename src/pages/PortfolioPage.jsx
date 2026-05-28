@@ -271,220 +271,41 @@ export default function PortfolioPage() {
 
       {/* CTA Section Before Footer */}
       <section style={{ borderTop:'1px solid #e4e2dc', background:'#fff' }}>
-        {/* Logo Row */}
-        <div style={{ padding:'36px 48px 0', display:'flex', alignItems:'center' }}>
-          <img
-            src="/assets/logo.jpeg"
-            alt="Khajanji Infraspaces"
-            style={{ height:'30px', width:'auto', display:'block' }}
-          />
-        </div>
-
-        <div style={{ margin:'20px 0 0', borderTop:'1px solid #e4e2dc' }} />
-
-        {/* Nav + Social */}
-        <div
-          style={{
-            padding:'18px 48px',
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'space-between',
-            flexWrap:'wrap',
-            gap:16
-          }}
-        >
-          <nav style={{ display:'flex', gap:32, flexWrap:'wrap' }}>
-            {[
-              ['Studio','/about'],
-              ['Services','/services'],
-              ['Portfolio','/portfolio'],
-              ['Reviews','/reviews'],
-              ['Journal','/journal']
-            ].map(([l,to]) => (
-              <Link
-                key={to}
-                to={to}
-                style={{
-                  fontFamily:"'Outfit', sans-serif",
-                  fontSize:13,
-                  fontWeight:300,
-                  color:'#0a0a0a',
-                  textDecoration:'none',
-                  opacity:0.75
-                }}
-              >
-                {l}
-              </Link>
-            ))}
-          </nav>
-
-          <div style={{ display:'flex', gap:16, alignItems:'center' }}>
-            {SOCIAL_PATHS.map((s) => (
-              <a
-                key={s.label}
-                href="#"
-                aria-label={s.label}
-                style={{
-                  color:'#8a8880',
-                  display:'flex',
-                  alignItems:'center',
-                  textDecoration:'none'
-                }}
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                  <path d={s.d}/>
-                </svg>
-              </a>
-            ))}
-          </div>
-        </div>
 
         <div style={{ borderTop:'1px solid #e4e2dc' }} />
 
-        {/* Main CTA */}
-        <div
-          className="footer-cta-grid"
-          style={{
-            padding:'48px',
-            display:'grid',
-            gridTemplateColumns:'1fr 1fr',
-            gap:40,
-            alignItems:'start'
-          }}
-        >
-          <div>
-            <h2
-              style={{
-                fontFamily:"'Outfit', sans-serif",
-                fontSize:'clamp(1.8rem,3.5vw,3rem)',
-                fontWeight:400,
-                lineHeight:1.2,
-                marginBottom:28
-              }}
-            >
-              Have something in mind?<br />
-              Let's talk.
-            </h2>
-
-            <button
-              style={{
-                padding:'10px 22px',
-                background:'transparent',
-                border:'1px solid #0a0a0a',
-                fontFamily:"'Outfit', sans-serif",
-                fontSize:13,
-                cursor:'pointer'
-              }}
-            >
-              Request a call back
-            </button>
-          </div>
-
-          <div>
-            <a
-              href="mailto:khajanjiinfraspaces@gmail.com"
-              style={{
-                display:'block',
-                fontFamily:"'Outfit', sans-serif",
-                fontSize:11,
-                letterSpacing:'0.1em',
-                textTransform:'uppercase',
-                color:'#0a0a0a',
-                textDecoration:'none',
-                borderBottom:'1px solid #0a0a0a',
-                paddingBottom:1,
-                marginBottom:10,
-                width:'fit-content'
-              }}
-            >
-              khajanjiinfraspaces@gmail.com
-            </a>
-
-            <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
-
-            <p
-              style={{
-                fontFamily:"'Outfit', sans-serif",
-                fontSize:11,
-                letterSpacing:'0.1em',
-                textTransform:'uppercase',
-                color:'#0a0a0a',
-                marginBottom:10
-              }}
-            >
-              +91 93228 15523
-            </p>
-
-            <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
-
-            <p
-              style={{
-                fontFamily:"'Outfit', sans-serif",
-                fontSize:10,
-                letterSpacing:'0.08em',
-                textTransform:'uppercase',
-                color:'#0a0a0a',
-                lineHeight:1.65
-              }}
-            >
-              NAGPUR <br />
-              MAHARASHTRA
-            </p>
-          </div>
-        </div>
-
-        <div style={{ borderTop:'1px solid #e4e2dc' }} />
-
-        {/* Bottom Row */}
-        <div
-          style={{
-            padding:'14px 48px 24px',
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'space-between'
-          }}
-        >
+        {/* Have something in mind + contact */}
+      <div style={{ padding:'48px 48px 40px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:40, alignItems:'start' }}>
+        <div>
+          <h2 style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,3.5vw,3rem)', fontWeight:400, lineHeight:1.2, marginBottom:28 }}>
+            Have something in mind?<br />Let's talk.
+          </h2>
           <button
-            onClick={() => window.scrollTo({ top:0, behavior:'smooth' })}
-            style={{
-              background:'none',
-              border:'none',
-              cursor:'pointer',
-              padding:4
-            }}
-            aria-label="Back to top"
-          >
-            ↑
-          </button>
-
-          <div style={{ display:'flex', gap:20 }}>
-            <span
-              style={{
-                fontFamily:"'Outfit', sans-serif",
-                fontSize:10,
-                letterSpacing:'0.12em',
-                textTransform:'uppercase',
-                color:'#8a8880'
-              }}
-            >
-              © 2009 – 2026 ROYALSWEBTECH
-            </span>
-
-            <a
-              href="#"
-              style={{
-                fontFamily:"'Outfit', sans-serif",
-                fontSize:10,
-                letterSpacing:'0.12em',
-                textTransform:'uppercase',
-                color:'#8a8880',
-                textDecoration:'none'
-              }}
-            >
-              TERMS
-            </a>
-          </div>
+            style={{ padding:'10px 22px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', transition:'background 0.2s, color 0.2s', color:'#0a0a0a' }}
+            onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
+            onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#0a0a0a' }}
+          >Request a call back</button>
         </div>
+        <div>
+          {/* Awards badge */}
+          <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:20 }}>
+            
+          </div>
+          <a href="mailto: khajanjiinfraspaces@gmail.com" style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:1, marginBottom:10, width:'fit-content' }}>
+            khajanjiinfraspaces@gmail.com
+          </a>
+          <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
+          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:10 }}>+91 928 414 9958</p>
+          <div style={{ height:1, background:'#e4e2dc', marginBottom:10 }} />
+          <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
+            NAGPUR<br/>MAHARASHTRA
+          </p>
+        </div>
+      </div>
+
+
+        <div style={{ borderTop:'1px solid #e4e2dc' }} />
+        
       </section>
     </>
   )

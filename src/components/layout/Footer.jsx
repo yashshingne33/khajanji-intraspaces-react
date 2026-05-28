@@ -54,22 +54,20 @@ export default function Footer() {
           <div className={styles['footer-menu-grid']}>
             <ul className={styles['footer-menu']}>
               <li>ABOUT</li>
-              <li>PEOPLE</li>
-              <li>CAREER</li>
               <li>OUR PROCESS</li>
             </ul>
             <ul className={styles['footer-menu']}>
-              <li>SERVICES</li>
+              <li>SERVICES & Expertise</li>
               <li>PORTFOLIO</li>
-              <li>REVIEWS</li>
-              <li>MEDIA &amp; AWARDS</li>
+              {/* <li>REVIEWS</li> */}
+              
             </ul>
           </div>
         </div>
       </div>
 
       <div className={styles['footer-bottom']}>
-        <div className={styles['footer-bottom-left']}>&copy; @2026 ROYALSWEBTECH.PVT.LTD</div>
+        {/* <div className={styles['footer-bottom-left']}>&copy; @2026 ROYALSWEBTECH.PVT.LTD</div> */}
         <div className={styles['footer-social']}>
           <a
             href="https://instagram.com"
@@ -84,18 +82,6 @@ export default function Footer() {
             <FaInstagram size={14} />
           </a>
           <a
-            href="https://houzz.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Houzz"
-            className={styles['footer-icon']}
-            onMouseEnter={hoverIn}
-            onMouseLeave={hoverOut}
-            style={{ cursor: 'pointer' }}
-          >
-            <SiHouzz size={14} />
-          </a>
-          <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -107,18 +93,7 @@ export default function Footer() {
           >
             <FaFacebookF size={14} />
           </a>
-          <a
-            href="https://pinterest.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Pinterest"
-            className={styles['footer-icon']}
-            onMouseEnter={hoverIn}
-            onMouseLeave={hoverOut}
-            style={{ cursor: 'pointer' }}
-          >
-            <FaPinterestP size={14} />
-          </a>
+
         </div>
         <div
           className={styles['footer-arrow']}

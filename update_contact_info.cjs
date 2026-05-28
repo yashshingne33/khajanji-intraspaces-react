@@ -14,7 +14,7 @@ walkDir('./src', (filePath) => {
         let content = fs.readFileSync(filePath, 'utf8');
         let newContent = content
             .replace(/\+1 2030 4050 10/g, "+91 928 414 9958")
-            .replace(/info@khajanjis\.com/g, "hello@khajanjiinfraspaces.com")
+            .replace(/info@khajanjis\.com/g, "khajanjiinfraspaces@gmail.com")
             .replace(/VAMTAM/g, "ROYALSWEBTECH")
             .replace(/Mumbai,\s*Maharashtra(?:<br\s*\/?>|\\n)400001,\s*India/g, "NAGPUR<br/>MAHARASHTRA")
             .replace(/Mumbai,\s*Maharashtra\s*400001,\s*India/g, "NAGPUR, MAHARASHTRA")

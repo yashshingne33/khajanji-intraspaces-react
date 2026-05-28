@@ -10,7 +10,7 @@ export default function Header() {
   const location = useLocation() // <-- 2. Current location get ki
 
   // 3. Check karein ki kya user current me in teen pages par hai
-  const isDarkFontPage = ['/about', '/portfolio', '/services'].includes(location.pathname)
+  const isDarkFontPage = ['/about', '/portfolio', '/services','/contact'].includes(location.pathname)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
