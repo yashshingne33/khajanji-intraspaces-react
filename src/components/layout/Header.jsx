@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom' // <-- 1. useLocation import kiya
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { navLinks } from '../../data/site.js'
 import styles from './Header.module.css'
 
@@ -7,10 +7,10 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   
-  const location = useLocation() // <-- 2. Current location get ki
+  const location = useLocation()
 
-  // 3. Check karein ki kya user current me in teen pages par hai
-  const isDarkFontPage = ['/about', '/portfolio', '/services','/contact'].includes(location.pathname)
+  // Media page par bhi dark font apply karne ke liye array mein add kiya
+  const isDarkFontPage = ['/about', '/portfolio', '/services', '/contact', '/media'].includes(location.pathname)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -27,7 +27,6 @@ export default function Header() {
 
   return (
     <>
-      {/* 4. Yahan header ki className me conditions check karke styles.darkFont class ko append kiya */}
       <header 
         className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${isDarkFontPage ? styles.darkFont : ''}`}
       >
@@ -41,11 +40,13 @@ export default function Header() {
 
         <nav className={styles.nav} aria-label="Primary navigation">
           <ul>
-            {navLinks.map(({ label, to, sub }) => {
-              // Yahan check kar rahe hain agar label 'Services' hai toh use 'Services & Expertise' dikhayein
+            {navLinks.reduce((acc, currentLink) => {
+              const { label, to, sub } = currentLink;
               const displayLabel = label.toLowerCase() === 'services' ? 'Services & Expertise' : label;
-              
-              return (
+              const isServices = label.toLowerCase() === 'services';
+
+              // 1. Pehle current link ko push karein
+              acc.push(
                 <li key={label} className={sub ? styles.navItem : ''}>
                   {sub ? (
                     <div className={styles.dropdownTrigger}>
@@ -81,7 +82,25 @@ export default function Header() {
                   )}
                 </li>
               );
-            })}
+
+              // 2. Agar current link "Services" hai, toh uske turant baad Media li push karein (same level par)
+              if (isServices) {
+                acc.push(
+                  <li key="media-desktop">
+                    <NavLink
+                      to="/media"
+                      className={({ isActive }) =>
+                        isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+                      }
+                    >
+                      Media
+                    </NavLink>
+                  </li>
+                );
+              }
+
+              return acc;
+            }, [])}
           </ul>
         </nav>
 
@@ -104,12 +123,14 @@ export default function Header() {
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ''}`}>
         <nav>
           <ul>
-            {navLinks.map(({ label, to, sub }) => {
-              // Mobile menu me bhi same change apply kiya
+            {navLinks.reduce((acc, currentLink) => {
+              const { label, to, sub } = currentLink;
               const displayLabel = label.toLowerCase() === 'services' ? 'Services & Expertise' : label;
-              
-              return (
-                <li key={label}>
+              const isServices = label.toLowerCase() === 'services';
+
+              // Mobile list item push karein
+              acc.push(
+                <li key={`mobile-${label}`}>
                   <Link to={to} className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
                     {displayLabel}
                   </Link>
@@ -124,7 +145,20 @@ export default function Header() {
                   )}
                 </li>
               );
-            })}
+
+              // Mobile mein bhi Services ke just baad Media item push karein
+              if (isServices) {
+                acc.push(
+                  <li key="media-mobile">
+                    <Link to="/media" className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
+                      Media
+                    </Link>
+                  </li>
+                );
+              }
+
+              return acc;
+            }, [])}
           </ul>
         </nav>
         <Link to="/contact" className="btn" onClick={() => setMenuOpen(false)}>

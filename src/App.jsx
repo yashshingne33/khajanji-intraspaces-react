@@ -16,6 +16,9 @@ import InteriorDesignPage from './pages/InteriorDesignPage'
 import LightingDesignPage from './pages/LightingDesignPage'
 import ContactPage from './pages/ContactPage'
 
+// 1. Sabse pehle apne Media page component ko yahan import karein
+import Media from './pages/Media' // <-- Agar aapka folder structure alag hai toh path sahi kar lein (e.g., './pages/MediaPage')
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -30,10 +33,16 @@ export default function App() {
           <Route path="services/interior-design" element={<InteriorDesignPage />} />
           <Route path="services/lighting-design" element={<LightingDesignPage />} />
           <Route path="contact" element={<ContactPage />} />
+          
+          {/* 2. Media Route ko exact yahan add kiya hai (Dynamic Slugs se upar) */}
+          <Route path="media" element={<Media />} />
+
           <Route path="blog"        element={<Archive />} />
           <Route path="blog/:slug"  element={<BlogPost />} />
           <Route path="author/:name" element={<AuthorPage />} />
           <Route path="search"      element={<SearchPage />} />
+          
+          {/* Yeh dynamic routes humesha last mein hone chahiye */}
           <Route path=":slug"       element={<PageView />} />
           <Route path="*"           element={<NotFound />} />
         </Route>
