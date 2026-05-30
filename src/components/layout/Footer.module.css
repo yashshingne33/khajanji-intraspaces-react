@@ -1,9 +1,30 @@
 .footer {
-  background-color: #ffffff; /* Clean White Background */
-  color: #1a1a1a;            /* Dark Charcoal Text */
-  padding: 80px 0 40px 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background:
+    linear-gradient(
+    180deg,
+    #002db0 0%,
+    #001f7a 100%
+    );
+
+  color: white;
+  padding: 90px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "KH";
+  position: absolute;
+
+  right: -50px;
+  bottom: -120px;
+
+  font-size: 500px;
+  font-weight: 900;
+
+  color: rgba(255,255,255,0.03);
+
+  pointer-events: none;
 }
 
 .container {
@@ -16,7 +37,7 @@
 .topSection {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 40px;
+  gap: 70px;
   margin-bottom: 60px;
 }
 
@@ -27,15 +48,14 @@
 }
 
 .logo {
-  max-height: 50px;
-  width: auto;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  align-self: flex-start;
-  border-radius: 4px;
 }
 
 .tagline {
-  color: #666666;
+  color: rgba(255,255,255,0.82);
   font-size: 14px;
   line-height: 1.6;
   max-width: 280px;
@@ -43,12 +63,14 @@
 }
 
 .colTitle {
+  color: white;
+
   font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
   margin-bottom: 24px;
-  color: #1a1a1a;
+  text-transform: uppercase;
 }
 
 .menuList {
@@ -61,16 +83,11 @@
 }
 
 .menuList a {
-  color: #666666;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease, transform 0.3s ease;
-  display: inline-block;
+  color: rgba(255,255,255,0.75);
 }
 
 .menuList a:hover {
-  color: #000000;
-  transform: translateX(4px);
+  color: white;
 }
 
 .contactInfo {
@@ -79,29 +96,18 @@
   gap: 14px;
 }
 
-.contactLink {
-  color: #666666;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-  word-break: break-all; /* Mobile par lambi email layout se bahar na jaye */
+.contactLink,
+.address {
+  color: rgba(255,255,255,0.75);
 }
 
 .contactLink:hover {
   color: #000000;
 }
 
-.address {
-  color: #666666;
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0;
-}
-
 .divider {
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  margin-bottom: 30px;
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 .bottomSection {
@@ -126,43 +132,54 @@
 
 .socialGroup {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 14px;
 }
 
 .socialIcon {
-  color: #666666;
-  font-size: 18px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  width: 44px;
+  height: 44px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px; /* or 50% if you want circles */
+
+  color: #ffffff;
+  font-size: 18px;
+
+  transition: all 0.3s ease;
+}
+
+.socialIcon svg {
+  width: 28px;
+  height: 20px;
+
+  display: block;
 }
 
 .socialIcon:hover {
-  color: #000000;
+  background: white;
+  color: #0038c7;
   transform: translateY(-3px);
 }
 
 .scrollTopBtn {
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: #1a1a1a;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  background: white;
+  color: #0038c7;
+
+  border: none;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 6px;
 }
 
 .scrollTopBtn:hover {
-  background: #1a1a1a;
-  color: #ffffff;
-  border-color: #1a1a1a;
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 /* ==========================================================================

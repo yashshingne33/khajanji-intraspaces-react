@@ -8,36 +8,9 @@ import BuildPromo from '../components/home/BuildPromo'
 import Stats from '../components/home/Stats'
 import Portfolio from '../components/home/Portfolio'
 import CTABanner from '../components/home/CTABanner'
-// import Awards from '../components/home/Awards'
 import FounderQuote from '../components/home/FounderQuote'
 import MediaPress from '../components/home/MediaPress'
 
-// const SLIDES = [
-//   {
-//     tag:      'FEATURED PROJECT / 2024',
-//     title:    'Heise',
-//     subtitle: 'Beyond Architecture. Creating Experiences.',
-//     cta:      'View Project',
-//     href:     '/portfolio',
-//     bg:       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80',
-//   },
-//   {
-//     tag:      'RECENT PROJECT / 2024',
-//     title:    'Nordvik',
-//     subtitle: 'Where Form Meets Function.',
-//     cta:      'View Project',
-//     href:     '/portfolio',
-//     bg:       'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1600&q=80',
-//   },
-//   {
-//     tag:      'AWARD WINNER / 2023',
-//     title:    'Solaris',
-//     subtitle: 'Designing Tomorrow, Today.',
-//     cta:      'View Project',
-//     href:     '/portfolio',
-//     bg:       'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80',
-//   },
-// ]
 const SLIDES = [
   {
     tag: 'FEATURED PROJECT / 2024',
@@ -89,7 +62,7 @@ export default function HomePage() {
   }
 
   useEffect(() => {
-    intervalRef.current = setInterval(advance, 6000)
+    intervalRef.current = setInterval(advance, 3000)
     return () => clearInterval(intervalRef.current)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

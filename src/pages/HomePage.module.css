@@ -6,6 +6,7 @@
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
+  background: #000;
 }
 
 .slideBg {
@@ -291,10 +292,10 @@
   .stats           { grid-template-columns: repeat(2, 1fr); }
   .portfolioGrid   { grid-template-columns: 1fr; }
   .panelLines      { display: none; }
-  .heroContent     { bottom: 80px; }
-  .heroSubtitle    { bottom: 32px; font-size: 13px; }
-  .viewProject     { bottom: 60px; }
-  .dots            { bottom: 28px; }
+  .heroContent     { bottom: 80px; left: 20px; right: 20px; }
+  .heroSubtitle    { bottom: 32px; font-size: 13px; left: 20px; right: 20px; }
+  .viewProject     { bottom: 60px; right: 20px; }
+  .dots            { bottom: 28px; right: 20px; }
 }
 
 @media (max-width: 540px) {

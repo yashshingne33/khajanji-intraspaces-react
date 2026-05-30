@@ -10,8 +10,7 @@ export default function Header() {
   const location = useLocation()
 
   // Media page par bhi dark font apply karne ke liye array mein add kiya
-  const isDarkFontPage = ['/about', '/portfolio', '/services', '/contact', '/media'].includes(location.pathname)
-
+  
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -28,7 +27,7 @@ export default function Header() {
   return (
     <>
       <header 
-        className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${isDarkFontPage ? styles.darkFont : ''}`}
+        className={`${styles.header} ${scrolled ? styles.scrolled : ''} }`}
       >
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
           <img
@@ -105,7 +104,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.actions}>
-          <Link to="/contact" className="btn">
+          <Link to="/contact" className={styles.headerBtn}>
             Contact us
           </Link>
           <button
@@ -161,8 +160,8 @@ export default function Header() {
             }, [])}
           </ul>
         </nav>
-        <Link to="/contact" className="btn" onClick={() => setMenuOpen(false)}>
-          Contact us
+        <Link to="/contact" className={styles.mobileContactBtn} onClick={() => setMenuOpen(false)}>
+          Contact us →
         </Link>
       </div>
     </>

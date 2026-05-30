@@ -43,7 +43,7 @@
 }
 
 .mainTitle {
-  font-size: 48px;
+  font-size: clamp(28px, 6vw, 48px);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -1px;
@@ -387,12 +387,16 @@
     grid-template-columns: 1fr;
   }
   .mainTitle {
-    font-size: 34px;
+    letter-spacing: -0.5px;
   }
   .filterBar {
     gap: 20px;
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
   }
+  .filterBar::-webkit-scrollbar { display: none; }
 }

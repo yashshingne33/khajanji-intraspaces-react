@@ -52,7 +52,7 @@ export default function FounderQuote({ fadeUp }) {
         .founder-quote {
           background: #000000;
           color: #ffffff;
-          padding: 100px 40px;
+          padding: clamp(48px, 8vw, 100px) clamp(24px, 5vw, 40px);
           font-family: var(--font-body), sans-serif;
         }
 
@@ -72,7 +72,7 @@ export default function FounderQuote({ fadeUp }) {
 
         .founder-quote__img-left {
           width: 100%;
-          height: auto;
+          height: 100%;
           aspect-ratio: 3 / 4;
           object-fit: cover;
           display: block;
@@ -146,27 +146,56 @@ export default function FounderQuote({ fadeUp }) {
           opacity: 0.7;
         }
 
+        /* REPLACE the @media (max-width: 1100px) block with this: */
         @media (max-width: 1100px) {
-          .founder-quote__inner {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
-          
-          .founder-quote__col--middle {
-            order: -1;
-            padding: 0;
-            gap: 40px;
-          }
-
-          .desktop-break {
-            display: none;
-          }
-
-          .founder-quote__img-left,
-          .founder-quote__img-right {
-            aspect-ratio: 16 / 9;
-          }
+        .founder-quote__inner {
+          grid-template-columns: 1fr;
+          gap: 32px;
         }
+
+        .founder-quote__col--middle {
+          order: -1;
+          padding: 0;
+          gap: 32px;
+        }
+
+        .founder-quote__text-bottom {
+          margin-top: 32px;
+        }
+
+        .founder-quote__col--left {
+          margin-left: calc(-1 * clamp(24px, 5vw, 40px));
+          margin-right: calc(-1 * clamp(24px, 5vw, 40px));
+          width: calc(100% + 2 * clamp(24px, 5vw, 40px));
+        }
+
+        .founder-quote__img-left {
+          width: 100%;
+          height: auto;          /* ← let natural image height show fully */
+          max-height: 55vh;      /* ← never taller than 55% of screen height */
+          aspect-ratio: unset;   /* ← remove the 3/4 crop constraint */
+          object-fit: contain;   /* ← show the FULL image, no cropping at all */
+          object-position: center center;
+          display: block;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .founder-quote__quote {
+          font-size: 20px;
+        }
+
+        .founder-quote__img-left {
+          object-fit: contain;   /* keep full image visible on small phones too */
+        }
+
+        .founder-quote__text-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+          margin-top: 24px;
+        }
+      }
       `}</style>
     </motion.section>
   )
