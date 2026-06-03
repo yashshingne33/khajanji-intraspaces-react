@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import servicesStyles from './Services.module.css'
 import ServiceCard from './shared/ServiceCard'
 
@@ -41,19 +41,6 @@ const services = [
       </svg>
     ),
   },
-  // {
-  //   title: 'Structure & Arch Planning Services',
-  //   desc: 'Efficient structural and architectural planning ensuring durability, aesthetics, and functionality.',
-  //   icon: (
-  //     <svg className="service-icon" viewBox="0 0 120 48" aria-hidden="true">
-  //       <path d="M12 34h96" />
-  //       <path d="M26 34V18" />
-  //       <path d="M46 34V14" />
-  //       <path d="M66 34V20" />
-  //       <path d="M86 34V16" />
-  //     </svg>
-  //   ),
-  // },
   {
     title: 'Digital Marketing and Branding Services',
     desc: 'Strategic digital solutions to enhance brand presence and reach the right audience effectively.',
@@ -83,54 +70,92 @@ const services = [
 export default function Services({ fadeUp }) {
   const scrollRef = useRef(null)
 
-  const scrollBy = direction => {
-    if (!scrollRef.current) return
-    const amount = 320
-    scrollRef.current.scrollBy({ left: direction * amount, behavior: 'smooth' })
-  }
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+
+    let animationId
+    const speed = 1
+
+    const scroll = () => {
+      container.scrollLeft += speed
+
+      if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+        container.scrollLeft = 0
+      }
+      animationId = requestAnimationFrame(scroll)
+    }
+
+    animationId = requestAnimationFrame(scroll)
+
+    const stopScroll = () => cancelAnimationFrame(animationId)
+    const restartScroll = () => {
+      cancelAnimationFrame(animationId)
+      animationId = requestAnimationFrame(scroll)
+    }
+
+    container.addEventListener('mouseenter', stopScroll)
+    container.addEventListener('mouseleave', restartScroll)
+    container.addEventListener('touchstart', stopScroll)
+    container.addEventListener('touchend', restartScroll)
+
+    return () => {
+      cancelAnimationFrame(animationId)
+      container.removeEventListener('mouseenter', stopScroll)
+      container.removeEventListener('mouseleave', restartScroll)
+      container.removeEventListener('touchstart', stopScroll)
+      container.removeEventListener('touchend', restartScroll)
+    }
+  }, [])
 
   return (
     <motion.section className={servicesStyles.services} id="our-services" {...fadeUp}>
-      <p className="section-label">OUR SERVICES</p>
+      <p className="section-label-centered">OUR SERVICES</p>
 
       <div className="services-scroll-wrap">
-        <button
-          type="button"
-          className="services-arrow services-arrow--left"
-          onClick={() => scrollBy(-1)}
-          aria-label="Scroll services left"
-        >
-          &#8592;
-        </button>
-
         <div className="services-scroll" ref={scrollRef}>
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
+          {services.slice(0, 2).map((service, index) => (
+            <ServiceCard key={`${service.title}-clone-${index}`} service={service} index={index} />
+          ))}
         </div>
-
-        <button
-          type="button"
-          className="services-arrow services-arrow--right"
-          onClick={() => scrollBy(1)}
-          aria-label="Scroll services right"
-        >
-          &#8594;
-        </button>
       </div>
 
       <style>{`
+        #our-services {
+          padding-top: 16px;
+          padding-bottom: 24px;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+        /* "OUR SERVICES" हेडिंग को बड़ा और बोल्ड (High Highlight) किया गया */
+        .section-label-centered {
+          font-family: var(--font-display), sans-serif;
+          font-size: clamp(20px, 2.5vw, 30px); /* स्क्रीन के हिसाब से रेस्पॉन्सिव बड़ा साइज */
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          font-weight: 700; /* एक्स्ट्रा डार्क और बोल्ड लुक */
+          color: #000000;
+          text-align: center;
+          margin-top: 0;
+          margin-bottom: 36px; /* बड़े टेक्स्ट को बैलेंस करने के लिए नीचे का मार्जिन थोड़ा बढ़ाया */
+          width: 100%;
+        }
+
         .services-scroll-wrap {
           position: relative;
+          width: 100%;
+          overflow: hidden;
         }
 
         .services-scroll {
           display: flex;
           gap: 20px;
           overflow-x: auto;
-          scroll-behavior: smooth;
           padding: 12px 2px 20px;
-          scroll-snap-type: x mandatory;
         }
 
         .services-scroll::-webkit-scrollbar {
@@ -150,7 +175,6 @@ export default function Services({ fadeUp }) {
           border-radius: 0;
           box-shadow: none;
           transition: transform 0.3s ease, border-color 0.3s ease;
-          scroll-snap-align: start;
           position: relative;
           overflow: hidden;
         }
@@ -183,51 +207,24 @@ export default function Services({ fadeUp }) {
 
         .service-card p {
           margin: 0;
-          font-size: 14px;
+          font-size: 15px;
           color: #444;
           line-height: 1.7;
         }
 
-        .services-arrow {
-          position: absolute;
-          top: 12px;
-          width: 44px;
-          height: 44px;
-          border-radius: 50%;
-          border: 1px solid rgba(0, 0, 0, 0.18);
-          background: rgba(255, 255, 255, 0.65);
-          color: #000;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 18px;
-          cursor: pointer;
-          transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-          z-index: 2;
-          backdrop-filter: blur(6px);
-        }
-
-        .services-arrow--left {
-          left: -6px;
-        }
-
-        .services-arrow--right {
-          right: -6px;
-        }
-
-        .services-arrow:hover {
-          background: rgba(255, 255, 255, 0.9);
-          border-color: rgba(0, 0, 0, 0.35);
-          transform: translateY(-2px);
-        }
-
         @media (max-width: 600px) {
-          .services-arrow {
-            display: none;
+          #our-services {
+            padding-top: 12px;
+            padding-bottom: 16px;
+          }
+
+          .section-label-centered {
+            font-size: 18px; /* मोबाइल स्क्रीन पर भी अच्छा दिखेगा */
+            margin-bottom: 24px;
           }
 
           .service-card {
-            min-width: 85%;
+            min-width: 280px;
           }
         }
       `}</style>

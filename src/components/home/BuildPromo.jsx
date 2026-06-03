@@ -46,7 +46,7 @@ export default function BuildPromo({ fadeUp }) {
         .build-promo {
           width: 100%;
           position: relative;
-          background: #fff;
+          background: #111111;
           padding: 0;
           overflow: hidden;
         }
@@ -54,7 +54,7 @@ export default function BuildPromo({ fadeUp }) {
         .build-promo__bg {
           position: relative;
           width: 100%;
-          height: 80vh; /* Adjust height as needed */
+          height: 80vh;
           min-height: 600px;
           display: flex;
           align-items: flex-end;
@@ -68,6 +68,7 @@ export default function BuildPromo({ fadeUp }) {
           height: 100%;
           object-fit: cover;
           z-index: 1;
+          opacity: 0.45;
         }
 
         .build-promo__overlay {
@@ -76,7 +77,7 @@ export default function BuildPromo({ fadeUp }) {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+          background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);
           z-index: 2;
         }
 
@@ -103,19 +104,23 @@ export default function BuildPromo({ fadeUp }) {
           font-weight: 400;
           line-height: 1.2;
           margin: 0;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .build-promo__right-container {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          /* बटन को बिल्कुल नीचे (bottom border के पास) पुश करने के लिए */
+          justify-content: flex-end; 
           gap: 40px;
           position: relative;
+          height: 100%;
         }
 
         .build-promo__inset-wrapper {
           position: absolute;
-          bottom: 120%; /* Pushes it up from the bottom of the container */
+          bottom: 120%;
           right: 0;
           width: 350px;
           aspect-ratio: 1 / 1.1;
@@ -148,6 +153,8 @@ export default function BuildPromo({ fadeUp }) {
           text-decoration: none;
           position: relative;
           transition: transform 0.3s ease;
+          /* थोड़ा सा और नीचे खिसकाने के लिए मार्जिन सेट किया */
+          margin-bottom: -0px; 
         }
         
         .build-promo__cta::after {
@@ -168,11 +175,13 @@ export default function BuildPromo({ fadeUp }) {
           .build-promo__content {
             flex-direction: column;
             align-items: flex-start;
+            padding: 40px 24px;
           }
 
           .build-promo__right-container {
             width: 100%;
             align-items: flex-start;
+            justify-content: flex-start;
           }
           
           .build-promo__inset-wrapper {
@@ -181,6 +190,11 @@ export default function BuildPromo({ fadeUp }) {
             width: 80%;
             max-width: 400px;
             margin-bottom: 30px;
+          }
+
+          .build-promo__cta {
+            margin-bottom: 0;
+            margin-top: 12px; /* मोबाइल पर ये सुंदर गैप के साथ नीचे दिखेगा */
           }
         }
       `}</style>

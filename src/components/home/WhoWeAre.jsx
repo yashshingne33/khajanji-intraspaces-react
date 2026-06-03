@@ -22,77 +22,89 @@ export default function WhoWeAre({ fadeUp }) {
       <style>{`
         .who-we-are {
           background: #ffffff;
-          padding: 120px 40px 80px 40px;
+          /* नीचे की स्पेसिंग (padding-bottom) को 20px से बढ़ाकर 50px किया ताकि लिंक के नीचे परफेक्ट गैप मिले */
+          padding: 60px 40px 50px 40px;
           max-width: 1400px;
           margin: 0 auto;
           color: #000;
-          font-family: var(--font-body), sans-serif;
+          font-family: var(--font-display), sans-serif; 
         }
 
         .who-we-are__inner {
           display: flex;
           flex-direction: column;
-          gap: 30px;
+          align-items: center; 
+          text-align: center;
+          gap: 24px;
         }
 
+        /* "WHO WE ARE" का फ़ॉन्ट साइज़ बढ़ाकर हाइलाइट किया */
         .who-we-are__kicker {
-          font-size: 12px;
-          letter-spacing: 0.2em;
+          font-size: clamp(16px, 2vw, 25px); /* मोबाइल पर 16px और डेस्कटॉप पर 20px */
+          letter-spacing: 0.15em;
           text-transform: uppercase;
-          font-weight: 500;
+          font-weight: 800;
           color: #000000;
         }
 
         .who-we-are__content {
           display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-          gap: 40px;
+          flex-direction: column; 
+          align-items: center;
+          justify-content: center;
+          gap: 24px; 
+          max-width: 1000px;
         }
 
         .who-we-are__text {
-          font-size: clamp(32px, 3.5vw, 42px);
-          font-weight: 300;
-          line-height: 1.35;
-          letter-spacing: -0.01em;
+          font-family: var(--font-display), sans-serif;
+          font-size: clamp(18px, 2.2vw, 26px);
+          font-weight: 400; 
+          line-height: 1.5;
+          letter-spacing: -0.015em;
           margin: 0;
           color: #000000;
         }
 
         .who-we-are__link-wrapper {
-          padding-bottom: 8px; /* Optically aligns with bottom line of text */
+          display: flex;
+          justify-content: center;
+          width: 100%;
         }
 
         .who-we-are__link {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          font-size: 14px;
-          font-weight: 500;
+          font-size: 15px;
+          font-weight: 600;
           color: #000;
           text-decoration: none;
-          border-bottom: 1px solid #dcdcdc;
-          padding-bottom: 4px;
-          transition: border-color 0.3s ease;
+          border-bottom: 2px solid #000000;
+          padding-bottom: 6px;
+          transition: opacity 0.3s ease;
           white-space: nowrap;
         }
         
         .who-we-are__link .arrow {
-          font-size: 16px;
-          font-weight: 300;
+          font-size: 18px;
+          font-weight: 400;
         }
 
         .who-we-are__link:hover {
-          border-color: #000;
+          opacity: 0.7;
         }
-
-        @media (max-width: 1000px) {
-          .who-we-are__content {
-            flex-direction: column;
-            align-items: flex-start;
+        
+        @media (max-width: 600px) {
+          .who-we-are {
+            /* मोबाइल के लिए भी नीचे का गैप बैलेंस किया */
+            padding: 40px 24px 36px 24px;
           }
-          .desktop-break {
-            display: none;
+          .who-we-are__kicker {
+            font-size: 16px;
+          }
+          .who-we-are__text {
+            font-size: 18px;
           }
         }
       `}</style>

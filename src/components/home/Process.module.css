@@ -1,8 +1,28 @@
 .process {
   background: #ffffff;
-  padding: var(--section-pad) 0;
+  /* ऊपर और नीचे की स्पेसिंग कम रखी ताकि सेक्शन्स आपस में जुड़े रहें */
+  padding-top: 16px;
+  padding-bottom: clamp(40px, 5vw, 64px);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
+/* "OUR PROCESS" लेबल को बड़ा, बोल्ड और स्क्रीन के बीच (Center) में लाने के लिए */
+:global(.section-label) {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(20px, 2.5vw, 24px); /* रेस्पॉन्सिव बड़ा साइज */
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700; /* एक्स्ट्रा बोल्ड और हाईलाइटेड लुक */
+  color: #000000;
+  text-align: center; /* मिडिल अलाइनमेंट */
+  margin-top: 0;
+  margin-bottom: 36px;
+  width: 100%;
+  display: block;
+}
+
+/* ग्रिड को सेंटर अलाइनमेंट के साथ बैलेंस रखने के लिए */
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -12,15 +32,16 @@
 
 .left {
   max-width: 640px;
+  width: 100%;
 }
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(24px, 2.8vw, 38px);
+  font-size: clamp(16px, 1.5vw, 20px);
   font-weight: 300;
-  line-height: 1.3;
+  line-height: 1.5;
   color: var(--color-text);
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .accordion {
@@ -125,9 +146,18 @@
 }
 
 @media (max-width: 600px) {
+  .process {
+    padding-top: 12px;
+  }
+
+  :global(.section-label) {
+    font-size: 18px; /* मोबाइल पर साइज बैलेंस किया */
+    margin-bottom: 24px;
+  }
+
   .heading {
-    font-size: 22px;
-    margin-bottom: 32px;
+    font-size: 16px;
+    margin-bottom: 24px;
   }
 
   .trigger {

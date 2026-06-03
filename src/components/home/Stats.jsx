@@ -5,8 +5,8 @@ import StatItem from './shared/StatItem'
 const STATS = [
   { value: '10+', label: 'Years of design and planning experience.' },
   { value: '20+', label: 'Projects across multiple real estate segments.' },
-  { value: '',  label: 'Expertise in Residential, Commercial, Plotted Projects, and Townships.' },
-  { value: '',  label: 'Focus on architecture, planning, and 3D visualization.' },
+  { value: '3+',  label: 'Expertise in Residential, Commercial, Plotted Projects, and Townships.' },
+  { value: '50+',  label: 'Focus on architecture, planning, and 3D visualization.' },
 ]
 
 export default function Stats({ fadeUp }) {
