@@ -49,27 +49,18 @@ const IconDouble = () => (
    DATA
 ───────────────────────────────────────────── */
 const VALUES = [
-  { Icon: IconArc,      title: 'Timeless quality',        accent: 'T', desc: 'We create enduring designs that outlast trends and remain relevant for years to come.' },
-  { Icon: IconTriangle, title: 'Modern functionality',    accent: 'M', desc: 'Every space is thoughtfully designed to be both beautiful and perfectly livable.' },
-  { Icon: IconArcSmall, title: 'Client-centered approach',accent: 'C', desc: 'Your vision leads the way — we listen, adapt, and design with your lifestyle in mind.' },
-  { Icon: IconDouble,   title: 'Conscious craftsmanship', accent: 'C', desc: 'We value sustainability and partner with artisans who share our commitment to ethical design.' },
+  { Icon: IconArc,      title: 'Design with purpose',       accent: 'D', desc: 'Every line, form, and layout must serve a function and enhance the human experience. We avoid trends for the sake of trends.' },
+  { Icon: IconTriangle, title: 'Create with integrity',    accent: 'C', desc: 'We honor materials, respect the environment, and build transparent, lasting relationships with our clients and partners.' },
+  { Icon: IconArcSmall, title: 'Plan with precision',accent: 'P', desc: 'Good design relies on rigorous logistics. We map out structural realities, timelines, and spaces down to the millimeter.' },
+  { Icon: IconDouble,   title: 'Visualize with clarity', accent: 'V', desc: 'We remove the guesswork. Through high-fidelity visualization, clients can confidently see, feel, and understand the future of their project.' },
+  { Icon: IconDouble,   title: 'Deliver with commitment', accent: 'D', desc: 'A beautiful concept means nothing without execution. We stay in the trenches until the physical reality matches the initial promise.' },
 ]
 
 const TEAM = [
-  { name: 'Ritesh Pande',  role: 'Business Development Manager',    img: '2.jpeg' },
+  { name: 'Piyush Khajanji',   role: 'Head of Architecture & Design',    img: '/assets/founder.jpg' },
+  { name: 'Ritesh Pande',  role: 'Business Development Manager',   img: '2.jpeg' },
   { name: 'Lokesh Naktode',  role: 'Principal Architect',              img: '1.jpeg' },
   { name: 'Ayush Tijare',   role: 'Interior designer',    img: '3.jpeg' },
-  // { name: 'Claris Hofman', role: 'Architect',            img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=620&fit=crop&crop=face' },
-  // { name: 'Carmen Lopes',  role: 'Operations manager',   img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=620&fit=crop&crop=face' },
-  // { name: 'Jack McLoren',  role: 'Engineer constructor', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=620&fit=crop&crop=face' },
-]
-
-const AWARDS = [
-  { year: '2025', title: 'Interior studio of the year' },
-  { year: '2025', title: 'Modern Luxury Interiors studio of the year' },
-  { year: '2025', title: 'Best luxury design' },
-  { year: '2025', title: 'Residential design interior design awards' },
-  { year: '2025', title: 'Residential interior design of the year' },
 ]
 
 const SOCIAL_ICONS = [
@@ -80,56 +71,19 @@ const SOCIAL_ICONS = [
 ]
 
 /* ─────────────────────────────────────────────
-            src="/assets/logo.jpeg"
-            alt="Khajanji Infraspaces"
-            style={{ height: '32px', width: 'auto', display: 'block' }}
-          />
-        </Link>
-        {NAV.map((l, i) => (
-          <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
-            style={{
-              fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2rem,6vw,4.5rem)',
-              fontWeight:400, lineHeight:1.2, color:'#0a0a0a', textDecoration:'none',
-              opacity: open ? 1 : 0,
-              transform: open ? 'translateY(0)' : 'translateY(20px)',
-              transition:`opacity 0.4s ease ${i*70}ms, transform 0.4s ease ${i*70}ms`,
-            }}
-            onMouseEnter={e => e.currentTarget.style.opacity='0.35'}
-            onMouseLeave={e => e.currentTarget.style.opacity='1'}
-          >{l.label}</Link>
-        ))}
-        <div style={{ marginTop:40, display:'flex', gap:24 }}>
-          {SOCIAL_ICONS.map(s => (
-            <a key={s.label} href="#"
-              style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.12em', textTransform:'uppercase', color:'#8a8880', textDecoration:'none' }}
-              onMouseEnter={e => e.currentTarget.style.color='#0a0a0a'}
-              onMouseLeave={e => e.currentTarget.style.color='#8a8880'}
-            >{s.label}</a>
-          ))}
-        </div>
-      </div>
-    </>
-  )
-}
-
-/* ─────────────────────────────────────────────
    FOOTER
 ───────────────────────────────────────────── */
 function Footer() {
   return (
     <footer style={{ background:'#fff', borderTop:'1px solid #e4e2dc' }}>
-
-      {/* ── Divider ── */}
       <div style={{ height:1, background:'#e4e2dc' }} />
-
-      {/* ── Main CTA + contact row ── */}
       <div style={{
         padding:'52px 48px 44px',
         display:'grid',
         gridTemplateColumns:'1fr 1fr',
         gap:40,
         alignItems:'start',
-      }}>
+      }} className="hg">
         <div>
           <h2 style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:400, lineHeight:1.18, marginBottom:28 }}>
             Have something in mind?<br />Let's talk.
@@ -151,9 +105,7 @@ function Footer() {
         </div>
 
         <div>
-          <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:24 }}>
-          </div>
-
+          <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:24 }}></div>
           <a href="mailto: khajanjiinfraspaces@gmail.com"
             style={{ display:'block', fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', textDecoration:'none', marginBottom:2, borderBottom:'1px solid #0a0a0a', paddingBottom:1, width:'fit-content' }}
             onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
@@ -161,22 +113,17 @@ function Footer() {
           >khajanjiinfraspaces@gmail.com</a>
 
           <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
-
           <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.1em', textTransform:'uppercase', color:'#0a0a0a', marginBottom:2 }}>
             +91 93228 15523
           </p>
 
           <div style={{ height:1, background:'#e4e2dc', margin:'10px 0' }} />
-
           <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.08em', textTransform:'uppercase', color:'#0a0a0a', lineHeight:1.65 }}>
             NAGPUR<br/>MAHARASHTRA
           </p>
         </div>
       </div>
-
-      {/* ── Divider ── */}
       <div style={{ height:1, background:'#e4e2dc' }} />
-
     </footer>
   )
 }
@@ -210,6 +157,9 @@ export default function AboutPage() {
         .iz img { display:block; transition: transform 0.75s cubic-bezier(.25,.46,.45,.94); }
         .iz:hover img { transform: scale(1.05); }
 
+        /* Uniform section padding token */
+        .section-pad { padding: 72px 48px; }
+
         @media (max-width: 900px) {
           .hg  { grid-template-columns: 1fr !important; }
           .hi  { height: 55vw !important; }
@@ -218,7 +168,7 @@ export default function AboutPage() {
           .ag  { grid-template-columns: 1fr !important; }
           .tg  { grid-template-columns: 1fr !important; gap: 48px !important; }
           .awg { grid-template-columns: 1fr !important; }
-          .pad { padding-left: 24px !important; padding-right: 24px !important; }
+          .section-pad { padding: 48px 24px !important; }
           /* Responsive Hero */
           .hero-grid { grid-template-columns: 1fr !important; }
           .hero-image { height: 60vh !important; }
@@ -226,46 +176,166 @@ export default function AboutPage() {
         }
       `}</style>
 
-      {/* Navbar removed — global layout Header is used */}
-
       {/* ── 1. HERO ─────────────────────────────── */}
-
-      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'100vh', fontFamily:'var(--font-sans)', background:'var(--color-background-primary)' }} className="hero-grid">
-      <div style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'80px 48px' }} className="hero-content">
-        <h1 style={{ fontSize:'clamp(4rem,3.5vw,3.2rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.02em', margin:'0 0 28px', color:'var(--color-text-primary)' }}>
-          Elevating interiors<br />
-          with lasting quality<br />
-          and modern vision
+      <section
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        minHeight: '100vh',
+        fontFamily: 'var(--font-sans)',
+        background: 'var(--color-background-primary)'
+      }}
+      className="hero-grid"
+    >
+      {/* Left — text */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          padding: '80px 48px'
+        }}
+        className="hero-content"
+      >
+        <h1
+          style={{
+            fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)',
+            fontWeight: 400,
+            lineHeight: 1.13,
+            letterSpacing: '-0.02em',
+            margin: '0 0 28px',
+            color: 'var(--color-text-primary)'
+          }}
+        >
+          Execution with Purpose
         </h1>
-        <p style={{ fontSize:16, lineHeight:1.8, color:'var(--color-text-secondary)', fontWeight:300, maxWidth:465, margin:0 }}>
-          Khajanji Infraspaces was founded out of a shared desire to create spaces that feel as good as they look — honest, balanced, and deeply personal. With a foundation in interior architecture and product design, the studio connects people to their environments through refined, purposeful design.
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.8,
+            color: 'var(--color-text-secondary)',
+            fontWeight: 300,
+            maxWidth: 465,
+            margin: 0
+          }}
+        >
+          Khajanji Infraspaces is an architecture and 3D designing firm in Nagpur,
+          Central India committed to shaping meaningful, well-planned, and inspiring
+          spaces for modern India. Built on a foundation of design integrity and
+          practical understanding, the firm has spent over a half a decade delivering
+          solutions that respond to both client aspirations and real-world development
+          needs. With experience across 20+ projects, we have worked on residential
+          apartments, commercial projects, plotted developments, and townships. Our
+          portfolio reflects versatility, creativity, and the ability to adapt our
+          design thinking to projects of different scales and purposes.
         </p>
       </div>
-      <div style={{ overflow:'hidden', height:'100vh' }} className="hero-image">
+
+      {/* Right — image */}
+      <div style={{ overflow: 'hidden', height: '100vh' }} className="hero-image">
         <img
           src="/assets/about.png"
           alt="Designer at work"
-          style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center top'
+          }}
         />
       </div>
     </section>
 
       {/* ── 2. PULL QUOTE ───────────────────────── */}
-      <section className="pad" style={{ padding:'110px 48px', display:'flex', justifyContent:'center' }}>
-        <p className="sr" style={{ fontFamily:"24px 'Outfit', sans-serif", fontSize:'clamp(1.3rem,2.4vw,1.85rem)', fontWeight:400, lineHeight:1.3, maxWidth:800, textAlign:'center' }}>
-          Every project begins with listening. We take the time to understand daily rhythms, personal values, and individual style. From that, we shape tailored interiors that reflect who you are — spaces that work quietly, beautifully, &amp; intuitively.
-        </p>
+      {/* ── OUR APPROACH ───────────────────────── */}
+<section className="section-pad">
+  <div
+    style={{
+      maxWidth: '1200px',
+      margin: '0 auto',
+    }}
+  >
+    <p
+      className="sr"
+      style={{
+        fontFamily: "'Outfit', sans-serif",
+        fontSize: '11px',
+        letterSpacing: '0.18em',
+        textTransform: 'uppercase',
+        color: '#8a8880',
+        marginBottom: '24px',
+      }}
+    >
+      Our Approach
+    </p>
+
+    <div
+      style={{
+        borderLeft: '2px solid #e4e2dc',
+        paddingLeft: '32px',
+      }}
+    >
+      <p
+        className="sr sr-d1"
+        style={{
+          fontFamily: "'Outfit', sans-serif",
+          fontSize: 'clamp(1.4rem, 2vw, 1.8rem)',
+          fontWeight: 400,
+          lineHeight: 1.6,
+          color: '#0a0a0a',
+          marginBottom: '24px',
+        }}
+      >
+        We are a design-driven firm that believes architecture is not just about structures, but about creating experiences. Every line, form, and space should have a purpose, and every design should reflect a deeper understanding of people, place, and progress. 
+        Our practice combines architecture, spatial planning, facade design, and high-quality 3D visualization to help clients see the future of their project with clarity.
+        We aim to turn concepts into compelling realities through a process that is thoughtful, collaborative, and detail-oriented.
+
+      </p>
+    </div>
+  </div>
+</section>
+
+      {/* ── 2b. VISION & MISSION SECTION ───────── */}
+      <section className="section-pad" style={{ borderTop: '1px solid #e4e2dc' }}>
+        <div className="hg" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'start' }}>
+          
+          {/* Vision Block */}
+          <div className="sr">
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8a8880', fontWeight: 400, marginBottom: 24 }}>
+              Our Vision
+            </p>
+            <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.5rem, 2.2vw, 1.85rem)', fontWeight: 400, lineHeight: 1.35, color: '#0a0a0a', marginBottom: 20, minHeight: '60px' }}>
+              Timeless, intelligent, and transformative spaces.
+            </h3>
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13.5, lineHeight: 1.8, color: '#666', fontWeight: 300, textAlign: 'justify' }}>
+              To become a trusted name in architecture and design by creating spaces that are timeless, intelligent, and transformative. We aspire to contribute to the built environment with work that improves living standards, enhances business presence, and supports community growth.
+            </p>
+          </div>
+
+          {/* Mission Block */}
+          <div className="sr sr-d1">
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8a8880', fontWeight: 400, marginBottom: 24 }}>
+              Our Mission
+            </p>
+            <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.5rem, 2.2vw, 1.85rem)', fontWeight: 400, lineHeight: 1.35, color: '#0a0a0a', marginBottom: 20, minHeight: '60px' }}>
+              Uniting creativity, utility, and concrete value.
+            </h3>
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13.5, lineHeight: 1.8, color: '#666', fontWeight: 300, textAlign: 'justify' }}>
+              To provide innovative architectural and 3D design solutions that unite creativity, utility, and value. We are committed to delivering designs that inspire confidence, communicate vision effectively, and support better decision-making for developers, businesses, and property stakeholders.
+            </p>
+          </div>
+
+        </div>
       </section>
 
       {/* ── 3. VALUES ───────────────────────────── */}
       <section style={{ background:'#f0efeb' }}>
         <div className="vg" style={{ display:'grid', gridTemplateColumns:'1fr 1fr' }}>
           <div className="iz" style={{ minHeight:600 }}>
-            <img src="/assets/studio-about.png"
-              alt="Studio atmosphere" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+            <img src="/assets/studio-about.png" alt="Studio atmosphere" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
           </div>
-          <div className="pad" style={{ padding:'64px 56px' }}>
-            <p className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:18 }}>Our values</p>
+          <div className="section-pad">
+            <p className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:18 }}>Our Core Values</p>
             <h2 className="sr sr-d1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.7rem,2.8vw,2.5rem)', fontWeight:400, lineHeight:1.26, marginBottom:40 }}>
               Driven by purpose,<br />designed with passion.<br />Integrity in every detail.
             </h2>
@@ -283,31 +353,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 4. GALLERY ──────────────────────────── */}
-      <section className="pad" style={{ padding:'80px 48px' }}>
-        <div className="gg" style={{ display:'grid', gridTemplateColumns:'1fr 1.85fr', gap:24 }}>
-          {[
-            { src:'/assets/about-team.png', alt:'Team meeting' },
-            { src:'/assets/about-consultation.png', alt:'Design consultation' },
-          ].map((img, i) => (
-            <div key={i} className={`sr sr-d${i + 1}`}>
-              <div className="iz" style={{ height:380 }}>
-                <img src={img.src} alt={img.alt} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+     {/* ── 4. GALLERY & WHAT SETS US APART ──────────────────────────── */}
+      <section className="section-pad">
+        <div className="gg" style={{ display: 'grid', gridTemplateColumns: '1fr 1.85fr', gap: 48, alignItems: 'start' }}>
+          
+          {/* Left Column: Narrative Content */}
+          <div className="sr" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#8a8880', fontWeight: 300, marginBottom: 16 }}>
+              What Sets Us Apart
+            </p>
+            <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', fontWeight: 400, lineHeight: 1.25, marginBottom: 24, color: '#0a0a0a' }}>
+              Thinking beyond drawings to build narratives.
+            </h3>
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 14, lineHeight: 1.75, color: '#444', fontWeight: 300, marginBottom: 16 }}>
+              What distinguishes Khajanji Infraspaces is our ability to think beyond drawings and create design narratives that connect concept, usability, and aspiration. We understand that in today's market, a project must not only be well-designed, but also well-presented and well-positioned.
+            </p>
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 14, lineHeight: 1.75, color: '#444', fontWeight: 300 }}>
+              Our integrated approach helps clients move from idea to visualization with confidence. From layout planning to 3D presentation, we bring structure to vision and elegance to execution.
+            </p>
+          </div>
+
+          {/* Right Column: Image Display Stack */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            {[
+              { src: '/assets/about-team.png', alt: 'Team meeting' },
+              { src: '/assets/about-consultation.png', alt: 'Design consultation' },
+            ].map((img, i) => (
+              <div key={i} className={`sr sr-d${i + 1}`}>
+                <div className="iz" style={{ height: 380, background: '#f5f5f3' }}>
+                  <img src={img.src} alt={img.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8a8880', marginTop: 12, fontWeight: 300 }}>
+                  Studio Process {i + 1}
+                </p>
               </div>
-              <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.14em', textTransform:'uppercase', color:'#8a8880', marginTop:12, fontWeight:300 }}>
-                Implemented more than 600 projects
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
+
         </div>
       </section>
 
-
-
-      {/* ── 7. TEAM ─────────────────────────────── */}
-      <section className="pad" style={{ padding: '120px 48px 140px', maxWidth: '1440px', margin: '0 auto' }}>
+      {/* ── 5. TEAM (All 4 Members in One Horizontal Line) ─────────────────────────────── */}
+      <section className="section-pad" style={{ borderTop: '1px solid #e4e2dc' }}>
+        
         {/* Top Header Block: Centered & Premium Editorial Layout */}
-        <div style={{ maxWidth: '720px', margin: '0 auto 80px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '720px', margin: '0 auto 64px', textAlign: 'center' }}>
           <p className="sr" style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8a8880', fontWeight: 400, marginBottom: 20 }}>
             The team
           </p>
@@ -319,12 +409,14 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Bottom Cards Block: Clean Horizontal Lineup */}
-        <div className="tg" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', alignItems: 'start' }}>
+        {/* Bottom Cards Block: 4 Columns Clean Horizontal Lineup */}
+        <div className="team-grid-fixed" style={{ display: 'grid', gap: '24px', alignItems: 'start' }}>
           {TEAM.map((m, i) => (
-            <div key={i} className={`sr sr-d${(i % 3) + 1}`} style={{ display: 'flex', flexDirection: 'column' }}>
+            <div key={i} className={`sr sr-d${(i % 4) + 1}`} style={{ display: 'flex', flexDirection: 'column' }}>
               <div className="iz" style={{ aspectRatio: '3/4', width: '100%', overflow: 'hidden', background: '#f5f5f3' }}>
-                <img src={m.img} alt={m.name}
+                <img 
+                  src={m.img.startsWith('/') || m.img.startsWith('http') ? m.img : `/${m.img}`} 
+                  alt={m.name}
                   style={{ 
                     width: '100%', 
                     height: '100%', 
@@ -347,9 +439,23 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+
+        <style>{`
+          .team-grid-fixed {
+            grid-template-columns: repeat(4, 1fr);
+          }
+          @media (max-width: 1024px) {
+            .team-grid-fixed {
+              grid-template-columns: repeat(2, 1fr) !important;
+            }
+          }
+          @media (max-width: 600px) {
+            .team-grid-fixed {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        `}</style>
       </section>
-
-
 
       <Footer />
     </>

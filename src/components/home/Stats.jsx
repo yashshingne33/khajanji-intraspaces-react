@@ -3,10 +3,10 @@ import styles from '../../pages/HomePage.module.css'
 import StatItem from './shared/StatItem'
 
 const STATS = [
-  { value: '10+', label: 'Years of experience' },
-  { value: '200+', label: 'Residential Projects Completed' },
-  { value: '100+',  label: 'Commercial Spaces Transformed' },
-  { value: '400+',  label: 'Serving Clients Nationwide' },
+  { value: '10+', label: 'Years of design and planning experience.' },
+  { value: '20+', label: 'Projects across multiple real estate segments.' },
+  { value: '',  label: 'Expertise in Residential, Commercial, Plotted Projects, and Townships.' },
+  { value: '',  label: 'Focus on architecture, planning, and 3D visualization.' },
 ]
 
 export default function Stats({ fadeUp }) {

@@ -5,23 +5,23 @@ import styles from './Process.module.css'
 const PROCESS_ITEMS = [
   {
     title: 'Step 1',
-    body: 'Preparing sketch plans & finalizing plans after discussion with Stakeholders.',
+    body: 'Consultation – We begin by understanding your vision, space requirements, budget, and functional goals to create the right design direction.',
   },
   {
     title: 'Step 2',
-    body: 'Handshaking on the plan and strategizing on the scope of the Project',
+    body: 'Concept Planning – We develop initial layouts, design ideas, and architectural concepts that align with your style and project purpose.',
   },
   {
     title: 'Step 3',
-    body: 'Designing the 3D universe with Arrangement, Unique Assets and other vital accessories for the project',
+    body: '3D Visualization – We turn ideas into realistic 3D views and design presentations so you can clearly see the final outcome before execution.',
   },
   {
     title: 'Step 4',
-    body: 'Final Meeting with stakeholders and updating few bits and pieces',
+    body: 'Design Development – We refine materials, details, space planning, and technical aspects to make the design practical, beautiful, and build-ready.',
   },
   {
     title: 'Step 5',
-    body: 'Deployment and handing over the Project with required Renders and Promo Videos.',
+    body: 'Execution Support – We guide the implementation process to help ensure the final space matches the approved design with quality and clarity.',
   },
 ]
 
@@ -39,7 +39,7 @@ export default function Process({ fadeUp }) {
           <div className={styles.left}>
             <p className="section-label">OUR PROCESS</p>
             <p className={styles.heading}>
-              Our process starts with the first conversation and continues through move-in, guided by a deep understanding of client goals and site-specific opportunities
+              Our expertise includes house planning, bungalow design, apartment layouts, office interiors, showroom interiors, 3D exterior design, 3D floor plans, and customized architectural solutions tailored to local market needs and Indian design preferences.
             </p>
 
             <div className={styles.accordion}>

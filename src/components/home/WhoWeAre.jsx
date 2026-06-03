@@ -9,7 +9,7 @@ export default function WhoWeAre({ fadeUp }) {
         
         <div className="who-we-are__content">
           <h2 className="who-we-are__text">
-            Khajanji Infraspaces is an award-winning modern architecture firm based in India. We specialize in contemporary design through our signature Natural Modern approach.
+            Designing spaces that inspire growth, elevate lifestyles, and shape enduring communities. With 10+ years of industry experience and 20+ successfully delivered projects, Khajanji Infraspaces brings together architecture, planning, and 3D design expertise for residential apartments, commercial developments, plotted layouts, and integrated townships. 
           </h2>
           <div className="who-we-are__link-wrapper">
             <Link to="/about" className="who-we-are__link">

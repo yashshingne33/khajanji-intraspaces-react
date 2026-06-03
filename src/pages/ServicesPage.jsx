@@ -9,15 +9,12 @@ import { Navbar, Footer, GLOBAL_CSS, useReveal } from '../components/shared/Shar
 const SERVICES = [
   {
     id: 'interior-design',
-    title: 'Interior design',
+    title: '3D Architecture & Elevation',
     to: '/services/interior-design',
     body: [
-      'Rooted in the heritage of Khajanji Infraspaces\'s product design and driven by a refined, intuitive eye for colour, our interior design team brings a unique, personal touch to every project. We specialise in creating spaces that are not only sophisticated and timeless, but also rich in texture, narrative, and meaning. Drawing inspiration from natural materials, harmonious palettes, and layered details, our award-winning interiors are designed to evoke emotion—each space carefully curated to feel lived-in, loved, and entirely bespoke.',
-      'Every project begins with a deep understanding of our clients—their lifestyles, aspirations, and aesthetic sensibilities. With a strong foundation in simplicity and a natural sense of visual order, our design philosophy centres on originality, authenticity, and considered elegance. We don\'t follow trends; we create enduring design stories that evolve with time and use.',
-      'At Khajanji Infraspaces, we live and breathe the belief that great design goes far beyond appearance. It has the power to improve lives—fostering well-being, sparking creativity, and cultivating spaces of calm, joy, and inspiration. Whether it\'s a quiet retreat or a vibrant family home, we design environments that support the way you live, work, and connect.',
-    ],
+      'We create photorealistic 3D architectural renderings, exterior elevation designs, and 3D floor plans that help homeowners, builders, and developers visualize projects before construction begins. Our designs combine modern aesthetics, functional layouts, and accurate detailing for residential, commercial, and real estate projects across Nagpur and India.'],
     fullWidthImg: '/assets/service-interior-design.jpg',
-    projectsLabel: 'Interior Design Projects',
+    projectsLabel: 'Architecture Design Projects',
     projects: [
       { name: 'Lonavala Valley Estate', img: '/assets/service-project1.jpg' },
       { name: 'The Heritage Dwelling',        img: '/assets/service-project2.jpg' },
@@ -25,48 +22,11 @@ const SERVICES = [
     ],
   },
   {
-    id: 'lighting-design',
-    title: 'Lighting design',
-    to: '/services/lighting-design',
-    body: [
-      'Lighting is one of the most powerful—and often underestimated—elements in interior design. It has the unique ability to shape atmosphere, influence mood, and define the way we experience and move through a space. At Khajanji Infraspaces, we see lighting not just as a functional necessity, but as a creative tool that brings interiors to life.',
-      'Our bespoke lighting design services seamlessly blend aesthetics with performance, crafting tailored lighting schemes that complement the architecture, elevate the design narrative, and highlight the finer details of your space. Whether it\'s warm ambient lighting for a living room, dramatic accent lighting to showcase artwork, or precision task lighting for a kitchen, we create layers of light that enhance both the beauty and usability of each room.',
-      'From new-build homes to thoughtful renovations or the redesign of a single room, we bring expertise, creativity, and technical know-how to every project. Working closely with you from concept to installation, our team ensures that every fixture, fitting, and light source contributes to a cohesive and beautifully lit environment—one that feels as good as it looks.',
-    ],
-    fullWidthImg: '/assets/service-lighting-design.jpg',
-    projectsLabel: 'Lighting Design Projects',
-    projects: [
-      { name: 'Kodaikanal Retreat', img: '/assets/service-project4.jpg' },
-      { name: 'Bandra Luxury Apartment',       img: '/assets/service-project5.jpg' },
-      { name: 'Contemporary Delhi Residence',         img: '/assets/service-project6.jpg' },
-    ],
-  },
-  {
-    id: 'bespoke-furnishings',
-    title: 'Bespoke furnishings',
-    to: '/services/interior-design',
-    body: [
-      'At Khajanji Infraspaces, we see furniture not simply as objects within a room, but as vital components of a larger design story—expressions of personal taste, functional artistry, and architectural harmony. Our bespoke furnishings service is born from a deep understanding of how interiors work, feel, and flow. It allows us to create truly custom pieces, tailored in every detail to suit your lifestyle, your space, and your aesthetic.',
-      'Whether it\'s a built-in library wall that transforms a study, a statement dining table designed for entertaining, or a perfectly proportioned sofa that completes your living room, each piece is conceived with intention and made to measure. No off-the-shelf solutions—just finely crafted, thoughtfully designed furniture that elevates everyday living.',
-      'We collaborate closely with you throughout the process, translating your vision into tangible design. Our in-house team works alongside trusted craftspeople and specialist makers, combining traditional joinery, hand-finishing techniques, and the finest materials—from solid hardwoods and natural veneers to hand-dyed leathers and richly textured fabrics.',
-      'The possibilities are limitless. From elegant integrated storage that blends seamlessly into the architecture to expressive, sculptural pieces that serve as focal points, our bespoke furnishings are built for beauty, purpose, and longevity.',
-    ],
-    fullWidthImg: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1400&h=500&fit=crop',
-    projectsLabel: 'Bespoke Furnishings Projects',
-    projects: [
-      { name: 'Mumbai Seaview Apartment', img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=580&fit=crop' },
-      { name: 'Colonial Heritage House',     img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=380&h=260&fit=crop' },
-      { name: 'Goa Coastal Villa',       img: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=380&h=260&fit=crop' },
-    ],
-  },
-  {
     id: 'construction',
-    title: 'Construction',
+    title: 'Construction & Development',
     to: '/services/construction',
     body: [
-      'Khajanji Infraspaces offers a comprehensive and fully integrated range of building and construction services—covering everything from expertly executed basement conversions and elegant house extensions to premium, high-spec fit-outs. Whether you\'re reimagining a single room or undertaking a large-scale structural transformation, we bring creativity, technical expertise, and an unwavering commitment to quality at every stage of the process.',
-      'Our approach is grounded in the principles that define every successful build: exceptional project management, rigorous quality control, and a team of skilled, trusted contractors who take pride in their craft. With extensive experience across residential and commercial projects, we know that the foundation of excellence lies in planning, precision, and the ability to anticipate and solve challenges before they arise.',
-      'At Khajanji Infraspaces, we deliberately limit the number of projects we take on simultaneously. This allows us to devote the time, attention, and resources each build deserves—ensuring that every detail is meticulously managed, every decision is well-informed, and every outcome exceeds expectations. From initial consultation through to final completion, our team maintains a hands-on, collaborative approach that keeps timelines on track and budgets firmly in place.',
+      'Our construction services cover end-to-end project execution from structural work to final finishes, ensuring quality, safety, and timely delivery. We partner with builders, developers, and homeowners to deliver residential homes, commercial buildings, and renovation projects with precision, transparency, and professional project management.',
     ],
     fullWidthImg: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&h=500&fit=crop',
     projectsLabel: 'Construction Projects',
@@ -74,6 +34,21 @@ const SERVICES = [
       { name: 'Pune Hillside Residence',     img: 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=400&h=580&fit=crop' },
       { name: 'The Royal Enclave', img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=380&h=260&fit=crop' },
       { name: 'Vasant Vihar Modern',        img: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=380&h=260&fit=crop' },
+    ],
+  },
+  {
+    id: 'Interior Design',
+    title: 'Interior Design',
+    to: '/services/interior-design',
+    body: [
+      'We design functional, aesthetically elevated interiors for homes, offices, showrooms, and hospitality spaces. From space planning and material selection to furniture, lighting, and decor, our interior solutions balance style, comfort, and practicality—tailored to your lifestyle, business needs, and budget.',
+    ],
+    fullWidthImg: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1400&h=500&fit=crop',
+    projectsLabel: 'Interior Design Projects',
+    projects: [
+      { name: 'Mumbai Seaview Apartment', img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=580&fit=crop' },
+      { name: 'Colonial Heritage House',     img: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=380&h=260&fit=crop' },
+      { name: 'Goa Coastal Villa',       img: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=380&h=260&fit=crop' },
     ],
   },
 ]
@@ -105,25 +80,73 @@ export default function ServicesPage() {
       {/* Navbar removed — global layout Header is used */}
 
       {/* ── HERO ── */}
-      <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'80vh' }} className="two-colHero">
-        {/* Left */}
-        <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', paddingTop:120, paddingBottom:80 }}>
-          <h1 className="fu1" style={{ fontFamily:"34px 'Outfit', sans-serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
-            Our services
-          </h1>
-          <p className="fu2" style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:340 }}>
-            From concept to completion, Khajanji Infraspaces delivers expert guidance across every phase of a project—from creative direction and detailed construction drawings to the full installation of rooms or entire buildings. We offer professional, experienced interior design services for homes, multi-family residences, lobbies, offices, medical spaces, retail stores, showrooms, and boutique hotels.
-          </p>
-        </div>
-        {/* Right — hero photo */}
-        <div className="iz" style={{ minHeight:'80vh' }}>
-          <img
-            src="/assets/service-hero.jpg"
-            alt="Interior design"
-            style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }}
-          />
-        </div>
-      </section>
+      <section
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        minHeight: '100vh',
+        fontFamily: 'var(--font-sans)',
+        background: 'var(--color-background-primary)'
+      }}
+      className="two-colHero"
+    >
+      {/* Left */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          padding: '80px 48px'
+        }}
+        className="pad"
+      >
+        <h1
+          className="fu1"
+          style={{
+            fontSize: 'clamp(4rem, 3.5vw, 3.2rem)',
+            fontWeight: 400,
+            lineHeight: 1.13,
+            letterSpacing: '-0.02em',
+            margin: '0 0 28px',
+            color: 'var(--color-text-primary)'
+          }}
+        >
+          Services & Expertise
+        </h1>
+        <p
+          className="fu2"
+          style={{
+            fontSize: 16,
+            lineHeight: 1.8,
+            color: 'var(--color-text-secondary)',
+            fontWeight: 300,
+            maxWidth: 465,
+            margin: 0
+          }}
+        >
+          From concept to completion, Khajanji Infraspaces delivers expert guidance
+          across every phase of a project — from creative direction and detailed
+          construction drawings to the full installation of rooms or entire buildings.
+          We offer professional, experienced interior design services for homes,
+          multi-family residences, lobbies, offices, medical spaces, retail stores,
+          showrooms, and boutique hotels.
+        </p>
+      </div>
+
+      {/* Right — hero photo */}
+      <div style={{ overflow: 'hidden', height: '100vh' }} className="iz">
+        <img
+          src="/assets/service-hero.jpg"
+          alt="Interior design"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center top'
+          }}
+        />
+      </div>
+    </section>
 
       {/* ── SERVICE SECTIONS  (repeat for each service) ── */}
       {SERVICES.map((svc, idx) => (
@@ -131,7 +154,7 @@ export default function ServicesPage() {
           {/* ── Service heading + body text ── */}
           <section className="pad" style={{ paddingTop:96, paddingBottom:64 }}>
             <div className="svc-body-grid">
-              {/* Left: title + Learn more */}
+              {/* Left: title +  more */}
               <div>
                 <h2 className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,3vw,2.8rem)', fontWeight:400, lineHeight:1.2, marginBottom:24, color:'#0a0a0a' }}>
                   {svc.title}
