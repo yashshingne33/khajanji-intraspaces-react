@@ -31,10 +31,8 @@ export default function MediaPress({ fadeUp }) {
       <div className="media-press__inner">
         
         <div className="media-press__header">
-          <div className="media-press__header-left">
-            <div className="media-press__kicker">MEDIA</div>
-            <h2 className="media-press__title">Media and press releases</h2>
-          </div>
+          <div className="media-press__kicker">MEDIA</div>
+          <h2 className="media-press__title">Media and press releases</h2>
           <Link to="/blog" className="media-press__read-all">
             Read all <span className="arrow">&#8594;</span>
           </Link>
@@ -70,46 +68,43 @@ export default function MediaPress({ fadeUp }) {
       </div>
 
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
         .media-press {
           background: #ffffff;
           padding: 100px 40px;
           color: #000000;
-          font-family: var(--font-body), sans-serif;
+          font-family: 'Cormorant Garamond', Garamond, 'Didot', 'Playfair Display', serif;
         }
 
         .media-press__inner {
-          max-width: 1400px;
+          max-width: 1200px;
           margin: 0 auto;
           display: flex;
           flex-direction: column;
-          gap: 60px;
+          gap: 50px;
         }
 
         .media-press__header {
           display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-          border-bottom: 1px solid transparent; /* Aligning just cleanly */
-        }
-
-        .media-press__header-left {
-          display: flex;
           flex-direction: column;
+          align-items: center;
+          text-align: center;
           gap: 16px;
         }
 
         .media-press__kicker {
-          font-size: 11px;
-          letter-spacing: 0.2em;
+          font-size: 13px;
+          letter-spacing: 0.3em;
           text-transform: uppercase;
-          font-weight: 500;
+          font-weight: 400;
           color: #000000;
         }
 
         .media-press__title {
-          font-size: clamp(32px, 4vw, 44px);
-          font-weight: 400;
-          line-height: 1.1;
+          font-size: clamp(34px, 4.5vw, 48px);
+          font-weight: 300;
+          line-height: 1.2;
           margin: 0;
           color: #000000;
         }
@@ -118,15 +113,16 @@ export default function MediaPress({ fadeUp }) {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          font-size: 14px;
-          font-weight: 500;
+          font-size: 15px;
+          font-weight: 400;
           color: #000;
           text-decoration: none;
           border-bottom: 1px solid #dcdcdc;
           padding-bottom: 4px;
           transition: border-color 0.3s ease;
           white-space: nowrap;
-          margin-bottom: 8px; /* Optically align with title baseline */
+          margin-top: 8px;
+          letter-spacing: 0.05em;
         }
 
         .media-press__read-all .arrow {
@@ -147,14 +143,16 @@ export default function MediaPress({ fadeUp }) {
         .media-card {
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          align-items: center; /* Content ko image box ke horizontally center karne ke liye */
+          text-align: center;   /* Text lines ko center align karne ke liye */
+          gap: 16px;
         }
 
         .media-card__img-wrapper {
           display: block;
           position: relative;
           overflow: hidden;
-          aspect-ratio: 4 / 5;
+          aspect-ratio: 16 / 10;
           width: 100%;
           background: #f0f0f0;
         }
@@ -174,18 +172,21 @@ export default function MediaPress({ fadeUp }) {
         .media-card__content {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          align-items: center; /* Inner components ke liye safe-guard center alignment */
+          gap: 6px;
         }
 
         .media-card__category {
           font-size: 12px;
           color: #888888;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
         }
 
         .media-card__title {
-          font-size: 20px;
+          font-size: 21px;
           font-weight: 400;
-          line-height: 1.35;
+          line-height: 1.4;
           margin: 0;
         }
 
@@ -200,13 +201,17 @@ export default function MediaPress({ fadeUp }) {
         }
 
         @media (max-width: 900px) {
-          .media-press__header {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 24px;
+          .media-press {
+            padding: 60px 20px;
+          }
+          .media-press__inner {
+            gap: 40px;
           }
           .media-press__grid {
             grid-template-columns: 1fr;
+            gap: 32px;
+            max-width: 450px;
+            margin: 0 auto;
           }
         }
       `}</style>

@@ -37,19 +37,22 @@ export default function FounderQuote({ fadeUp }) {
       </div>
 
       <style>{`
+        /* Premium Serif Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
         .founder-quote {
-          background: #000000; 
-          color: #ffffff;
-          padding: clamp(60px, 8vw, 120px) clamp(24px, 5vw, 60px);
-          font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          background: #E6E0D8; /* Even Darker Sophisticated Taupe/Warm Grey Accent */
+          color: #111111; 
+          padding: clamp(50px, 6vw, 80px) clamp(24px, 5vw, 60px); /* Reduced padding to make section short */
+          font-family: 'Cormorant Garamond', Garamond, 'Didot', 'Playfair Display', serif;
         }
 
         .founder-quote__inner {
-          max-width: 1200px;
+          max-width: 1100px; /* Locked down width slightly for a tighter block */
           margin: 0 auto;
           display: grid;
-          grid-template-columns: 1fr 1.2fr; 
-          gap: clamp(40px, 6vw, 100px);
+          grid-template-columns: 1fr 1.3fr; 
+          gap: clamp(30px, 4vw, 60px); /* Tighter spacing */
           align-items: center;
         }
 
@@ -61,157 +64,138 @@ export default function FounderQuote({ fadeUp }) {
 
         .founder-quote__col--left {
           overflow: hidden;
-          background: #000000; 
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .founder-quote__img {
           width: 100%;
+          max-width: 360px; /* Made image slightly more compact to keep section short */
           height: auto;
           aspect-ratio: 4 / 5; 
           object-fit: cover;
           object-position: top center;
           display: block;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06); 
         }
 
         .founder-quote__col--right {
           height: 100%;
-          justify-content: space-between;
-          padding: 20px 0;
+          justify-content: center; 
+          padding: 10px 0;
         }
 
         .founder-quote__quote {
-          font-size: clamp(20px, 2.2vw, 26px);
-          font-weight: 300;
-          line-height: 1.6;
+          font-size: clamp(20px, 2.2vw, 25px); /* Balanced text sizing */
+          font-weight: 300; 
+          line-height: 1.5;
           letter-spacing: -0.01em;
           margin: 0;
-          color: #e5e5e5; 
+          color: #111111; 
+          font-style: italic; 
         }
 
         .founder-quote__text-bottom {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          margin-top: clamp(40px, 5vw, 80px);
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-          padding-top: 24px;
+          margin-top: clamp(24px, 3.5vw, 40px); /* Reduced top margin to save height */
+          border-top: 1px solid rgba(0, 0, 0, 0.12); /* Slightly darker line for the new background contrast */
+          padding-top: 16px;
         }
 
         .founder-quote__identity {
           display: flex;
           flex-direction: column;
-          gap: 6px;
+          gap: 4px;
         }
 
         .founder-quote__name {
-          font-size: 16px;
-          font-weight: 500;
-          letter-spacing: 0.02em;
-          color: #ffffff;
+          font-size: 17px;
+          font-weight: 400;
+          letter-spacing: 0.04em;
+          color: #000000;
         }
 
         .founder-quote__title {
-          font-size: 13px;
+          font-size: 11px;
           font-weight: 400;
-          letter-spacing: 0.03em;
+          letter-spacing: 0.25em; 
           text-transform: uppercase;
-          color: #8e8e93;
+          color: #5E5D5A; /* High contrast muted shade */
         }
 
         .founder-quote__link {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
           font-size: 14px;
-          font-weight: 500;
-          color: #ffffff;
+          font-weight: 400;
+          color: #000000;
           text-decoration: none;
           transition: all 0.3s ease;
           white-space: nowrap;
           padding-bottom: 2px;
           border-bottom: 1px solid transparent;
+          letter-spacing: 0.05em;
         }
 
         .founder-quote__link .arrow {
-          font-size: 16px;
+          font-size: 15px;
           transition: transform 0.3s ease;
         }
 
         .founder-quote__link:hover {
-          color: #cccccc;
-          border-bottom: 1px solid #ffffff;
+          color: #444444;
+          border-color: #000000;
         }
 
         .founder-quote__link:hover .arrow {
           transform: translateX(4px);
         }
 
-        /* Responsive Breakpoints Fix */
+        /* Responsive UI Optimization */
         @media (max-width: 1024px) {
           .founder-quote {
             padding: 50px 32px;
           }
 
           .founder-quote__inner {
-            grid-template-columns: 1fr; /* Stacks layout to single column */
-            gap: 36px;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            text-align: center;
           }
 
           .founder-quote__col--left {
-            /* Pulls image out slightly to align look on sub-desktop devices */
-            margin-left: -12px;
-            margin-right: -12px;
-            width: calc(100% + 24px);
+            margin: 0 auto;
           }
 
           .founder-quote__img {
-            width: 100%;
-            height: auto;
-            max-height: 45vh;      /* Limits height so the image doesn't drown out the screen */
-            aspect-ratio: auto;    /* FIX: Removes the forced 16/10 landscape constraint cutting the head */
-            object-fit: contain;   /* FIX: Forces the entire image file to be fully visible */
-            object-position: center center;
+            max-height: 35vh; /* Reduced mobile height to keep it snappy */
+            object-fit: cover;
           }
 
-          .founder-quote__col--right {
-            padding: 0;
+          .founder-quote__text-bottom {
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-top: 24px;
+          }
+          
+          .founder-quote__link {
+            align-self: center;
           }
         }
 
         @media (max-width: 640px) {
           .founder-quote {
-            padding: 40px 24px;
-          }
-
-          .founder-quote__inner {
-            gap: 28px;
-          }
-
-          .founder-quote__col--left {
-            margin-left: -24px;
-            margin-right: -24px;
-            width: calc(100% + 48px);
-          }
-
-          .founder-quote__img {
-            max-height: 40vh; /* Scaled perfectly for small mobile viewports */
+            padding: 40px 20px;
           }
 
           .founder-quote__quote {
-            font-size: 18px;
-            line-height: 1.55;
-          }
-
-          .founder-quote__text-bottom {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 24px;
-            margin-top: 24px;
-            padding-top: 20px;
-          }
-
-          .founder-quote__link {
-            align-self: flex-start;
+            font-size: 19px;
+            line-height: 1.5;
           }
         }
       `}</style>

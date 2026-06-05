@@ -18,22 +18,27 @@ export default function CTABanner({ fadeUp }) {
       </div>
 
       <style>{`
+        /* Premium Serif Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
         .cta-banner {
           position: relative;
-          min-height: 80vh;
+          min-height: 50vh; /* Section height ko medium aur standard kiya */
           display: flex;
-          align-items: stretch;
+          align-items: center; /* Vertically middle align */
+          justify-content: center; /* Horizontally center align */
           background-image: url('/assets/cta-background.jpg');
           background-size: cover;
           background-position: center;
-          padding: 56px 6vw;
+          padding: 80px 40px;
           color: #fff;
+          font-family: 'Cormorant Garamond', Garamond, 'Didot', 'Playfair Display', serif;
         }
 
         .cta-banner__overlay {
           position: absolute;
           inset: 0;
-          background: rgba(0, 0, 0, 0.3);
+          background: rgba(0, 0, 0, 0.45); /* High-end contrast ke liye subtle dark overlay */
           z-index: 1;
         }
 
@@ -41,55 +46,62 @@ export default function CTABanner({ fadeUp }) {
           position: relative;
           z-index: 2;
           display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
+          flex-direction: column; /* Content ko image box ke hisab se stacking di */
+          align-items: center;    /* Horizontally bilkul center */
+          text-align: center;     /* Text lines middle-aligned */
+          gap: 32px;
+          max-width: 800px;
           width: 100%;
         }
 
         .cta-banner__text {
-          max-width: 520px;
+          width: 100%;
         }
 
         .cta-banner__kicker {
-          font-size: 12px;
-          letter-spacing: 0.28em;
+          font-size: 13px;
+          letter-spacing: 0.3em; /* Image jaisa elegant spread space */
           text-transform: uppercase;
-          margin-bottom: 18px;
+          font-weight: 400;
+          margin-bottom: 16px;
+          color: rgba(255, 255, 255, 0.9);
         }
 
         .cta-banner__headline {
-          font-size: clamp(36px, 6vw, 64px);
-          font-weight: 400;
+          font-size: clamp(36px, 5vw, 56px);
+          font-weight: 300; /* Serif styling ke liye delicate light weight */
+          line-height: 1.2;
           margin: 0;
+          color: #ffffff;
         }
 
         .cta-banner__button {
-          background: #fff;
-          color: #000;
-          padding: 12px 24px;
+          background: #ffffff;
+          color: #000000;
+          padding: 14px 36px;
           text-decoration: none;
-          border: 1px solid #fff;
+          border: 1px solid #ffffff;
           font-size: 14px;
-          letter-spacing: 0.04em;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          text-transform: uppercase; /* Button ko minimalist luxury look dene ke liye */
           transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         .cta-banner__button:hover {
-          background: rgba(255, 255, 255, 0.85);
-          color: #000;
-          border-color: rgba(255, 255, 255, 0.85);
+          background: transparent;
+          color: #ffffff;
+          border-color: #ffffff;
         }
 
         @media (max-width: 768px) {
           .cta-banner {
-            min-height: 70vh;
+            min-height: 40vh;
+            padding: 60px 20px;
           }
 
           .cta-banner__content {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 20px;
+            gap: 24px;
           }
         }
       `}</style>
