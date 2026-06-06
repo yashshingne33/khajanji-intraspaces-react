@@ -248,52 +248,52 @@ export default function AboutPage() {
 
       {/* ── 2. PULL QUOTE ───────────────────────── */}
       {/* ── OUR APPROACH ───────────────────────── */}
-<section className="section-pad">
-  <div
-    style={{
-      maxWidth: '1200px',
-      margin: '0 auto',
-    }}
-  >
-    <p
-      className="sr"
-      style={{
-        fontFamily: "'Outfit', sans-serif",
-        fontSize: '11px',
-        letterSpacing: '0.18em',
-        textTransform: 'uppercase',
-        color: '#8a8880',
-        marginBottom: '24px',
-      }}
-    >
-      Our Approach
-    </p>
+      <section className="section-pad">
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+          }}
+        >
+          <p
+            className="sr"
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: '11px',
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#8a8880',
+              marginBottom: '24px',
+            }}
+          >
+            Our Approach
+          </p>
 
-    <div
-      style={{
-        borderLeft: '2px solid #e4e2dc',
-        paddingLeft: '32px',
-      }}
-    >
-      <p
-        className="sr sr-d1"
-        style={{
-          fontFamily: "'Outfit', sans-serif",
-          fontSize: 'clamp(1.4rem, 2vw, 1.8rem)',
-          fontWeight: 400,
-          lineHeight: 1.6,
-          color: '#0a0a0a',
-          marginBottom: '24px',
-        }}
-      >
-        We are a design-driven firm that believes architecture is not just about structures, but about creating experiences. Every line, form, and space should have a purpose, and every design should reflect a deeper understanding of people, place, and progress. 
-        Our practice combines architecture, spatial planning, facade design, and high-quality 3D visualization to help clients see the future of their project with clarity.
-        We aim to turn concepts into compelling realities through a process that is thoughtful, collaborative, and detail-oriented.
+          <div
+            style={{
+              borderLeft: '2px solid #e4e2dc',
+              paddingLeft: '32px',
+            }}
+          >
+            <p
+              className="sr sr-d1"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: 'clamp(1.4rem, 2vw, 1.8rem)',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                color: '#0a0a0a',
+                marginBottom: '24px',
+              }}
+            >
+              We are a design-driven firm that believes architecture is not just about structures, but about creating experiences. Every line, form, and space should have a purpose, and every design should reflect a deeper understanding of people, place, and progress. 
+              Our practice combines architecture, spatial planning, facade design, and high-quality 3D visualization to help clients see the future of their project with clarity.
+              We aim to turn concepts into compelling realities through a process that is thoughtful, collaborative, and detail-oriented.
 
-      </p>
-    </div>
-  </div>
-</section>
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── 2b. VISION & MISSION SECTION ───────── */}
       <section className="section-pad" style={{ borderTop: '1px solid #e4e2dc' }}>

@@ -11,20 +11,19 @@ const STEPS = [
 
 const COMMITMENT = [
   {
-    title: 'Superior Craftsmanship',
-    desc: 'We partner with only the most skilled artisans and tradespeople in India and from around the world.',
-    bullets: ['Over 1,000 businesses supported', 'Commitment to sustainability', 'Handmade furniture & human creations'],
+    title: 'Design Excellence',
+    // desc: 'We partner with only the most skilled artisans and tradespeople in India and from around the world.',
+    bullets: ['Custom space planning optimized for functionality and flow.', 'Thoughtful material, color, and finish selection suited to lifestyle and budget.', 'Lighting, furniture, and decor integration for cohesive aesthetics.'],
   },
   {
-    title: 'High-Quality Furnishings',
-    desc: 'We source from exclusive design galleries, top private brands and global suppliers.',
-    bullets: ['Global sourcing', 'Investment in quality', 'Discerning focus'],
+    title: 'Functionality & Comfort',
+    // desc: 'We source from exclusive design galleries, top private brands and global suppliers.',
+    bullets: ['Ergonomic layouts that enhance daily living.', 'Smart storage solutions and multi-functional design for modern living.', 'Climate-appropriate material choices for Nagpur\'s weather conditions.'],
   },
   {
-    title: 'Investment Value',
-    desc: 'Our designs are strategically tailored to maximise your property\'s appeal in the Indian luxury market.',
-    bullets: ['Timeless elegance & lasting value', 'Prioritise value creation', 'Strategic design approach'],
-  },
+    title: 'Client Satisfaction',
+    // desc: 'Our designs are strategically tailored to maximise your property\'s appeal in the Indian luxury market.',
+    bullets: ['Collaborative design process with regular client feedback and revisions.', 'Detailed execution drawings and vendor coordination for accurate implementation.', 'End-to-end project support from concept to final handover and styling.'],  },
 ]
 
 const EXPLORE = [
@@ -51,7 +50,7 @@ export default function InteriorDesignPage() {
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-colHero">
         <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', paddingTop:120, paddingBottom:80 }}>
           <h1 className="fu1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
-            Construction
+            Interior Design
           </h1>
           <p className="fu2" style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:320 }}>
             We offer interior design services for both residential and commercial spaces, ranging from small-scale updates to large, full-scope projects. We work exclusively with licensed contractors and are happy to provide free estimates.
@@ -62,10 +61,54 @@ export default function InteriorDesignPage() {
         </div>
       </section>
 
-      {/* ── PULL QUOTE ── */}
-      <PullQuote text="Our initial consultation includes a thoughtful discussion to understand how you plan to use the space, your style preferences, favourite colors, and overall vision. These insights guide every step of the design process to ensure a personalised and functional result." />
+      {/* ── OUR APPROACH ───────────────────────── */}
+      <section className="section-pad">
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            paddingTop: 64
+          }}
+        >
+          <p
+            className="sr"
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: '11px',
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#8a8880',
+              marginBottom: '24px',
+            }}
+          >
+            Our Approach
+          </p>
 
+          <div
+            style={{
+              borderLeft: '2px solid #e4e2dc',
+              paddingLeft: '32px',
+            }}
+          >
+            <p
+              className="sr sr-d1"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: 'clamp(1.4rem, 2vw, 1.8rem)',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                color: '#0a0a0a',
+                marginBottom: '24px',
+              }}
+            >
+              We start by listening deeply to understand your vision, functional needs, and budget, then translate those insights into thoughtful design and execution plans. Our multidisciplinary team combines architectural intelligence, 3D visualization, and construction expertise to ensure every project is beautiful, practical, and built to last. Through clear communication, detailed planning, and quality-focused execution, we deliver spaces that exceed expectations.
+            </p>
+          </div>
+        </div>
+      </section>
+      
       {/* ── PROCESS SECTION ── */}
+      <div className="pad" style={{ paddingTop: 64 }}></div>
       <ProcessSection
         label="The process"
         heading="Process of our interior renovation work"

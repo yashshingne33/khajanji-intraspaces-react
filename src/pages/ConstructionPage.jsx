@@ -11,19 +11,19 @@ const STEPS = [
 
 const COMMITMENT = [
   {
-    title: 'Superior Craftsmanship',
-    desc: 'We partner with only the most skilled artisans and tradespeople in India and from around the world.',
-    bullets: ['Over 1,000 businesses supported', 'Commitment to sustainability', 'Handmade furniture & human creations'],
+    title: 'Quality Execution',
+    // desc: 'We partner with only the most skilled artisans and tradespeople in India and from around the world.',
+    bullets: ['Structured construction process with strict quality checks at every stage.', 'Use of certified materials and skilled labor for durability and safety.', 'Adherence to timelines with transparent progress updates.'],
   },
   {
-    title: 'High-Quality Furnishings',
-    desc: 'We source from exclusive design galleries, top private brands and global suppliers.',
-    bullets: ['Global sourcing', 'Investment in quality', 'Discerning focus'],
+    title: 'Project Management',
+    // desc: 'We source from exclusive design galleries, top private brands and global suppliers.',
+    bullets: ['Dedicated project coordination from start to handover.', 'Budget tracking and cost optimization without compromising quality.', 'Coordination with architects, engineers, and vendors for seamless delivery.'],
   },
   {
-    title: 'Investment Value',
-    desc: 'Our designs are strategically tailored to maximise your property\'s appeal in the Indian luxury market.',
-    bullets: ['Timeless elegance & lasting value', 'Prioritise value creation', 'Strategic design approach'],
+    title: 'Client Trust',
+    // desc: 'Our designs are strategically tailored to maximise your property\'s appeal in the Indian luxury market.',
+    bullets: ['•	Transparent communication with regular site updates and documentation.', 'Professional supervision ensuring safety standards and compliance.', 'Post-completion support for warranty and maintenance guidance.'],
   },
 ]
 
@@ -51,7 +51,7 @@ export default function ConstructionPage() {
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-colHero">
         <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', paddingTop:120, paddingBottom:80 }}>
           <h1 className="fu1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
-            3D Architecture & Elevation 
+            Construction 
           </h1>
           <p className="fu2" style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:320 }}>
             Khajanji Infraspaces offers a comprehensive and fully integrated range of building and construction services—covering everything from expertly executed basement conversions and elegant house extensions to premium, high-spec fit-outs.
@@ -62,10 +62,54 @@ export default function ConstructionPage() {
         </div>
       </section>
 
-      {/* ── PULL QUOTE ── */}
-      <PullQuote text="Our approach is grounded in the principles that define every successful build: exceptional project management, rigorous quality control, and a team of skilled, trusted contractors who take pride in their craft." />
+      {/* ── OUR APPROACH ───────────────────────── */}
+      <section className="section-pad">
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            paddingTop: 64
+          }}
+        >
+          <p
+            className="sr"
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: '11px',
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#8a8880',
+              marginBottom: '24px',
+            }}
+          >
+            Our Approach
+          </p>
+
+          <div
+            style={{
+              borderLeft: '2px solid #e4e2dc',
+              paddingLeft: '32px',
+            }}
+          >
+            <p
+              className="sr sr-d1"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: 'clamp(1.4rem, 2vw, 1.8rem)',
+                fontWeight: 400,
+                lineHeight: 1.6,
+                color: '#0a0a0a',
+                marginBottom: '24px',
+              }}
+            >
+              We start by listening deeply to understand your vision, functional needs, and budget, then translate those insights into thoughtful design and execution plans. Our multidisciplinary team combines architectural intelligence, 3D visualization, and construction expertise to ensure every project is beautiful, practical, and built to last. Through clear communication, detailed planning, and quality-focused execution, we deliver spaces that exceed expectations.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── PROCESS SECTION ── */}
+      <div className="pad" style={{ paddingTop: 64 }}></div>
       <ProcessSection
         label="The process"
         heading="Delivering excellence from concept to completion"

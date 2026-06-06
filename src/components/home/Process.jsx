@@ -25,7 +25,7 @@ const PROCESS_ITEMS = [
   },
 ]
 
-export default function Process({ fadeUp }) {
+export default function Process({ fadeUp, items = PROCESS_ITEMS }) {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const toggle = index => {
@@ -43,7 +43,7 @@ export default function Process({ fadeUp }) {
             </p>
 
             <div className={styles.accordion}>
-              {PROCESS_ITEMS.map((item, index) => {
+              {items.map((item, index) => {
                 const isOpen = activeIndex === index
                 const hasBody = Boolean(item.body)
                 const contentId = `process-panel-${index}`

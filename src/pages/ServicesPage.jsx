@@ -2,29 +2,28 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, Footer, GLOBAL_CSS, useReveal } from '../components/shared/SharedComponents'
+import Process from '../components/home/Process'
 
 /* ─────────────────────────────────────────────
    SERVICE SECTIONS DATA
 ───────────────────────────────────────────── */
 const SERVICES = [
   {
-    id: 'interior-design',
+    id: 'architecture',
     title: '3D Architecture & Elevation',
-    to: '/services/interior-design',
     body: [
       'We create photorealistic 3D architectural renderings, exterior elevation designs, and 3D floor plans that help homeowners, builders, and developers visualize projects before construction begins. Our designs combine modern aesthetics, functional layouts, and accurate detailing for residential, commercial, and real estate projects across Nagpur and India.'],
     fullWidthImg: '/assets/service-interior-design.jpg',
     projectsLabel: 'Architecture Design Projects',
     projects: [
       { name: 'Lonavala Valley Estate', img: '/assets/service-project1.jpg' },
-      { name: 'The Heritage Dwelling',        img: '/assets/service-project2.jpg' },
-      { name: 'Skyline Penthouse',        img: '/assets/service-project3.jpg' },
+      { name: 'The Heritage Dwelling', img: '/assets/service-project2.jpg' },
+      { name: 'Skyline Penthouse', img: '/assets/service-project3.jpg' },
     ],
   },
   {
     id: 'construction',
     title: 'Construction & Development',
-    to: '/services/construction',
     body: [
       'Our construction services cover end-to-end project execution from structural work to final finishes, ensuring quality, safety, and timely delivery. We partner with builders, developers, and homeowners to deliver residential homes, commercial buildings, and renovation projects with precision, transparency, and professional project management.',
     ],
@@ -39,7 +38,6 @@ const SERVICES = [
   {
     id: 'Interior Design',
     title: 'Interior Design',
-    to: '/services/interior-design',
     body: [
       'We design functional, aesthetically elevated interiors for homes, offices, showrooms, and hospitality spaces. From space planning and material selection to furniture, lighting, and decor, our interior solutions balance style, comfort, and practicality—tailored to your lifestyle, business needs, and budget.',
     ],
@@ -51,6 +49,13 @@ const SERVICES = [
       { name: 'Goa Coastal Villa',       img: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=380&h=260&fit=crop' },
     ],
   },
+]
+const SERVICE_PROCESS_ITEMS = [
+  { title: 'Step 1', body: 'Consultation – We understand your vision, requirements, budget, and timeline to set the right direction.' },
+  { title: 'Step 2', body: 'Concept Planning – We develop initial layouts, design ideas, and architectural concepts aligned with your goals.' },
+  { title: 'Step 3', body: '3D Visualization – We create realistic 3D views and presentations so you can see the outcome before execution.' },
+  { title: 'Step 4', body: 'Design Development – We refine materials, details, and technical specifications to make the design build-ready.' },
+  { title: 'Step 5', body: 'Execution & Delivery – We guide implementation with quality control, ensuring the final space matches the approved design.' },
 ]
 
 /* ─────────────────────────────────────────────
@@ -210,8 +215,13 @@ export default function ServicesPage() {
               ))}
             </div>
           </section>
+
+          
         </div>
       ))}
+      {/* ── PROCESS SECTION ── */}
+      
+      <Process fadeUp={{}} items={SERVICE_PROCESS_ITEMS} />
 
       <Footer />
     </>

@@ -29,9 +29,9 @@ export const navLinks = [
     label: 'Services',
     to:    '/services',
     sub: [
-      { label: '3D Architecture & Elevation',    to: '/services/construction' },
-      { label: 'Construction ', to: '/services/interior-design' },
-      { label: ' Interior Design', to: '/services/lighting-design' },
+      { label: '3D Architecture & Elevation',    to: '/services/lighting-design' },
+      { label: 'Construction ', to: '/services/construction' },
+      { label: ' Interior Design', to: '/services/interior-design' },
     ]
   },
 ]

@@ -7,6 +7,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   
+  // const location = useLocation()
   const location = useLocation()
 
   // Media page par bhi dark font apply karne ke liye array mein add kiya
@@ -26,9 +27,9 @@ export default function Header() {
 
   return (
     <>
-      <header 
-        className={`${styles.header} ${scrolled ? styles.scrolled : ''} }`}
-      >
+<header 
+  className={`${styles.header} ${styles.scrolled}`}
+>
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
           <img
             className={styles.logoImage}
@@ -57,9 +58,7 @@ export default function Header() {
                       >
                         {displayLabel}
                       </NavLink>
-                      <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                        <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                      
                       <div className={styles.dropdownMenu}>
                         {sub.map(s => (
                           <Link key={s.to} to={s.to} className={styles.dropdownItem}>
