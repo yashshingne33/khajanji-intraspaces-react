@@ -166,7 +166,8 @@
 
 /* -- Portfolio -- */
 .portfolio {
-  padding: clamp(45px, 6vw, 65px) var(--page-pad);
+  padding: clamp(45px, 6vw, 25px) var(--page-pad);
+  
   background: var(--color-bg);
 }
 
@@ -174,7 +175,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 36px;
+  margin-bottom: 12px;
+  
 }
 
 .seeAll {

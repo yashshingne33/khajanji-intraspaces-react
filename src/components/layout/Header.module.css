@@ -1,3 +1,6 @@
+/* ═══════════════════════════════════════════════════════
+   HEADER — Base (transparent / hero state)
+═══════════════════════════════════════════════════════ */
 .header {
   position: fixed;
   top: 0;
@@ -12,16 +15,28 @@
   padding: 0 48px;
   height: 76px;
 
+  /* Transparent base — no bg, no border */
   background: transparent;
-  border-bottom: none;
-  transition: all 0.4s ease;
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.3s ease;
 }
 
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+/* ═══════════════════════════════════════════════════════
+   HEADER — Scrolled / solid white state
+═══════════════════════════════════════════════════════ */
+.header.scrolled,
+.header.forceScrolled {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.05),
+    0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 /* ── Logo ── */
@@ -40,77 +55,104 @@
   object-fit: contain;
 }
 
-/* ── Desktop Nav ── */
+/* ═══════════════════════════════════════════════════════
+   DESKTOP NAV
+═══════════════════════════════════════════════════════ */
 .nav {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-/* Nav pill container — remove the frosted bg, just use spacing */
+/* Frosted pill container — visible on hero images */
 .nav ul {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
+  padding: 5px 8px;
+  border-radius: 999px;
+
+  /* Glassmorphism backing — keeps links readable on any hero */
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.45s ease;
+}
+
+/* Scrolled — remove the dark glass pill, links sit on white */
+.header.scrolled .nav ul,
+.header.forceScrolled .nav ul {
   background: transparent;
   backdrop-filter: none;
-  border: none;
-  padding: 5px 6px;
-}
-
-.header.scrolled .nav ul {
-  background: transparent;
+  -webkit-backdrop-filter: none;
   border-color: transparent;
+  box-shadow: none;
   padding: 5px 6px;
 }
 
-/* Each link — bordered pill */
+/* ── Individual nav link pill ── */
 .navLink {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 12px;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13.5px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 7px 16px;
+  letter-spacing: 0.07em;
+  padding: 7px 15px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.22s ease;
+  border: 1px solid transparent;
+  transition:
+    color 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease;
   white-space: nowrap;
 }
 
 .navLink:hover {
-  border-color: rgba(255, 255, 255, 0.55);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .navLink.active {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
   color: #0f52ff;
-  border-color: #fff;
-  font-weight: 600;
+  border-color: rgba(255, 255, 255, 0.0);
+  font-weight: 650;
 }
 
-/* Scrolled — blue bordered pills */
-.header.scrolled .navLink {
-  color: rgba(0, 0, 0, 0.6);
-  border-color: rgba(0, 0, 0, 0.15);
+/* Scrolled state link overrides */
+.header.scrolled .navLink,
+.header.forceScrolled .navLink {
+  color: rgba(15, 15, 20, 0.65);
+  border-color: transparent;
   background: transparent;
 }
 
-.header.scrolled .navLink:hover {
+.header.scrolled .navLink:hover,
+.header.forceScrolled .navLink:hover {
   color: #0f52ff;
-  border-color: #0f52ff;
-  background: #e8eeff;
+  background: rgba(15, 82, 255, 0.07);
+  border-color: rgba(15, 82, 255, 0.2);
 }
 
-.header.scrolled .navLink.active {
+.header.scrolled .navLink.active,
+.header.forceScrolled .navLink.active {
   background: #0f52ff;
   color: #ffffff;
   border-color: #0f52ff;
+  font-weight: 650;
 }
 
-/* ── Dropdown ── */
+/* ═══════════════════════════════════════════════════════
+   DROPDOWN
+═══════════════════════════════════════════════════════ */
 .navItem {
   position: relative;
   display: flex;
@@ -128,16 +170,24 @@
   position: absolute;
   top: calc(100% + 14px);
   left: 50%;
-  transform: translateX(-50%) translateY(6px);
-  background: #ffffff;
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.13),
+    0 4px 16px rgba(0, 0, 0, 0.06),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
   min-width: 220px;
   padding: 8px;
-  border-radius: 12px;
+  border-radius: 14px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    visibility 0.25s;
   z-index: 100;
 }
 
@@ -153,18 +203,20 @@
   font-size: 12.5px;
   font-weight: 400;
   letter-spacing: 0.03em;
-  color: #333;
+  color: #2a2a2a;
   border-radius: 8px;
   transition: background 0.15s, color 0.15s;
   white-space: nowrap;
 }
 
 .dropdownItem:hover {
-  background: #f4f4f4;
-  color: #000;
+  background: rgba(15, 82, 255, 0.06);
+  color: #0f52ff;
 }
 
-/* ── Actions ── */
+/* ═══════════════════════════════════════════════════════
+   ACTIONS (CTA + hamburger)
+═══════════════════════════════════════════════════════ */
 .actions {
   display: flex;
   align-items: center;
@@ -174,26 +226,52 @@
 }
 
 .headerBtn {
-  background: #0f52ff;
+  /* background: rgba(255, 255, 255, 0.15); */
+  background: blue;
   color: #ffffff;
   padding: 10px 22px;
   border-radius: 999px;
-  font-size: 11.5px;
+  font-size: 13.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
-  border: 1.5px solid transparent;
-  transition: background 0.22s, transform 0.2s, box-shadow 0.2s;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.25s ease;
 }
 
 .headerBtn:hover {
-  background: #0038c7;
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.85);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(15, 82, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* ── Hamburger ── */
+/* Scrolled CTA — solid blue */
+.header.scrolled .headerBtn,
+.header.forceScrolled .headerBtn {
+  background: #0f52ff;
+  color: #ffffff;
+  border-color: transparent;
+  backdrop-filter: none;
+}
+
+.header.scrolled .headerBtn:hover,
+.header.forceScrolled .headerBtn:hover {
+  background: #0038c7;
+  box-shadow: 0 8px 24px rgba(15, 82, 255, 0.32);
+}
+
+/* ═══════════════════════════════════════════════════════
+   HAMBURGER
+═══════════════════════════════════════════════════════ */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -211,19 +289,23 @@
   display: block;
   width: 22px;
   height: 1.5px;
-  background: #ffffff;
-  transition: transform 0.3s ease, opacity 0.25s;
+  background: rgba(255, 255, 255, 0.9);
+  transition: transform 0.3s ease, opacity 0.25s, background 0.3s;
   transform-origin: center;
 }
 
-.header.scrolled .hamburger span {
-  background: #0f52ff;
+/* Scrolled hamburger — dark lines */
+.header.scrolled .hamburger span,
+.header.forceScrolled .hamburger span {
+  background: #0f1020;
 }
 
 .hamburger.open span:nth-child(1) { transform: translateY(3.25px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { transform: translateY(-3.25px) rotate(-45deg); }
 
-/* ── Mobile Menu ── */
+/* ═══════════════════════════════════════════════════════
+   MOBILE MENU
+═══════════════════════════════════════════════════════ */
 .mobileMenu {
   display: none;
   position: fixed;
@@ -343,7 +425,9 @@
   letter-spacing: -8px;
 }
 
-/* ── Responsive ── */
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
   .header { padding: 0 24px; }
   .nav { display: none; }

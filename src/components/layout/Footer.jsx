@@ -33,7 +33,7 @@ export default function Footer() {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/process">Our Process</Link></li>
-              <li><Link to="/portfolio">Portfolio</Link></li>
+              {/* <li><Link to="/portfolio">Portfolio</Link></li> */}
             </ul>
           </div>
 

@@ -1,10 +1,8 @@
+/* ── Main Root & Container Options ── */
 .mediaPage {
-  background-color: #fafafa;
-  min-height: 100vh;
-  padding-top: 80px;
-  color: #111111;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  overflow-x: hidden;
+  background-color: #ffffff;
+  padding: 80px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .container {
@@ -13,390 +11,201 @@
   padding: 0 24px;
 }
 
-/* 1. Cinematic Hero Frame */
+/* ── Centered Layout Header ── */
 .heroSection {
-  position: relative;
-  background: #ffffff;
-  padding: 100px 0 60px 0;
-  border-bottom: 1px solid #eeeeee;
+  text-align: center;
+  margin-bottom: 32px;
 }
 
-.geometricOverlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40%;
-  height: 100%;
-  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
-  background-size: 16px 16px;
-  opacity: 0.7;
-}
-
-.badgeLine {
-  font-size: 11px;
+.pageMainHeading {
+  font-size: 42px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #8c8c8c;
-  display: inline-block;
-  margin-bottom: 16px;
+  color: blue; /* Clean high-end brand orange color matching your target reference */
+  margin: 70px 0 0 0;
 }
 
-.mainTitle {
-  font-size: clamp(28px, 6vw, 48px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -1px;
-  margin: 0 0 20px 0;
-}
-
-.mainTitle span {
-  color: #666666;
-  font-weight: 400;
-}
-
-.heroDescription {
-  font-size: 16px;
-  color: #666666;
-  max-width: 540px;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* 2. Spotlight Section */
-.featuredSection {
-  padding: 60px 0 30px 0;
-}
-
-.sectionHeader {
-  margin-bottom: 24px;
-}
-
-.sectionTitle {
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.featuredCard {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  background: #ffffff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-  border: 1px solid #eeeeee;
-}
-
-.featuredVisual {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  background: #000000;
-}
-
-.featuredVisual iframe {
-  width: 100%;
-  height: 100%;
-}
-
-.coverWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.coverWrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.coverWrapper:hover img {
-  transform: scale(1.03);
-}
-
-/* Play Button Animation */
-.playOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.playButtonRipple {
-  width: 70px;
-  height: 70px;
-  background: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.playTriangle {
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 16px solid #000000;
-  margin-left: 4px;
-}
-
-.coverWrapper:hover .playButtonRipple {
-  transform: scale(1.1);
-}
-
-.featuredDetails {
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.categoryTag {
-  font-size: 11px;
-  font-weight: 700;
-  color: #8c8c8c;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.featuredTitle {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 0 0 16px 0;
-}
-
-.featuredText {
-  font-size: 14px;
-  color: #666666;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* 3. Controls / Filter System */
+/* ── Filter Controls ── */
 .controlsSection {
-  padding: 30px 0;
+  margin-bottom: 48px;
 }
 
 .filterBar {
   display: flex;
-  gap: 32px;
-  border-bottom: 1px solid #eeeeee;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .filterLink {
-  background: transparent;
-  border: none;
-  font-size: 15px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  color: #555555;
+  padding: 8px 20px;
+  font-size: 14px;
   font-weight: 500;
-  color: #8c8c8c;
-  padding: 0 0 16px 0;
+  border-radius: 999px;
   cursor: pointer;
-  position: relative;
-  transition: color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .filterLink:hover {
-  color: #111111;
+  background: #eeeeee;
+  color: #000000;
 }
 
 .activeLink {
-  color: #111111;
-  font-weight: 600;
+  background: blue;
+  border-color:blue;
+  color: #ffffff;
 }
 
-.activeLink::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #111111;
+.activeLink:hover {
+  background: blue;
+  color: #ffffff;
 }
 
-/* 4. Grid System */
+/* ── Core Grid Layout ── */
 .gridSection {
-  padding: 20px 0 80px 0;
+  width: 100%;
 }
 
 .mediaGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr); /* Matching the strict 2-column format */
+  gap: 40px 32px;
 }
 
 .gridCard {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #eeeeee;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.gridCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-}
-
-.cardVisual {
+/* ── Frame Layer ── */
+.cardVisualContainer {
   position: relative;
+  width: 100%;
   aspect-ratio: 16 / 9;
-  background: #000000;
+  border-radius: 12px; /* Smooth card layout border rounding */
   overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Clean modern depth layer shading */
+  background: #000000;
 }
 
-.cardVisual iframe {
+.coverImageWrapper {
+  position: relative;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
-.pureImg {
+.cardImageAsset {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.visualTag {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(255,255,255,0.9);
-  padding: 4px 10px;
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 4px;
+.videoEmbedElement {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
-.miniPlayBtn {
+/* ── Red Button Style ── */
+.youtubePlayButtonOverlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 46px;
-  height: 46px;
-  background: #ffffff;
-  border-radius: 50%;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  background: rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease;
 }
 
-.playTriangleSmall {
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-left: 10px solid #000000;
-  margin-left: 2px;
+.coverImageWrapper:hover .youtubePlayButtonOverlay {
+  background: rgba(0, 0, 0, 0.25);
 }
 
-/* Press Card Layout Specifics */
-.pressPaperBack {
-  aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #f9f9f9 0%, #edf0f5 100%);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-bottom: 1px solid #e2e8f0;
+.youtubePlayIconShape {
+  width: 68px;
+  height: 48px;
+  background-color: blue; /* Distinct crisp red play block */
+  border-radius: 14px;
+  position: relative;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.pressHeaderRow {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+/* Centered structural play vector triangle */
+.youtubePlayIconShape::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent #ffffff;
 }
 
-.pubName {
-  font-size: 12px;
-  font-weight: 700;
-  color: #1a1a1a;
-  text-transform: uppercase;
+.coverImageWrapper:hover .youtubePlayIconShape {
+  background-color: #cc0000;
+  transform: scale(1.05);
 }
 
-.pubDate {
-  font-size: 12px;
-  color: #8c8c8c;
+/* ── Dynamic Text Elements Positioned Outside Beneath Images ── */
+.cardContentMetadata {
+  padding: 16px 4px 0;
 }
 
-.pressIconQuotes {
-  font-size: 60px;
-  font-family: serif;
-  color: rgba(0,0,0,0.06);
-  line-height: 0;
-  align-self: flex-end;
-  margin-bottom: -10px;
-}
-
-/* Metadata Footer */
-.cardMeta {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.cardTitle {
+.cardTitleText {
   font-size: 16px;
   font-weight: 600;
+  color: #222222;
   line-height: 1.4;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
 }
 
-.cardDesc {
-  font-size: 13px;
+.cardDescriptionText {
+  font-size: 14px;
   color: #666666;
   line-height: 1.5;
   margin: 0;
 }
 
-/* Responsive Structural Controls */
-@media (max-width: 1024px) {
-  .mediaGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .featuredCard {
-    grid-template-columns: 1fr;
-  }
-  .featuredDetails {
-    padding: 30px;
-  }
+/* ── Document/Article Fallback Representation ── */
+.pressCardPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fdfbf7 0%, #f5f1ea 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  box-sizing: border-box;
 }
 
-@media (max-width: 680px) {
+.pressLabelBadge {
+  font-size: 18px;
+  font-weight: 700;
+  color: #444444;
+  margin-bottom: 8px;
+}
+
+.pressDateBadge {
+  font-size: 13px;
+  color: #888888;
+}
+
+/* ── Responsive Screen Management ── */
+@media (max-width: 840px) {
   .mediaGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Responsively shift to 1-column layout on smaller screens */
+    gap: 36px;
   }
-  .mainTitle {
-    letter-spacing: -0.5px;
+  
+  .pageMainHeading {
+    font-size: 28px;
   }
-  .filterBar {
-    gap: 20px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 12px;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x proximity;
-    scrollbar-width: none;
-  }
-  .filterBar::-webkit-scrollbar { display: none; }
 }

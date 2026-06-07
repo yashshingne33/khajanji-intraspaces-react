@@ -6,13 +6,20 @@ import { Link } from 'react-router-dom'
 ───────────────────────────────────────────── */
 function useReveal() {
   useEffect(() => {
-    const els = document.querySelectorAll('.sr')
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('sr-on')),
-      { threshold: 0.08 }
-    )
-    els.forEach((el) => io.observe(el))
-    return () => io.disconnect()
+    const timer = setTimeout(() => {
+      const els = document.querySelectorAll('.sr')
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('sr-on')
+          }
+        }),
+        { threshold: 0.05 }
+      )
+      els.forEach((el) => io.observe(el))
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, [])
 }
 
@@ -57,7 +64,7 @@ const VALUES = [
 ]
 
 const TEAM = [
-  { name: 'Piyush Khajanji',   role: 'Head of Architecture & Design',    img: '/assets/founder.jpg' },
+  { name: 'Piyush Khajanji',   role: 'Founder & Design Director',    img: '/assets/founder.jpg' },
   { name: 'Ritesh Pande',  role: 'Business Development Manager',   img: '2.jpeg' },
   { name: 'Lokesh Naktode',  role: 'Principal Architect',              img: '1.jpeg' },
   { name: 'Ayush Tijare',   role: 'Interior designer',    img: '3.jpeg' },
@@ -198,6 +205,7 @@ export default function AboutPage() {
         className="hero-content"
       >
         <h1
+          className="sr"
           style={{
             fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)',
             fontWeight: 400,
@@ -210,6 +218,7 @@ export default function AboutPage() {
           Execution with Purpose
         </h1>
         <p
+          className="sr sr-d1"
           style={{
             fontSize: 16,
             lineHeight: 1.8,
@@ -232,7 +241,7 @@ export default function AboutPage() {
       </div>
 
       {/* Right — image */}
-      <div style={{ overflow: 'hidden', height: '100vh' }} className="hero-image">
+      <div style={{ overflow: 'hidden', height: '100vh' }} className="iz sr sr-d2">
         <img
           src="/assets/about.png"
           alt="Designer at work"

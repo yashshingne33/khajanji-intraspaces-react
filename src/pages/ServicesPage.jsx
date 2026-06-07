@@ -68,14 +68,17 @@ export default function ServicesPage() {
     <>
       <style>{GLOBAL_CSS}{`
         /* Service section responsive */
+        /* Update layout tokens inside your <style> element */
         .svc-body-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-        .svc-proj-grid  { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: start; }
+        .svc-proj-grid  { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; align-items: start; }
+        .section-pad { padding: 72px 48px; }
+
         @media (max-width: 900px) {
           .svc-body-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
           .svc-proj-grid { grid-template-columns: 1fr 1fr !important; }
           .two-colHero { grid-template-columns: 1fr !important; }
-          .two-colHero > div:last-child { height: 50vh !important; order: -1; }
-          .pad { padding: 80px 24px 60px !important; }
+          .two-colHero > div:last-child { height: 55vw !important; order: -1; }
+          .section-pad { padding: 48px 24px !important; }
         }
         @media (max-width: 600px) {
           .svc-proj-grid { grid-template-columns: 1fr !important; }
@@ -106,20 +109,21 @@ export default function ServicesPage() {
         className="pad"
       >
         <h1
-          className="fu1"
+          className="sr"
           style={{
-            fontSize: 'clamp(4rem, 3.5vw, 3.2rem)',
+            fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)',
             fontWeight: 400,
             lineHeight: 1.13,
             letterSpacing: '-0.02em',
             margin: '0 0 28px',
             color: 'var(--color-text-primary)'
           }}
+
         >
           Services & Expertise
         </h1>
         <p
-          className="fu2"
+          className="sr sr-d1"
           style={{
             fontSize: 16,
             lineHeight: 1.8,
@@ -139,7 +143,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Right — hero photo */}
-      <div style={{ overflow: 'hidden', height: '100vh' }} className="iz">
+      <div style={{ overflow: 'hidden', height: '100vh' }} className="iz sr sr-d2">
         <img
           src="/assets/service-hero.jpg"
           alt="Interior design"
@@ -155,19 +159,19 @@ export default function ServicesPage() {
 
       {/* ── SERVICE SECTIONS  (repeat for each service) ── */}
       {SERVICES.map((svc, idx) => (
-        <div key={svc.id}>
+        <div key={svc.id} style={{ borderTop: idx > 0 ? '1px solid #e4e2dc' : 'none' }}>
           {/* ── Service heading + body text ── */}
-          <section className="pad" style={{ paddingTop:96, paddingBottom:64 }}>
+          <section className="section-pad">
             <div className="svc-body-grid">
-              {/* Left: title +  more */}
+              {/* Left: title + link */}
               <div>
-                <h2 className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,3vw,2.8rem)', fontWeight:400, lineHeight:1.2, marginBottom:24, color:'#0a0a0a' }}>
+                <h2 className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.7rem, 2.8vw, 2.5rem)', fontWeight:400, lineHeight:1.26, marginBottom:24, color:'#0a0a0a' }}>
                   {svc.title}
                 </h2>
                 <Link
                   to={svc.to}
                   className="sr sr-d1"
-                  style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"'Outfit', sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, transition:'opacity 0.2s' }}
+                  style={{ display:'inline-flex', alignItems:'center', gap:6, fontFamily:"'Outfit', sans-serif", fontSize:13, color:'#0a0a0a', textDecoration:'none', borderBottom:'1px solid #0a0a0a', paddingBottom:2, transition:'opacity 0.2s', width:'fit-content' }}
                   onMouseEnter={e => e.currentTarget.style.opacity='0.5'}
                   onMouseLeave={e => e.currentTarget.style.opacity='1'}
                 >
@@ -177,7 +181,7 @@ export default function ServicesPage() {
               {/* Right: body paragraphs */}
               <div className="sr sr-d1">
                 {svc.body.map((para, i) => (
-                  <p key={i} style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.8, color:'#555', fontWeight:300, marginBottom: i < svc.body.length - 1 ? 20 : 0 }}>
+                  <p key={i} style={{ fontFamily:"'Outfit', sans-serif", fontSize:13.5, lineHeight:1.8, color:'#666', fontWeight:300, marginBottom: i < svc.body.length - 1 ? 20 : 0, textAlign: 'justify' }}>
                     {para}
                   </p>
                 ))}
@@ -185,8 +189,8 @@ export default function ServicesPage() {
             </div>
           </section>
 
-          {/* ── Full width image ── */}
-          <div className="iz" style={{ width:'100%', height:'clamp(280px,35vw,480px)', margin:'0 0 64px' }}>
+          {/* ── Full width image wrapper ── */}
+          <div className="iz sr" style={{ width:'100%', height:'clamp(300px, 45vw, 520px)', marginBottom: '40px' }}>
             <img
               src={svc.fullWidthImg}
               alt={svc.title}
@@ -194,29 +198,27 @@ export default function ServicesPage() {
             />
           </div>
 
-          {/* ── Projects grid label + 3-col asymmetric grid ── */}
-          <section className="pad" style={{ paddingBottom:96 }}>
-            <p className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:10, letterSpacing:'0.16em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:24 }}>
+          {/* ── Projects grid label + 3-col lineup ── */}
+          <section className="section-pad" style={{ paddingTop: 24, paddingBottom: 80 }}>
+            <p className="sr" style={{ fontFamily:"'Outfit', sans-serif", fontSize:11, letterSpacing:'0.18em', textTransform:'uppercase', color:'#8a8880', fontWeight:300, marginBottom:24 }}>
               {svc.projectsLabel}
             </p>
             <div className="svc-proj-grid">
               {svc.projects.map((p, i) => (
-                <div key={i} className={`sr sr-d${i + 1}`}>
-                  <div className="iz" style={{ aspectRatio: '4/5', marginBottom:12 }}>
+                <div key={i} className={`sr sr-d${(i % 3) + 1}`} style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div className="iz" style={{ aspectRatio: '3/4', width: '100%', overflow: 'hidden', background: '#f5f5f3', marginBottom: 16 }}>
                     <img
                       src={p.img}
                       alt={p.name}
-                      style={{ width:'100%', height:'100%', objectFit:'cover' }}
-                      onError={e => { e.target.src=`https://placehold.co/400x400/e4e2dc/8a8880?text=${encodeURIComponent(p.name)}` }}
+                      style={{ width:'100%', height:'100%', objectFit:'cover', transition: 'transform 0.8s cubic-bezier(.25,.46,.45,.94)' }}
+                      onError={e => { e.target.src=`https://placehold.co/400x500/e4e2dc/8a8880?text=${encodeURIComponent(p.name)}` }}
                     />
                   </div>
-                  <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a' }}>{p.name}</p>
+                  <p style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, fontWeight:400, color:'#0a0a0a', letterSpacing:'0.02em', margin:0 }}>{p.name}</p>
                 </div>
               ))}
             </div>
           </section>
-
-          
         </div>
       ))}
       {/* ── PROCESS SECTION ── */}

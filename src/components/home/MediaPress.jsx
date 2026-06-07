@@ -72,7 +72,7 @@ export default function MediaPress({ fadeUp }) {
 
         .media-press {
           background: #ffffff;
-          padding: 100px 40px;
+          padding: 80px 48px;
           color: #000000;
           font-family: 'Cormorant Garamond', Garamond, 'Didot', 'Playfair Display', serif;
         }

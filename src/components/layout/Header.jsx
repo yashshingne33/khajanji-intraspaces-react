@@ -3,33 +3,43 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import { navLinks } from '../../data/site.js'
 import styles from './Header.module.css'
 
+// Routes that have a white/light background (no hero image).
+// On these pages the navbar should immediately appear in its solid white style.
+const WHITE_BG_ROUTES = ['/contact', '/media', '/about', '/portfolio', '/services']
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  
-  // const location = useLocation()
+
   const location = useLocation()
 
-  // Media page par bhi dark font apply karne ke liye array mein add kiya
-  
+  // Detect if current route has a white background — apply solid style immediately
+  const isWhiteBgPage = WHITE_BG_ROUTES.some(
+    route => location.pathname === route || location.pathname.startsWith(route + '/')
+  )
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll, { passive: true })
+    // Initialise on mount (in case page is already scrolled on load)
+    onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
+    return () => { document.body.style.overflow = '' }
   }, [menuOpen])
+
+  // Build class string — forceScrolled takes priority over scroll detection
+  const headerClass = [
+    styles.header,
+    isWhiteBgPage ? styles.forceScrolled : (scrolled ? styles.scrolled : ''),
+  ].filter(Boolean).join(' ')
 
   return (
     <>
-<header 
-  className={`${styles.header} ${styles.scrolled}`}
->
+      <header className={headerClass}>
         <Link to="/" className={styles.logo} onClick={() => setMenuOpen(false)}>
           <img
             className={styles.logoImage}
@@ -41,11 +51,10 @@ export default function Header() {
         <nav className={styles.nav} aria-label="Primary navigation">
           <ul>
             {navLinks.reduce((acc, currentLink) => {
-              const { label, to, sub } = currentLink;
-              const displayLabel = label.toLowerCase() === 'services' ? 'Services & Expertise' : label;
-              const isServices = label.toLowerCase() === 'services';
+              const { label, to, sub } = currentLink
+              const displayLabel = label.toLowerCase() === 'services' ? 'Services & Expertise' : label
+              const isServices = label.toLowerCase() === 'services'
 
-              // 1. Pehle current link ko push karein
               acc.push(
                 <li key={label} className={sub ? styles.navItem : ''}>
                   {sub ? (
@@ -58,7 +67,6 @@ export default function Header() {
                       >
                         {displayLabel}
                       </NavLink>
-                      
                       <div className={styles.dropdownMenu}>
                         {sub.map(s => (
                           <Link key={s.to} to={s.to} className={styles.dropdownItem}>
@@ -79,9 +87,8 @@ export default function Header() {
                     </NavLink>
                   )}
                 </li>
-              );
+              )
 
-              // 2. Agar current link "Services" hai, toh uske turant baad Media li push karein (same level par)
               if (isServices) {
                 acc.push(
                   <li key="media-desktop">
@@ -94,10 +101,10 @@ export default function Header() {
                       Media
                     </NavLink>
                   </li>
-                );
+                )
               }
 
-              return acc;
+              return acc
             }, [])}
           </ul>
         </nav>
@@ -117,16 +124,15 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu Code */}
+      {/* Mobile Menu */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.menuOpen : ''}`}>
         <nav>
           <ul>
             {navLinks.reduce((acc, currentLink) => {
-              const { label, to, sub } = currentLink;
-              const displayLabel = label.toLowerCase() === 'services' ? 'Services & Expertise' : label;
-              const isServices = label.toLowerCase() === 'services';
+              const { label, to, sub } = currentLink
+              const displayLabel = label.toLowerCase() === 'services' ? 'Services & Expertise' : label
+              const isServices = label.toLowerCase() === 'services'
 
-              // Mobile list item push karein
               acc.push(
                 <li key={`mobile-${label}`}>
                   <Link to={to} className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
@@ -142,9 +148,8 @@ export default function Header() {
                     </div>
                   )}
                 </li>
-              );
+              )
 
-              // Mobile mein bhi Services ke just baad Media item push karein
               if (isServices) {
                 acc.push(
                   <li key="media-mobile">
@@ -152,10 +157,10 @@ export default function Header() {
                       Media
                     </Link>
                   </li>
-                );
+                )
               }
 
-              return acc;
+              return acc
             }, [])}
           </ul>
         </nav>
