@@ -31,16 +31,58 @@ const SERVICES = [
 
 export default function ContactPage() {
   useReveal()
-  const [form, setForm] = useState({ name: '', phone: '', projectType: '', location: '', message: '' })
+  const [form, setForm] = useState({
+    name: '',
+    phone: '',
+    projectType: '',
+    location: '',
+    message: ''
+  })
   const [sent, setSent] = useState(false)
   const [error, setError] = useState('')
 
   const onChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }))
-  const onSubmit = e => {
-    e.preventDefault()
-    if (!form.name || !form.phone || !form.message) { setError('Please complete name, phone and message.'); return }
-    setError(''); setSent(true)
-  }
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    if (!form.name || !form.phone || !form.message) {
+      setError('Please complete name, phone and message.');
+      return;
+    }
+
+    const whatsappNumber = "918459299935";
+
+    const whatsappMessage = `
+  NEW PROJECT ENQUIRY
+
+  Client Name:
+  ${form.name}
+
+  Contact Number:
+  ${form.phone}
+
+  Project Type:
+  ${form.projectType || "Not Specified"}
+
+  Project Location:
+  ${form.location || "Not Specified"}
+
+  Project Requirements:
+  ${form.message}
+
+  Submitted via Website
+  Khajanji Infraspaces
+  `;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(url, "_blank");
+
+    setSent(true);
+    setError('');
+  };
 
   return (
     <>
