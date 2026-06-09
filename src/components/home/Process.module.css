@@ -9,12 +9,12 @@
 
 /* "OUR PROCESS" लेबल को बड़ा, बोल्ड और स्क्रीन के बीच (Center) में लाने के लिए */
 :global(.section-label) {
-  font-family: var(--font-display), sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(20px, 2.5vw, 24px); /* रेस्पॉन्सिव बड़ा साइज */
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-weight: 700; /* एक्स्ट्रा बोल्ड और हाईलाइटेड लुक */
-  color: #000000;
+  font-weight: 400; /* एक्स्ट्रा बोल्ड और हाईलाइटेड लुक */
+  color: #0a0a0a;
   text-align: center; /* मिडिल अलाइनमेंट */
   margin-top: 0;
   margin-bottom: 36px;
@@ -36,11 +36,12 @@
 }
 
 .heading {
-  font-family: var(--font-display);
-  font-size: clamp(16px, 1.5vw, 20px);
-  font-weight: 300;
+  font-family: 'Outfit', sans-serif;
+  /* font-size: clamp(16px, 1.5vw, 20px); */
+  font-size: clamp(20px, 2.5vw, 24px);
+  font-weight: 100;
   line-height: 1.5;
-  color: var(--color-text);
+  color: #444;
   margin-bottom: 32px;
 }
 

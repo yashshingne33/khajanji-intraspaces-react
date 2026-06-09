@@ -19,7 +19,6 @@ export default function CTABanner({ fadeUp }) {
 
       <style>{`
         /* Premium Serif Font Import */
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap');
 
         .cta-banner {
           position: relative;
@@ -32,7 +31,7 @@ export default function CTABanner({ fadeUp }) {
           background-position: center;
           padding: 80px 40px;
           color: #fff;
-          font-family: 'Cormorant Garamond', Garamond, 'Didot', 'Playfair Display', serif;
+          font-family: 'Outfit', sans-serif;
         }
 
         .cta-banner__overlay {
@@ -59,12 +58,12 @@ export default function CTABanner({ fadeUp }) {
         }
 
         .cta-banner__kicker {
-          font-size: 13px;
-          letter-spacing: 0.3em; /* Image jaisa elegant spread space */
+          font-size: 11px;
+          letter-spacing: 0.18em; /* Image jaisa elegant spread space */
           text-transform: uppercase;
-          font-weight: 400;
+          font-weight: 300;
           margin-bottom: 16px;
-          color: rgba(255, 255, 255, 0.9);
+          color: rgba(255, 255, 255, 0.6);
         }
 
         .cta-banner__headline {
@@ -76,6 +75,7 @@ export default function CTABanner({ fadeUp }) {
         }
 
         .cta-banner__button {
+          font-family: 'Outfit', sans-serif;
           background: #ffffff;
           color: #000000;
           padding: 14px 36px;

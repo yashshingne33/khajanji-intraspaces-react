@@ -50,7 +50,7 @@ export default function ContactPage() {
       return;
     }
 
-    const whatsappNumber = "918459299935";
+    const whatsappNumber = "919284149958";
 
     const whatsappMessage = `
   NEW PROJECT ENQUIRY
@@ -87,7 +87,7 @@ export default function ContactPage() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Outfit', sans-serif; -webkit-font-smoothing: antialiased; background: #f9f8f5; color: #0a0a0a; }
@@ -129,16 +129,16 @@ export default function ContactPage() {
           overflow: hidden;
         }
         .hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-        .hero-eyebrow-line { width: 24px; height: 1px; background: #8C7226; flex-shrink: 0; }
+        .hero-eyebrow-line { width: 24px; height: 1px; background: #555; flex-shrink: 0; }
         .hero-eyebrow .sec-label { margin-bottom: 0; }
         .hero-h1 {
-          font-size: clamp(2.2rem, 3.4vw, 4rem);
-          font-weight: 300;
-          line-height: 1.1;
-          letter-spacing: -.03em;
+          font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+          font-weight: 400;
+          line-height: 1.13;
+          letter-spacing: '-0.02em';
           margin-bottom: 18px;
         }
-        .hero-h1 em { font-style: italic; font-weight: 200; color: #8C7226; }
+        .hero-h1 em { font-style: italic; font-weight: 400; color: #555; }
         .hero-sub {
           font-size: 13px;
           line-height: 1.8;
@@ -146,13 +146,14 @@ export default function ContactPage() {
           font-weight: 300;
           max-width: 420px;
           margin-bottom: 32px;
+          color: 'var(--color-text-primary)'
         }
         .hero-meta { display: flex; flex-direction: column; gap: 10px; }
         .hero-meta a {
           font-size: 13px; font-weight: 400; color: #0a0a0a; text-decoration: none;
           display: inline-flex; align-items: center; gap: 8px; width: fit-content; transition: color .2s;
         }
-        .hero-meta a:hover { color: #8C7226; }
+        .hero-meta a:hover { color: #555; }
         .hero-meta a::before { content: ''; display: block; width: 16px; height: 1px; background: currentColor; }
 
         /* Right image panel — constrained, no scroll */
@@ -182,7 +183,7 @@ export default function ContactPage() {
         .contact-l { padding: 72px 40px 72px 64px; display: flex; flex-direction: column; gap: 28px; }
         .contact-l-block { display: flex; flex-direction: column; gap: 4px; }
         .contact-l-block a { font-size: 14px; font-weight: 400; color: #0a0a0a; text-decoration: none; transition: color .2s; width: fit-content; }
-        .contact-l-block a:hover { color: #8C7226; }
+        .contact-l-block a:hover { color: #555; }
         .contact-l-val { font-size: 14px; font-weight: 300; color: #333; line-height: 1.6; }
 
         /* ── ENQUIRY FORM PANEL ── */
@@ -315,7 +316,7 @@ export default function ContactPage() {
           display: inline-flex; align-items: center; gap: 12px;
           padding: 13px 28px;
           background: #1a4fc4; border: 1px solid #1a4fc4;
-          font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 500;
+          font-family: 'outfit', sans-serif; font-size: 10px; font-weight: 500;
           letter-spacing: .18em; text-transform: uppercase; color: #fff;
           cursor: pointer; transition: background .25s, gap .25s, border-color .25s;
           width: fit-content;
@@ -325,7 +326,7 @@ export default function ContactPage() {
           display: inline-flex; align-items: center; gap: 10px;
           padding: 13px 28px;
           background: transparent; border: 1px solid rgba(255,255,255,0.18);
-          font-family: 'Outfit', sans-serif; font-size: 10px; font-weight: 400;
+          font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400;
           letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,0.5);
           cursor: pointer; transition: all .25s;
           margin-left: 12px;
@@ -341,14 +342,14 @@ export default function ContactPage() {
         .why-cell { padding: 48px 32px; border-right: 1px solid #e4e2dc; display: flex; flex-direction: column; gap: 12px; transition: background .3s; }
         .why-cell:first-child { border-left: 1px solid #e4e2dc; }
         .why-cell:hover { background: #fff; }
-        .why-num { font-size: 11px; font-weight: 400; color: #8C7226; letter-spacing: .1em; }
+        .why-num { font-size: 11px; font-weight: 400; color: #555; letter-spacing: .1em; }
         .why-title { font-size: 15px; font-weight: 400; color: #0a0a0a; }
-        .why-body { font-size: 13px; font-weight: 300; color: #666; line-height: 1.6; }
+        .why-body { font-size: 13px; font-weight: 400; color: #555; line-height: 1.6; }
 
         /* ── S4: STUDIO LOCATION ── */
         .location-header { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 40px; align-items: end; }
         .location-header h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; line-height: 1.2; letter-spacing: -.02em; }
-        .location-header h2 em { font-style: italic; font-weight: 200; color: #8C7226; }
+        .location-header h2 em { font-style: italic; font-weight: 400; color: #555; }
         .location-header p { font-size: 13px; line-height: 1.8; color: #666; font-weight: 300; }
         .map-wrap { width: 100%; aspect-ratio: 24/9; overflow: hidden; position: relative; background: #e4e2dc; border: 1px solid #e4e2dc; }
         .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(40%) contrast(1.02); }
@@ -356,7 +357,7 @@ export default function ContactPage() {
         /* ── S6: FINAL CTA ── */
         .final-cta { display: flex; flex-direction: column; align-items: center; text-align: center; border-top: 1px solid #e4e2dc; }
         .final-cta h2 { font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 300; letter-spacing: -.03em; line-height: 1.1; color: #0a0a0a; margin-bottom: 20px; }
-        .final-cta h2 em { font-style: italic; font-weight: 200; color: #8C7226; }
+        .final-cta h2 em { font-style: italic; font-weight: 400; color: #555; }
         .final-cta p { font-size: 14px; font-weight: 300; color: #666; line-height: 1.7; max-width: 480px; margin-bottom: 36px; }
         .ghost-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 40px; background: transparent; border: 1px solid #0a0a0a; font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: #0a0a0a; cursor: pointer; transition: background .25s, color .25s, gap .25s; text-decoration: none; }
         .ghost-btn:hover { background: #0a0a0a; color: #fff; gap: 18px; }
@@ -548,7 +549,7 @@ export default function ContactPage() {
           </div>
 
           <h1 className="hero-h1 fu2">
-            Let's shape<br />
+            Let's shape
             <em>your vision</em><br />
             together.
           </h1>

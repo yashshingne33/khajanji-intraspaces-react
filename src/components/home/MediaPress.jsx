@@ -33,7 +33,7 @@ export default function MediaPress({ fadeUp }) {
         <div className="media-press__header">
           <div className="media-press__kicker">MEDIA</div>
           <h2 className="media-press__title">Media and press releases</h2>
-          <Link to="/blog" className="media-press__read-all">
+          <Link to="/about" className="who-we-are__link">
             Read all <span className="arrow">&#8594;</span>
           </Link>
         </div>
@@ -74,7 +74,7 @@ export default function MediaPress({ fadeUp }) {
           background: #ffffff;
           padding: 80px 48px;
           color: #000000;
-          font-family: 'Cormorant Garamond', Garamond, 'Didot', 'Playfair Display', serif;
+          font-family: 'Outfit', sans-serif;
         }
 
         .media-press__inner {
@@ -94,11 +94,12 @@ export default function MediaPress({ fadeUp }) {
         }
 
         .media-press__kicker {
-          font-size: 13px;
-          letter-spacing: 0.3em;
+          font-family: 'Outfit', sans-serif;
+          font-size: 11px;                    /* was 13px */
+          letter-spacing: 0.18em;            /* was 0.3em */
           text-transform: uppercase;
-          font-weight: 400;
-          color: #000000;
+          font-weight: 300;                   /* was 400 */
+          color: #8a8880;                     /* was #000000 */
         }
 
         .media-press__title {
@@ -106,7 +107,7 @@ export default function MediaPress({ fadeUp }) {
           font-weight: 300;
           line-height: 1.2;
           margin: 0;
-          color: #000000;
+          color: #0a0a0a;
         }
 
         .media-press__read-all {

@@ -52,19 +52,19 @@ export default function Portfolio({ fadeUp }) {
 
       {/* 'View all projects' को नीचे सेंटर में 'More about us' जैसी स्टाइल के साथ शिफ्ट किया */}
       <div className="view-all-projects-wrapper">
-        <Link to="/portfolio" className="more-about-style-link">
-          View all projects <ArrowIcon />
+        <Link to="/about" className="who-we-are__link">
+          View all projects <span className="arrow">&#8594;</span> 
         </Link>
       </div>
 
       <style>{`
         /* "Selected works" का टेक्स्ट बड़ा, बोल्ड और सेंटर करने के लिए */
         .section-label-centered {
-          font-family: var(--font-display), sans-serif;
+          font-family: 'Outfit', sans-serif;
           font-size: clamp(20px, 2.5vw, 24px);
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          font-weight: 700;
+          font-weight: 400;
           color: #000000;
           text-align: center;
           margin-top: 0;

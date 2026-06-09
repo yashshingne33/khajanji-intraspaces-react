@@ -24,10 +24,11 @@ export default function WhoWeAre({ fadeUp }) {
           background: #ffffff;
           /* नीचे की स्पेसिंग (padding-bottom) को 20px से बढ़ाकर 50px किया ताकि लिंक के नीचे परफेक्ट गैप मिले */
           padding: 60px 40px 50px 40px;
-          max-width: 1400px;
+          max-width: 1500px;
           margin: 0 auto;
           color: #000;
-          font-family: var(--font-display), sans-serif; 
+          font-family: 'Outfit', sans-serif; 
+        
         }
 
         .who-we-are__inner {
@@ -40,10 +41,10 @@ export default function WhoWeAre({ fadeUp }) {
 
         /* "WHO WE ARE" का फ़ॉन्ट साइज़ बढ़ाकर हाइलाइट किया */
         .who-we-are__kicker {
-          font-size: clamp(16px, 2vw, 25px); /* मोबाइल पर 16px और डेस्कटॉप पर 20px */
+          font-size: clamp(20px, 2.5vw, 24px); /* मोबाइल पर 16px और डेस्कटॉप पर 20px */
           letter-spacing: 0.15em;
           text-transform: uppercase;
-          font-weight: 800;
+          font-weight: 400;
           color: #000000;
         }
 
@@ -57,13 +58,13 @@ export default function WhoWeAre({ fadeUp }) {
         }
 
         .who-we-are__text {
-          font-family: var(--font-display), sans-serif;
+          font-family: outfit, sans-serif;
           font-size: clamp(18px, 2.2vw, 26px);
-          font-weight: 400; 
+          font-weight: 100; 
           line-height: 1.5;
           letter-spacing: -0.015em;
           margin: 0;
-          color: #000000;
+          color: #444;
         }
 
         .who-we-are__link-wrapper {
@@ -76,12 +77,15 @@ export default function WhoWeAre({ fadeUp }) {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          font-size: 15px;
-          font-weight: 600;
-          color: #000;
+          font-family: 'Outfit', sans-serif;   /* add this */
+          font-size: 11px;                      /* was 15px */
+          font-weight: 400;                     /* was 600 */
+          letter-spacing: 0.1em;               /* add this */
+          text-transform: uppercase;           /* add this */
+          color: #0a0a0a;                       /* was #000 */
           text-decoration: none;
-          border-bottom: 2px solid #000000;
-          padding-bottom: 6px;
+          border-bottom: 1px solid #0a0a0a;   /* was 2px solid #000000 */
+          padding-bottom: 1px;                 /* was 6px */
           transition: opacity 0.3s ease;
           white-space: nowrap;
         }
@@ -104,7 +108,7 @@ export default function WhoWeAre({ fadeUp }) {
             font-size: 16px;
           }
           .who-we-are__text {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
       `}</style>

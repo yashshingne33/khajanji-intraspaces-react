@@ -133,15 +133,15 @@ export default function Services({ fadeUp }) {
 
         /* "OUR SERVICES" हेडिंग को बड़ा और बोल्ड (High Highlight) किया गया */
         .section-label-centered {
-          font-family: var(--font-display), sans-serif;
-          font-size: clamp(20px, 2.5vw, 30px); /* स्क्रीन के हिसाब से रेस्पॉन्सिव बड़ा साइज */
-          letter-spacing: 0.15em;
+          font-family: 'Outfit', sans-serif;   /* was DM Sans */
+          font-size: 11px;                      /* was clamp(20px, 2.5vw, 30px) */
+          letter-spacing: 0.18em;              /* was 0.15em */
           text-transform: uppercase;
-          font-weight: 700; /* एक्स्ट्रा डार्क और बोल्ड लुक */
-          color: #000000;
+          font-weight: 300;                     /* was 700 */
+          color: #8a8880;                       /* was #000000 */
           text-align: center;
           margin-top: 0;
-          margin-bottom: 36px; /* बड़े टेक्स्ट को बैलेंस करने के लिए नीचे का मार्जिन थोड़ा बढ़ाया */
+          margin-bottom: 36px;
           width: 100%;
         }
 
@@ -199,10 +199,11 @@ export default function Services({ fadeUp }) {
         }
 
         .service-card h3 {
+          font-family: 'Outfit', sans-serif; 
           font-size: 20px;
           font-weight: 500;
           margin: 0 0 12px;
-          color: #000;
+          color: #0a0a0a;
         }
 
         .service-card p {
@@ -210,17 +211,13 @@ export default function Services({ fadeUp }) {
           font-size: 15px;
           color: #444;
           line-height: 1.7;
+          font-weight: 300;  
         }
 
         @media (max-width: 600px) {
           #our-services {
             padding-top: 12px;
             padding-bottom: 16px;
-          }
-
-          .section-label-centered {
-            font-size: 18px; /* मोबाइल स्क्रीन पर भी अच्छा दिखेगा */
-            margin-bottom: 24px;
           }
 
           .service-card {

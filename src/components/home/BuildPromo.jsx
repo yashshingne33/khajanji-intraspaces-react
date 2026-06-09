@@ -18,11 +18,20 @@ export default function BuildPromo({ fadeUp }) {
 
         <div className="build-promo__content">
           <div className="build-promo__text-container">
+            <p style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: '11px',
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              fontWeight: 300,
+              color: 'rgba(255,255,255,0.6)',
+              marginBottom: '16px',
+            }}>Architecture & Design</p>
             <h2 className="build-promo__title">
               The best builds start<br />before the build
             </h2>
           </div>
-
+q
           <div className="build-promo__right-container">
             <div className="build-promo__inset-wrapper">
               <img 
@@ -30,12 +39,12 @@ export default function BuildPromo({ fadeUp }) {
                 alt="Collin College, Technical Campus" 
                 className="build-promo__inset-img"
               />
-              <span className="build-promo__inset-caption">
+              {/* <span className="build-promo__inset-caption">
                 Collin College, Technical Campus
-              </span>
+              </span> */}
             </div>
             
-            <Link to="/contact" className="build-promo__cta">
+            <Link to="/contact" className="build-promo__cta" >
               Free Consultation
             </Link>
           </div>
@@ -92,6 +101,7 @@ export default function BuildPromo({ fadeUp }) {
           justify-content: space-between;
           align-items: flex-end;
           gap: 40px;
+          height: 100%;
         }
 
         .build-promo__text-container {
@@ -110,18 +120,15 @@ export default function BuildPromo({ fadeUp }) {
         .build-promo__right-container {
           display: flex;
           flex-direction: column;
-          align-items: flex-end;
-          /* बटन को बिल्कुल नीचे (bottom border के पास) पुश करने के लिए */
-          justify-content: flex-end; 
-          gap: 40px;
-          position: relative;
-          height: 100%;
+          align-items: center;        /* was flex-end */
+          justify-content: flex-end;
+          gap: 20px;                  /* was 40px */
         }
 
         .build-promo__inset-wrapper {
-          position: absolute;
-          bottom: 120%;
-          right: 0;
+          position: relative;         /* was absolute */
+          bottom: auto;               /* remove absolute positioning */
+          right: auto;
           width: 350px;
           aspect-ratio: 1 / 1.1;
           background: #fff;
@@ -149,7 +156,7 @@ export default function BuildPromo({ fadeUp }) {
           color: #000000;
           padding: 16px 32px;
           font-size: 15px;
-          font-weight: 500;
+          font-weight: 300;
           text-decoration: none;
           position: relative;
           transition: transform 0.3s ease;

@@ -10,24 +10,44 @@ export default function Media() {
       id: 1,
       type: 'video',
       category: 'ads',
-      title: 'The Blueprint of Luxury - Khajanji Infraspaces Corporate Film',
+      title: 'Luxury Commercial Property in Katol | Business Space 3D Visualization',
       description: 'Experience an unmatched standard of design innovation and premium infrastructure execution across central India.',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      videoUrl: 'https://www.youtube.com/embed/HVH6Edno3xo',
+      thumbnail: 'https://img.youtube.com/vi/HVH6Edno3xo/maxresdefault.jpg',
       featured: true
     },
     {
       id: 2,
       type: 'video',
       category: 'walkthrough',
-      title: 'Elysium Penthouses: Exclusive Virtual Tour',
+      title: 'Premium 3 Storey Apartment Project in Nagpur | Real Estate Walkthrough ',
       description: 'A comprehensive interior and spatial design walkthrough curated by our leading space engineers.',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-      thumbnail: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80',
-      featured: false
+      videoUrl: 'https://www.youtube.com/embed/PJSSTQFR_3w',
+      thumbnail: 'https://img.youtube.com/vi/PJSSTQFR_3w/maxresdefault.jpg',
+      featured: true
     },
     {
       id: 3,
+      type: 'video',
+      category: 'ads',
+      title: 'Best Interior Designers in Nagpur | Luxury Home 3D Visualization Tour',
+      description: 'Step into a world of modern luxury, elegant interiors, and smart space planning. This premium 3D walkthrough showcases contemporary home interior designs crafted for stylish and comfortable living.',
+      videoUrl: 'https://www.youtube.com/embed/3WuMmSREpyQ',
+      thumbnail: 'https://img.youtube.com/vi/3WuMmSREpyQ/maxresdefault.jpg',
+      featured: true
+    },
+    {
+      id: 4,
+      type: 'video',
+      category: 'walkthrough',
+      title: 'Premium Residential Plots in Nagpur | 3D Township Walkthrough',
+      description: 'Explore our modern township and residential plot development through this stunning 3D walkthrough video. Designed for smart investors and future homeowners, this project offers premium plots in a rapidly developing location with excellent connectivity and future growth potential.',
+      videoUrl: 'https://www.youtube.com/embed/jgT-Vq8i-98',
+      thumbnail: 'https://img.youtube.com/vi/jgT-Vq8i-98/maxresdefault.jpg',
+      featured: false
+    },
+    {
+      id: 5,
       type: 'press',
       category: 'news',
       title: 'National Architecture Conclave 2026: Pioneers of Tomorrow',
@@ -35,13 +55,37 @@ export default function Media() {
       date: 'May 2026',
       publication: 'Urban Design Magazine'
     },
+    // {
+    //   id: 6,
+    //   type: 'image',
+    //   category: 'gallery',
+    //   title: 'Structural Geometry In Concrete & Glass',
+    //   description: 'Raw minimal aesthetic framework shot during the final handover phase of our commercial landmark.',
+    //   imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80'
+    // }
     {
-      id: 4,
+      id: 6,
       type: 'image',
       category: 'gallery',
-      title: 'Structural Geometry In Concrete & Glass',
-      description: 'Raw minimal aesthetic framework shot during the final handover phase of our commercial landmark.',
-      imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80'
+      // title: 'Structural Geometry In Concrete & Glass',
+      // description: 'Raw minimal aesthetic framework shot during the final handover phase of our commercial landmark.',
+      imageUrl: '/assets/gallery1.jpg'
+    },
+    {
+      id: 7,
+      type: 'image',
+      category: 'gallery',
+      // title: 'Modern Interior Design',
+      // description: 'Elegant and contemporary interior spaces.',
+      imageUrl: '/assets/gallery2.jpg'
+    },
+    {
+      id: 8,
+      type: 'image',
+      category: 'gallery',
+      // title: 'Luxury Residence',
+      // description: 'Premium residential architecture and detailing.',
+      imageUrl: '/assets/gallery3.jpg'
     }
   ]
 

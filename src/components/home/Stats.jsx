@@ -1,53 +1,3 @@
-// import { motion } from 'framer-motion'
-// import styles from '../../pages/HomePage.module.css'
-// import StatItem from './shared/StatItem'
-
-// const STATS = [
-//   { value: '10+', label: 'Years of design and planning experience.' },
-//   { value: '20+', label: 'Projects across multiple real estate segments.' },
-//   { value: '3+',  label: 'Expertise in Residential, Commercial, Plotted Projects, and Townships.' },
-//   { value: '50+',  label: 'Focus on architecture, planning, and 3D visualization.' },
-// ]
-
-// export default function Stats({ fadeUp }) {
-//   return (
-//     <motion.div
-//       className="new-stats-container"
-//       {...fadeUp}
-//       style={{
-//         background: '#ffffff',
-//         padding: '60px 40px',
-//         display: 'grid',
-//         gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-//         gap: '24px',
-//         borderBottom: '1px solid #e5e5e5',
-//         maxWidth: '1400px',
-//         margin: '0 auto',
-//       }}
-//     >
-//       {STATS.map((stat, index) => (
-//         <StatItem key={stat.label} stat={stat} index={index} />
-//       ))}
-//     </motion.div>
-//   )
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { motion } from 'framer-motion'
 import styles from '../../pages/HomePage.module.css'
 import StatItem from './shared/StatItem'
@@ -68,7 +18,24 @@ export default function Stats({ fadeUp }) {
       >
         {STATS.map((stat, index) => (
           <div className="premium-stats-cell" key={stat.label}>
-            <StatItem stat={stat} index={index} />
+            <p style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
+              fontWeight: 400,
+              color: '#0a0a0a',
+              margin: '0 0 12px',
+              letterSpacing: '-0.02em',
+              lineHeight: 1,
+            }}>{stat.value}</p>
+            <p style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: '13px',
+              fontWeight: 300,
+              color: '#8a8880',
+              lineHeight: 1.68,
+              margin: 0,
+              maxWidth: '180px',        /* keeps text from stretching too wide */
+            }}>{stat.label}</p>
           </div>
         ))}
       </motion.div>
@@ -76,14 +43,12 @@ export default function Stats({ fadeUp }) {
       <style>{`
         .premium-stats-grid {
           background: #ffffff;
-          padding: 60px 40px;
+          padding: 30px 40px;
           display: grid;
-          /* 4 columns on desktop, scaling cleanly down to 2 columns side-by-side on mobile */
           grid-template-columns: repeat(4, 1fr);
-          gap: 32px;
-          border-bottom: 1px solid #e5e5e5;
-          maxWidth: 1400px;
-          margin: 0 auto;
+          gap: 0;                        /* was 32px — use dividers instead */
+          border-top: 1px solid #e4e2dc;
+          border-bottom: 1px solid #e4e2dc;
           width: 100%;
           box-sizing: border-box;
         }
@@ -91,7 +56,14 @@ export default function Stats({ fadeUp }) {
         .premium-stats-cell {
           display: flex;
           flex-direction: column;
-          height: 100%;
+          align-items: center;           /* centers content horizontally */
+          text-align: center;            /* centers text */
+          padding: 40px 32px;            /* equal spacing inside each cell */
+          border-right: 1px solid #e4e2dc;  /* divider between cells */
+        }
+
+        .premium-stats-cell:last-child {
+          border-right: none;            /* remove last divider */
         }
 
         /* Senior Engineer Responsiveness adjustments */
