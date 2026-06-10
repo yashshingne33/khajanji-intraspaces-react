@@ -72,7 +72,7 @@
 }
 
 .heroTitle {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(72px, 11vw, 136px);
   font-weight: 300;
   line-height: 0.92;
@@ -150,7 +150,7 @@
 .stat:last-child { border-right: none; }
 
 .statValue {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(36px, 4vw, 52px);
   font-weight: 300;
   color: var(--color-text);
@@ -243,10 +243,10 @@
 }
 
 .portfolioTitle {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-size: 26px;
   font-weight: 300;
-  color: #000000;
+  color: #0a0a0a;
 }
 
 .portfolioYear {
@@ -268,7 +268,7 @@
 }
 
 .ctaHeadline {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(32px, 4vw, 52px);
   font-weight: 300;
   color: var(--color-text);

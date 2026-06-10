@@ -43,9 +43,9 @@ export default function FounderQuote({ fadeUp }) {
 
         .founder-quote {
           background: #E6E0D8; 
-          color: #111111; 
+          color: #444; 
           padding: clamp(60px, 8vw, 100px) clamp(24px, 5vw, 60px);
-          font-family: 'Cormorant Garamond', Garamond, 'Didot', 'Playfair Display', serif;
+          font-family: 'Outfit', sans-serif;
         }
 
         .founder-quote__inner {
@@ -104,7 +104,7 @@ export default function FounderQuote({ fadeUp }) {
           line-height: 1.55;
           letter-spacing: -0.01em;
           margin: 0;
-          color: #111111; 
+          color: #0a0a0a; 
           font-style: italic; 
         }
 
@@ -124,46 +124,36 @@ export default function FounderQuote({ fadeUp }) {
         }
 
         .founder-quote__name {
-          font-size: 19px;
-          font-weight: 500;
+          font-size: 14px;
+          font-weight: 400;
           letter-spacing: 0.02em;
-          color: #000000;
+          color: #0a0a0a;
         }
 
         .founder-quote__title {
-          font-size: 11px;
-          font-weight: 500;
+          font-family: 'Outfit', sans-serif;
+          font-size: 12px;
+          font-weight: 300;
           letter-spacing: 0.2em; 
           text-transform: uppercase;
-          color: #5E5D5A;
+          color: #8a8880;
         }
 
         .founder-quote__link {
           display: inline-flex;
           align-items: center;
+          font-family: 'Outfit', sans-serif;
           gap: 6px;
-          font-size: 14px;
-          font-weight: 500;
-          color: #000000;
+          font-size: 12px;
+          font-weight: 400;
+          color: #8a8880;
+          letter-spacing: 0.1em;  
+          text-transform: uppercase;
           text-decoration: none;
           transition: all 0.25s ease;
-          padding-bottom: 2px;
-          border-bottom: 1px solid transparent;
+          padding-bottom: 1px;
+          border-bottom: 1px solid #0a0a0a;
           letter-spacing: 0.03em;
-        }
-
-        .founder-quote__link .arrow {
-          font-size: 15px;
-          transition: transform 0.25s ease;
-        }
-
-        .founder-quote__link:hover {
-          color: #0040df;
-          border-color: #0040df;
-        }
-
-        .founder-quote__link:hover .arrow {
-          transform: translateX(5px);
         }
 
         /* Mobile Layout Refinements */

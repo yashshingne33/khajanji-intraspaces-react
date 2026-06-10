@@ -328,31 +328,37 @@ export default function PortfolioPage() {
       `}</style>
 
       {/* ── HERO ───────────────────────────── */}
-      <section className="sp" style={{ padding: '145px 48px 52px' }}>
-        <h1 className="fu1" style={{
-          fontFamily: "'Outfit', sans-serif",
-          fontSize: 'clamp(2.8rem, 5vw, 4rem)',
-          fontWeight: 400, lineHeight: 1.1,
-          letterSpacing: '-0.03em',
-          marginBottom: 28, color: '#0a0a0a',
-        }}>
-          Our Portfolio
+      <section className="sp" style={{ padding: '145px 48px 52px', textAlign: 'center' }}>
+        <h1
+          className="sr"
+          style={{
+            fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)',
+            fontWeight: 400,
+            lineHeight: 1.13,
+            letterSpacing: '-0.02em',
+            margin: '0 0 28px',
+            color: 'var(--color-text-primary)'
+          }}
+        >
+          Portfolio
         </h1>
         <p className="fu2" style={{
           fontFamily: "'Outfit', sans-serif",
           fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
-          lineHeight: 1.75, color: '#666',
-          fontWeight: 300, maxWidth: 520,
+          lineHeight: 1.75, color: '#444',
+          fontWeight: 300, maxWidth: 620,
+          margin: '0 auto',             
         }}>
           At Khajanji Infraspaces, we approach each project with a thoughtful
           blend of environmental psychology, art, architecture, and cultural
           insight — all grounded in meticulous project management.
         </p>
       </section>
+      
 
       {/* ── FILTER TABS ────────────────────── */}
       <div style={{ borderTop: '1px solid #e4e2dc', borderBottom: '1px solid #e4e2dc' }}>
-        <div className="filter-row sp" style={{ padding: '0 48px', display: 'flex', gap: 36 }}>
+        <div className="filter-row sp" style={{ padding: '0 48px', display: 'flex', gap: 36, justifyContent: 'center' }}>
           {TABS.map((t) => (
             <button
               key={t.key}

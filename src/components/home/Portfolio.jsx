@@ -91,12 +91,12 @@ export default function Portfolio({ fadeUp }) {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          font-family: var(--font-display), sans-serif;
+          font-family: 'Outfit', sans-serif;
           font-size: 15px;
-          font-weight: 600;
-          color: #000000;
+          font-weight: 400;
+          color: #0a0a0a;
           text-decoration: none;
-          border-bottom: 2px solid #000000;
+          border-bottom: 2px solid #0a0a0a;
           padding-bottom: 6px;
           transition: opacity 0.3s ease;
           white-space: nowrap;

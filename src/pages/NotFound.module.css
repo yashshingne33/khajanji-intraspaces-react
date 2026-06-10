@@ -15,7 +15,7 @@
 }
 
 .errorNum {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(100px, 18vw, 180px);
   font-weight: 300;
   line-height: 1;
@@ -25,7 +25,7 @@
 }
 
 .headline {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(32px, 5vw, 52px);
   font-weight: 300;
   color: var(--color-text);

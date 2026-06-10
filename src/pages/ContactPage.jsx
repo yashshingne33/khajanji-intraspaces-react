@@ -585,7 +585,7 @@ export default function ContactPage() {
       </section>
 
       {/* ══════════════════ S2 — CONTACT EXPERIENCE ══════════════════ */}
-      <section className="contact-grid">
+      <section className="contact-grid" id="enquiry-form">
         <div className="contact-l">
           <div>
             <span className="sec-label sr">Get in Touch</span>
@@ -773,7 +773,7 @@ export default function ContactPage() {
         <p className="sr sr-d2">
           From residential landmarks to corporate offices and masterplanned layouts—we combine design principles with functional execution.
         </p>
-        <a href="mailto:khajanjiinfraspaces@gmail.com" className="ghost-btn sr sr-d3">
+        <a href="#enquiry-form" className="ghost-btn sr sr-d3">
           Start a Conversation <span style={{ fontSize:13 }}>→</span>
         </a>
       </section>

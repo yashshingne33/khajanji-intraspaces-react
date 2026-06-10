@@ -24,7 +24,7 @@
   color: var(--color-text-muted);
 }
 .content h2, .content h3 {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-weight: 300;
   color: var(--color-text);
   margin: 36px 0 16px;
@@ -46,7 +46,7 @@
 .comments { border-top: 1px solid var(--color-border); padding-top: 48px; }
 
 .commentsTitle {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 24px;
@@ -64,7 +64,7 @@
 }
 
 .formTitle {
-  font-family: var(--font-display);
+  font-family: 'Outfit', sans-serif;
   font-size: 20px;
   font-weight: 300;
   color: var(--color-text);
@@ -81,7 +81,7 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   color: var(--color-text);
-  font-family: var(--font-body);
+  font-family: 'Outfit', sans-serif;
   font-size: 13.5px;
   font-weight: 300;
   padding: 13px 16px;

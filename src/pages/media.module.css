@@ -1,3 +1,18 @@
+/* ── Scroll Reveal ── */
+:global(.sr) {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s cubic-bezier(.25, 1, .5, 1), transform 0.8s cubic-bezier(.25, 1, .5, 1);
+}
+:global(.sr-on) {
+  opacity: 1 !important;
+  transform: none !important;
+}
+:global(.sr-d1) { transition-delay: .05s }
+:global(.sr-d2) { transition-delay: .12s }
+:global(.sr-d3) { transition-delay: .18s }
+:global(.sr-d4) { transition-delay: .25s }
+
 /* ── Main Root & Container Options ── */
 .mediaPage {
   background-color: #ffffff;
@@ -18,10 +33,16 @@
 }
 
 .pageMainHeading {
-  font-size: 42px;
-  font-weight: 700;
-  color: blue; /* Clean high-end brand orange color matching your target reference */
+  font-family: 'Outfit', sans-serif;
+  /* font-size: 42px; */
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 400;
+  color: #0a0a0a; /* Clean high-end brand orange color matching your target reference */
   margin: 70px 0 0 0;
+  line-height: 1.13;          /* Added: Tightens the vertical space between lines */
+  letter-spacing: -0.02em;
+  color: 'var(--color-text-primary)'
+
 }
 
 /* ── Filter Controls ── */
@@ -43,7 +64,7 @@
   padding: 8px 20px;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 999px;
+  border-radius: 0px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -85,7 +106,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 12px; /* Smooth card layout border rounding */
+  border-radius: 0px; /* Smooth card layout border rounding */
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Clean modern depth layer shading */
   background: #000000;
@@ -131,7 +152,7 @@
   width: 68px;
   height: 48px;
   background-color: blue; /* Distinct crisp red play block */
-  border-radius: 14px;
+  border-radius: 0px;
   position: relative;
   transition: background-color 0.2s ease, transform 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

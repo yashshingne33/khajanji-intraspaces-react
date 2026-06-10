@@ -4,11 +4,11 @@
 }
 
 .heading {
-  font-family: var(--font-body);
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(28px, 3.6vw, 44px);
   font-weight: 700;
   letter-spacing: 0.01em;
-  color: #000000;
+  color: #0a0a0a;
   margin-bottom: 36px;
 }
 
@@ -60,11 +60,11 @@
 }
 
 .title {
-  font-family: var(--font-body);
+  font-family: 'Outfit', sans-serif;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.01em;
-  color: #000000;
+  color: #0a0a0a;
 }
 
 .text {

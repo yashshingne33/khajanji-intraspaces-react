@@ -1,7 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Media.module.css'
 
+function useReveal() {
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const els = document.querySelectorAll('.sr')
+      const io = new IntersectionObserver(
+        entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('sr-on')),
+        { threshold: 0.06 }
+      )
+      els.forEach(el => io.observe(el))
+      return () => io.disconnect()
+    }, 60)
+    return () => clearTimeout(t)
+  }, [])
+}
+
+
 export default function Media() {
+  useReveal() 
   const [activeFilter, setActiveFilter] = useState('all')
   const [playingVideoId, setPlayingVideoId] = useState(null)
 
@@ -111,12 +128,12 @@ export default function Media() {
       {/* 1. Page Header */}
       <section className={styles.heroSection}>
         <div className={styles.container}>
-          <h1 className={styles.pageMainHeading}>Media</h1>
+          <h1 className={`${styles.pageMainHeading} sr`}>Media</h1>
         </div>
       </section>
 
       {/* 2. Navigation Filters */}
-      <section className={styles.controlsSection}>
+      <section className={`${styles.controlsSection} sr sr-d1`}>
         <div className={styles.container}>
           <div className={styles.filterBar}>
             {['all', 'video', 'press', 'gallery'].map((filter) => (
@@ -136,9 +153,9 @@ export default function Media() {
       <section className={styles.gridSection}>
         <div className={styles.container}>
           <div className={styles.mediaGrid}>
-            {getFilteredItems().map((item) => (
-              <div key={item.id} className={styles.gridCard}>
-                
+            {/* Each grid card */}
+            {getFilteredItems().map((item, index) => (
+              <div key={item.id} className={`${styles.gridCard} sr sr-d${(index % 4) + 1}`}>
                 {/* Visual Content Block */}
                 <div className={styles.cardVisualContainer}>
                   {item.type === 'video' && (
