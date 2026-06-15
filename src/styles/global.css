@@ -11,11 +11,10 @@
   --color-bg-alt:    #ffffff;
   --color-surface:   #ffffff;
   --color-border:    #e5e5e5;
-  --color-text:      #000000;
+  --color-text:      #0a0a0a;
   --color-text-muted: #555555;
   --color-text-dim:  #777777;
-  --color-accent:    #000000;
-
+  --color-accent:    #0a0a0a;
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'Outfit', system-ui, sans-serif;
@@ -28,6 +27,18 @@
   /* Transitions */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --transition: 0.3s var(--ease);
+}
+
+/* Full-width reset for layout elements */
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 html {

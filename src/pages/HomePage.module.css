@@ -1,47 +1,123 @@
-/* -- Hero -- */
-.page { overflow-x: hidden; }
-
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 600px;
-  overflow: hidden;
-  background: #000;
+/* ─────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────── */
+:root {
+  --page-pad: clamp(16px, 5vw, 80px);
+  --section-pad: clamp(48px, 8vw, 96px);
+  --transition: 0.25s ease;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-bg: #ffffff;
+  --color-text: #0a0a0a;
+  --color-text-dim: rgba(10, 10, 10, 0.5);
+  --color-text-muted: rgba(10, 10, 10, 0.45);
 }
 
+/* ─────────────────────────────────────────
+   PAGE WRAPPER
+───────────────────────────────────────── */
+.page {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 500px;
+  overflow: hidden;
+  background: #0a0a0a;
+  box-sizing: border-box;
+}
+
+/* ── Slide background container ──
+   z-index ladder:
+   0  = inactive slide image
+   1  = active slide image       ← bgActive
+   2  = overlay (gradient)       ← .overlay
+   3  = panel lines              ← .panelLines
+   4  = all hero text / UI       ← .heroContent, .heroSubtitle, .viewProject, .dots
+*/
 .slideBg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   opacity: 0;
+  z-index: 0;
   transition: opacity 0.6s ease;
-  transform: scale(1.05);
-  animation: slowZoom 8s ease-out forwards;
+  will-change: opacity;
+  /* No transform/animation here — applied only on desktop via @media */
 }
-.bgActive { opacity: 1; }
+
+.bgActive {
+  opacity: 1;
+  z-index: 1;   /* sits BELOW overlay (z-index 2) */
+}
+
+/* ── Slide image ── */
+.slideBgImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Desktop — subtle zoom animation only on large screens where it looks good */
+@media (min-width: 769px) {
+  .bgActive .slideBgImg {
+    animation: slowZoom 8s ease-out forwards;
+  }
+}
 
 @keyframes slowZoom {
   from { transform: scale(1.05); }
   to   { transform: scale(1.00); }
 }
 
+/* ── Dark gradient overlay ──
+   z-index: 2 — sits above the image (z-index 1) but below text (z-index 4) */
 .overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;   /* FIX: was z-index 1 — now correctly above bgActive */
+  pointer-events: none;
   background: linear-gradient(
     to right,
-    rgba(0,0,0,0.35) 0%,
-    rgba(0,0,0,0.18) 55%,
-    rgba(0,0,0,0.05) 100%
+    rgba(0, 0, 0, 0.50) 0%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.10) 100%
   );
-  z-index: 1;
 }
 
+/* Extra bottom fade so text is always readable */
+.overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.60) 0%,
+    transparent 45%
+  );
+}
+
+/* ── Decorative panel lines ── */
 .panelLines {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 3;   /* above overlay */
   pointer-events: none;
   display: flex;
 }
@@ -49,90 +125,109 @@
   display: block;
   width: 1px;
   height: 100%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 .panelLines span:first-child { margin-left: 26%; }
 .panelLines span:last-child  { margin-left: 38%; }
 
+/* ── Hero text block ── */
 .heroContent {
   position: absolute;
-  bottom: 100px;
+  bottom: clamp(80px, 12vh, 120px);
   left: var(--page-pad);
-  z-index: 2;
+  right: var(--page-pad);
+  z-index: 4;   /* above everything */
   transition: opacity 0.4s ease, transform 0.4s ease;
+  max-width: 820px;
 }
-.heroContent.fadeOut { opacity: 0; transform: translateY(10px); }
+.heroContent.fadeOut {
+  opacity: 0;
+  transform: translateY(10px);
+}
 
 .heroTag {
-  font-size: 11px;
+  font-size: clamp(9px, 1.2vw, 11px);
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: clamp(8px, 1.5vh, 14px);
 }
 
 .heroTitle {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(72px, 11vw, 136px);
+  font-size: clamp(36px, 8vw, 136px);
   font-weight: 300;
   line-height: 0.92;
   letter-spacing: -0.01em;
   color: #ffffff;
+  word-break: break-word;
 }
 
+/* ── Subtitle ── */
 .heroSubtitle {
   position: absolute;
-  bottom: 40px;
+  bottom: clamp(28px, 5vh, 48px);
   left: var(--page-pad);
-  z-index: 2;
-  font-size: 15px;
+  right: clamp(100px, 20vw, 220px);
+  z-index: 4;
+  font-size: clamp(12px, 1.5vw, 15px);
   font-weight: 300;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   transition: opacity 0.4s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .heroSubtitle.fadeOut { opacity: 0; }
 
+/* ── CTA link ── */
 .viewProject {
   position: absolute;
-  bottom: 68px;
+  bottom: clamp(56px, 10vh, 80px);
   right: var(--page-pad);
-  z-index: 2;
+  z-index: 4;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 13.5px;
+  font-size: clamp(11px, 1.3vw, 13.5px);
   font-weight: 400;
   letter-spacing: 0.07em;
-  color: rgba(255,255,255,0.85);
-  transition: color 0.25s, gap 0.25s;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color var(--transition), gap var(--transition);
+  white-space: nowrap;
 }
 .viewProject:hover { color: #ffffff; gap: 16px; }
 
+/* ── Slide dots ── */
 .dots {
   position: absolute;
-  bottom: 38px;
+  bottom: clamp(20px, 4vh, 38px);
   right: var(--page-pad);
-  z-index: 2;
+  z-index: 4;
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
 .dot {
-  width: 6px; height: 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.32);
+  background: rgba(255, 255, 255, 0.32);
   border: none;
   padding: 0;
-  transition: background 0.25s, transform 0.25s;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
 }
 .dotActive {
   background: #ffffff;
   transform: scale(1.4);
 }
 
-/* -- Stats -- */
+/* ─────────────────────────────────────────
+   STATS
+───────────────────────────────────────── */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -141,7 +236,7 @@
 }
 
 .stat {
-  padding: 48px var(--page-pad);
+  padding: clamp(28px, 4vw, 48px) var(--page-pad);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -151,23 +246,24 @@
 
 .statValue {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(36px, 4vw, 52px);
+  font-size: clamp(28px, 4vw, 52px);
   font-weight: 300;
   color: var(--color-text);
   line-height: 1;
 }
 
 .statLabel {
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-dim);
 }
 
-/* -- Portfolio -- */
+/* ─────────────────────────────────────────
+   PORTFOLIO
+───────────────────────────────────────── */
 .portfolio {
-  padding: clamp(45px, 6vw, 25px) var(--page-pad);
-  
+  padding: clamp(40px, 6vw, 80px) var(--page-pad);
   background: var(--color-bg);
 }
 
@@ -175,8 +271,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
-  
+  margin-bottom: 24px;
 }
 
 .seeAll {
@@ -199,17 +294,19 @@
 .portfolioItem {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3/4;
+  aspect-ratio: 3 / 4;
   display: block;
 }
 
 .portfolioImgWrap {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
 .portfolioImg {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.7s var(--ease);
 }
@@ -218,7 +315,12 @@
 .portfolioOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.4) 60%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.4) 60%,
+    transparent 100%
+  );
   opacity: 0;
   transition: opacity 0.35s var(--ease);
 }
@@ -238,24 +340,26 @@
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.55);
+  color: rgba(0, 0, 0, 0.55);
   margin-bottom: 6px;
 }
 
 .portfolioTitle {
   font-family: 'Outfit', sans-serif;
-  font-size: 26px;
+  font-size: clamp(18px, 2.5vw, 26px);
   font-weight: 300;
   color: #0a0a0a;
 }
 
 .portfolioYear {
   font-size: 12px;
-  color: rgba(0,0,0,0.45);
+  color: rgba(0, 0, 0, 0.45);
   margin-top: 4px;
 }
 
-/* -- CTA Banner -- */
+/* ─────────────────────────────────────────
+   CTA BANNER
+───────────────────────────────────────── */
 .ctaBanner {
   padding: var(--section-pad) var(--page-pad);
   background: var(--color-bg);
@@ -269,39 +373,144 @@
 
 .ctaHeadline {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(24px, 4vw, 52px);
   font-weight: 300;
   color: var(--color-text);
 }
 
 .ctaText {
-  font-size: 15px;
+  font-size: clamp(13px, 1.5vw, 15px);
   font-weight: 300;
   color: var(--color-text-muted);
   max-width: 400px;
   line-height: 1.7;
 }
 
-/* -- Responsive -- */
+/* ─────────────────────────────────────────
+   RESPONSIVE BREAKPOINTS
+───────────────────────────────────────── */
+
+/* ── Tablet landscape (≤ 1024px) ── */
 @media (max-width: 1024px) {
-  .stats           { grid-template-columns: repeat(2, 1fr); }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .stat:nth-child(2) { border-right: none; }
   .stat:nth-child(3) { border-top: 1px solid var(--color-border); }
-  .portfolioGrid   { grid-template-columns: repeat(2, 1fr); }
+
+  .portfolioGrid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ── Tablet portrait (≤ 900px) ── */
+@media (max-width: 900px) {
+  .slideBgImg {
+    object-position: 30% center;
+  }
+}
+
+/* ── Tablet portrait (≤ 768px) ── */
 @media (max-width: 768px) {
-  .stats           { grid-template-columns: repeat(2, 1fr); }
-  .portfolioGrid   { grid-template-columns: 1fr; }
-  .panelLines      { display: none; }
-  .heroContent     { bottom: 80px; left: 20px; right: 20px; }
-  .heroSubtitle    { bottom: 32px; font-size: 13px; left: 20px; right: 20px; }
-  .viewProject     { bottom: 60px; right: 20px; }
-  .dots            { bottom: 28px; right: 20px; }
+  .panelLines { display: none; }
+
+  /* Disable zoom on mobile — prevents crop/cutoff appearance */
+  .bgActive .slideBgImg {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .heroContent {
+    bottom: clamp(90px, 14vh, 130px);
+  }
+
+  .heroSubtitle {
+    right: clamp(80px, 18vw, 160px);
+    white-space: normal;
+  }
+
+  .viewProject {
+    font-size: 11px;
+    gap: 7px;
+  }
+
+  .portfolioGrid { grid-template-columns: repeat(2, 1fr); }
+
+  .portfolioInfo {
+    bottom: 16px;
+    left: 16px;
+  }
 }
 
-@media (max-width: 540px) {
-  .stats           { grid-template-columns: 1fr; }
-  .stat            { border-right: none; border-top: 1px solid var(--color-border); }
+/* ── Large phones (≤ 600px) ── */
+@media (max-width: 600px) {
+  .slideBgImg {
+    object-position: 25% center;
+  }
+
+  .portfolioGrid { grid-template-columns: 1fr; }
+  .portfolioItem { aspect-ratio: 4 / 3; }
+}
+
+/* ── Small phones (≤ 480px) ── */
+@media (max-width: 480px) {
+  .hero {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 480px;
+    max-height: none;
+  }
+
+  .slideBgImg {
+    object-position: center top;  /* show top of building/room on portrait */
+  }
+
+  .heroTitle {
+    font-size: clamp(32px, 10vw, 52px);
+  }
+
+  .heroContent {
+    bottom: clamp(80px, 16vh, 100px);
+  }
+
+  .heroSubtitle {
+    bottom: clamp(52px, 9vh, 64px);
+    right: var(--page-pad);
+    white-space: normal;
+    font-size: 12px;
+  }
+
+  .viewProject {
+    bottom: clamp(32px, 5.5vh, 44px);
+    font-size: 11px;
+  }
+
+  .dots {
+    bottom: clamp(14px, 3vh, 22px);
+    right: var(--page-pad);
+  }
+
+  .stats { grid-template-columns: 1fr; }
+  .stat {
+    border-right: none;
+    border-top: 1px solid var(--color-border);
+  }
   .stat:first-child { border-top: none; }
+}
+
+/* ── Very small phones (≤ 360px) ── */
+@media (max-width: 360px) {
+  .heroTitle {
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .viewProject { display: none; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .bgActive .slideBgImg {
+    animation: none;
+    transform: none;
+  }
+  .portfolioImg { transition: none; }
 }

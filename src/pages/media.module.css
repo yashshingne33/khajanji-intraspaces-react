@@ -1,88 +1,98 @@
 /* ── Scroll Reveal ── */
 :global(.sr) {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.8s cubic-bezier(.25, 1, .5, 1), transform 0.8s cubic-bezier(.25, 1, .5, 1);
+  transform: translateY(26px);
+  transition: opacity 0.75s cubic-bezier(.25, .46, .45, .94), transform 0.75s cubic-bezier(.25, .46, .45, .94);
 }
 :global(.sr-on) {
   opacity: 1 !important;
-  transform: none !important;
+  transform: translateY(0) !important;
 }
-:global(.sr-d1) { transition-delay: .05s }
-:global(.sr-d2) { transition-delay: .12s }
-:global(.sr-d3) { transition-delay: .18s }
-:global(.sr-d4) { transition-delay: .25s }
+:global(.sr-d1) { transition-delay: 0.08s; }
+:global(.sr-d2) { transition-delay: 0.16s; }
+:global(.sr-d3) { transition-delay: 0.24s; }
+:global(.sr-d4) { transition-delay: 0.32s; }
 
 /* ── Main Root & Container Options ── */
 .mediaPage {
   background-color: #ffffff;
-  padding: 80px 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding-bottom: 80px;
+  font-family: 'Outfit', sans-serif;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 
 /* ── Centered Layout Header ── */
 .heroSection {
   text-align: center;
-  margin-bottom: 32px;
+  padding: 56px 0 24px 0; 
+  margin-top: 64px; /* Flawlessly offsets fixed header bar */
 }
 
 .pageMainHeading {
   font-family: 'Outfit', sans-serif;
-  /* font-size: 42px; */
-  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
   font-weight: 400;
-  color: #0a0a0a; /* Clean high-end brand orange color matching your target reference */
-  margin: 70px 0 0 0;
-  line-height: 1.13;          /* Added: Tightens the vertical space between lines */
+  color: #0a0a0a;
+  margin: 0;
+  line-height: 1.15;          
   letter-spacing: -0.02em;
-  color: 'var(--color-text-primary)'
-
 }
 
-/* ── Filter Controls ── */
+/* ── Filter Controls & Edge-to-Edge Divider Lines ── */
 .controlsSection {
   margin-bottom: 48px;
+  width: 100%;
+}
+
+.filterDividerLine {
+  width: 100%;
+  height: 1px;
+  background-color: #e4e2dc; /* Matching exact portfolio container line rules */
 }
 
 .filterBar {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 40px;
 }
 
 .filterLink {
-  background: #f5f5f5;
-  border: 1px solid #e0e0e0;
-  color: #555555;
-  padding: 8px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 0px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px; /* Scaled down to premium layout values */
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 400;
+  background: none;
+  border: none;
+  color: #8a8880;
+  padding: 18px 0;
   cursor: pointer;
-  transition: all 0.2s ease;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
 .filterLink:hover {
-  background: #eeeeee;
-  color: #000000;
+  color: #0a0a0a;
 }
 
 .activeLink {
-  background: blue;
-  border-color:blue;
-  color: #ffffff;
+  color: #0a0a0a !important;
 }
 
-.activeLink:hover {
-  background: blue;
-  color: #ffffff;
+/* Bottom tracking line indicator for active categories */
+.activeLink::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; 
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #0a0a0a;
 }
 
 /* ── Core Grid Layout ── */
@@ -92,8 +102,8 @@
 
 .mediaGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Matching the strict 2-column format */
-  gap: 40px 32px;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 40px 24px;
 }
 
 .gridCard {
@@ -105,11 +115,10 @@
 .cardVisualContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 0px; /* Smooth card layout border rounding */
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Clean modern depth layer shading */
   background: #000000;
+  margin-bottom: 14px;
 }
 
 .coverImageWrapper {
@@ -124,6 +133,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.75s cubic-bezier(.25, .46, .45, .94);
+}
+
+.coverImageWrapper:hover .cardImageAsset {
+  transform: scale(1.04);
 }
 
 .videoEmbedElement {
@@ -133,32 +147,30 @@
   display: block;
 }
 
-/* ── Red Button Style ── */
+/* ── Overlay Style ── */
 .youtubePlayButtonOverlay {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.15);
-  transition: background-color 0.2s ease;
+  background: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
 }
 
 .coverImageWrapper:hover .youtubePlayButtonOverlay {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .youtubePlayIconShape {
-  width: 68px;
-  height: 48px;
-  background-color: blue; /* Distinct crisp red play block */
-  border-radius: 0px;
+  width: 52px;
+  height: 36px;
+  background-color: rgba(10, 10, 10, 0.85); 
   position: relative;
+  border-radius: 4px;
   transition: background-color 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Centered structural play vector triangle */
 .youtubePlayIconShape::after {
   content: "";
   position: absolute;
@@ -166,32 +178,37 @@
   left: 55%;
   transform: translate(-50%, -50%);
   border-style: solid;
-  border-width: 10px 0 10px 18px;
+  border-width: 6px 0 6px 10px;
   border-color: transparent transparent transparent #ffffff;
 }
 
 .coverImageWrapper:hover .youtubePlayIconShape {
-  background-color: #cc0000;
+  background-color: #003399; /* Brand blue highlight on hover */
   transform: scale(1.05);
 }
 
-/* ── Dynamic Text Elements Positioned Outside Beneath Images ── */
+/* ── Typography Elements Positioned Beneath Images ── */
 .cardContentMetadata {
-  padding: 16px 4px 0;
+  padding: 0 2px;
 }
 
 .cardTitleText {
-  font-size: 16px;
-  font-weight: 600;
-  color: #222222;
-  line-height: 1.4;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0a0a0a;
+  line-height: 1.35;
   margin: 0 0 6px 0;
 }
 
 .cardDescriptionText {
-  font-size: 14px;
-  color: #666666;
-  line-height: 1.5;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;              /* Clean, readable size for body text */
+  font-weight: 300;
+  color: #8a8880;
+  letter-spacing: normal;        /* Removes the wide spacing bug */
+  text-transform: none;          /* Fixes the odd uppercase text tracking */
+  line-height: 1.5;              /* Gives multi-line descriptions room to breathe */
   margin: 0;
 }
 
@@ -199,34 +216,85 @@
 .pressCardPlaceholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #fdfbf7 0%, #f5f1ea 100%);
+  background: #f7f6f2;
+  border: 1px solid #e4e2dc;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 32px;
+  justify-content: space-between;
+  padding: 24px;
   box-sizing: border-box;
 }
 
 .pressLabelBadge {
-  font-size: 18px;
-  font-weight: 700;
-  color: #444444;
-  margin-bottom: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0a0a0a;
+  line-height: 1.4;
 }
 
 .pressDateBadge {
-  font-size: 13px;
-  color: #888888;
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  color: #8a8880;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 /* ── Responsive Screen Management ── */
-@media (max-width: 840px) {
-  .mediaGrid {
-    grid-template-columns: 1fr; /* Responsively shift to 1-column layout on smaller screens */
-    gap: 36px;
+@media (max-width: 900px) {
+  .container {
+    padding: 0 24px !important;
   }
   
+  .mediaGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px 20px !important;
+  }
+
+  /* Swiper row alignment layout rules */
+  .filterBar {
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 24px !important;
+    gap: 32px !important;
+  }
+
+  .filterBar::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
+/* Mobile Viewport Matching (480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px !important;
+  }
+
+  /* Corrects layout to render properly right underneath navbar */
+  .heroSection {
+    padding: 36px 0 12px 0 !important;
+    margin-top: 64px !important;
+  }
+
   .pageMainHeading {
-    font-size: 28px;
+    font-size: 32px !important;
+  }
+
+  .controlsSection {
+    margin-bottom: 32px !important;
+  }
+
+  .mediaGrid {
+    grid-template-columns: 1fr !important;
+    padding: 0 !important;
+    gap: 28px !important;
+  }
+
+  .filterBar {
+    padding: 0 16px !important;
+    gap: 24px !important;
   }
 }

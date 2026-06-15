@@ -16,11 +16,14 @@ function useReveal() {
   }, [])
 }
 
-
 export default function Media() {
   useReveal() 
   const [activeFilter, setActiveFilter] = useState('all')
   const [playingVideoId, setPlayingVideoId] = useState(null)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const mediaItems = [
     {
@@ -72,53 +75,33 @@ export default function Media() {
       date: 'May 2026',
       publication: 'Urban Design Magazine'
     },
-    // {
-    //   id: 6,
-    //   type: 'image',
-    //   category: 'gallery',
-    //   title: 'Structural Geometry In Concrete & Glass',
-    //   description: 'Raw minimal aesthetic framework shot during the final handover phase of our commercial landmark.',
-    //   imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80'
-    // }
     {
       id: 6,
       type: 'image',
       category: 'gallery',
-      // title: 'Structural Geometry In Concrete & Glass',
-      // description: 'Raw minimal aesthetic framework shot during the final handover phase of our commercial landmark.',
       imageUrl: '/assets/gallery1.jpg'
     },
     {
       id: 7,
       type: 'image',
       category: 'gallery',
-      // title: 'Modern Interior Design',
-      // description: 'Elegant and contemporary interior spaces.',
       imageUrl: '/assets/gallery2.jpg'
     },
     {
       id: 8,
       type: 'image',
       category: 'gallery',
-      // title: 'Luxury Residence',
-      // description: 'Premium residential architecture and detailing.',
       imageUrl: '/assets/gallery3.jpg'
     }
   ]
 
-  const featuredItem = mediaItems.find(item => item.featured)
-  const regularItems = mediaItems.filter(item => !item.featured)
-
   const handleFilterChange = (filter) => {
     setActiveFilter(filter)
-    setPlayingVideoId(null) // Reset videos when changing views
+    setPlayingVideoId(null)
   }
 
   const getFilteredItems = () => {
-    if (activeFilter === 'all') {
-      // Return everything but let the featured item appear normally inside the main grid
-      return mediaItems
-    }
+    if (activeFilter === 'all') return mediaItems
     return mediaItems.filter(item => item.type === activeFilter || item.category === activeFilter)
   }
 
@@ -126,14 +109,27 @@ export default function Media() {
     <div className={styles.mediaPage}>
       
       {/* 1. Page Header */}
-      <section className={styles.heroSection}>
+      <section className={styles.heroSection} style={{ padding: '92px 48px 52px', textAlign: 'center' }}>
         <div className={styles.container}>
-          <h1 className={`${styles.pageMainHeading} sr`}>Media</h1>
+          <h1
+          className="sr"
+          style={{
+            fontSize: 'clamp(2.2rem, 3.5vw, 3.2rem)',
+            fontWeight: 400,
+            lineHeight: 1.13,
+            letterSpacing: '-0.02em',
+            margin: '0 0 28px',
+            color: 'var(--color-text-primary)'
+          }}
+        >
+          Media
+        </h1>
         </div>
       </section>
 
-      {/* 2. Navigation Filters */}
+      {/* 2. Navigation Filters with Edge-To-Edge Divider Lines */}
       <section className={`${styles.controlsSection} sr sr-d1`}>
+        <div className={styles.filterDividerLine} />
         <div className={styles.container}>
           <div className={styles.filterBar}>
             {['all', 'video', 'press', 'gallery'].map((filter) => (
@@ -147,15 +143,16 @@ export default function Media() {
             ))}
           </div>
         </div>
+        <div className={styles.filterDividerLine} />
       </section>
 
       {/* 3. Media Presentation Grid */}
       <section className={styles.gridSection}>
         <div className={styles.container}>
           <div className={styles.mediaGrid}>
-            {/* Each grid card */}
             {getFilteredItems().map((item, index) => (
               <div key={item.id} className={`${styles.gridCard} sr sr-d${(index % 4) + 1}`}>
+                
                 {/* Visual Content Block */}
                 <div className={styles.cardVisualContainer}>
                   {item.type === 'video' && (
@@ -172,7 +169,6 @@ export default function Media() {
                       ) : (
                         <div className={styles.coverImageWrapper} onClick={() => setPlayingVideoId(item.id)}>
                           <img src={item.thumbnail} alt={item.title} className={styles.cardImageAsset} />
-                          {/* Centered Video Play Action Trigger */}
                           <div className={styles.youtubePlayButtonOverlay}>
                             <div className={styles.youtubePlayIconShape}></div>
                           </div>
@@ -183,7 +179,7 @@ export default function Media() {
 
                   {item.type === 'image' && (
                     <div className={styles.coverImageWrapper}>
-                      <img src={item.imageUrl} alt={item.title} className={styles.cardImageAsset} />
+                      <img src={item.imageUrl} alt={item.title || "Gallery Asset"} className={styles.cardImageAsset} />
                     </div>
                   )}
 
@@ -195,10 +191,10 @@ export default function Media() {
                   )}
                 </div>
 
-                {/* Content Block Details positioned cleanly below */}
+                {/* Metadata Styling matches Portfolio precisely */}
                 <div className={styles.cardContentMetadata}>
-                  <h3 className={styles.cardTitleText}>{item.title}</h3>
-                  <p className={styles.cardDescriptionText}>{item.description}</p>
+                  {item.title && <h3 className={styles.cardTitleText}>{item.title}</h3>}
+                  {item.description && <p className={styles.cardDescriptionText}>{item.description}</p>}
                 </div>
 
               </div>

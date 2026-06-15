@@ -178,176 +178,265 @@ export default function ContactPage() {
           border-left: 2px solid #8C7226;
         }
 
-        /* ── S2: CONTACT GRID ── */
-        .contact-grid { display: grid; grid-template-columns: 34% 66%; background: #f9f8f5; border-top: 1px solid #e4e2dc; }
-        .contact-l { padding: 72px 40px 72px 64px; display: flex; flex-direction: column; gap: 28px; }
-        .contact-l-block { display: flex; flex-direction: column; gap: 4px; }
-        .contact-l-block a { font-size: 14px; font-weight: 400; color: #0a0a0a; text-decoration: none; transition: color .2s; width: fit-content; }
-        .contact-l-block a:hover { color: #555; }
-        .contact-l-val { font-size: 14px; font-weight: 300; color: #333; line-height: 1.6; }
-
-        /* ── ENQUIRY FORM PANEL ── */
-        .contact-r {
-          background: #0c0c0b;
-          padding: 56px 72px 56px 64px;
+        /* ── S2: CONTACT EXPERIENCE ── */
+        .contact-grid { 
+          display: grid; 
+          grid-template-columns: 40% 60%; 
+          background: #f5f5f5; 
+          padding: 80px 64px;
+          gap: 40px;
+          border-top: 1px solid #e4e2dc;
+        }
+        
+        .contact-left-wrapper {
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          color: #fff;
-          position: relative;
-          overflow: hidden;
-        }
-        /* Blue corner accent matching logo */
-        .contact-r::before {
-          content: '';
-          position: absolute;
-          top: 0; left: 0;
-          width: 140px; height: 140px;
-          border-top: 1px solid rgba(26,79,196,0.3);
-          border-left: 1px solid rgba(26,79,196,0.3);
-          pointer-events: none;
-        }
-        .contact-r::after {
-          content: '';
-          position: absolute;
-          bottom: 0; right: 0;
-          width: 100px; height: 100px;
-          border-bottom: 1px solid rgba(26,79,196,0.15);
-          border-right: 1px solid rgba(26,79,196,0.15);
-          pointer-events: none;
+          gap: 24px;
         }
 
-        /* Inner form uses full width — two-column layout on right side */
-        .form-inner {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0 56px;
-          width: 100%;
-        }
-        .form-left { display: flex; flex-direction: column; }
-        .form-right { display: flex; flex-direction: column; justify-content: space-between; }
-
-        .form-header { margin-bottom: 28px; }
-        .form-header .sec-label { color: rgba(255,255,255,0.35); margin-bottom: 8px; }
-        .form-header h3 { font-size: 22px; font-weight: 300; color: #fff; letter-spacing: -.01em; line-height: 1.25; }
-        .form-header p { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.4); margin-top: 8px; line-height: 1.7; }
-
-        /* Vertical divider between two form columns */
-        .form-col-divider {
-          display: none; /* handled by grid gap */
+        .contact-card-l, .contact-card-r {
+          background: #ffffff;
+          padding: 48px;
+          border-radius: 6px;
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
         }
 
-        /* Field groups */
-        .f-group {
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          flex: 1;
-          margin-bottom: 20px;
-        }
-        .f-group:last-child { margin-bottom: 0; }
-
-        .f-label {
-          font-size: 9px;
-          letter-spacing: .2em;
-          text-transform: uppercase;
-          color: rgba(255,255,255,0.5);
-          font-weight: 500;
-          display: block;
-          margin-bottom: 8px;
-        }
-        /* Highly visible field borders */
-        .f-input, .f-select, .f-textarea {
-          width: 100%;
-          padding: 11px 14px;
+        .form-title { 
           font-family: 'Outfit', sans-serif;
-          font-size: 13px;
-          font-weight: 300;
-          color: #fff;
-          background: rgba(255,255,255,0.06);
-          border: 1px solid rgba(255,255,255,0.22);
-          outline: none;
-          resize: none;
-          transition: border-color .25s, background .25s, box-shadow .25s;
-          appearance: none;
-          -webkit-appearance: none;
-          border-radius: 0;
-        }
-        .f-input::placeholder, .f-textarea::placeholder { color: rgba(255,255,255,0.25); font-size: 12px; }
-        .f-input:focus, .f-select:focus, .f-textarea:focus {
-          border-color: #1a4fc4;
-          background: rgba(26,79,196,0.08);
-          box-shadow: 0 0 0 3px rgba(26,79,196,0.12);
-        }
-        .f-select { cursor: pointer; color: rgba(255,255,255,0.7); }
-        .f-select option { background: #111; color: #fff; }
-        .f-select.has-value { color: #fff; }
-
-        /* Textarea fills remaining height on right column */
-        .f-textarea-tall { flex: 1; min-height: 120px; }
-
-        .f-sel-wrap { position: relative; display: flex; flex-direction: column; flex: 1; }
-        .f-sel-wrap .f-select { flex: 1; }
-        .f-sel-wrap::after {
-          content: '▾'; position: absolute; right: 13px; top: calc(100% - 22px);
-          color: rgba(255,255,255,0.4); pointer-events: none; font-size: 11px;
+          font-size: 28px; 
+          font-weight: 600; 
+          margin-bottom: 32px; 
+          color: #0a0a0a; 
         }
 
-        /* Thin blue accent line above form */
-        .form-accent-line {
-          width: 40px; height: 2px;
+        /* Info Item Styles & Minimal Professional Indicators */
+        .contact-info-item {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 24px;
+          align-items: flex-start;
+        }
+        .contact-info-item:last-child {
+          margin-bottom: 0;
+        }
+        
+        /* Sleek line accent replacing previous emojis */
+        .contact-info-icon-line {
+          width: 20px;
+          height: 1px;
           background: #1a4fc4;
-          margin-bottom: 20px;
+          margin-top: 10px;
+          flex-shrink: 0;
+        }
+        
+        .contact-info-text h4 { 
+          font-family: 'Outfit', sans-serif;
+          font-size: 13px; 
+          font-weight: 500; 
+          color: #888; 
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 4px; 
+        }
+        .contact-info-text p, .contact-info-text a { 
+          font-family: 'Outfit', sans-serif;
+          font-size: 15px; 
+          color: #0a0a0a; 
+          text-decoration: none; 
+          line-height: 1.5;
+        }
+        .contact-info-text a:hover {
+          color: #1a4fc4;
         }
 
-        /* Stats row inside form panel */
-        .form-stats {
-          display: flex; gap: 32px;
-          margin-top: 28px;
-          padding-top: 24px;
-          border-top: 1px solid rgba(255,255,255,0.08);
+        /* ── LIGHT GRID FORM ELEMENTS ── */
+        .f-row { 
+          display: grid; 
+          grid-template-columns: 1fr 1fr; 
+          gap: 20px; 
+          margin-bottom: 20px; 
         }
-        .form-stat { display: flex; flex-direction: column; gap: 2px; }
-        .form-stat-num { font-size: 20px; font-weight: 200; color: #fff; letter-spacing: -.02em; }
-        .form-stat-label { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,0.3); font-weight: 400; }
-
-        /* CTA — logo blue */
-        .cta-btn {
-          display: inline-flex; align-items: center; gap: 12px;
-          padding: 13px 28px;
-          background: #1a4fc4; border: 1px solid #1a4fc4;
-          font-family: 'outfit', sans-serif; font-size: 10px; font-weight: 500;
-          letter-spacing: .18em; text-transform: uppercase; color: #fff;
-          cursor: pointer; transition: background .25s, gap .25s, border-color .25s;
-          width: fit-content;
+        .f-label-light { 
+          font-family: 'Outfit', sans-serif;
+          font-size: 13px; 
+          font-weight: 500; 
+          margin-bottom: 8px; 
+          display: block; 
+          color: #333; 
         }
-        .cta-btn:hover { background: #2558d8; border-color: #2558d8; gap: 18px; }
-        .cta-btn-ghost {
-          display: inline-flex; align-items: center; gap: 10px;
-          padding: 13px 28px;
-          background: transparent; border: 1px solid rgba(255,255,255,0.18);
-          font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400;
-          letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,0.5);
-          cursor: pointer; transition: all .25s;
-          margin-left: 12px;
+        .f-input-light {
+          width: 100%;
+          padding: 12px 16px;
+          font-family: 'Outfit', sans-serif;
+          font-size: 14px;
+          border: 1px solid #e0e0e0;
+          background: #ffffff;
+          color: #0a0a0a;
+          outline: none;
+          transition: border-color 0.2s, box-shadow 0.2s;
+          border-radius: 6px;
         }
-        .cta-btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.8); }
+        .f-input-light:focus { 
+          border-color: #1a4fc4; 
+          box-shadow: 0 0 0 3px rgba(26, 79, 196, 0.1);
+        }
+        .f-input-light::placeholder {
+          color: #bbb;
+        }
+        select.f-input-light {
+          cursor: pointer;
+          appearance: none;
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+          background-repeat: no-repeat;
+          background-position: right 16px center;
+          background-size: 14px;
+          padding-right: 40px;
+        }
 
-        /* Error state */
-        .f-error { font-size: 11px; color: #e07070; margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
-        .f-error::before { content: '↳'; }
+        /* Error Text State */
+        .f-error-light {
+          color: #e07070; 
+          font-size: 13px; 
+          font-weight: 500; 
+          margin-bottom: 20px; 
+          display: flex; 
+          align-items: center; 
+          gap: 6px;
+        }
 
-        /* ── S3: WHY CONNECT STRIP ── */
-        .why-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #e4e2dc; border-bottom: 1px solid #e4e2dc; background: #f9f8f5; padding: 0 64px; }
-        .why-cell { padding: 48px 32px; border-right: 1px solid #e4e2dc; display: flex; flex-direction: column; gap: 12px; transition: background .3s; }
-        .why-cell:first-child { border-left: 1px solid #e4e2dc; }
-        .why-cell:hover { background: #fff; }
-        .why-num { font-size: 11px; font-weight: 400; color: #555; letter-spacing: .1em; }
-        .why-title { font-size: 15px; font-weight: 400; color: #0a0a0a; }
-        .why-body { font-size: 13px; font-weight: 400; color: #555; line-height: 1.6; }
+        /* ── INTERACTIVE BUTTONS & ROBUST HOVER ACTIONS ── */
+        .cta-row { 
+          display: flex; 
+          gap: 16px; 
+          margin-top: 32px; 
+        }
+        
+        /* Primary #002ca3 "Send Message" Button */
+        .btn-primary { 
+          background: #002ca3; 
+          color: #ffffff; 
+          padding: 14px 32px; 
+          border: 1px solid #002ca3; 
+          font-family: 'Outfit', sans-serif;
+          font-weight: 400; 
+          font-size: 14px;
+          cursor: pointer; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center;
+          gap: 8px;
+          border-radius: 6px;
+          transition: background 0.2s, border-color 0.2s;
+        }
+        .btn-primary:hover { 
+          background: #1a4fc4; 
+          border-color: #1a4fc4; 
+        }
+
+        /* Custom Inverted "Call Instead" Button */
+        .btn-secondary { 
+          background: transparent; 
+          color: #002ca3; 
+          padding: 14px 32px; 
+          border: 1px solid #002ca3; 
+          font-family: 'Outfit', sans-serif;
+          font-weight: 400; 
+          font-size: 14px;
+          cursor: pointer; 
+          text-decoration: none;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 6px;
+          transition: background 0.2s, color 0.2s, border-color 0.2s;
+        }
+        /* Completely adapts to fill up dynamically like the Send Message button */
+        .btn-secondary:hover, .btn-secondary:active { 
+          background: #002ca3; 
+          color: #ffffff; 
+          border-color: #002ca3;
+        }
+
+        /* ── S3: SERVICES CARD STRIP ── */
+        .why-strip { 
+          display: grid; 
+          grid-template-columns: repeat(4, 1fr); 
+          background: #f5f5f5; 
+          padding: 0 64px 64px 64px; 
+          gap: 20px;
+        }
+        .why-cell { 
+          background: #ffffff;
+          padding: 32px 24px; 
+          border: 1px solid #fff;
+          border-radius: 2px;
+          display: flex; 
+          flex-direction: column; 
+          gap: 12px; 
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .why-cell:hover { 
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+        }
+        .why-num { 
+          font-family: 'Outfit', sans-serif;
+          font-size: 16px; 
+          font-weight: 400; 
+          color: #002ca3; 
+        }
+        .why-title { 
+          font-family: 'Outfit', sans-serif;
+          font-size: 14px; 
+          font-weight: 400; 
+          color: #0a0a0a; 
+          line-height: 1.3;
+        }
+        .why-body { 
+          font-family: 'Outfit', sans-serif;
+          font-size: 14px; 
+          font-weight: 300; 
+          color: #444; 
+          line-height: 1.5; 
+        }
+
+        /* ── S4: LOCATION GRID AREA ── */
+        .location-section {
+          background: #f5f5f5;
+          padding: 0 64px 80px 64px;
+        }
+        .location-header h2 { 
+          font-family: 'Outfit', sans-serif;
+          font-size: 28px; 
+          font-weight: 400; 
+          color: #0a0a0a;
+          margin-bottom: 24px;
+        }
+        .map-container-box {
+          width: 100%;
+          background: #ffffff;
+          padding: 16px;
+          border: 1px solid #fff;
+          border-radius: 4px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+        .map-wrap { 
+          width: 100%; 
+          aspect-ratio: 21 / 9; 
+          overflow: hidden; 
+          position: relative; 
+          border-radius: 2px;
+        }
+        .map-wrap iframe { 
+          width: 100%; 
+          height: 100%; 
+          border: 0; 
+          display: block; 
+        }
 
         /* ── S4: STUDIO LOCATION ── */
-        .location-header { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 40px; align-items: end; }
+        .location-header { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 24px; align-items: end; }
         .location-header h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; line-height: 1.2; letter-spacing: -.02em; }
         .location-header h2 em { font-style: italic; font-weight: 400; color: #555; }
         .location-header p { font-size: 13px; line-height: 1.8; color: #666; font-weight: 300; }
@@ -355,15 +444,61 @@ export default function ContactPage() {
         .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; filter: grayscale(40%) contrast(1.02); }
 
         /* ── S6: FINAL CTA ── */
-        .final-cta { display: flex; flex-direction: column; align-items: center; text-align: center; border-top: 1px solid #e4e2dc; }
-        .final-cta h2 { font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 300; letter-spacing: -.03em; line-height: 1.1; color: #0a0a0a; margin-bottom: 20px; }
-        .final-cta h2 em { font-style: italic; font-weight: 400; color: #555; }
-        .final-cta p { font-size: 14px; font-weight: 300; color: #666; line-height: 1.7; max-width: 480px; margin-bottom: 36px; }
-        .ghost-btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 40px; background: transparent; border: 1px solid #0a0a0a; font-size: 11px; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: #0a0a0a; cursor: pointer; transition: background .25s, color .25s, gap .25s; text-decoration: none; }
-        .ghost-btn:hover { background: #0a0a0a; color: #fff; gap: 18px; }
+        .final-cta-section { 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          text-align: center; 
+          background: #ffffff;
+          padding: 100px 20px;
+          border-top: 1px solid #e4e2dc;
+        }
+        .final-cta-section h2 { 
+          font-family: 'Outfit', sans-serif;
+          font-size: clamp(2.2rem, 5vw, 3.5rem); 
+          font-weight: 300; 
+          letter-spacing: -.02em; 
+          line-height: 1.2; 
+          color: #0a0a0a; 
+          margin-bottom: 20px; 
+        }
+        .final-cta-section p { 
+          font-family: 'Outfit', sans-serif;
+          font-size: 15px; 
+          font-weight: 300; 
+          color: #444; 
+          line-height: 1.7; 
+          max-width: 540px; 
+          margin-bottom: 36px; 
+        }
+        
+        /* Brand matching button link */
+        .cta-final-link {
+          background: #002ca3; 
+          color: #fff; 
+          padding: 14px 36px; 
+          border: 1px solid #002ca3; 
+          font-family: 'Outfit', sans-serif;
+          font-weight: 400; 
+          font-size: 14px;
+          cursor: pointer; 
+          text-decoration: none;
+          display: inline-flex; 
+          align-items: center; 
+          justify-content: center;
+          gap: 10px;
+          border-radius: 4px;
+          transition: background 0.2s, border-color 0.2s;
+        }
+        .cta-final-link:hover {
+          background: #1a4fc4;
+          border-color: #1a4fc4;
+        }
 
         /* ══════════════════════════════════════════════
            RESPONSIVE MEDIA QUERIES — FULLY UPDATED
+           (rewritten to target the actual classes used
+            in this version of the page)
         ══════════════════════════════════════════════ */
 
         /* ── Tablet landscape: 1024px and below ── */
@@ -380,20 +515,16 @@ export default function ContactPage() {
           .hero-l { padding: 48px 40px 36px; }
           .hero-r { margin: 0 40px 40px; height: 52vh; }
 
-          /* Contact grid: stack */
-          .contact-grid { grid-template-columns: 1fr; }
-          .contact-l { padding: 56px 40px; }
-          .contact-r { padding: 56px 40px; }
-
-          /* Form inner keeps two columns on tablet */
-          .form-inner { grid-template-columns: 1fr 1fr; gap: 0 40px; }
+          /* Contact grid: stack into single column */
+          .contact-grid {
+            grid-template-columns: 1fr;
+            padding: 60px 40px;
+            gap: 32px;
+          }
+          .contact-card-l, .contact-card-r { padding: 40px; }
 
           /* Services strip: 2 cols */
-          .why-strip { grid-template-columns: 1fr 1fr; padding: 0 40px; }
-          .why-cell:first-child { border-left: none; }
-          .why-cell:nth-child(2) { border-right: none; }
-          .why-cell:nth-child(3), .why-cell:nth-child(4) { border-top: 1px solid #e4e2dc; }
-          .why-cell:nth-child(4) { border-right: none; }
+          .why-strip { grid-template-columns: 1fr 1fr; padding: 0 40px 40px; gap: 16px; }
 
           /* Location */
           .location-header { gap: 32px; }
@@ -405,40 +536,30 @@ export default function ContactPage() {
           .page-sec { padding: 52px 28px; }
 
           /* Hero */
-          .hero-l { padding: 40px 28px 28px; }
+          .hero-l { padding-top: 100px; padding: 100px 28px 28px; }
           .hero-r { margin: 0 28px 28px; height: 44vh; }
           .hero-h1 { font-size: clamp(2rem, 6vw, 2.8rem); margin-bottom: 14px; }
           .hero-sub { font-size: 13px; margin-bottom: 24px; }
 
-          /* Contact */
-          .contact-l { padding: 48px 28px; gap: 22px; }
-          .contact-r { padding: 48px 28px; }
+          /* Contact grid */
+          .contact-grid { padding: 48px 24px; gap: 24px; }
+          .contact-card-l, .contact-card-r { padding: 32px; }
+          .form-title { font-size: 24px; margin-bottom: 24px; }
 
-          /* Form: single column on tablet portrait */
-          .form-inner { grid-template-columns: 1fr; gap: 0; }
-          .form-right { margin-top: 0; }
-          .f-textarea-tall { min-height: 100px; }
-
-          /* Form header badge: stack on narrow */
-          .form-badge-row { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
-
-          /* Buttons: side by side but let them wrap */
-          .cta-btn, .cta-btn-ghost { padding: 13px 22px; }
-          .cta-btn-ghost { margin-left: 8px; }
-
-          /* Stats */
-          .form-stats { gap: 24px; }
+          /* Form fields: single column on tablet portrait */
+          .f-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+          .f-row > div { margin-bottom: 20px; }
 
           /* Services */
-          .why-strip { padding: 0 28px; }
-          .why-cell { padding: 36px 20px; }
+          .why-strip { padding: 0 24px 24px; }
+          .why-cell { padding: 28px 20px; }
 
           /* Location */
           .location-header { grid-template-columns: 1fr; gap: 14px; }
           .map-wrap { aspect-ratio: 16/9; }
 
           /* Final CTA */
-          .final-cta h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+          .final-cta-section { padding: 70px 24px; }
         }
 
         /* ── Mobile: 480px and below (iPhone 14 Pro / most Android) ── */
@@ -447,7 +568,7 @@ export default function ContactPage() {
 
           /* Hero: tighter for small screens */
           .hero { height: auto; max-height: none; overflow: visible; }
-          .hero-l { padding: 32px 20px 20px; }
+          .hero-l { padding: 90px 20px 20px; }
           .hero-r {
             margin: 0 20px 24px;
             height: 36vh;
@@ -458,58 +579,35 @@ export default function ContactPage() {
           .hero-stamp { padding: 12px 16px; bottom: 16px; left: 16px; }
           .hero-meta a { font-size: 12px; }
 
-          /* Contact info panel */
-          .contact-l { padding: 40px 20px; gap: 20px; }
-          .contact-l-val { font-size: 13px; }
+          /* Contact grid */
+          .contact-grid { padding: 40px 16px; gap: 20px; }
+          .contact-card-l, .contact-card-r { padding: 24px; }
+          .form-title { font-size: 22px; margin-bottom: 20px; }
 
-          /* Form panel */
-          .contact-r { padding: 36px 20px 40px; }
-          .contact-r::before { width: 80px; height: 80px; }
-          .contact-r::after { width: 60px; height: 60px; }
+          /* Form fields: single column, tighter spacing */
+          .f-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+          .f-row > div { margin-bottom: 16px; }
+          .f-input-light { padding: 12px 14px; font-size: 14px; min-height: 46px; }
+          textarea.f-input-light { min-height: 110px; }
 
-          .form-accent-line { margin-bottom: 16px; }
-
-          /* Form header */
-          .form-header h3 { font-size: 19px; }
-          .form-badge-row { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
-
-          /* All fields single column */
-          .form-inner { grid-template-columns: 1fr; gap: 0; }
-          .f-group { margin-bottom: 16px; }
-          .f-input, .f-select, .f-textarea { padding: 12px 12px; font-size: 14px; }
-          /* Bigger touch targets on mobile */
-          .f-input, .f-select { min-height: 46px; }
-          .f-textarea-tall { min-height: 110px; }
-          .f-sel-wrap::after { top: calc(100% - 25px); }
-
-          /* Buttons: full width stack on mobile */
-          .cta-btn-row { flex-direction: column !important; gap: 10px !important; }
-          .cta-btn { width: 100%; justify-content: center; margin-top: 20px; padding: 15px 20px; }
-          .cta-btn-ghost { width: 100%; justify-content: center; margin-left: 0; padding: 15px 20px; }
-
-          /* Stats: compact */
-          .form-stats { gap: 20px; margin-top: 24px; padding-top: 20px; flex-wrap: wrap; }
-          .form-stat-num { font-size: 18px; }
+          /* CTA buttons: stack full width */
+          .cta-row { flex-direction: column; gap: 12px; margin-top: 24px; }
+          .btn-primary, .btn-secondary { width: 100%; padding: 15px 20px; }
 
           /* Services: single column */
-          .why-strip { grid-template-columns: 1fr; padding: 0 20px; }
-          .why-cell {
-            padding: 28px 16px;
-            border-right: none !important;
-            border-left: none !important;
-            border-top: 1px solid #e4e2dc;
-          }
-          .why-cell:first-child { border-top: none; }
+          .why-strip { grid-template-columns: 1fr; padding: 0 16px 16px; gap: 14px; }
+          .why-cell { padding: 24px 18px; }
 
           /* Location */
+          .location-section { padding: 0 16px 60px; }
           .location-header { grid-template-columns: 1fr; gap: 12px; }
           .map-wrap { aspect-ratio: 4/3; }
 
           /* Final CTA */
-          .page-sec.final-cta { padding: 48px 20px; }
-          .final-cta h2 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
-          .final-cta p { font-size: 13px; }
-          .ghost-btn { width: 100%; justify-content: center; padding: 14px 24px; }
+          .final-cta-section { padding: 56px 20px; }
+          .final-cta-section h2 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+          .final-cta-section p { font-size: 13px; }
+          .cta-final-link { width: 100%; padding: 14px 24px; }
         }
 
         /* ── Small mobile: 390px and below (iPhone SE, iPhone 12 mini) ── */
@@ -518,12 +616,10 @@ export default function ContactPage() {
           .hero-l { padding: 28px 16px 16px; }
           .hero-r { margin: 0 16px 20px; height: 32vh; min-height: 180px; }
           .hero-h1 { font-size: clamp(1.7rem, 8vw, 2.1rem); }
-          .contact-l { padding: 36px 16px; }
-          .contact-r { padding: 32px 16px 36px; }
-          .why-strip { padding: 0 16px; }
-          .page-sec.final-cta { padding: 40px 16px; }
-          .form-stats { gap: 16px; }
-          .cta-btn, .cta-btn-ghost { font-size: 9px; padding: 14px 16px; }
+          .contact-grid { padding: 32px 12px; }
+          .contact-card-l, .contact-card-r { padding: 20px; }
+          .why-strip { padding: 0 12px 16px; }
+          .final-cta-section { padding: 48px 16px; }
         }
 
         /* ── Landscape mobile: short viewport ── */
@@ -543,25 +639,17 @@ export default function ContactPage() {
       {/* ══════════════════ S1 — HERO (viewport-height, no scroll) ══════════════════ */}
       <section className="hero">
         <div className="hero-l">
-          <div className="hero-eyebrow fu1">
-            <div className="hero-eyebrow-line" />
-            <span className="sec-label">Contact Us</span>
-          </div>
-
-          <h1 className="hero-h1 fu2">
-            Let's shape
-            <em>your vision</em><br />
-            together.
+          <h1 className="fu1" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: '400', color: '#0a0a0a', marginBottom: '16px' }}>
+            Contact Us
           </h1>
 
-          <p className="hero-sub fu3">
-            Every great project begins with a single design conversation. Reach out to translate your requirements into a space built for longevity.
-          </p>
+          <h2 className="fu2" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: '400', color: '#0a0a0a', marginBottom: '24px', lineHeight: '1.2' }}>
+            Let's shape your vision together.
+          </h2>
 
-          <div className="hero-meta fu4">
-            <a href="mailto:khajanjiinfraspaces@gmail.com">khajanjiinfraspaces@gmail.com</a>
-            <a href="tel:+919284149958">+91 928 414 9958</a>
-          </div>
+          <p className="hero-sub fu3" style={{ fontSize: '14px', color: '#444', lineHeight: '1.6', maxWidth: '520px' }}>
+            Every great project begins with a single design conversation. Reach out to translate your requirements into a space built for longevity
+          </p>
         </div>
 
         {/* Image panel — margin creates padding, constrained to viewport height */}
@@ -586,149 +674,106 @@ export default function ContactPage() {
 
       {/* ══════════════════ S2 — CONTACT EXPERIENCE ══════════════════ */}
       <section className="contact-grid" id="enquiry-form">
-        <div className="contact-l">
-          <div>
-            <span className="sec-label sr">Get in Touch</span>
-            <h2 className="sr sr-d1" style={{ fontSize: '22px', fontWeight: 300, color: '#0a0a0a', lineHeight: 1.3 }}>
-              We welcome every<br />architectural brief.
-            </h2>
-          </div>
+        {/* LEFT SIDE: INFO CARD */}
+        <div className="contact-left-wrapper">
+          <div className="contact-card-l sr">
+            <h2 className="form-title" style={{ fontSize: '28px', fontWeight: '400', marginBottom: '32px' }}>Get in Touch</h2>
+            
+            <div className="contact-info-item">
+              <div className="contact-info-icon-line" />
+              <div className="contact-info-text">
+                <h4>Email</h4>
+                <a href="mailto:khajanjiinfraspaces@gmail.com">khajanjiinfraspaces@gmail.com</a>
+              </div>
+            </div>
 
-          <div style={{ display:'flex', flexDirection:'column', gap:20, marginTop:10 }}>
-            <div className="contact-l-block sr sr-d1">
-              <span className="sec-label" style={{ margin:0, fontSize:10, color:'#888' }}>Office Studio</span>
-              <span className="contact-l-val">Nagpur, Maharashtra, India — 440 001</span>
+            <div className="contact-info-item">
+              <div className="contact-info-icon-line" />
+              <div className="contact-info-text">
+                <h4>Phone</h4>
+                <a href="tel:+919284149958">+91 9284149958</a>
+              </div>
             </div>
-            <hr className="rule" />
-            <div className="contact-l-block sr sr-d2">
-              <span className="sec-label" style={{ margin:0, fontSize:10, color:'#888' }}>Business Hours</span>
-              <span className="contact-l-val">Monday – Saturday | 10:00 AM – 7:00 PM IST</span>
+
+            <div className="contact-info-item">
+              <div className="contact-info-icon-line" />
+              <div className="contact-info-text">
+                <h4>Address</h4>
+                <p>Nagpur, Maharashtra, India — 440 001</p>
+              </div>
             </div>
-            <hr className="rule" />
-            <p className="sr sr-d3" style={{ fontSize:13, lineHeight:1.7, color:'#777', fontWeight:300, fontStyle:'italic' }}>
-              "Architecture is the learned game, correct and magnificent, of forms assembled in the light."
-            </p>
+
+            <div className="contact-info-item">
+              <div className="contact-info-icon-line" />
+              <div className="contact-info-text">
+                <h4>Working Hours</h4>
+                <p>Monday – Saturday | 10:00 AM – 7:00 PM IST</p>
+              </div>
+            </div>
           </div>
+          <p style={{ marginTop: '24px', fontSize: '13px', fontWeight: '400', lineHeight: '1.5', color: '#0a0a0a', textAlign: 'center' }}>
+            "Architecture is the learned game, correct and magnificent, of forms assembled in the light."
+          </p>
         </div>
 
-        {/* ── FORM PANEL ── */}
-        <div className="contact-r">
-          {sent ? (
-            <div style={{ position:'relative', zIndex:1 }}>
-              <div style={{ width:40, height:2, background:'#1a4fc4', marginBottom:28 }} />
-              <h3 style={{ fontSize:'28px', fontWeight:300, color:'#fff', marginBottom:14 }}>Thank you.</h3>
-              <p style={{ fontSize:14, color:'rgba(255,255,255,0.5)', fontWeight:300, lineHeight:1.7 }}>
-                We have received your enquiry. Our design team will get back to you within 24 business hours.
-              </p>
+        {/* RIGHT SIDE: FORM CARD */}
+        <div className="contact-card-r sr sr-d1">
+          <h2 className="form-title" style={{ fontSize: '28px', fontWeight: '400', marginBottom: '32px' }}>Send us a message</h2>
+          <form onSubmit={onSubmit}>
+            {/* ROW 1: NAME & EMAIL */}
+            <div className="f-row">
+              <div>
+                <label className="f-label-light">Name*</label>
+                <input className="f-input-light" name="name" placeholder="Your name" value={form.name} onChange={onChange} />
+              </div>
+              <div>
+                <label className="f-label-light">Email*</label>
+                <input className="f-input-light" name="email" placeholder="your@gmail.com" onChange={onChange} />
+              </div>
             </div>
-          ) : (
-            <form onSubmit={onSubmit} noValidate style={{ width:'100%', position:'relative', zIndex:1 }}>
 
-              {/* Form header — spans full width */}
-              <div className="sr" style={{ marginBottom:32 }}>
-                <div className="form-accent-line" />
-                <div className="form-badge-row" style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', flexWrap:'wrap', gap:12 }}>
-                  <div>
-                    <span className="sec-label" style={{ color:'rgba(255,255,255,0.35)', marginBottom:6 }}>Project Enquiry</span>
-                    <h3 style={{ fontSize:22, fontWeight:300, color:'#fff', letterSpacing:'-.01em' }}>Start your design journey</h3>
-                    <p style={{ fontSize:12, fontWeight:300, color:'rgba(255,255,255,0.4)', marginTop:6, lineHeight:1.7 }}>
-                      Fill in the details and we'll prepare a tailored response.
-                    </p>
-                  </div>
-                  {/* Response time badge */}
-                  <div style={{ display:'flex', alignItems:'center', gap:8, padding:'8px 14px', border:'1px solid rgba(26,79,196,0.3)', background:'rgba(26,79,196,0.08)', flexShrink:0 }}>
-                    <span style={{ width:6, height:6, borderRadius:'50%', background:'#4caf50', display:'block', flexShrink:0 }} />
-                    <span style={{ fontSize:9, letterSpacing:'.15em', textTransform:'uppercase', color:'rgba(255,255,255,0.4)', fontWeight:400 }}>Responds in 24 hrs</span>
-                  </div>
-                </div>
+            {/* ROW 2: COMPANY & CONTACT NUMBER */}
+            <div className="f-row">
+              <div>
+                <label className="f-label-light">Company (optional)</label>
+                <input className="f-input-light" name="company" placeholder="Your company name" onChange={onChange} />
               </div>
-
-              {error && <p className="f-error">{error}</p>}
-
-              {/* Two-column form layout */}
-              <div className="form-inner">
-                {/* LEFT COLUMN */}
-                <div className="form-left">
-                  <div className="f-group sr sr-d1">
-                    <label className="f-label">Full Name *</label>
-                    <input className="f-input" name="name" placeholder="e.g. Piyush Khajanji" value={form.name} onChange={onChange} />
-                  </div>
-
-                  <div className="f-group sr sr-d2">
-                    <label className="f-label">Phone Number *</label>
-                    <input className="f-input" type="tel" name="phone" placeholder="+91 98765 43210" value={form.phone} onChange={onChange} />
-                  </div>
-
-                  <div className="f-group sr sr-d2">
-                    <label className="f-label">Project Type</label>
-                    <div className="f-sel-wrap">
-                      <select
-                        className={`f-select${form.projectType ? ' has-value' : ''}`}
-                        name="projectType"
-                        value={form.projectType}
-                        onChange={onChange}
-                      >
-                        <option value="" disabled>Select scope</option>
-                        {PROJECT_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="f-group sr sr-d3">
-                    <label className="f-label">Location</label>
-                    <input className="f-input" name="location" placeholder="e.g. Nagpur" value={form.location} onChange={onChange} />
-                  </div>
-                </div>
-
-                {/* RIGHT COLUMN */}
-                <div className="form-right">
-                  <div className="f-group sr sr-d2" style={{ flex:1, display:'flex', flexDirection:'column' }}>
-                    <label className="f-label">Your Message *</label>
-                    <textarea className="f-textarea f-textarea-tall" name="message" rows={8}
-                      placeholder={"Describe your vision,\ntimeline, site details,\nor budget range..."}
-                      value={form.message} onChange={onChange}
-                      style={{ flex:1, minHeight:180 }}
-                    />
-                  </div>
-
-                  {/* Actions inside right column */}
-                  <div className="cta-btn-row sr sr-d4" style={{ display:'flex', alignItems:'center', flexWrap:'wrap', gap:0, marginTop:16 }}>
-                    <button type="submit" className="cta-btn">
-                      Send Enquiry <span style={{ fontSize:13 }}>→</span>
-                    </button>
-                    <a href="tel:+919284149958" className="cta-btn-ghost">
-                      Call Instead
-                    </a>
-                  </div>
-
-                  <p style={{ fontSize:10, color:'rgba(255,255,255,0.2)', marginTop:14, letterSpacing:'.05em' }}>
-                    * Required fields. Your information is kept strictly confidential.
-                  </p>
-                </div>
+              <div>
+                <label className="f-label-light">Contact No.*</label>
+                <input className="f-input-light" type="tel" name="phone" placeholder="+91 98765 43210" value={form.phone} onChange={onChange} />
               </div>
+            </div>
 
-              {/* Stats strip at bottom */}
-              <div className="form-stats sr sr-d4">
-                <div className="form-stat">
-                  <span className="form-stat-num">10+</span>
-                  <span className="form-stat-label">Years Active</span>
-                </div>
-                <div className="form-stat">
-                  <span className="form-stat-num">200+</span>
-                  <span className="form-stat-label">Projects Delivered</span>
-                </div>
-                <div className="form-stat">
-                  <span className="form-stat-num">24h</span>
-                  <span className="form-stat-label">Response Time</span>
-                </div>
-              </div>
+            {/* ROW 3: SERVICES */}
+            <div style={{ marginBottom: '20px' }}>
+              <label className="f-label-light">Service Interested In</label>
+              <select className="f-input-light" name="projectType" value={form.projectType} onChange={onChange}>
+                <option value="">Select a service</option>
+                {PROJECT_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
+              </select>
+            </div>
 
-            </form>
-          )}
+            {/* ROW 4: MESSAGE */}
+            <div style={{ marginBottom: '20px' }}>
+              <label className="f-label-light">Message*</label>
+              <textarea className="f-input-light" name="message" rows={4} placeholder="Tell us about your project or question" value={form.message} onChange={onChange} />
+            </div>
+
+            {error && (
+              <p style={{ color: '#e07070', fontSize: '14px', fontWeight: '400', marginBottom: '16px', display: 'flex', alignAtoms: 'center', gap: '4px' }}>
+                {error}
+              </p>
+            )}
+
+            <div className="cta-row">
+              <button type="submit" className="btn-primary">Send Message →</button>
+              <a href="tel:+919284149958" className="btn-secondary">Call Instead</a>
+            </div>
+          </form>
         </div>
       </section>
 
-      {/* ══════════════════ S3 — WHY CONNECT ══════════════════ */}
+      {/* ══════════════════ S3 — SERVICES CARDS ══════════════════ */}
       <div className="why-strip">
         {SERVICES.map((s, i) => (
           <div key={s.num} className={`why-cell sr sr-d${i + 1}`}>
@@ -739,24 +784,22 @@ export default function ContactPage() {
         ))}
       </div>
 
-      {/* ══════════════════ S4 — STUDIO LOCATION ══════════════════ */}
-      <section className="page-sec">
+      {/* ══════════════════ S4 — STUDIO LOCATION MAP ══════════════════ */}
+      <section className="location-section">
         <div className="location-header">
-          <div>
-            <span className="sec-label sr">Our Location</span>
-            <h2 className="sr sr-d1">
-              Based in Nagpur,<br />
-              <em>serving clients nationwide.</em>
-            </h2>
-          </div>
+          <h2 className="sr">Our Locations</h2>
         </div>
 
-        <div className="map-wrap sr sr-d2" style={{ marginBottom: 40 }}>
-          <iframe
-            title="Khajanji Infraspaces — Studio Map Layout"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238196.6609989218!2d78.96880415!3d21.1458004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5c0e6f8cf%3A0x2f0a76a9afcd0f0!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1699000000000"
-            allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-          />
+        <div className="map-container-box sr sr-d1">
+          <div className="map-wrap">
+            <iframe
+              title="Khajanji Infraspaces — Studio Map Layout"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238196.6609989218!2d78.96880415!3d21.1458004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5c0e6f8cf%3A0x2f0a76a9afcd0f0!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1699000000000"
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
 
@@ -764,17 +807,15 @@ export default function ContactPage() {
       <FounderQuote />
 
       {/* ══════════════════ S6 — FINAL CTA ══════════════════ */}
-      <section className="page-sec final-cta">
-        <span className="sec-label sr">Begin Your Development</span>
+      <section className="final-cta-section">
         <h2 className="sr sr-d1">
-          Let's create something<br />
-          <em>remarkable.</em>
+          Let's create something remarkable.
         </h2>
         <p className="sr sr-d2">
           From residential landmarks to corporate offices and masterplanned layouts—we combine design principles with functional execution.
         </p>
-        <a href="#enquiry-form" className="ghost-btn sr sr-d3">
-          Start a Conversation <span style={{ fontSize:13 }}>→</span>
+        <a href="#enquiry-form" className="cta-final-link sr sr-d3">
+          Start a Conversation <span style={{ fontSize: 14 }}>→</span>
         </a>
       </section>
     </>

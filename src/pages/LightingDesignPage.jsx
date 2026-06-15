@@ -28,9 +28,9 @@ const COMMITMENT = [
 ]
 
 const EXPLORE = [
-  { name: 'Kodaikanal Retreat', img: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=580&fit=crop' },
-  { name: 'Bandra Luxury Apartment',       img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=260&fit=crop' },
-  { name: 'Contemporary Delhi Residence',         img: 'https://images.unsplash.com/photo-1618219944342-824e40a13285?w=400&h=260&fit=crop' },
+ { name: 'Lonavala Valley Estate', img: '/assets/service-project1.jpg' },
+ { name: 'The Heritage Dwelling', img: '/assets/service-project2.jpg' },
+ { name: 'Skyline Penthouse', img: '/assets/service-project3.jpg' },
 ]
 
 export default function LightingDesignPage() {
@@ -40,9 +40,50 @@ export default function LightingDesignPage() {
     <>
       <style>{GLOBAL_CSS}{`
         @media (max-width: 900px) {
-          .two-colHero { grid-template-columns: 1fr !important; }
-          .two-colHero > div:last-child { height: 50vh !important; order: -1; }
-          .pad { padding: 80px 24px 60px !important; }
+          .two-colHero {
+            grid-template-columns: 1fr !important;
+            min-height: auto !important;
+          }
+          .two-colHero > div:first-child {
+            padding: 110px 24px 40px !important;
+            order: 1;
+          }
+          .two-colHero > div:last-child {
+            height: 50vh !important;
+            order: 2;
+          }
+
+          .section-pad { padding: 40px 16px !important; }
+          .pad { padding: 0 16px !important; }
+
+          /* Process section: kill extra inner padding/maxWidth on mobile */
+          .pad > div,
+          .pad [style*="maxWidth"] {
+            max-width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+
+          /* If step numbers (01,02..) sit in a separate column, stack them */
+          .pad [style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
+            gap: 8px !important;
+          }
+
+          .process-grid img, [class*="process"] img {
+            width: 100% !important;
+            height: 40vh !important;
+            object-fit: cover !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .section-pad { padding: 28px 14px !important; }
+          .pad { padding: 0 14px !important; }
+          .two-colHero > div:first-child { padding: 100px 16px 32px !important; }
+          .two-colHero > div:last-child { height: 38vh !important; }
         }
       `}</style>
       {/* Internal Navbar removed — global layout Header is used */}
@@ -53,12 +94,12 @@ export default function LightingDesignPage() {
           <h1 className="fu1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
             3D Architecture & Elevation
           </h1>
-          <p className="fu2" style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:320 }}>
+          <p className="fu2" style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:400, maxWidth:320 }}>
             Whether you're building new, renovating, or refreshing a single space, we bring expert guidance and technical precision to illuminate your home or business beautifully.
           </p>
         </div>
-        <div className="iz" style={{ minHeight:'78vh' }}>
-          <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=900&h=1000&fit=crop&crop=top" alt="Lighting design" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }} />
+        <div className="iz" style={{ minHeight:'100vh' }}>
+          <img src="/assets/service-interior-design.jpg" alt="Lighting design" style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center top' }} />
         </div>
       </section>
 
@@ -68,17 +109,17 @@ export default function LightingDesignPage() {
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
-            paddingTop: 64
+            paddingTop: 24
           }}
         >
           <p
             className="sr"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: '11px',
+              fontSize: '12px',
               letterSpacing: '0.18em',
               textTransform: 'uppercase',
-              color: '#8a8880',
+              color: '#555',
               marginBottom: '24px',
             }}
           >
@@ -130,7 +171,7 @@ export default function LightingDesignPage() {
 
       {/* ── FULL WIDTH IMAGE ── */}
       <div className="iz" style={{ width:'100%', height:'clamp(280px,40vw,540px)' }}>
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=700&fit=crop" alt="Lighting" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+        <img src="/assets/service-interior-design.jpg" alt="Lighting" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
       </div>
 
       {/* ── BEST DESIGNERS ── */}

@@ -12,25 +12,22 @@ const STEPS = [
 const COMMITMENT = [
   {
     title: 'Quality Execution',
-    // desc: 'We partner with only the most skilled artisans and tradespeople in India and from around the world.',
     bullets: ['Structured construction process with strict quality checks at every stage.', 'Use of certified materials and skilled labor for durability and safety.', 'Adherence to timelines with transparent progress updates.'],
   },
   {
     title: 'Project Management',
-    // desc: 'We source from exclusive design galleries, top private brands and global suppliers.',
     bullets: ['Dedicated project coordination from start to handover.', 'Budget tracking and cost optimization without compromising quality.', 'Coordination with architects, engineers, and vendors for seamless delivery.'],
   },
   {
     title: 'Client Trust',
-    // desc: 'Our designs are strategically tailored to maximise your property\'s appeal in the Indian luxury market.',
-    bullets: ['•	Transparent communication with regular site updates and documentation.', 'Professional supervision ensuring safety standards and compliance.', 'Post-completion support for warranty and maintenance guidance.'],
+    bullets: ['Transparent communication with regular site updates and documentation.', 'Professional supervision ensuring safety standards and compliance.', 'Post-completion support for warranty and maintenance guidance.'],
   },
 ]
 
 const EXPLORE = [
-  { name: 'Pune Hillside Residence',     img: 'https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=400&h=580&fit=crop' },
-  { name: 'The Royal Enclave', img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop' },
-  { name: 'Vasant Vihar Modern',        img: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=400&h=300&fit=crop' },
+  { name: 'Pune Hillside Residence', img: '/assets/service-project4.jpg' },
+  { name: 'The Royal Enclave', img: '/assets/service-project5.jpg' },
+  { name: 'Vasant Vihar Modern', img: '/assets/service-project6.jpg' },
 ]
 
 export default function ConstructionPage() {
@@ -40,12 +37,53 @@ export default function ConstructionPage() {
     <>
       <style>{GLOBAL_CSS}{`
         @media (max-width: 900px) {
-          .two-colHero { grid-template-columns: 1fr !important; }
-          .two-colHero > div:last-child { height: 50vh !important; order: -1; }
-          .pad { padding: 80px 24px 60px !important; }
+          .two-colHero {
+            grid-template-columns: 1fr !important;
+            min-height: auto !important;
+          }
+          /* Displays text block first */
+          .two-colHero > div:first-child {
+            padding: 110px 24px 40px !important;
+            order: 1;
+          }
+          /* Displays hero image second */
+          .two-colHero > div:last-child {
+            height: 50vh !important;
+            order: 2;
+          }
+
+          .section-pad { padding: 40px 16px !important; }
+          .pad { padding: 0 16px !important; }
+
+          /* Process section formatting adjustments for smaller screens */
+          .pad > div,
+          .pad [style*="maxWidth"] {
+            max-width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+
+          .pad [style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
+            gap: 8px !important;
+          }
+
+          .process-grid img, [class*="process"] img {
+            width: 100% !important;
+            height: 40vh !important;
+            object-fit: cover !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .section-pad { padding: 28px 14px !important; }
+          .pad { padding: 0 14px !important; }
+          .two-colHero > div:first-child { padding: 100px 16px 32px !important; }
+          .two-colHero > div:last-child { height: 38vh !important; }
         }
       `}</style>
-      {/* Internal Navbar removed — global layout Header is used */}
 
       {/* ── HERO ── */}
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-colHero">
@@ -62,20 +100,20 @@ export default function ConstructionPage() {
         </div>
       </section>
 
-      {/* ── OUR APPROACH ───────────────────────── */}
+      {/* ── OUR APPROACH ── */}
       <section className="section-pad">
         <div
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
-            paddingTop: 64
+            paddingTop: 24
           }}
         >
           <p
             className="sr"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: '11px',
+              fontSize: '12px',
               letterSpacing: '0.18em',
               textTransform: 'uppercase',
               color: '#8a8880',
@@ -130,7 +168,7 @@ export default function ConstructionPage() {
 
       {/* ── FULL WIDTH IMAGE ── */}
       <div className="iz" style={{ width:'100%', height:'clamp(280px,38vw,520px)' }}>
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&h=700&fit=crop" alt="Interior" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+        <img src="/assets/construction.jpg" alt="Construction" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
       </div>
 
       {/* ── BEST DESIGNERS ── */}
@@ -138,8 +176,6 @@ export default function ConstructionPage() {
 
       {/* ── EXPLORE ── */}
       <ExploreSection projects={EXPLORE} />
-
-      {/* Internal Footer removed — global layout Footer is used */}
     </>
   )
 }

@@ -14,17 +14,15 @@ import MediaPress from '../components/home/MediaPress'
 const SLIDES = [
   {
     tag: 'FEATURED PROJECT / 2024',
-    // title: 'Heise',
-    title: 'Best Architectural',
+    title: 'Architectural',
     subtitle: 'Beyond Architecture. Creating Experiences.',
-    cta: '•	View Our Portfolio',
+    cta: 'View Our Portfolio',
     href: '/portfolio',
     bg: '/assets/hero1.jpg',
   },
   {
     tag: 'RECENT PROJECT / 2024',
-    // title: 'Nordvik',
-    title: '3D Design ',
+    title: '3D Design',
     subtitle: 'Where Form Meets Function.',
     cta: 'Explore Our Services',
     href: '/portfolio',
@@ -32,8 +30,7 @@ const SLIDES = [
   },
   {
     tag: 'AWARD WINNER / 2023',
-    // title: 'Solaris',
-    title: 'Construction Firm',
+    title: 'Construction',
     subtitle: 'Designing Tomorrow, Today.',
     cta: 'Schedule a Consultation',
     href: '/portfolio',
@@ -41,42 +38,48 @@ const SLIDES = [
   },
 ]
 
+const AUTO_PLAY_MS = 5000
+const FADE_MS      = 450
+
 export default function HomePage() {
   const [current, setCurrent] = useState(0)
-  const [fading, setFading] = useState(false)
+  const [fading,  setFading]  = useState(false)
   const intervalRef = useRef(null)
 
-  function goTo(indexOrFn) {
-    setFading(true)
+  /** Restart the auto-play timer */
+  function resetTimer() {
     clearInterval(intervalRef.current)
-    setTimeout(() => {
-      setCurrent(typeof indexOrFn === 'function' ? indexOrFn : () => indexOrFn)
-      setFading(false)
-    }, 450)
-    intervalRef.current = setInterval(() => advance(), 6000)
+    intervalRef.current = setInterval(advance, AUTO_PLAY_MS)
   }
 
+  /** Navigate to a specific slide index */
+  function goTo(index) {
+    if (index === current) return
+    setFading(true)
+    resetTimer()
+    setTimeout(() => {
+      setCurrent(index)
+      setFading(false)
+    }, FADE_MS)
+  }
+
+  /** Advance to the next slide */
   function advance() {
     setFading(true)
     setTimeout(() => {
       setCurrent(c => (c + 1) % SLIDES.length)
       setFading(false)
-    }, 450)
+    }, FADE_MS)
   }
 
   useEffect(() => {
-    intervalRef.current = setInterval(advance, 3000)
+    intervalRef.current = setInterval(advance, AUTO_PLAY_MS)
     return () => clearInterval(intervalRef.current)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const slide = SLIDES[current]
-  const fadeUp = {
-    // initial: { opacity: 0, y: 40 },
-    // whileInView: { opacity: 1, y: 0 },
-    // transition: { duration: 0.6 },
-    // viewport: { once: true, amount: 0.2 },
-  }
+  const slide   = SLIDES[current]
+  const fadeUp  = {}   // kept for parity with child components
 
   return (
     <div className={styles.page}>
@@ -88,22 +91,34 @@ export default function HomePage() {
         fading={fading}
         goTo={goTo}
         fadeUp={{
-          initial: { opacity: 0 },
-          animate: { opacity: 1 },
-          transition: { duration: 0.8 }
+          initial:    { opacity: 0 },
+          animate:    { opacity: 1 },
+          transition: { duration: 0.8 },
         }}
       />
 
-      <WhoWeAre fadeUp={fadeUp} />
-      <Services fadeUp={fadeUp} />
-      <Portfolio fadeUp={fadeUp} />
-      <Process fadeUp={fadeUp} />
+      <WhoWeAre   fadeUp={fadeUp} />
+      <Services   fadeUp={fadeUp} />
+      <Portfolio  fadeUp={fadeUp} />
+      <Process    fadeUp={fadeUp} />
       <BuildPromo fadeUp={fadeUp} />
-      <Stats fadeUp={fadeUp} />
-      {/* <Awards /> */}
+      <Stats      fadeUp={fadeUp} />
       <FounderQuote fadeUp={fadeUp} />
-      <MediaPress fadeUp={fadeUp} />
-      <CTABanner fadeUp={fadeUp} />
+      <MediaPress   fadeUp={fadeUp} />
+      <CTABanner    fadeUp={fadeUp} />
     </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

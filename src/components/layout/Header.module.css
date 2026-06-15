@@ -51,6 +51,7 @@
 .logoImage {
   height: 52px;
   max-height: 52px;
+  border-radius: 6px;
   width: auto;
   object-fit: contain;
 }
@@ -105,7 +106,7 @@
   text-transform: uppercase;
   letter-spacing: 0.07em;
   padding: 7px 15px;
-  border-radius: 0px;
+  border-radius: 6px;
   border: none;
   position: relative;
   transition:
@@ -124,7 +125,7 @@
 }
 
 .navLink.active {
-  background: blue;
+  background: #002ca3;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.0);
   font-weight: 650;
@@ -140,16 +141,16 @@
 
 .header.scrolled .navLink:hover,
 .header.forceScrolled .navLink:hover {
-  color: #0f52ff;
-  background: rgba(15, 82, 255, 0.07);
-  border-color: rgba(15, 82, 255, 0.2);
+  color: #002ca3;
+  background: rgba(0, 44, 163, 0.07);
+  border-color: rgba(0, 44, 163, 0.2);
 }
 
 .header.scrolled .navLink.active,
 .header.forceScrolled .navLink.active {
-  background: #0f52ff;
+  background: #002ca3;
   color: #ffffff;
-  border-color: #0f52ff;
+  border-color: #002ca3;
   font-weight: 650;
 }
 
@@ -207,14 +208,14 @@
   font-weight: 400;
   letter-spacing: 0.03em;
   color: #2a2a2a;
-  border-radius: 0px;
+  border-radius: 6px;
   transition: background 0.15s, color 0.15s;
   white-space: nowrap;
 }
 
 .dropdownItem:hover {
   background: rgba(15, 82, 255, 0.06);
-  color: #0f52ff;
+  color: #002ca3;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -230,10 +231,10 @@
 
 .headerBtn {
   /* background: rgba(255, 255, 255, 0.15); */
-  background: blue;
+  background: #002ca3;
   color: #ffffff;
   padding: 10px 22px;
-  border-radius: 0px;
+  border-radius: 6px;
   font-size: 13.5px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -257,10 +258,10 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* Scrolled CTA — solid blue */
+/* Scrolled CTA — solid #002ca3 */
 .header.scrolled .headerBtn,
 .header.forceScrolled .headerBtn {
-  background: #0f52ff;
+  background: #002ca3;
   color: #ffffff;
   border-color: transparent;
   backdrop-filter: none;
@@ -269,12 +270,12 @@
 .header.scrolled .headerBtn:hover,
 .header.forceScrolled .headerBtn:hover {
   background: #0038c7;
-  box-shadow: 0 8px 24px rgba(15, 82, 255, 0.32);
+  box-shadow: 0 8px 24px rgba(0, 44, 163, 0.32);
 }
 
 /* ═══════════════════════════════════════════════════════
    HAMBURGER
-═══════════════════════════════════════════════════════ */
+═════════════════════════════════════════════════════ */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -397,7 +398,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #0f52ff;
+  background: #002ca3;
   color: #ffffff;
   font-size: 12px;
   font-weight: 700;

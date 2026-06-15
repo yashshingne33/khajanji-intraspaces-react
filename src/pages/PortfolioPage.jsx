@@ -1,7 +1,8 @@
+// src/pages/PortfolioPage.jsx
 import { useEffect, useState } from 'react'
 
 /* ─────────────────────────────────────────────
-   SCROLL REVEAL
+   SCROLL REVEAL HOOK
 ───────────────────────────────────────────── */
 function useReveal(dep = null) {
   useEffect(() => {
@@ -36,56 +37,102 @@ const PROJECTS = [
   },
   {
     id: 4, name: 'White Villa', location: 'Nagpur, Maharashtra', subtitle: 'VILLA & ESTATE',
-    img: '/assets/project4.jpg', badge: 'Villa & Estate', category: 'Residential',
+    img: '/assets/project4.jpg', badge: 'Residential', category: 'Residential',
     description: 'White Villa is a premium private residence that exemplifies understated luxury. Clean white volumes, open-plan interiors, and seamless indoor-outdoor flow come together to form a home that is both serene and sophisticated.',
   },
   {
     id: 5, name: "Jerry's Home", location: 'Nagpur, Maharashtra', subtitle: 'CUSTOM HOME',
-    img: '/assets/project5.jpg', badge: 'Custom Home', category: 'Residential',
+    img: '/assets/project5.jpg', badge: 'Residential', category: 'Residential',
     description: "Jerry's Home is a bespoke residence designed around the unique lifestyle and preferences of its owners. Every spatial decision — from room orientation to material palette — was made in close collaboration with the client to deliver a truly personal home.",
   },
   {
     id: 6, name: 'City Center Mall Katol', location: 'Katol, Maharashtra', subtitle: 'RETAIL LANDMARK',
-    img: '/assets/project6.jpg', badge: 'Commercial', category: 'Commercial',
+    img: '/assets/project6.jpg', badge: 'Residential', category: 'Residential',
     description: 'City Center Mall Katol is a mixed-use commercial destination designed to serve the evolving retail and lifestyle needs of the Katol region. The design focuses on footfall circulation, tenant visibility, and a welcoming public environment.',
   },
   {
     id: 7, name: "Dubai's Icaverse", location: 'Dubai, UAE', subtitle: 'CORPORATE INFRASTRUCTURE',
-    img: '/assets/project7.jpg', badge: 'Commercial', category: 'Commercial',
+    img: '/assets/project7.jpg', badge: 'Interior', category: 'Interior',
     description: "Dubai's Icaverse is a forward-thinking commercial development conceived for the high-density urban context of Dubai. The project integrates bold facade design, flexible floor plates, and smart building principles to meet international commercial standards.",
   },
   {
     id: 8, name: 'Mumbai Enclave', location: 'Mumbai, Maharashtra', subtitle: 'MIXED-USE ARCHITECTURE',
-    img: '/assets/project8.jpg', badge: 'Commercial', category: 'Commercial',
+    img: '/assets/project8.jpg', badge: 'Interior', category: 'Interior',
     description: "Mumbai Enclave is a premium commercial complex that responds to the fast-paced demands of one of India's most competitive real estate markets. The design delivers efficient workspaces, high-quality lobbies, and a strong street presence.",
   },
   {
     id: 9, name: 'Naman Lounge', location: 'Nagpur, Maharashtra', subtitle: 'HOSPITALITY DESIGN',
-    img: '/assets/project9.jpg', badge: 'Commercial', category: 'Commercial',
+    img: '/assets/project9.jpg', badge: 'Interior', category: 'Interior',
     description: 'Naman Lounge is a boutique commercial space designed to serve as a premium hospitality and business hub. The interiors balance warmth and professionalism, with carefully selected finishes that elevate the everyday experience.',
   },
   {
     id: 10, name: "Dubai's Luxeverse", location: 'Dubai, UAE', subtitle: 'LUXURY COMMERCIAL',
-    img: '/assets/project10.jpg', badge: 'Commercial', category: 'Commercial',
+    img: '/assets/project10.jpg', badge: 'Interior', category: 'Interior',
     description: "Dubai's Luxeverse represents Khajanji Infraspaces' ambition in the international luxury commercial segment. A refined architectural expression, premium material specification, and attention to experiential detail define this flagship project.",
   },
   {
     id: 11, name: 'Greenfield Township', location: 'Nagpur, Maharashtra', subtitle: 'MASTER PLANNING',
-    img: '/assets/project11.jpg', badge: 'Township', category: 'Plotted',
+    img: '/assets/project11.jpg', badge: 'Interior', category: 'Interior',
     description: 'Greenfield Township is a large-scale master-planned development that integrates residential plots, commercial zones, and open green corridors. The layout prioritises walkability, community infrastructure, and long-term liveability.',
   },
   {
     id: 12, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
-    img: '/assets/project12.jpg', badge: 'Plotted', category: 'Plotted',
+    img: '/assets/project12.jpg', badge: 'Commercial', category: 'Commercial',
     description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
   },
+  {
+    id: 13, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project13.jpg', badge: 'Commercial', category: 'Commercial',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  },
+  {
+    id: 14, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project14.jpg', badge: 'Commercial', category: 'Commercial',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  },
+  {
+    id: 15, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project15.jpg', badge: 'Plotted', category: 'Plotted',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  },
+  {
+    id: 16, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project16.jpg', badge: 'Plotted', category: 'Plotted',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  },
+  {
+    id: 17, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project17.jpg', badge: 'Plotted', category: 'Plotted',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  },
+  {
+    id: 18, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project18.jpg', badge: 'Plotted', category: 'Plotted',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  },
+  {
+    id: 19, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project19.jpg', badge: 'Plotted', category: 'Plotted',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  },
+  {
+    id: 20, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project20.jpg', badge: 'Plotted', category: 'Plotted',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  },
+  {
+    id: 21, name: 'Horizon Plots', location: 'Nagpur, Maharashtra', subtitle: 'PLOTTED DEVELOPMENT',
+    img: '/assets/project21.jpg', badge: 'Plotted', category: 'Plotted',
+    description: 'Horizon Plots is a well-planned plotted development offering flexible ownership in a thoughtfully designed layout. Wide internal roads, utility provisions, and landscaped boundaries make this a premier address for custom home builders.',
+  }
 ]
 
 const TABS = [
-  { key: 'All',        label: 'All Developments' },
-  { key: 'Residential',label: 'Residential Projects' },
-  { key: 'Commercial', label: 'Commercial Projects' },
-  { key: 'Plotted',    label: 'Plotted & Township Projects' },
+  { key: 'All',         label: 'All Developments' },
+  { key: 'Residential', label: 'Residential' },
+  { key: 'Interior',    label: 'Interior Design' },
+  { key: 'Commercial',  label: 'Commercial' },
+  { key: 'Plotted',     label: 'Township & Land Development' },
 ]
 
 /* ─────────────────────────────────────────────
@@ -107,6 +154,7 @@ function ProjectModal({ project, onClose }) {
   return (
     <div
       onClick={onClose}
+      className="modal-overlay"
       style={{
         position: 'fixed', inset: 0,
         background: 'rgba(10,10,10,0.6)',
@@ -126,8 +174,8 @@ function ProjectModal({ project, onClose }) {
           animation: 'slideModal 0.3s cubic-bezier(.25,.46,.45,.94) both',
         }}
       >
-        {/* Left: Image */}
-        <div style={{ position: 'relative', minHeight: 480 }}>
+        {/* Left: Image Container */}
+        <div className="modal-img-wrapper" style={{ position: 'relative', minHeight: 480 }}>
           <img
             src={project.img} alt={project.name}
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
@@ -143,8 +191,8 @@ function ProjectModal({ project, onClose }) {
           </div>
         </div>
 
-        {/* Right: Content */}
-        <div style={{ padding: '48px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        {/* Right: Content Wrapper */}
+        <div className="modal-content-wrapper" style={{ padding: '48px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
             <button
               onClick={onClose}
@@ -245,7 +293,7 @@ function ProjectSection({ label, projects, onCardClick }) {
   if (!projects.length) return null
   return (
     <div>
-      <div style={{ padding: '56px 48px 24px', borderTop: '1px solid #e4e2dc' }}>
+      <div className="section-header-wrap" style={{ padding: '56px 48px 24px', borderTop: '1px solid #e4e2dc' }}>
         <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8a8880', fontWeight: 300 }}>
           {label}
         </p>
@@ -272,6 +320,7 @@ export default function PortfolioPage() {
 
   const filtered    = activeTab === 'All' ? PROJECTS : PROJECTS.filter(p => p.category === activeTab)
   const residential = filtered.filter(p => p.category === 'Residential')
+  const interior     = filtered.filter(p => p.category === 'Interior')
   const commercial  = filtered.filter(p => p.category === 'Commercial')
   const plotted     = filtered.filter(p => p.category === 'Plotted')
 
@@ -315,20 +364,36 @@ export default function PortfolioPage() {
         .filter-tab:hover  { color: #0a0a0a; }
         .filter-tab.active { color: #0a0a0a; border-bottom: 1px solid #0a0a0a; }
 
+        /* Tablet Breakpoint (900px) */
         @media (max-width: 900px) {
-          .portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 32px 20px !important; padding: 0 24px 48px !important; }
           .sp { padding-left: 24px !important; padding-right: 24px !important; }
-          .footer-grid { grid-template-columns: 1fr !important; }
-          .modal-inner { grid-template-columns: 1fr !important; }
-          .filter-row  { gap: 20px !important; overflow-x: auto; padding-bottom: 2px; }
+          .section-header-wrap { padding: 40px 24px 16px !important; }
+          .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; padding: 40px 24px !important; }
+          
+          /* Modal Layout Conversion */
+          .modal-inner { grid-template-columns: 1fr !important; width: 95% !important; }
+          .modal-img-wrapper { min-height: 320px !important; height: 35vh !important; }
+          .modal-content-wrapper { padding: 32px 24px !important; }
+          
+          /* Horizontal Filtering Controls Configuration */
+          .filter-row-container { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+          .filter-row { justify-content: flex-start !important; padding: 0 24px !important; gap: 24px !important; }
         }
+
+        /* Mobile Breakpoint (480px) */
         @media (max-width: 480px) {
-          .portfolio-grid { grid-template-columns: 1fr !important; }
+          .portfolio-grid { grid-template-columns: 1fr !important; padding: 0 16px 40px !important; gap: 28px !important; }
+          .sp { padding-left: 16px !important; padding-right: 16px !important; }
+          .section-header-wrap { padding: 32px 16px 12px !important; }
+          .hero-section-box { padding: 100px 16px 40px !important; }
+          .modal-img-wrapper { height: 30vh !important; min-height: 240px !important; }
+          .modal-content-wrapper { padding: 24px 16px !important; }
         }
       `}</style>
 
-      {/* ── HERO ───────────────────────────── */}
-      <section className="sp" style={{ padding: '145px 48px 52px', textAlign: 'center' }}>
+      {/* ── HERO ── */}
+      <section className="sp hero-section-box" style={{ padding: '145px 48px 52px', textAlign: 'center' }}>
         <h1
           className="sr"
           style={{
@@ -347,7 +412,7 @@ export default function PortfolioPage() {
           fontSize: 'clamp(0.95rem, 1.5vw, 1.1rem)',
           lineHeight: 1.75, color: '#444',
           fontWeight: 300, maxWidth: 620,
-          margin: '0 auto',             
+          margin: '0 auto',          
         }}>
           At Khajanji Infraspaces, we approach each project with a thoughtful
           blend of environmental psychology, art, architecture, and cultural
@@ -355,9 +420,8 @@ export default function PortfolioPage() {
         </p>
       </section>
       
-
-      {/* ── FILTER TABS ────────────────────── */}
-      <div style={{ borderTop: '1px solid #e4e2dc', borderBottom: '1px solid #e4e2dc' }}>
+      {/* ── FILTER TABS ── */}
+      <div className="filter-row-container" style={{ borderTop: '1px solid #e4e2dc', borderBottom: '1px solid #e4e2dc' }}>
         <div className="filter-row sp" style={{ padding: '0 48px', display: 'flex', gap: 36, justifyContent: 'center' }}>
           {TABS.map((t) => (
             <button
@@ -371,14 +435,15 @@ export default function PortfolioPage() {
         </div>
       </div>
 
-      {/* ── SECTIONS ───────────────────────── */}
+      {/* ── SECTIONS ── */}
       <div style={{ paddingTop: 8 }}>
-        <ProjectSection label="Residential Projects"        projects={residential} onCardClick={setActiveProject} />
-        <ProjectSection label="Commercial Projects"         projects={commercial}  onCardClick={setActiveProject} />
+        <ProjectSection label="Residential Projects"         projects={residential} onCardClick={setActiveProject} />
+        <ProjectSection label="Commercial Projects"          projects={commercial}  onCardClick={setActiveProject} />
         <ProjectSection label="Plotted & Township Projects" projects={plotted}     onCardClick={setActiveProject} />
+        <ProjectSection label="Interior Design"             projects={interior}    onCardClick={setActiveProject} />
       </div>
 
-      {/* ── FOOTER CTA ─────────────────────── */}
+      {/* ── FOOTER CTA ── */}
       <section style={{ borderTop: '1px solid #e4e2dc', background: '#fff' }}>
         <div className="footer-grid sp" style={{ padding: '52px 48px 44px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'start' }}>
           <div>
@@ -408,7 +473,7 @@ export default function PortfolioPage() {
         <div style={{ height: 1, background: '#e4e2dc' }} />
       </section>
 
-      {/* ── MODAL ──────────────────────────── */}
+      {/* ── MODAL WINDOW ── */}
       {activeProject && (
         <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
       )}

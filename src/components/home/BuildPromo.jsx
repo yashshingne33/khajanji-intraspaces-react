@@ -178,32 +178,52 @@ q
           transform: translateY(-2px);
         }
 
-        @media (max-width: 900px) {
-          .build-promo__content {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 40px 24px;
-          }
-
-          .build-promo__right-container {
-            width: 100%;
-            align-items: flex-start;
-            justify-content: flex-start;
-          }
-          
-          .build-promo__inset-wrapper {
-            position: relative;
-            bottom: auto;
-            width: 80%;
-            max-width: 400px;
-            margin-bottom: 30px;
-          }
-
-          .build-promo__cta {
-            margin-bottom: 0;
-            margin-top: 12px; /* मोबाइल पर ये सुंदर गैप के साथ नीचे दिखेगा */
-          }
+       @media (max-width: 900px) {
+        .build-promo__bg {
+          height: auto;
+          min-height: unset;
         }
+
+        .build-promo__bg-img {
+          position: absolute;   /* ← back to absolute, NOT fixed */
+          height: 100%;
+          opacity: 0.7;         /* ← bump up from 0.45 so it's visible */
+        }
+
+        .build-promo__content {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          padding: 60px 24px 40px;
+          gap: 24px;
+          height: auto;
+        }
+
+        .build-promo__right-container {
+          width: 100%;
+          align-items: flex-center;
+          justify-content: flex-center;
+          gap: 20px;
+        }
+
+        .build-promo__inset-wrapper {
+          width: 100%;
+          max-width: 100%;
+          aspect-ratio: 4 / 3;
+          margin-bottom: 0;
+        }
+
+        .build-promo__cta {
+          width: auto;              /* shrink to text width */
+          display: inline-block;
+          text-align: center;
+          padding: 14px 28px;       /* slightly tighter padding */
+          box-sizing: border-box;
+          margin-top: 0;
+          margin-bottom: 0;
+          white-space: nowrap;      /* prevent text wrapping */
+        }
+      }
       `}</style>
     </motion.section>
   )

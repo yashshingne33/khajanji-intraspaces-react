@@ -12,24 +12,21 @@ const STEPS = [
 const COMMITMENT = [
   {
     title: 'Design Excellence',
-    // desc: 'We partner with only the most skilled artisans and tradespeople in India and from around the world.',
     bullets: ['Custom space planning optimized for functionality and flow.', 'Thoughtful material, color, and finish selection suited to lifestyle and budget.', 'Lighting, furniture, and decor integration for cohesive aesthetics.'],
   },
   {
     title: 'Functionality & Comfort',
-    // desc: 'We source from exclusive design galleries, top private brands and global suppliers.',
     bullets: ['Ergonomic layouts that enhance daily living.', 'Smart storage solutions and multi-functional design for modern living.', 'Climate-appropriate material choices for Nagpur\'s weather conditions.'],
   },
   {
     title: 'Client Satisfaction',
-    // desc: 'Our designs are strategically tailored to maximise your property\'s appeal in the Indian luxury market.',
     bullets: ['Collaborative design process with regular client feedback and revisions.', 'Detailed execution drawings and vendor coordination for accurate implementation.', 'End-to-end project support from concept to final handover and styling.'],  },
 ]
 
 const EXPLORE = [
-  { name: 'Lonavala Valley Estate', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=580&fit=crop' },
-  { name: 'The Heritage Dwelling',        img: 'https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?w=400&h=260&fit=crop' },
-  { name: 'Somersby villa',       img: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=400&h=260&fit=crop' },
+  { name: 'Mumbai Seaview Apartment', img: '/assets/service-project7.jpg' },
+  { name: 'Colonial Heritage House',     img: '/assets/service-project8.jpg' },
+  { name: 'Goa Coastal Villa',       img: '/assets/service-project9.jpg' },
 ]
 
 export default function InteriorDesignPage() {
@@ -39,12 +36,53 @@ export default function InteriorDesignPage() {
     <>
       <style>{GLOBAL_CSS}{`
         @media (max-width: 900px) {
-          .two-colHero { grid-template-columns: 1fr !important; }
-          .two-colHero > div:last-child { height: 50vh !important; order: -1; }
-          .pad { padding: 80px 24px 60px !important; }
+          .two-colHero {
+            grid-template-columns: 1fr !important;
+            min-height: auto !important;
+          }
+          /* Orders text box first in the grid sequence */
+          .two-colHero > div:first-child {
+            padding: 110px 24px 40px !important;
+            order: 1;
+          }
+          /* Orders hero image second below the header text */
+          .two-colHero > div:last-child {
+            height: 50vh !important;
+            order: 2;
+          }
+
+          .section-pad { padding: 40px 16px !important; }
+          .pad { padding: 0 16px !important; }
+
+          /* Process layout normalization overrides for mobile */
+          .pad > div,
+          .pad [style*="maxWidth"] {
+            max-width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+
+          .pad [style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
+            gap: 8px !important;
+          }
+
+          .process-grid img, [class*="process"] img {
+            width: 100% !important;
+            height: 40vh !important;
+            object-fit: cover !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .section-pad { padding: 28px 14px !important; }
+          .pad { padding: 0 14px !important; }
+          .two-colHero > div:first-child { padding: 100px 16px 32px !important; }
+          .two-colHero > div:last-child { height: 38vh !important; }
         }
       `}</style>
-      {/* Internal Navbar removed — global layout Header is used */}
 
       {/* ── HERO ── */}
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-colHero">
@@ -61,13 +99,13 @@ export default function InteriorDesignPage() {
         </div>
       </section>
 
-      {/* ── OUR APPROACH ───────────────────────── */}
+      {/* ── OUR APPROACH ── */}
       <section className="section-pad">
         <div
           style={{
             maxWidth: '1200px',
             margin: '0 auto',
-            paddingTop: 64
+            paddingTop: 24
           }}
         >
           <p
@@ -129,7 +167,7 @@ export default function InteriorDesignPage() {
 
       {/* ── FULL WIDTH IMAGE ── */}
       <div className="iz" style={{ width:'100%', height:'clamp(280px,40vw,540px)' }}>
-        <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=1600&h=700&fit=crop" alt="Interior" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+        <img src="/assets/interior-design.jpg" alt="Interior" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
       </div>
 
       {/* ── BEST DESIGNERS ── */}
@@ -137,8 +175,6 @@ export default function InteriorDesignPage() {
 
       {/* ── EXPLORE ── */}
       <ExploreSection projects={EXPLORE} />
-
-      {/* Internal Footer removed — global layout Footer is used */}
     </>
   )
 }

@@ -224,6 +224,7 @@ export default function AboutPage() {
             lineHeight: 1.8,
             color: 'var(--color-text-secondary)',
             fontWeight: 300,
+            color: '#555',  
             maxWidth: 465,
             margin: 0
           }}
@@ -316,7 +317,7 @@ export default function AboutPage() {
             <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(1.5rem, 2.2vw, 1.85rem)', fontWeight: 400, lineHeight: 1.35, color: '#0a0a0a', marginBottom: 20, minHeight: '60px' }}>
               Timeless, intelligent, and transformative spaces.
             </h3>
-            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13.5, lineHeight: 1.8, color: '#666', fontWeight: 300, textAlign: 'justify' }}>
+            <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13.5, lineHeight: 1.8, color: '#555', fontWeight: 300, textAlign: 'justify' }}>
               To become a trusted name in architecture and design by creating spaces that are timeless, intelligent, and transformative. We aspire to contribute to the built environment with work that improves living standards, enhances business presence, and supports community growth.
             </p>
           </div>
