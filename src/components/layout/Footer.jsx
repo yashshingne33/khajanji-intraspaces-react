@@ -76,13 +76,13 @@ export default function Footer() {
 
           <div className={styles.footerActions}>
             <div className={styles.socialGroup}>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
+              <a href="https://www.instagram.com/stallion3dandco?igsh=Zmljamg3b2VmZDhz&utm_source=qr" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
                 <FaInstagram />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Facebook">
+              {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Facebook">
                 <FaFacebookF />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+              </a> */}
+              <a href="https://www.linkedin.com/company/khajanji-infraspaces/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BpTJJV74ERFCo3cAc1t1IEw%3D%3D" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
                 <FaLinkedinIn />
               </a>
             </div>

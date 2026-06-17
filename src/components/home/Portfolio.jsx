@@ -5,22 +5,22 @@ import PortfolioCard from './shared/PortfolioCard'
 
 const PORTFOLIO = [
   {
-    title: '3 Tower Residence Nagpur',
-    year: '2024',
-    category: 'Residential',
+    title: 'Modern & Contemporary',
+    year: '2026',
+    category: 'Resident Haven',
     img: '/assets/portfolio1.jpg',
   },
   {
-    title: 'Bungalow,Civil Line, Nagpur',
-    year: '2023',
-    category: 'Residential',
+    title: 'Plotting Extravaganza',
+    year: '2026',
+    category: 'Precision Build Execution',
     img: '/assets/portfolio2.jpg',
   },
   {
-    title: '7 Floor Pinnacle,Chatrapati Nagar,Nagpur',
-    year: '2023',
-    category: 'Mixed-Use',
-    img: '/assets/portfolio3.jpg',
+    title: 'Photorealistic 3D Design',
+    year: '2026',
+    category: 'Immersive 3D Experience',
+    img: '/assets/cascade-newproject.jpg',
   },
 ]
 

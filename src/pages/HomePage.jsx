@@ -13,32 +13,32 @@ import MediaPress from '../components/home/MediaPress'
 
 const SLIDES = [
   {
-    tag: 'FEATURED PROJECT / 2024',
-    title: 'Architectural',
-    subtitle: 'Beyond Architecture. Creating Experiences.',
+    tag: 'FEATURED PROJECT / 2026',
+    title: 'Architecture & Planning ',
+    subtitle: 'Best Architect in Nagpur for Real Estate, 3D Design & Interior Design Solutions.',
     cta: 'View Our Portfolio',
     href: '/portfolio',
-    bg: '/assets/hero1.jpg',
+    bg: '/assets/cascade-newproject.jpg',
   },
   {
-    tag: 'RECENT PROJECT / 2024',
-    title: '3D Design',
-    subtitle: 'Where Form Meets Function.',
+    tag: 'FEATURED PROJECT / 2026',
+    title: 'AI Advanced 3D Design',
+    subtitle: 'Photorealistic 3D Architectural Renderings & Elevation Designs for Real Estate Projects.',
     cta: 'Explore Our Services',
     href: '/portfolio',
     bg: '/assets/hero2.jpg',
   },
   {
-    tag: 'AWARD WINNER / 2023',
-    title: 'Construction',
-    subtitle: 'Designing Tomorrow, Today.',
+    tag: 'FEATURED PROJECT / 2026',
+    title: 'Construction & Turnkey',
+    subtitle: 'End-to-End Architecture, Construction & Interior Design Services for Homeowners & Developers Across Central India.',
     cta: 'Schedule a Consultation',
     href: '/portfolio',
     bg: '/assets/hero3.jpg',
   },
 ]
 
-const AUTO_PLAY_MS = 5000
+const AUTO_PLAY_MS = 3000
 const FADE_MS      = 450
 
 export default function HomePage() {

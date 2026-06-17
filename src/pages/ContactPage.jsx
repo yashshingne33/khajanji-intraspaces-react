@@ -655,15 +655,15 @@ export default function ContactPage() {
         {/* Image panel — margin creates padding, constrained to viewport height */}
         <div className="hero-r fu3">
           <img
-            src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&h=1600&fit=crop&q=85"
+            src="/assets/cascade-newproject.jpg"
             alt="Khajanji Studio Architecture"
           />
           <div className="hero-stamp">
-            <span style={{ fontSize:10, letterSpacing:'.15em', textTransform:'uppercase', color:'rgba(255,255,255,0.45)', fontWeight:400 }}>
+            {/* <span style={{ fontSize:10, letterSpacing:'.15em', textTransform:'uppercase', color:'rgba(255,255,255,0.45)', fontWeight:400 }}>
               Est. 2014
-            </span>
+            </span> */}
             <span style={{ fontSize:20, fontWeight:200, color:'#fff', letterSpacing:'-.01em', lineHeight:1.1 }}>
-              10+ Years
+              7+ Years
             </span>
             <span style={{ fontSize:9, letterSpacing:'.12em', textTransform:'uppercase', color:'rgba(255,255,255,0.4)', fontWeight:400 }}>
               Design Excellence
@@ -699,7 +699,7 @@ export default function ContactPage() {
               <div className="contact-info-icon-line" />
               <div className="contact-info-text">
                 <h4>Address</h4>
-                <p>Nagpur, Maharashtra, India — 440 001</p>
+                <p>Plot No 7, Santaji Colony, Sawarkar Nagar, Deo Nagar, Nagpur, Maharashtra 440015</p>
               </div>
             </div>
 
@@ -794,9 +794,9 @@ export default function ContactPage() {
           <div className="map-wrap">
             <iframe
               title="Khajanji Infraspaces — Studio Map Layout"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238196.6609989218!2d78.96880415!3d21.1458004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5c0e6f8cf%3A0x2f0a76a9afcd0f0!2sNagpur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1699000000000"
-              allowFullScreen="" 
-              loading="lazy" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.0!2d79.0882!3d21.1458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bfb50019d40f%3A0xec4471d64e9c3788!2sKhajanji%20Infraspaces!5e0!3m2!1sen!2sin!4v1699000000000"
+              allowFullScreen=""
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>

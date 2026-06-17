@@ -24,9 +24,9 @@ const COMMITMENT = [
 ]
 
 const EXPLORE = [
-  { name: 'Mumbai Seaview Apartment', img: '/assets/service-project7.jpg' },
-  { name: 'Colonial Heritage House',     img: '/assets/service-project8.jpg' },
-  { name: 'Goa Coastal Villa',       img: '/assets/service-project9.jpg' },
+  { name: "Jerry's Home", img: '/assets/project11-jerryhome.jpg' },
+  { name: "Naman Lounge",     img: '/assets/service-project8.jpg' },
+  { name: 'The White Villa',       img: '/assets/service-project9.jpg' },
 ]
 
 export default function InteriorDesignPage() {

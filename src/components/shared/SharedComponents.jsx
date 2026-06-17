@@ -320,11 +320,27 @@ export function Footer() {
            <h2 style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(1.8rem,3.5vw,3rem)', fontWeight:400, lineHeight:1.2, marginBottom:24 }}>
              Have something in mind?<br />Let's talk.
            </h2>
-           <button
-             style={{ padding:'10px 22px', background:'transparent', border:'1px solid #0a0a0a', fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:400, cursor:'pointer', transition:'background 0.2s, color 0.2s', color:'#0a0a0a' }}
-             onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
-             onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#0a0a0a' }}
-           >Request a call back</button>
+           <Link
+            to="/contact#enquiry-form"
+            style={{
+              display: 'inline-block',
+              padding: '10px 22px',
+              background: 'transparent',
+              border: '1px solid #0a0a0a',
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: 13,
+              fontWeight: 400,
+              cursor: 'pointer',
+              letterSpacing: '0.01em',
+              color: '#0a0a0a',
+              textDecoration: 'none',
+              transition: 'background 0.2s, color 0.2s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.color = '#fff' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#0a0a0a' }}
+          >
+            Request a call back
+          </Link>
          </div>
 
         <div>

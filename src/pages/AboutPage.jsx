@@ -64,7 +64,6 @@ const VALUES = [
 ]
 
 const TEAM = [
-  { name: 'Piyush Khajanji',   role: 'Founder & Design Director',    img: '/assets/founder.jpg' },
   { name: 'Ritesh Pande',  role: 'Business Development Manager',   img: '2.jpeg' },
   { name: 'Lokesh Naktode',  role: 'Principal Architect',              img: '1.jpeg' },
   { name: 'Ayush Tijare',   role: 'Interior designer',    img: '3.jpeg' },
@@ -95,20 +94,27 @@ function Footer() {
           <h2 style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2rem,4vw,3.2rem)', fontWeight:400, lineHeight:1.18, marginBottom:28 }}>
             Have something in mind?<br />Let's talk.
           </h2>
-          <button
+          <Link
+            to="/contact#enquiry-form"
             style={{
-              padding:'10px 22px', background:'transparent',
-              border:'1px solid #0a0a0a',
-              fontFamily:"'Outfit', sans-serif", fontSize:13, fontWeight:400,
-              cursor:'pointer', letterSpacing:'0.01em',
-              transition:'background 0.2s, color 0.2s',
-              color:'#0a0a0a',
+              display: 'inline-block',
+              padding: '10px 22px',
+              background: 'transparent',
+              border: '1px solid #0a0a0a',
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: 13,
+              fontWeight: 400,
+              cursor: 'pointer',
+              letterSpacing: '0.01em',
+              color: '#0a0a0a',
+              textDecoration: 'none',
+              transition: 'background 0.2s, color 0.2s',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background='#0a0a0a'; e.currentTarget.style.color='#fff' }}
-            onMouseLeave={e => { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='#0a0a0a' }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.color = '#fff' }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#0a0a0a' }}
           >
             Request a call back
-          </button>
+          </Link>
         </div>
 
         <div>
@@ -403,68 +409,111 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 5. TEAM (All 4 Members in One Horizontal Line) ─────────────────────────────── */}
+      {/* ── 5. TEAM ─────────────────────────────── */}
       <section className="section-pad" style={{ borderTop: '1px solid #e4e2dc' }}>
-        
-        {/* Top Header Block: Centered & Premium Editorial Layout */}
-        <div style={{ maxWidth: '720px', margin: '0 auto 64px', textAlign: 'center' }}>
+
+        {/* Header */}
+        <div style={{ maxWidth: '680px', margin: '0 auto 64px', textAlign: 'center' }}>
           <p className="sr" style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8a8880', fontWeight: 400, marginBottom: 20 }}>
             The team
           </p>
-          <h2 className="sr sr-d1" style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 400, lineHeight: 1.2, marginBottom: 24, letterSpacing: '-0.01em' }}>
+          <h2 className="sr sr-d1" style={{ fontFamily: "'Outfit', sans-serif", fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', fontWeight: 400, lineHeight: 1.2, letterSpacing: '-0.02em', color: '#0a0a0a', marginBottom: 20 }}>
             Meet the team behind the designs
           </h2>
-          <p className="sr sr-d2" style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, lineHeight: 1.8, color: '#666', fontWeight: 300 }}>
-            Our team blends creativity, expertise, and precision to craft interiors that feel as good as they look. With diverse backgrounds in design, architecture, and project management, we bring a collaborative spirit and a shared passion for thoughtful, elevated living. Every project is a partnership — and every detail, a reflection of our commitment to excellence.
+          <p className="sr sr-d2" style={{ fontFamily: "'Outfit', sans-serif", fontSize: 14, lineHeight: 1.8, color: '#555', fontWeight: 300 }}>
+            Our team blends creativity, expertise, and precision — with diverse backgrounds in design,
+            architecture, and project management, united by a shared passion for thoughtful, elevated spaces.
           </p>
         </div>
 
-        {/* Bottom Cards Block: 4 Columns Clean Horizontal Lineup */}
-        <div className="team-grid-fixed" style={{ display: 'grid', gap: '24px', alignItems: 'start' }}>
-          {TEAM.map((m, i) => (
-            <div key={i} className={`sr sr-d${(i % 4) + 1}`} style={{ display: 'flex', flexDirection: 'column' }}>
-              <div className="iz" style={{ aspectRatio: '3/4', width: '100%', overflow: 'hidden', background: '#f5f5f3' }}>
-                <img 
-                  src={m.img.startsWith('/') || m.img.startsWith('http') ? m.img : `/${m.img}`} 
-                  alt={m.name}
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover', 
-                    filter: 'grayscale(100%)', 
-                    transition: 'filter 0.5s ease, transform 0.8s cubic-bezier(.25,.46,.45,.94)' 
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.filter = 'grayscale(0%)'}
-                  onMouseLeave={e => e.currentTarget.style.filter = 'grayscale(100%)'}
-                />
+        {/* ── Founders & Management ── */}
+        <div className="sr sr-d1">
+          <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8a8880', fontWeight: 400, marginBottom: 32, textAlign: 'center' }}>
+            Founders &amp; Management
+          </p>
+
+          {/* Two founder cards — centered pair */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '32px', flexWrap: 'wrap' }}>
+            {[
+              { name: 'Piyush Khajanji', role: 'Founder & Design Director',  img: '/assets/founder.jpg' },
+              { name: 'Nikita Khajanji', role: 'Managing Director & CEO',       img: '/assets/founder-nikita-mam.jpg' },
+            ].map((m, i) => (
+              <div key={i} className={`sr sr-d${i + 1}`} style={{ display: 'flex', flexDirection: 'column', width: '280px', flexShrink: 0 }}>
+                <div className="iz" style={{ aspectRatio: '3/4', width: '100%', overflow: 'hidden', background: '#ebe9e4' }}>
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(100%)', transition: 'filter 0.5s ease, transform 0.8s cubic-bezier(.25,.46,.45,.94)' }}
+                    onMouseEnter={e => e.currentTarget.style.filter = 'grayscale(0%)'}
+                    onMouseLeave={e => e.currentTarget.style.filter = 'grayscale(100%)'}
+                  />
+                </div>
+                <div style={{ marginTop: 16 }}>
+                  <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 400, color: '#0a0a0a', letterSpacing: '0.01em', margin: '0 0 5px' }}>{m.name}</p>
+                  <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 300, color: '#8a8880', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{m.role}</p>
+                </div>
               </div>
-              <div style={{ marginTop: 16, textAlign: 'left' }}>
-                <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 14, fontWeight: 400, color: '#0a0a0a', letterSpacing: '0.02em', margin: 0 }}>
-                  {m.name}
-                </p>
-                <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 12, color: '#8a8880', fontWeight: 300, marginTop: 4, letterSpacing: '0.01em' }}>
-                  {m.role}
-                </p>
+            ))}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div style={{ height: 1, background: '#e4e2dc', margin: '56px 0' }} />
+
+        {/* ── Design Team ── */}
+        <div className="sr sr-d2">
+          <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#8a8880', fontWeight: 400, marginBottom: 32, textAlign: 'center' }}>
+            Design Team
+          </p>
+
+          {/* Three team cards — centered row */}
+          <div className="design-team-grid">
+            {[
+              { name: 'Ritesh Pande',   role: 'Business Development Manager', img: '/2.jpeg' },
+              { name: 'Lokesh Naktode', role: 'Principal Architect',           img: '/1.jpeg' },
+              { name: 'Ayush Tijare',   role: 'Interior Designer',             img: '/3.jpeg' },
+            ].map((m, i) => (
+              <div key={i} className={`sr sr-d${i + 1}`} style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="iz" style={{ aspectRatio: '3/4', width: '100%', overflow: 'hidden', background: '#ebe9e4' }}>
+                  <img
+                    src={m.img}
+                    alt={m.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(100%)', transition: 'filter 0.5s ease, transform 0.8s cubic-bezier(.25,.46,.45,.94)' }}
+                    onMouseEnter={e => e.currentTarget.style.filter = 'grayscale(0%)'}
+                    onMouseLeave={e => e.currentTarget.style.filter = 'grayscale(100%)'}
+                  />
+                </div>
+                <div style={{ marginTop: 16 }}>
+                  <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 15, fontWeight: 400, color: '#0a0a0a', letterSpacing: '0.01em', margin: '0 0 5px' }}>{m.name}</p>
+                  <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 300, color: '#8a8880', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{m.role}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <style>{`
-          .team-grid-fixed {
-            grid-template-columns: repeat(4, 1fr);
+          .design-team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 960px;
+            margin: 0 auto;
           }
-          @media (max-width: 1024px) {
-            .team-grid-fixed {
+          @media (max-width: 900px) {
+            .design-team-grid {
               grid-template-columns: repeat(2, 1fr) !important;
+              max-width: 640px !important;
             }
           }
-          @media (max-width: 600px) {
-            .team-grid-fixed {
+          @media (max-width: 480px) {
+            .design-team-grid {
               grid-template-columns: 1fr !important;
+              max-width: 320px !important;
             }
           }
         `}</style>
+
       </section>
 
       <Footer />

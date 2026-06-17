@@ -4,24 +4,24 @@ import { Link } from 'react-router-dom'
 const MEDIA_ITEMS = [
   {
     id: 1,
-    category: 'Media',
-    title: 'How Khajanji became a model for affordable, sustainable living',
+    category: 'Nagpur Real Estate Design Trends 2026',
+    title: 'Architecture, 3D Visualization & Modern Interior Design Insights',
     image: '/assets/media-living.jpg',
-    link: '/blog/sustainable-living'
+    link: '/media'
   },
   {
     id: 2,
-    category: 'Announcements',
-    title: '2025 Design Awards Recap',
+    category: 'Plotted & Township Projects',
+    title: 'How Photorealistic 3D Elevation Designs Boost Property Sales in Nagpur',
     image: '/assets/design-awards.png',
-    link: '/blog/awards-recap'
+    link: '/media'
   },
   {
     id: 3,
-    category: 'Media',
-    title: 'Industrial Luxury Style, explained by Khajanji Design',
+    category: 'Turnkey Interior Projects in Nagpur',
+    title: 'From Concept to Completion by Khajanji Infraspaces',
     image: '/assets/luxury.jpg',
-    link: '/blog/industrial-luxury'
+    link: '/media'
   }
 ]
 
@@ -33,7 +33,7 @@ export default function MediaPress({ fadeUp }) {
         <div className="media-press__header">
           <div className="media-press__kicker">MEDIA</div>
           <h2 className="media-press__title">Media and press releases</h2>
-          <Link to="/about" className="who-we-are__link">
+          <Link to="/media" className="who-we-are__link">
             Read all <span className="arrow">&#8594;</span>
           </Link>
         </div>
