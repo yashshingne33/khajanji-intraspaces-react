@@ -1,5 +1,6 @@
 // src/pages/InteriorDesignPage.jsx
 import { Navbar, Footer, GLOBAL_CSS, useReveal, PullQuote, ProcessSection, ImagePair, CommitmentSection, BestDesignersSection, ExploreSection } from '../components/shared/SharedComponents'
+import { Helmet } from 'react-helmet-async'
 
 const STEPS = [
   { title: 'Initial concept',                           desc: 'Our first meeting is dedicated entirely to listening—your vision, goals, favourite styles, and budget are at the heart of everything we do. We ask plenty of questions because our design process revolves completely around you. If you\'re unsure about your style, don\'t worry—we\'ll guide you by exploring details in photos together, helping you discover what resonates and what doesn\'t. This way, we quickly gain a clear understanding of your preferences and ensure every design choice reflects your unique taste.' },
@@ -83,6 +84,11 @@ export default function InteriorDesignPage() {
           .two-colHero > div:last-child { height: 38vh !important; }
         }
       `}</style>
+
+      <Helmet>
+        <title>Interior Design Services in Nagpur, Amravati, Chandrapur | Khajanji</title>
+        <meta name="description" content="Khajanji Infraspaces offers architecture, 3D design, sanction planning & interior design services in Nagpur, Amravati, Chandrapur & Wardha." />
+      </Helmet>
 
       {/* ── HERO ── */}
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-colHero">

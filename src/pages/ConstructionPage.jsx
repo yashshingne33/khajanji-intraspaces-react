@@ -1,5 +1,6 @@
 // src/pages/ConstructionPage.jsx
 import { Navbar, Footer, GLOBAL_CSS, useReveal, PullQuote, ProcessSection, ImagePair, CommitmentSection, BestDesignersSection, ExploreSection } from '../components/shared/SharedComponents'
+import { Helmet } from 'react-helmet-async'
 
 const STEPS = [
   { title: 'Initial consultation & planning',   desc: 'We begin by understanding your goals, budget, and timeline. Our team assesses the site, reviews requirements, and works with you to develop a clear, detailed project plan that aligns with your vision.' },
@@ -85,11 +86,16 @@ export default function ConstructionPage() {
         }
       `}</style>
 
+      <Helmet>
+        <title>Construction Services in Nagpur | Khajanji Infraspaces</title>
+        <meta name="description" content="Khajanji Infraspaces offers architecture, 3D design, sanction planning & interior design services in Nagpur, Amravati, Chandrapur & Wardha." />
+      </Helmet>
+
       {/* ── HERO ── */}
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-colHero">
         <div className="pad" style={{ display:'flex', flexDirection:'column', justifyContent:'center', paddingTop:120, paddingBottom:80 }}>
           <h1 className="fu1" style={{ fontFamily:"'Outfit', sans-serif", fontSize:'clamp(2.2rem,3.8vw,3.4rem)', fontWeight:400, lineHeight:1.13, letterSpacing:'-0.01em', marginBottom:28, color:'#0a0a0a' }}>
-            Construction 
+            Construction
           </h1>
           <p className="fu2" style={{ fontFamily:"'Outfit', sans-serif", fontSize:14, lineHeight:1.78, color:'#555', fontWeight:300, maxWidth:320 }}>
             Khajanji Infraspaces offers a comprehensive and fully integrated range of building and construction services—covering everything from expertly executed basement conversions and elegant house extensions to premium, high-spec fit-outs.

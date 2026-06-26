@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import styles from './HomePage.module.css'
 import Hero from '../components/home/Hero'
 import WhoWeAre from '../components/home/WhoWeAre'
@@ -10,6 +11,7 @@ import Portfolio from '../components/home/Portfolio'
 import CTABanner from '../components/home/CTABanner'
 import FounderQuote from '../components/home/FounderQuote'
 import MediaPress from '../components/home/MediaPress'
+
 
 const SLIDES = [
   {
@@ -82,6 +84,12 @@ export default function HomePage() {
   const fadeUp  = {}   // kept for parity with child components
 
   return (
+    <> {/* <-- ADD OPENING FRAGMENT */}
+      <Helmet>
+        <title>Architecture & Interior Design Firm in Nagpur | Khajanji Infraspaces</title>
+        <meta name="description" content="Khajanji Infraspaces offers architecture, 3D design, sanction planning & interior design services in Nagpur, Amravati, Chandrapur & Wardha." />
+      </Helmet>
+
     <div className={styles.page}>
       {/* ── HERO ── */}
       <Hero
@@ -107,6 +115,7 @@ export default function HomePage() {
       <MediaPress   fadeUp={fadeUp} />
       <CTABanner    fadeUp={fadeUp} />
     </div>
+    </>
   )
 }
 

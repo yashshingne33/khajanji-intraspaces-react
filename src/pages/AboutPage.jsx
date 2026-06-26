@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 /* ─────────────────────────────────────────────
    SCROLL REVEAL HOOK
@@ -149,6 +150,12 @@ export default function AboutPage() {
 
   return (
     <>
+
+    <Helmet>
+        <title>About Us – Khajanji Infraspaces | Architects in Nagpur</title>
+        <meta name="description" content="Khajanji Infraspaces offers architecture, 3D design, sanction planning & interior design services in Nagpur, Amravati, Chandrapur & Wardha." />
+      </Helmet>
+
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -436,7 +443,7 @@ export default function AboutPage() {
           <div style={{ display: 'flex', justifyContent: 'center', gap: '32px', flexWrap: 'wrap' }}>
             {[
               { name: 'Piyush Khajanji', role: 'Founder & Design Director',  img: '/assets/founder.jpg' },
-              { name: 'Nikita Khajanji', role: 'Managing Director & CEO',       img: '/assets/founder-nikita-mam.jpg' },
+              { name: 'Nikita Khajanji', role: 'Managing Director & COO',       img: '/assets/founder-nikita-mam.jpg' },
             ].map((m, i) => (
               <div key={i} className={`sr sr-d${i + 1}`} style={{ display: 'flex', flexDirection: 'column', width: '280px', flexShrink: 0 }}>
                 <div className="iz" style={{ aspectRatio: '3/4', width: '100%', overflow: 'hidden', background: '#ebe9e4' }}>

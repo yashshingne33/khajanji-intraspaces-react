@@ -1,5 +1,6 @@
 // src/pages/ServicesPage.jsx
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { Navbar, Footer, GLOBAL_CSS, useReveal } from '../components/shared/SharedComponents'
 import Process from '../components/home/Process'
@@ -114,6 +115,11 @@ export default function ServicesPage() {
           }
         }
       `}</style>
+
+      <Helmet>
+        <title>Architecture, 3D Design & Sanction Planning Services | Nagpur</title>
+        <meta name="description" content="Khajanji Infraspaces offers architecture, 3D design, sanction planning & interior design services in Nagpur, Amravati, Chandrapur & Wardha." />
+      </Helmet>
 
       {/* ── HERO ── */}
       <section

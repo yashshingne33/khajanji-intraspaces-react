@@ -1,6 +1,7 @@
 // src/pages/Media.jsx
 import { title } from 'framer-motion/client'
 import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 /* ── Scroll Reveal Hook — matches ContactPage debounced pattern ── */
 // Replace your useReveal hook with this:
@@ -469,6 +470,11 @@ export default function Media() {
           .media-grid { grid-template-columns: repeat(2, 1fr); }
         }
       `}</style>
+
+      <Helmet>
+        <title>Media & Interior Design Services in Nagpur, Amravati, Chandrapur | Khajanji</title>
+        <meta name="description" content="Khajanji Infraspaces offers architecture, 3D design, sanction planning & interior design services in Nagpur, Amravati, Chandrapur & Wardha." />
+      </Helmet>
 
       {/* ══════════════ HERO ══════════════ */}
       <section className="media-hero">

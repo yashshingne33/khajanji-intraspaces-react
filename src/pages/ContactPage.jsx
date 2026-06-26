@@ -1,5 +1,6 @@
 // src/pages/ContactPage.jsx
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import FounderQuote from '../components/home/FounderQuote'
 
 function useReveal() {
@@ -635,6 +636,11 @@ export default function ContactPage() {
           .hero-sub { margin-bottom: 14px; font-size: 12px; }
         }
       `}</style>
+
+      <Helmet>
+        <title>Contact Khajanji Infraspaces | Architects in Nagpur, Wardha, Amravati, Chandrapur</title>
+        <meta name="description" content="Khajanji Infraspaces offers architecture, 3D design, sanction planning & interior design services in Nagpur, Amravati, Chandrapur & Wardha." />
+      </Helmet>
 
       {/* ══════════════════ S1 — HERO (viewport-height, no scroll) ══════════════════ */}
       <section className="hero">

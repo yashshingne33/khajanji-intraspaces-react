@@ -1,5 +1,6 @@
 // src/pages/LightingDesignPage.jsx
 import { Navbar, Footer, GLOBAL_CSS, useReveal, PullQuote, ProcessSection, ImagePair, CommitmentSection, BestDesignersSection, ExploreSection } from '../components/shared/SharedComponents'
+import { Helmet } from 'react-helmet-async'
 
 const STEPS = [
   { title: 'Discovery & consultation',       desc: 'We begin by understanding your vision, space, and lifestyle. Through an in-depth consultation, we assess your lighting needs, preferences, and functional goals—ensuring our design aligns perfectly with the ambiance and mood you want to create.' },
@@ -86,7 +87,11 @@ export default function LightingDesignPage() {
           .two-colHero > div:last-child { height: 38vh !important; }
         }
       `}</style>
-      {/* Internal Navbar removed — global layout Header is used */}
+      
+      <Helmet>
+        <title>Interior Design Services in Nagpur, Amravati, Chandrapur | Khajanji Infraspaces</title>
+        <meta name="description" content="Khajanji Infraspaces offers architecture, 3D design, sanction planning & interior design services in Nagpur, Amravati, Chandrapur & Wardha." />
+      </Helmet>
 
       {/* ── HERO ── */}
       <section style={{ display:'grid', gridTemplateColumns:'1fr 1fr', minHeight:'78vh' }} className="two-colHero">
